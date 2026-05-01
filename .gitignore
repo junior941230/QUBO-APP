@@ -1,3 +1,5 @@
 DESTINATION/
 __pycache__/
 .vscode/
+checkpoints/
+results/

@@ -8,11 +8,6 @@ from joblib import Parallel, delayed
 from collections import defaultdict
 
 try:
-    import openjij as oj  # noqa: F401
-except ImportError:
-    oj = None
-
-try:
     from neal import SimulatedAnnealingSampler
 except ImportError:
     SimulatedAnnealingSampler = None

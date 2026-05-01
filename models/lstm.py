@@ -147,6 +147,11 @@ def _predict_lstm_sequence(model, seq, mean, std, device):
     with torch.no_grad():
         logits = model(x).squeeze(0)                  # (T,)
         probs = torch.sigmoid(logits).cpu().numpy()
+    log_step(
+        f"[LSTM] pred stats: min={probs.min():.3f} "
+        f"max={probs.max():.3f} mean={probs.mean():.3f} "
+        f"p>0.5={np.mean(probs > 0.5):.3f}"
+    )
     return probs
 
 def predict_lstm(train_files, test_file, features, labels, lstm_params=None):
