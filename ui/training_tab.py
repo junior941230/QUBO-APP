@@ -41,7 +41,7 @@ def build_training_tab():
 
         with gr.Row():
             max_files_per_subject = gr.Slider(
-                0, 30, value=5, step=1, label="Max EDF files per subject (0=all)"
+                0, 30, value=0, step=1, label="Max EDF files per subject (0=all)"
             )
             n_jobs = gr.Slider(-1, 16, value=-1, step=1, label="Preprocess parallel jobs")
 
@@ -56,14 +56,14 @@ def build_training_tab():
             )
 
         with gr.Accordion("🧠 LSTM Hyperparameters (only used when baseline=lstm)",
-                          open=False):
+                          open=True):
             with gr.Row():
-                lstm_hidden = gr.Slider(32, 512, value=128, step=32, label="Hidden dim")
-                lstm_layers = gr.Slider(1, 4, value=2, step=1, label="Num layers")
-                lstm_dropout = gr.Slider(0.0, 0.6, value=0.3, step=0.05, label="Dropout")
+                lstm_hidden = gr.Slider(32, 512, value=32, step=32, label="Hidden dim")
+                lstm_layers = gr.Slider(1, 4, value=1, step=1, label="Num layers")
+                lstm_dropout = gr.Slider(0.0, 0.6, value=0.2, step=0.05, label="Dropout")
             with gr.Row():
-                lstm_epochs = gr.Slider(5, 100, value=15, step=1, label="Epochs")
-                lstm_lr = gr.Number(value=1e-3, label="Learning rate")
+                lstm_epochs = gr.Slider(5, 100, value=50, step=1, label="Epochs")
+                lstm_lr = gr.Number(value=5e-4, label="Learning rate")
                 lstm_batch = gr.Slider(1, 16, value=4, step=1, label="Batch size (files)")
 
         with gr.Row():

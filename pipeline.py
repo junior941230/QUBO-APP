@@ -15,6 +15,15 @@ except ImportError:
 DURATION = 1.0
 warnings.filterwarnings("ignore", category=RuntimeWarning, module="mne")
 
+STANDARD_CHB_CHANNELS = [
+    'FP1-F7', 'F7-T7', 'T7-P7', 'P7-O1',
+    'FP1-F3', 'F3-C3', 'C3-P3', 'P3-O1',
+    'FP2-F4', 'F4-C4', 'C4-P4', 'P4-O2',
+    'FP2-F8', 'F8-T8', 'T8-P8-0', 'P8-O2',
+    'FZ-CZ',  'CZ-PZ',
+    'P7-T7',  'T7-FT9', 'FT9-FT10', 'FT10-T8', 'T8-P8-1'
+]
+
 def processAllFiles(fileList, seizureTimesDict, nJobs=-1):
     """
     fileList: 檔案路徑清單
@@ -45,6 +54,13 @@ def preprocess_one_file(edf_path, seizure_times):
     # verbose=False 可以讓它安靜一點
     raw = mne.io.read_raw_edf(edf_path, preload=True, verbose=False)
 
+    available = [ch for ch in STANDARD_CHB_CHANNELS if ch in raw.ch_names]
+    missing   = [ch for ch in STANDARD_CHB_CHANNELS if ch not in raw.ch_names]
+    
+    if missing:
+        print(f"  ⚠️  {edf_path}: 缺少 {missing}")
+    raw.pick(available)
+    
     # 假設 raw 是你讀取後的物件
     channelNames = raw.ch_names
 
@@ -65,10 +81,11 @@ def preprocess_one_file(edf_path, seizure_times):
         raw, duration=DURATION, overlap=0.0, verbose=False)
 
     # 取得數據矩陣 X: (Epoch數, 通道數, 時間點數)
-    X_data = epochs.get_data(copy=True)
+    X_data = epochs.get_data(copy=False)
 
     X_feat = np.array([extract_band_power(e) for e in X_data])
-
+    del raw, epochs, X_data
+    import gc; gc.collect()
     # 5. 製作標籤 y
     # 先產生全 0 的向量
     numEpochs = len(X_feat)
