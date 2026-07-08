@@ -1,0 +1,29 @@
+name: rapids-26.04
+channels:
+  - rapidsai
+  - conda-forge
+  - nvidia
+dependencies:
+  - python=3.11
+  - cuda-version=12.9
+
+  # RAPIDS / GPU SVM backend
+  - cudf=26.04
+  - cuml=26.04
+  - cupy=14.0
+
+  # Scientific stack used directly by the project
+  - joblib=1.5.3
+  - numpy=2.4.3
+  - pandas=2.3.3
+  - pytorch=2.10.0
+  - scikit-learn=1.8.0
+  - scipy=1.16.3
+
+  - pip
+  - pip:
+      - dwave-neal==0.6.0
+      - gradio==6.13.0
+      - matplotlib==3.10.9
+      - mne==1.12.1
+      - xgboost==3.2.0

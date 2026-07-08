@@ -113,11 +113,15 @@ def processAllFiles(fileList, seizureTimesDict, nJobs=-1)
 
 def preprocess_one_file(edf_path, seizure_times)
     ├─ 1. 讀取 EDF 文件 (使用 MNE)
-    ├─ 2. 數據濾波 (帶通濾波)
-    ├─ 3. 分割成 epochs (時間窗口)
-    ├─ 4. 特徵提取
+    ├─ 2. 正規化成固定 18-channel bipolar montage
+    ├─ 3. 數據濾波 (帶通濾波)
+    ├─ 4. 分割成 epochs (時間窗口)
+    ├─ 5. 特徵提取
     └─ 返回 (特徵, 標籤)
 ```
+
+通道正規化支援標準 bipolar、`T8-P8-0` 別名，以及共同參考
+(`*-CS2`/單電極) 記錄；共同參考記錄會以電極相減重建 bipolar 通道。
 
 #### 特徵提取: `FeatureExtraction.py`
 
@@ -131,7 +135,7 @@ def extract_band_power(epoch, sfreq=256)
     └─ Gamma   (30-40 Hz)
     
     # 使用 Welch 功率譜密度估計 (PSD)
-    # 輸出: 平展特徵向量 (通道 × 5個頻帶)
+    # 輸出: 固定 90 維向量 (18 通道 × 5 個頻帶)
 ```
 
 **關鍵參數** (`config.py`)
@@ -323,12 +327,19 @@ RANDOM_SEED = 42                           # 可重現性
 
 | 包名 | 版本 | 用途 |
 |------|------|------|
-| `dwave_neal` | 0.6.0 | QUBO 模擬退火求解器 |
+| `dwave-neal` | 0.6.0 | QUBO 模擬退火求解器 |
 | `gradio` | 6.13.0 | Web UI 框架 |
+| `joblib` | 1.5.3 | EDF 並行前處理 |
 | `matplotlib` | 3.10.9 | 數據可視化 |
 | `mne` | 1.12.1 | 腦電圖數據處理 |
-| `scikit_learn` | 1.8.0 | SVM 和指標計算 |
+| `numpy` | 2.4.3 | 數值計算 |
+| `pandas` | 2.3.3 | 結果表格 |
+| `scikit-learn` | 1.8.0 | CPU SVM fallback、切分與指標計算 |
+| `scipy` | 1.16.3 | 頻帶功率特徵 |
+| `torch` | 2.10.0 | LSTM baseline |
 | `xgboost` | 3.2.0 | 梯度提升模型 |
+
+GPU SVM 使用 RAPIDS/cuML，請透過 `environment-rapids.yml` 建立 conda 環境；`requirements.txt` 只列 pip 可安裝的核心依賴。若沒有安裝 cuML，SVM 會自動降級使用 scikit-learn。
 
 ---
 
@@ -432,7 +443,7 @@ UI 顯示結果
 ### 啟動 UI 伺服器
 
 ```bash
-conda activate rapids-26.04-gpu
+conda activate rapids-26.04
 python app.py
 ```
 
@@ -461,7 +472,8 @@ python -m pipeline_runner.experiment \
 - 可配置 CPU 核心數
 
 ### 3. **快取機制** (Caching)
-- `qubo/validation_cache.py`: 快取驗證集結果，加快調優
+- `qubo/validation_cache.py`: 每個外層測試 fold 分別建立驗證快取；
+  快取訓練資料不包含該外層測試檔，避免資料洩漏
 - `core/checkpoint.py`: 快取中間結果，支持恢復
 
 ### 4. **模塊化設計** (Modularity)

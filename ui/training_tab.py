@@ -67,7 +67,10 @@ def build_training_tab():
                 lstm_batch = gr.Slider(1, 16, value=4, step=1, label="Batch size (files)")
 
         with gr.Row():
-            reuse_global_cache = gr.Checkbox(value=True, label="Reuse global validation cache")
+            reuse_global_cache = gr.Checkbox(
+                value=True,
+                label="Precompute leak-free validation cache per outer test file",
+            )
             save_pkl = gr.Checkbox(value=True, label="Save results to ./results/")
 
         with gr.Row():

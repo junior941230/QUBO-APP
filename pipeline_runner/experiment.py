@@ -1,6 +1,7 @@
 from config import *
 from core.logging_utils import log_step, parse_float_list
 from core.io import collect_files_and_seizures
+from core.splits import leave_one_file_out_train_sets
 from core.checkpoint import make_run_id, load_checkpoint, save_checkpoint, clear_checkpoint
 from core.results import save_results_pkl
 from models.registry import predict_scores
@@ -58,6 +59,7 @@ def run_experiment(
         "batch_size": int(lstm_batch),
     }
     config = {
+        "run_schema_version": RUN_SCHEMA_VERSION,
         "subjects": list(selected_subjects),
         "baseline": baseline,
         "solver_name": solver_name,
@@ -122,19 +124,38 @@ def run_experiment(
 
     solver = get_qubo_solver(solver_name)
 
-    # --- Global cache ---
-    global_cache = None
+    outer_train_sets = leave_one_file_out_train_sets(test_files)
+
+    # --- Leak-free outer validation caches ---
+    # A cache is valid only for one outer test file.  Building a single cache
+    # from all test_files leaks the outer test labels into inner model fits.
+    outer_validation_caches = {}
+    outer_cache_errors = {}
     if reuse_global_cache:
-        progress(0.14, desc="Building global validation cache")
-        try:
-            global_cache = build_validation_score_cache(
-                test_files, features, labels, baseline,
-                tune_mode=tune_mode, n_splits=tune_n_splits,
-                lstm_params=lstm_params,
+        cache_targets = [f for f in test_files if f not in done_files]
+        for cache_idx, outer_test_file in enumerate(cache_targets, start=1):
+            train_files = outer_train_sets[outer_test_file]
+            if len(train_files) < 2:
+                continue
+            progress(
+                0.10 + 0.05 * (cache_idx / max(1, len(cache_targets))),
+                desc=f"Building leak-free cache for {outer_test_file}",
             )
-        except Exception as exc:
-            log_step(f"[Run] global cache failed: {exc}")
-            global_cache = None
+            try:
+                outer_validation_caches[outer_test_file] = (
+                    build_validation_score_cache(
+                        train_files, features, labels, baseline,
+                        tune_mode=tune_mode,
+                        n_splits=min(tune_n_splits, len(train_files)),
+                        lstm_params=lstm_params,
+                    )
+                )
+            except Exception as exc:
+                outer_cache_errors[outer_test_file] = str(exc)
+                log_step(
+                    f"[Run] validation cache failed for outer test "
+                    f"{outer_test_file}: {exc}"
+                )
 
     # --- Main Loop ---
     loop_total = max(1, len(test_files))
@@ -151,15 +172,17 @@ def run_experiment(
         file_start = time.perf_counter()
         log_step(f"[File] {idx + 1}/{len(test_files)} test={test_file}")
 
-        train_files = [f for f in test_files if f != test_file]
+        train_files = outer_train_sets[test_file]
         if len(train_files) < 2:
             skipped.append(f"{test_file}: not enough training files")
             save_checkpoint(run_id, rows, detail_cache, skipped, config)
             continue
 
         try:
-            if global_cache is not None:
-                score_cache = {k: v for k, v in global_cache.items() if k != test_file}
+            if reuse_global_cache:
+                if test_file in outer_cache_errors:
+                    raise RuntimeError(outer_cache_errors[test_file])
+                score_cache = outer_validation_caches.get(test_file, {})
             else:
                 score_cache = build_validation_score_cache(
                     train_files, features, labels, baseline,
@@ -278,6 +301,7 @@ def run_experiment(
     progress(0.96, desc="Saving results")
 
     meta = {
+        "run_schema_version": RUN_SCHEMA_VERSION,
         "timestamp": datetime.now().isoformat(),
         "run_id": run_id,
         "subjects": list(selected_subjects),

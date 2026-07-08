@@ -1,6 +1,15 @@
 from config import RANDOM_SEED
-from cuml import SVC
-from cuml.preprocessing import StandardScaler
+import numpy as np
+
+try:
+    from cuml import SVC
+    from cuml.preprocessing import StandardScaler
+    CUM_AVAILABLE = True
+except ImportError:
+    from sklearn.svm import SVC
+    from sklearn.preprocessing import StandardScaler
+    CUM_AVAILABLE = False
+
 try:
     from xgboost import XGBClassifier
 except ImportError:
@@ -15,7 +24,7 @@ def predict_svm(x_train, y_train, x_test):
         class_weight="balanced", random_state=RANDOM_SEED,
     )
     clf.fit(x_train_scaled, y_train)
-    return clf.predict_proba(x_test_scaled)[:, 1]
+    return np.asarray(clf.predict_proba(x_test_scaled))[:, 1]
 
 def predict_xgboost(x_train, y_train, x_test):
     if XGBClassifier is None:

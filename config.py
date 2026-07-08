@@ -11,3 +11,7 @@ DEFAULT_THRESHOLD_LIST = [0.3, 0.4, 0.45, 0.5, 0.6]
 TUNE_ALPHA = 0.2
 BASELINE_THRESHOLD = 0.5
 RANDOM_SEED = 42
+
+# Increment when preprocessing or evaluation semantics change so checkpoints
+# produced by older code cannot be resumed into an incompatible run.
+RUN_SCHEMA_VERSION = 2

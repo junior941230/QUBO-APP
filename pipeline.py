@@ -4,6 +4,7 @@ import warnings
 import numpy as np
 from parser import parse_seizure_file
 from FeatureExtraction import extract_band_power
+from core.channels import CANONICAL_CHB_CHANNELS, build_channel_plan
 from joblib import Parallel, delayed
 from collections import defaultdict
 
@@ -15,14 +16,28 @@ except ImportError:
 DURATION = 1.0
 warnings.filterwarnings("ignore", category=RuntimeWarning, module="mne")
 
-STANDARD_CHB_CHANNELS = [
-    'FP1-F7', 'F7-T7', 'T7-P7', 'P7-O1',
-    'FP1-F3', 'F3-C3', 'C3-P3', 'P3-O1',
-    'FP2-F4', 'F4-C4', 'C4-P4', 'P4-O2',
-    'FP2-F8', 'F8-T8', 'T8-P8-0', 'P8-O2',
-    'FZ-CZ',  'CZ-PZ',
-    'P7-T7',  'T7-FT9', 'FT9-FT10', 'FT10-T8', 'T8-P8-1'
-]
+STANDARD_CHB_CHANNELS = list(CANONICAL_CHB_CHANNELS)
+
+
+def normalize_chb_channels(raw):
+    """Return a RawArray with the canonical 18-channel bipolar montage."""
+    plan = build_channel_plan(raw.ch_names)
+    normalized = []
+    for instruction in plan:
+        if instruction[0] == "direct":
+            normalized.append(raw.get_data(picks=[instruction[1]])[0])
+        else:
+            _, anode, cathode = instruction
+            pair = raw.get_data(picks=[anode, cathode])
+            normalized.append(pair[0] - pair[1])
+
+    data = np.vstack(normalized)
+    info = mne.create_info(
+        ch_names=list(CANONICAL_CHB_CHANNELS),
+        sfreq=float(raw.info["sfreq"]),
+        ch_types=["eeg"] * len(CANONICAL_CHB_CHANNELS),
+    )
+    return mne.io.RawArray(data, info, verbose=False)
 
 def processAllFiles(fileList, seizureTimesDict, nJobs=-1):
     """
@@ -54,22 +69,9 @@ def preprocess_one_file(edf_path, seizure_times):
     # verbose=False 可以讓它安靜一點
     raw = mne.io.read_raw_edf(edf_path, preload=True, verbose=False)
 
-    available = [ch for ch in STANDARD_CHB_CHANNELS if ch in raw.ch_names]
-    missing   = [ch for ch in STANDARD_CHB_CHANNELS if ch not in raw.ch_names]
-    
-    if missing:
-        print(f"  ⚠️  {edf_path}: 缺少 {missing}")
-    raw.pick(available)
-    
-    # 假設 raw 是你讀取後的物件
-    channelNames = raw.ch_names
-
-    # 找出所有包含 T8-P8 的通道
-    targetChannels = [ch for ch in channelNames if 'T8-P8' in ch]
-
-    if len(targetChannels) > 1:
-        # 刪除 T8-P8-1
-        raw.drop_channels(['T8-P8-1'])
+    normalized_raw = normalize_chb_channels(raw)
+    del raw
+    raw = normalized_raw
 
     # 3. 濾波
     raw.filter(l_freq=0.5, h_freq=40.0, verbose=False, n_jobs=1)  # Bandpass
@@ -83,7 +85,17 @@ def preprocess_one_file(edf_path, seizure_times):
     # 取得數據矩陣 X: (Epoch數, 通道數, 時間點數)
     X_data = epochs.get_data(copy=False)
 
-    X_feat = np.array([extract_band_power(e) for e in X_data])
+    sfreq = int(round(float(raw.info["sfreq"])))
+    X_feat = np.array([
+        extract_band_power(e, sfreq=sfreq)
+        for e in X_data
+    ])
+    expected_features = len(CANONICAL_CHB_CHANNELS) * 5
+    if X_feat.ndim != 2 or X_feat.shape[1] != expected_features:
+        raise ValueError(
+            f"Unexpected feature shape {X_feat.shape}; expected "
+            f"(epochs, {expected_features})"
+        )
     del raw, epochs, X_data
     import gc; gc.collect()
     # 5. 製作標籤 y

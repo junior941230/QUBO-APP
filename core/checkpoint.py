@@ -7,6 +7,7 @@ from datetime import datetime
 def make_run_id(config):
     """Create a deterministic run id from experiment config."""
     key_parts = [
+        str(config.get("run_schema_version", 1)),
         ",".join(sorted(config["subjects"])),
         config["baseline"],
         config["solver_name"],
