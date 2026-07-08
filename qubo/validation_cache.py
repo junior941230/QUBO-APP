@@ -56,11 +56,22 @@ def build_validation_score_cache_kfold(candidate_files, features, labels, baseli
         y_train = np.concatenate([labels[f] for f in inner_train_files]).astype(int)
         if len(np.unique(y_train)) < 2:
             continue
+
+        x_val_all = np.concatenate([features[f] for f in val_files])
+        scores_all = np.asarray(predict_scores(baseline, x_train, y_train, x_val_all))
+
+        offset = 0
         for val_file in val_files:
-            x_val = features[val_file]
+            val_len = len(features[val_file])
+            scores = scores_all[offset:offset + val_len]
             y_val = np.asarray(labels[val_file]).astype(int)
-            scores = np.asarray(predict_scores(baseline, x_train, y_train, x_val))
+            if scores.shape[0] != y_val.shape[0]:
+                raise ValueError(
+                    f"Score length mismatch for {val_file}: "
+                    f"{scores.shape[0]} scores vs {y_val.shape[0]} labels"
+                )
             cache[val_file] = {"scores": scores, "y_val": y_val}
+            offset += val_len
 
     log_step(f"[Cache-NFold] done, cached_files={len(cache)}")
     return cache

@@ -1,7 +1,12 @@
-DESTINATION/
+DESTINATION
+.cache/
+.gradio/
+.venv/
 __pycache__/
 .vscode/
 checkpoints/
 results/
 .codex/
 .agents/
+.gradio/
+.pytest_cache/
