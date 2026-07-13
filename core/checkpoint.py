@@ -1,24 +1,30 @@
 from config import CHECKPOINT_DIR
 from core.logging_utils import log_step
 import hashlib
+import json
 import pickle
 from datetime import datetime
 
+
+def _config_signature(config):
+    """Return a stable representation of the settings that define a run."""
+    # Subject selection is a set for this experiment: the input order does not
+    # change the files evaluated.  Preserve that existing run-ID behavior while
+    # serializing every other setting exactly as supplied.
+    canonical_config = dict(config)
+    if "subjects" in canonical_config:
+        canonical_config["subjects"] = sorted(canonical_config["subjects"])
+    return json.dumps(
+        canonical_config,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=True,
+    )
+
+
 def make_run_id(config):
     """Create a deterministic run id from experiment config."""
-    key_parts = [
-        str(config.get("run_schema_version", 1)),
-        ",".join(sorted(config["subjects"])),
-        config["baseline"],
-        config["solver_name"],
-        config["tune_mode"],
-        str(config["tune_n_splits"]),
-        str(config["max_files_per_subject"]),
-        ",".join(str(x) for x in config["lambda_list"]),
-        ",".join(str(x) for x in config["threshold_list"]),
-        str(config["reuse_global_cache"]),
-    ]
-    raw = "|".join(key_parts).encode("utf-8")
+    raw = _config_signature(config).encode("utf-8")
     digest = hashlib.md5(raw).hexdigest()[:10]
     subj_tag = "-".join(config["subjects"][:3])
     if len(config["subjects"]) > 3:
@@ -31,13 +37,22 @@ def checkpoint_path(run_id):
     return CHECKPOINT_DIR / f"ckpt_{run_id}.pkl"
 
 
-def load_checkpoint(run_id):
+def load_checkpoint(run_id, expected_config=None):
+    """Load a checkpoint only when it was written for the expected config."""
     path = checkpoint_path(run_id)
     if not path.exists():
         return None
     try:
         with open(path, "rb") as fp:
             data = pickle.load(fp)
+        if expected_config is not None:
+            saved_config = data.get("config")
+            if (
+                not isinstance(saved_config, dict)
+                or _config_signature(saved_config) != _config_signature(expected_config)
+            ):
+                log_step(f"[Ckpt] config mismatch for {path}, starting fresh")
+                return None
         log_step(f"[Ckpt] loaded {path}, done_files={len(data.get('rows', []))}")
         return data
     except Exception as exc:

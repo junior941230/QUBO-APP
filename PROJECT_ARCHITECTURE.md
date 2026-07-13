@@ -421,10 +421,10 @@ UI 顯示結果
 
 - **保存進度**: 每完成或跳過一個測試 EDF，保存 rows、detail cache 與 skipped 清單
 - **恢復功能**: 允許略過已完成的測試 EDF
-- **Run ID**: 由 subject、baseline、solver、tuning grid 等設定產生
+- **Run ID**: 由完整執行設定產生；LSTM 時包含所有 `lstm_params`
 - **目前限制**: EDF 前處理與未完成 fold 的 validation cache 不會持久化，恢復時仍會重算
-- **目前限制**: Run ID 尚未納入 LSTM 超參數；改變 LSTM 設定時應使用 Force Restart，
-  直到 checkpoint identity 納入完整 `lstm_params`
+- **恢復驗證**: 載入 checkpoint 時會比對完整執行設定；不一致或舊 checkpoint
+  缺少設定時，會捨棄該 checkpoint 並從頭開始
 
 ### 結果存儲 (`core/results.py`)
 

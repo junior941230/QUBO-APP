@@ -86,7 +86,7 @@ def run_experiment(
         clear_checkpoint(run_id)
 
     if resume_enabled and not force_restart:
-        ckpt = load_checkpoint(run_id)
+        ckpt = load_checkpoint(run_id, expected_config=config)
         if ckpt is not None:
             rows = ckpt.get("rows", [])
             detail_cache = ckpt.get("detail_cache", {})
