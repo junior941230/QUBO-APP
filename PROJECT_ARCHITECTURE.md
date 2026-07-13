@@ -74,8 +74,12 @@ QUBO-APP/
 ├── results/                     # 實驗結果存儲
 │   └── qubo_run_*.pkl         # 結果序列化文件
 │
-└── models/                      # 預訓練模型存儲
-    └── ...
+└── tests/                       # 單元測試
+    ├── test_channels.py
+    ├── test_checkpoint.py
+    ├── test_experiment_isolation.py
+    ├── test_splits.py
+    └── test_validation_cache.py
 ```
 
 ---
@@ -86,18 +90,19 @@ QUBO-APP/
 
 #### 文件結構
 - **EDF 文件**: 原始腦電圖數據（每個患者多個記錄）
-- **Seizure 標籤**: `.edf.seizures` 文件包含發作時間段
+- **Seizure 標籤**: 每位患者的 `chbXX-summary.txt` 包含各 EDF 的發作時間段
+- 資料集也包含 `.edf.seizures`，但目前實作不直接解析這些檔案
 
 ```
 DESTINATION/chb01/
 ├── chb01_01.edf              # 腦電圖原始數據
-├── chb01_01.edf.seizures     # 該記錄中的發作時間
 ├── chb01_02.edf
+├── chb01-summary.txt         # 目前程式使用的發作時間來源
 └── ...
 ```
 
 #### 相關模塊
-- **`parser.py`**: 解析 `.edf.seizures` 文件，提取發作時間
+- **`parser.py`**: 解析 `chbXX-summary.txt`，提取每個 EDF 的發作時間
 - **`core/io.py`**: 收集文件列表和發作時間字典
 
 ---
@@ -189,10 +194,16 @@ seqs = [(s - mean) / std for s in seqs]
 
 # 類別平衡
 all_y = np.concatenate(labs)
-pos_weight = np.clip(len(all_y) - pos / max(pos, 1.0), 1.0, 20.0)
+neg = len(all_y) - pos
+pos_weight = np.clip(neg / max(pos, 1.0), 1.0, 20.0)
 
 # 動態填充 (collate_pad) + per-epoch 預測
 ```
+
+目前 LSTM 是雙向模型，因此每個 epoch 的輸出會使用同一 EDF 中的未來時間點；
+這適合離線序列分類，不能直接視為即時、因果式 seizure detection。不同長度序列
+目前以零值補齊，但尚未使用 `pack_padded_sequence`，短序列的訓練表示可能受到
+padding 影響。
 
 ---
 
@@ -216,9 +227,12 @@ def safe_solver_call(solver, scores, lmbda, threshold)
 調優過程:
 ├─ 使用驗證集上的模型得分
 ├─ 掃描 λ 和 threshold 參數空間
-├─ 最大化 F1 分數
-└─ 快取結果以加快實驗
+├─ 最大化 seizure-file mean F1 - α × non-seizure-file mean FP rate
+└─ 每個外層測試檔建立獨立的驗證分數快取
 ```
+
+`solve_chain_qubo_exact` 是確定性的精確 DP；`solve_qubo_seizure` 使用模擬退火，
+目前沒有傳入固定 seed，因此相同輸入不保證得到完全相同的輸出。
 
 **可調參數** (`config.py`)
 ```python
@@ -243,7 +257,7 @@ def run_experiment(
 )
     ├─ 1. 收集文件和標籤 (core/io.py)
     ├─ 2. 預處理 EDF 文件 (pipeline.py)
-    ├─ 3. 訓練/測試分割
+    ├─ 3. 以 EDF 文件為單位執行 leave-one-file-out 分割
     ├─ 4. 模型訓練 (models/registry.py)
     ├─ 5. QUBO 參數調優 (qubo/tuning.py)
     ├─ 6. 應用 QUBO 求解器 (qubo/solvers.py)
@@ -285,8 +299,8 @@ def build_ui()
 - LSTM 超參數（隱藏層大小、層數、epochs 等）
 
 **輸出:**
-- 結果表格（Subject, Baseline, Solver, Metrics）
-- 總結圖表（準確率、F1 分數、召回率）
+- 每個 EDF 的結果表格（F1、Precision、Recall、FP rate、最佳 QUBO 參數）
+- 總結圖表（seizure-file F1、non-seizure-file FP rate、F1 improvement）
 - 詳細對比圖表
 
 #### 查看器標籤: `ui/viewer_tab.py`
@@ -312,12 +326,16 @@ DEFAULT_LAMBDA_LIST = [0.5, 1.0, 1.5, 2.0, 3.0]
 DEFAULT_THRESHOLD_LIST = [0.3, 0.4, 0.45, 0.5, 0.6]
 
 # 調優參數
-TUNE_ALPHA = 0.2                           # 調優透視參數
+TUNE_ALPHA = 0.2                           # non-seizure FP rate 懲罰權重
 BASELINE_THRESHOLD = 0.5                   # 基線分類閾值
 
 # 種子參數
-RANDOM_SEED = 42                           # 可重現性
+RANDOM_SEED = 42                           # SVM/XGBoost 與資料切分種子
+RUN_SCHEMA_VERSION = 2                     # checkpoint/result 相容性版本
 ```
+
+`RANDOM_SEED` 目前尚未套用到 PyTorch LSTM 與 Neal 模擬退火，因此它不能保證
+整條實驗流程完全可重現。
 
 ---
 
@@ -360,7 +378,9 @@ run_experiment() 開始執行
     ├─ 提取頻帶功率特徵
     └─ 獲得發作/非發作標籤
     ↓
-3. 訓練/測試分割 (通常按患者分割)
+3. 外層 Leave-One-File-Out 分割
+    ├─ 每次保留一個 EDF 作為測試檔
+    └─ 其餘 EDF 作為該 fold 的訓練候選集
     ↓
 4. 訓練選定模型 (models/registry.py)
     ├─ SVM.fit(x_train, y_train)
@@ -369,10 +389,10 @@ run_experiment() 開始執行
     └─ 在測試集上生成預測概率
     ↓
 5. QUBO 參數調優 (qubo/tuning.py)
-    ├─ 使用驗證集建立快取
+    ├─ 只使用當前外層訓練檔建立 inner-validation 快取
     ├─ 掃描 λ 和 threshold 網格
     ├─ 找到最佳參數組合
-    └─ 快取結果
+    └─ 不讓外層測試檔進入 inner-validation model fit
     ↓
 6. 應用 QUBO 求解器 (qubo/solvers.py)
     ├─ solve_qubo_seizure(scores, λ, threshold)
@@ -399,9 +419,12 @@ UI 顯示結果
 
 ### 檢查點系統 (`core/checkpoint.py`)
 
-- **保存進度**: 在長時間運行中保存中間結果
-- **恢復功能**: 允許從上次中斷的地方繼續
-- **Run ID**: 為每次實驗生成唯一 ID
+- **保存進度**: 每完成或跳過一個測試 EDF，保存 rows、detail cache 與 skipped 清單
+- **恢復功能**: 允許略過已完成的測試 EDF
+- **Run ID**: 由 subject、baseline、solver、tuning grid 等設定產生
+- **目前限制**: EDF 前處理與未完成 fold 的 validation cache 不會持久化，恢復時仍會重算
+- **目前限制**: Run ID 尚未納入 LSTM 超參數；改變 LSTM 設定時應使用 Force Restart，
+  直到 checkpoint identity 納入完整 `lstm_params`
 
 ### 結果存儲 (`core/results.py`)
 
@@ -434,7 +457,10 @@ UI 顯示結果
 | **F1 Score** | $2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$ | 主要優化目標 |
 | **Precision** | $\frac{\text{TP}}{\text{TP} + \text{FP}}$ | 避免假陽性 |
 | **Recall** | $\frac{\text{TP}}{\text{TP} + \text{FN}}$ | 避免漏檢 |
-| **Accuracy** | $\frac{\text{TP} + \text{TN}}{\text{Total}}$ | 整體準確性 |
+| **False-positive rate** | 非 seizure 檔案中預測為 1 的 epoch 比例 | 評估正常記錄的誤報 |
+
+目前結果表沒有輸出 Accuracy。F1 只在包含 seizure 的測試檔上具有主要解讀價值；
+對完全沒有 seizure 的檔案，摘要使用預測陽性比例評估誤報。
 
 ---
 
@@ -449,14 +475,19 @@ python app.py
 
 訪問：`http://localhost:7860`
 
-### 命令行使用 (未來擴展)
+### 命令行使用
 
 ```bash
-# 直接運行實驗 (如果支持 CLI)
-python -m pipeline_runner.experiment \
+# 直接執行訓練／評估
+python app.py train \
     --subjects chb01 chb02 \
     --baseline svm \
-    --solver solve_qubo_seizure
+    --solver solve_chain_qubo_exact \
+    --tune-mode nfold \
+    --tune-n-splits 5
+
+# 查看所有 CLI 選項
+python app.py train --help
 ```
 
 ---
@@ -469,16 +500,33 @@ python -m pipeline_runner.experiment \
 
 ### 2. **並行化** (Parallelization)
 - `pipeline.py`: 使用 `joblib.Parallel` 並行預處理 EDF 文件
-- 可配置 CPU 核心數
+- 可配置 CPU 核心數；`n_jobs=-1` 會使用所有可用核心
+- 每個 worker 都會 preload EDF，處理大量檔案時應限制 worker 數以避免記憶體壓力
 
 ### 3. **快取機制** (Caching)
 - `qubo/validation_cache.py`: 每個外層測試 fold 分別建立驗證快取；
   快取訓練資料不包含該外層測試檔，避免資料洩漏
-- `core/checkpoint.py`: 快取中間結果，支持恢復
+- `core/checkpoint.py`: 保存已完成 EDF 的評估結果，支持部分恢復
 
 ### 4. **模塊化設計** (Modularity)
 - 各層功能分離（數據→預處理→模型→優化→UI）
 - 易於擴展新模型或求解器
+
+---
+
+## ⚠️ 已知限制與結果解讀
+
+1. **切分單位是 EDF，不是患者**：同一患者的其他 EDF 可能同時出現在訓練集。
+   若要衡量對未見患者的泛化能力，需另行實作 leave-one-subject-out 或 group split。
+2. **LSTM 為雙向、非因果模型**：預測會使用未來時間點，只適合離線評估。
+3. **完整流程尚未完全可重現**：LSTM 與 Neal solver 尚未使用固定 seed。
+4. **變長 LSTM 序列直接補零**：目前沒有 packed sequence，padding 可能影響反向 LSTM。
+5. **checkpoint identity 不完整**：LSTM 超參數尚未納入 Run ID；變更設定時需 Force Restart。
+6. **前處理缺少逐檔容錯**：任一 EDF 前處理失敗可能中止整批 `joblib` 工作。
+7. **QUBO 調優的 solver 失敗會被略過**：目前所有 validation solver call 都失敗時，
+   仍可能回傳第一組參數與 0 分，應在後續版本加入成功次數驗證。
+8. **Pickle 僅適用於可信檔案**：result viewer 與 checkpoint 會呼叫 `pickle.load`，
+   不應載入來源不明或經第三方修改的檔案。
 
 ---
 
@@ -498,17 +546,18 @@ python -m pipeline_runner.experiment \
 
 | 文件 | 行數 | 用途 |
 |------|------|------|
-| `app.py` | ~20 | Gradio UI 入口 |
-| `config.py` | ~15 | 全局配置 |
-| `pipeline.py` | ~200+ | EDF 預處理管道 |
+| `app.py` | ~140 | Gradio UI 與 CLI 入口 |
+| `config.py` | ~20 | 全局配置 |
+| `pipeline.py` | ~200 | EDF 預處理與 QUBO solver |
 | `FeatureExtraction.py` | ~30 | 特徵提取邏輯 |
-| `parser.py` | ~50+ | 癲癇標籤解析 |
-| `core/` | 多個 | 核心工具集 |
-| `models/` | 多個 | 機器學習模型 |
-| `qubo/` | 多個 | QUBO 最佳化 |
-| `pipeline_runner/` | ~500+ | 實驗執行引擎 |
-| `ui/` | ~200+ | Web UI 組件 |
-| `viz/` | ~100+ | 可視化邏輯 |
+| `parser.py` | ~70 | 癲癇標籤解析 |
+| `core/` | ~250 | 核心工具集 |
+| `models/` | ~220 | 機器學習模型 |
+| `qubo/` | ~190 | QUBO 最佳化與驗證快取 |
+| `pipeline_runner/` | ~380 | 實驗執行引擎 |
+| `ui/` | ~230 | Web UI 組件 |
+| `viz/` | ~70 | 可視化邏輯 |
+| `tests/` | ~220 | 核心單元與隔離測試 |
 
 ---
 
@@ -532,6 +581,8 @@ python -m pipeline_runner.experiment \
 
 ---
 
-**最後更新**: 2026-05-13  
-**版本**: 1.0  
+**最後更新**: 2026-07-13
+
+**版本**: 1.1
+
 **作者**: Project Team
