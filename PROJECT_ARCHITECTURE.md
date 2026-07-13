@@ -200,10 +200,9 @@ pos_weight = np.clip(neg / max(pos, 1.0), 1.0, 20.0)
 # 動態填充 (collate_pad) + per-epoch 預測
 ```
 
-目前 LSTM 是雙向模型，因此每個 epoch 的輸出會使用同一 EDF 中的未來時間點；
-這適合離線序列分類，不能直接視為即時、因果式 seizure detection。不同長度序列
-目前以零值補齊，但尚未使用 `pack_padded_sequence`，短序列的訓練表示可能受到
-padding 影響。
+目前 LSTM 是單向模型，因此每個 epoch 的輸出只使用該時間點及過去的 EEG，適合
+評估因果／即時偵測情境。不同長度序列目前以零值補齊，但尚未使用
+`pack_padded_sequence`，短序列的訓練表示可能受到 padding 影響。
 
 ---
 
@@ -331,7 +330,7 @@ BASELINE_THRESHOLD = 0.5                   # 基線分類閾值
 
 # 種子參數
 RANDOM_SEED = 42                           # 模型、資料切分與 QUBO 模擬退火種子
-RUN_SCHEMA_VERSION = 4                     # checkpoint/result 相容性版本
+RUN_SCHEMA_VERSION = 5                     # checkpoint/result 相容性版本
 ```
 
 LSTM 每次訓練前會設定 Python、NumPy、PyTorch/CUDA 與 DataLoader 的種子，並啟用
@@ -518,12 +517,11 @@ python app.py train --help
 
 1. **切分單位是 EDF，不是患者**：同一患者的其他 EDF 可能同時出現在訓練集。
    若要衡量對未見患者的泛化能力，需另行實作 leave-one-subject-out 或 group split。
-2. **LSTM 為雙向、非因果模型**：預測會使用未來時間點，只適合離線評估。
-3. **變長 LSTM 序列直接補零**：目前沒有 packed sequence，padding 可能影響反向 LSTM。
-4. **前處理缺少逐檔容錯**：任一 EDF 前處理失敗可能中止整批 `joblib` 工作。
-5. **QUBO 調優的 solver 失敗會被略過**：目前所有 validation solver call 都失敗時，
+2. **變長 LSTM 序列直接補零**：目前沒有 packed sequence，padding 可能影響訓練效率。
+3. **前處理缺少逐檔容錯**：任一 EDF 前處理失敗可能中止整批 `joblib` 工作。
+4. **QUBO 調優的 solver 失敗會被略過**：目前所有 validation solver call 都失敗時，
    仍可能回傳第一組參數與 0 分，應在後續版本加入成功次數驗證。
-6. **Pickle 僅適用於可信檔案**：result viewer 與 checkpoint 會呼叫 `pickle.load`，
+5. **Pickle 僅適用於可信檔案**：result viewer 與 checkpoint 會呼叫 `pickle.load`，
    不應載入來源不明或經第三方修改的檔案。
 
 ---
