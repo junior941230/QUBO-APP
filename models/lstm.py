@@ -1,3 +1,10 @@
+import os
+import random
+
+# CUDA requires this workspace configuration for deterministic matrix products.
+# It must be present before CUDA is initialized.
+os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+
 try:
     import torch
     import torch.nn as nn
@@ -6,6 +13,7 @@ try:
 except ImportError:
     TORCH_AVAILABLE = False
 import numpy as np
+from config import RANDOM_SEED
 from core.logging_utils import log_step
 
 
@@ -72,16 +80,30 @@ def collate_pad(batch):
     return padded, lab_pad, mask
 
 
+def _set_lstm_seed(seed):
+    """Configure all RNGs used by LSTM initialization and training."""
+    seed = int(seed)
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+        torch.backends.cudnn.benchmark = False
+        torch.backends.cudnn.deterministic = True
+    torch.use_deterministic_algorithms(True)
+
+
 def _train_lstm_on_files(
     train_files, features, labels,
     hidden_dim=128, num_layers=2, dropout=0.3,
     epochs=15, lr=1e-3, batch_size=4,
-    device=None,
+    device=None, random_seed=RANDOM_SEED,
 ):
     """Train LSTM treating each file as one sequence."""
     if not TORCH_AVAILABLE:
         raise ImportError("PyTorch is not installed")
 
+    _set_lstm_seed(random_seed)
     device = device or ("cuda" if torch.cuda.is_available() else "cpu")
 
     seqs   = [np.asarray(features[f], dtype=np.float32) for f in train_files]
@@ -104,9 +126,11 @@ def _train_lstm_on_files(
     # pos_weight = torch.tensor([neg / max(pos, 1.0)], device=device)
 
     ds = SeqDataset(seqs, labs)
+    loader_generator = torch.Generator()
+    loader_generator.manual_seed(int(random_seed))
     loader = DataLoader(
         ds, batch_size=batch_size, shuffle=True,
-        collate_fn=collate_pad, drop_last=False,
+        collate_fn=collate_pad, drop_last=False, generator=loader_generator,
     )
 
     model = SeizureLSTM(
@@ -154,11 +178,18 @@ def _predict_lstm_sequence(model, seq, mean, std, device):
     )
     return probs
 
-def predict_lstm(train_files, test_file, features, labels, lstm_params=None):
+def predict_lstm(
+    train_files,
+    test_file,
+    features,
+    labels,
+    lstm_params=None,
+    random_seed=RANDOM_SEED,
+):
     if train_files is None or test_file is None or features is None or labels is None:
         raise ValueError("LSTM mode needs train_files, test_file, features, labels")
     params = lstm_params or {}
     model, mean, std, device = _train_lstm_on_files(
-        train_files, features, labels, **params,
+        train_files, features, labels, random_seed=random_seed, **params,
     )
     return _predict_lstm_sequence(model, features[test_file], mean, std, device)

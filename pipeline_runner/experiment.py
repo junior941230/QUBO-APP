@@ -69,6 +69,7 @@ def run_experiment(
         "lambda_list": lambda_list,
         "threshold_list": threshold_list,
         "reuse_global_cache": reuse_global_cache,
+        "random_seed": RANDOM_SEED,
         "lstm_params": lstm_params if baseline == "lstm" else None,
     }
     run_id = make_run_id(config)
@@ -148,6 +149,7 @@ def run_experiment(
                         tune_mode=tune_mode,
                         n_splits=min(tune_n_splits, len(train_files)),
                         lstm_params=lstm_params,
+                        random_seed=RANDOM_SEED,
                     )
                 )
             except Exception as exc:
@@ -189,6 +191,7 @@ def run_experiment(
                     tune_mode=tune_mode,
                     n_splits=min(tune_n_splits, len(train_files)),
                     lstm_params=lstm_params,
+                    random_seed=RANDOM_SEED,
                 )
         except Exception as exc:
             skipped.append(f"{test_file}: cache build failed ({exc})")
@@ -202,7 +205,8 @@ def run_experiment(
 
         try:
             best_lambda, best_threshold, best_val_score = tune_qubo_params_from_cache(
-                score_cache, solver, lambda_list, threshold_list, alpha=TUNE_ALPHA,
+                score_cache, solver, lambda_list, threshold_list,
+                alpha=TUNE_ALPHA, random_seed=RANDOM_SEED,
             )
         except Exception as exc:
             skipped.append(f"{test_file}: QUBO tuning failed ({exc})")
@@ -225,9 +229,12 @@ def run_experiment(
                 train_files=train_files, test_file=test_file,
                 features=features, labels=labels,
                 lstm_params=lstm_params,
+                random_seed=RANDOM_SEED,
             ))
             y_baseline = (scores >= BASELINE_THRESHOLD).astype(int)
-            y_qubo = safe_solver_call(solver, scores, best_lambda, best_threshold)
+            y_qubo = safe_solver_call(
+                solver, scores, best_lambda, best_threshold, seed=RANDOM_SEED,
+            )
         except Exception as exc:
             skipped.append(f"{test_file}: inference failed ({exc})")
             save_checkpoint(run_id, rows, detail_cache, skipped, config)

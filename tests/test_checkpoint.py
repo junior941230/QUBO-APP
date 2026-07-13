@@ -73,6 +73,20 @@ class CheckpointIdentityTests(unittest.TestCase):
             self.assertIsNone(load_checkpoint(run_id, expected_config=changed_config))
             self.assertIsNotNone(load_checkpoint(run_id, expected_config=config))
 
+    def test_random_seed_changes_run_id(self):
+        config = {
+            "run_schema_version": 4,
+            "subjects": ["chb01"],
+            "baseline": "lstm",
+            "solver_name": "solve_qubo_seizure",
+            "random_seed": 42,
+            "lstm_params": {"hidden_dim": 32, "epochs": 5},
+        }
+
+        self.assertNotEqual(
+            make_run_id(config), make_run_id({**config, "random_seed": 7})
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

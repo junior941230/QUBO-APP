@@ -216,7 +216,7 @@ def get_qubo_solver(name)
     ├─ "solve_qubo_seizure"      # 標準 QUBO 求解
     └─ "solve_chain_qubo_exact"  # 鏈式 QUBO 求解
 
-def safe_solver_call(solver, scores, lmbda, threshold)
+def safe_solver_call(solver, scores, lmbda, threshold, seed=RANDOM_SEED)
     ├─ 輸入: 模型預測分數、λ(拉格朗日乘數)、閾值
     └─ 輸出: 二進制分類結果 (0 或 1)
 ```
@@ -232,7 +232,7 @@ def safe_solver_call(solver, scores, lmbda, threshold)
 ```
 
 `solve_chain_qubo_exact` 是確定性的精確 DP；`solve_qubo_seizure` 使用模擬退火，
-目前沒有傳入固定 seed，因此相同輸入不保證得到完全相同的輸出。
+會把 `RANDOM_SEED` 傳給 Neal sampler，讓相同輸入與設定得到可重現的抽樣結果。
 
 **可調參數** (`config.py`)
 ```python
@@ -330,12 +330,12 @@ TUNE_ALPHA = 0.2                           # non-seizure FP rate 懲罰權重
 BASELINE_THRESHOLD = 0.5                   # 基線分類閾值
 
 # 種子參數
-RANDOM_SEED = 42                           # SVM/XGBoost 與資料切分種子
-RUN_SCHEMA_VERSION = 2                     # checkpoint/result 相容性版本
+RANDOM_SEED = 42                           # 模型、資料切分與 QUBO 模擬退火種子
+RUN_SCHEMA_VERSION = 4                     # checkpoint/result 相容性版本
 ```
 
-`RANDOM_SEED` 目前尚未套用到 PyTorch LSTM 與 Neal 模擬退火，因此它不能保證
-整條實驗流程完全可重現。
+LSTM 每次訓練前會設定 Python、NumPy、PyTorch/CUDA 與 DataLoader 的種子，並啟用
+PyTorch 的 deterministic algorithms；該 seed 也屬於 checkpoint identity。
 
 ---
 
@@ -519,13 +519,11 @@ python app.py train --help
 1. **切分單位是 EDF，不是患者**：同一患者的其他 EDF 可能同時出現在訓練集。
    若要衡量對未見患者的泛化能力，需另行實作 leave-one-subject-out 或 group split。
 2. **LSTM 為雙向、非因果模型**：預測會使用未來時間點，只適合離線評估。
-3. **完整流程尚未完全可重現**：LSTM 與 Neal solver 尚未使用固定 seed。
-4. **變長 LSTM 序列直接補零**：目前沒有 packed sequence，padding 可能影響反向 LSTM。
-5. **checkpoint identity 不完整**：LSTM 超參數尚未納入 Run ID；變更設定時需 Force Restart。
-6. **前處理缺少逐檔容錯**：任一 EDF 前處理失敗可能中止整批 `joblib` 工作。
-7. **QUBO 調優的 solver 失敗會被略過**：目前所有 validation solver call 都失敗時，
+3. **變長 LSTM 序列直接補零**：目前沒有 packed sequence，padding 可能影響反向 LSTM。
+4. **前處理缺少逐檔容錯**：任一 EDF 前處理失敗可能中止整批 `joblib` 工作。
+5. **QUBO 調優的 solver 失敗會被略過**：目前所有 validation solver call 都失敗時，
    仍可能回傳第一組參數與 0 分，應在後續版本加入成功次數驗證。
-8. **Pickle 僅適用於可信檔案**：result viewer 與 checkpoint 會呼叫 `pickle.load`，
+6. **Pickle 僅適用於可信檔案**：result viewer 與 checkpoint 會呼叫 `pickle.load`，
    不應載入來源不明或經第三方修改的檔案。
 
 ---

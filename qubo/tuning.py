@@ -1,10 +1,17 @@
-from config import TUNE_ALPHA
+from config import RANDOM_SEED, TUNE_ALPHA
 from core.logging_utils import log_step
 from sklearn.metrics import f1_score
 from qubo.solvers import safe_solver_call
 import numpy as np
 
-def tune_qubo_params_from_cache(score_cache, solver, lambda_list, threshold_list, alpha=TUNE_ALPHA):
+def tune_qubo_params_from_cache(
+    score_cache,
+    solver,
+    lambda_list,
+    threshold_list,
+    alpha=TUNE_ALPHA,
+    random_seed=RANDOM_SEED,
+):
     if not lambda_list or not threshold_list:
         raise ValueError("lambda_list and threshold_list must not be empty")
     if not score_cache:
@@ -20,7 +27,9 @@ def tune_qubo_params_from_cache(score_cache, solver, lambda_list, threshold_list
             nonseizure_fps = []
             for data in score_cache.values():
                 try:
-                    y_qubo_val = safe_solver_call(solver, data["scores"], lmbda, threshold)
+                    y_qubo_val = safe_solver_call(
+                        solver, data["scores"], lmbda, threshold, seed=random_seed,
+                    )
                 except Exception as exc:
                     log_step(f"[QUBO-Tune] solver failed λ={lmbda},θ={threshold}: {exc}")
                     continue

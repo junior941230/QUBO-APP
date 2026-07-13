@@ -31,7 +31,9 @@ def build_validation_score_cache_lofo(candidate_files, features, labels, baselin
     return cache
 
 
-def build_validation_score_cache_kfold(candidate_files, features, labels, baseline, n_splits=5):
+def build_validation_score_cache_kfold(
+    candidate_files, features, labels, baseline, n_splits=5, random_seed=RANDOM_SEED,
+):
     cache = {}
     arr = np.array(candidate_files)
     effective_splits = max(2, min(int(n_splits), len(candidate_files)))
@@ -43,10 +45,10 @@ def build_validation_score_cache_kfold(candidate_files, features, labels, baseli
     min_class_count = min(np.sum(file_has_seizure), np.sum(1 - file_has_seizure))
 
     if min_class_count >= effective_splits:
-        splitter = StratifiedKFold(n_splits=effective_splits, shuffle=True, random_state=RANDOM_SEED)
+        splitter = StratifiedKFold(n_splits=effective_splits, shuffle=True, random_state=random_seed)
         split_iter = splitter.split(arr, file_has_seizure)
     else:
-        splitter = KFold(n_splits=effective_splits, shuffle=True, random_state=RANDOM_SEED)
+        splitter = KFold(n_splits=effective_splits, shuffle=True, random_state=random_seed)
         split_iter = splitter.split(arr)
 
     for fold_idx, (train_idx, val_idx) in enumerate(split_iter, start=1):
@@ -77,7 +79,8 @@ def build_validation_score_cache_kfold(candidate_files, features, labels, baseli
     return cache
 
 def build_validation_score_cache_lstm(candidate_files, features, labels,
-                                      tune_mode, n_splits, lstm_params):
+                                      tune_mode, n_splits, lstm_params,
+                                      random_seed=RANDOM_SEED):
     """LSTM version: train once per fold, infer on all val files."""
     cache = {}
     arr = np.array(candidate_files)
@@ -89,10 +92,10 @@ def build_validation_score_cache_lstm(candidate_files, features, labels,
         file_has_sz = np.array([1 if np.sum(labels[f]) > 0 else 0 for f in candidate_files])
         min_cls = min(np.sum(file_has_sz), np.sum(1 - file_has_sz))
         if min_cls >= effective:
-            splitter = StratifiedKFold(n_splits=effective, shuffle=True, random_state=RANDOM_SEED)
+            splitter = StratifiedKFold(n_splits=effective, shuffle=True, random_state=random_seed)
             split_iter = splitter.split(arr, file_has_sz)
         else:
-            splitter = KFold(n_splits=effective, shuffle=True, random_state=RANDOM_SEED)
+            splitter = KFold(n_splits=effective, shuffle=True, random_state=random_seed)
             split_iter = splitter.split(arr)
         splits = [(arr[tr].tolist(), arr[va].tolist()) for tr, va in split_iter]
 
@@ -103,7 +106,8 @@ def build_validation_score_cache_lstm(candidate_files, features, labels,
             continue
         log_step(f"[Cache-LSTM] fold {fi}/{len(splits)} train={len(inner_train)} val={len(val_files)}")
         model, mean, std, device = _train_lstm_on_files(
-            inner_train, features, labels, **(lstm_params or {}),
+            inner_train, features, labels,
+            random_seed=random_seed, **(lstm_params or {}),
         )
         for vf in val_files:
             scores = _predict_lstm_sequence(model, features[vf], mean, std, device)
@@ -117,13 +121,25 @@ def build_validation_score_cache_lstm(candidate_files, features, labels,
     log_step(f"[Cache-LSTM] done, cached={len(cache)}")
     return cache
 
-def build_validation_score_cache(candidate_files, features, labels, baseline, tune_mode, n_splits=5, lstm_params=None):
+def build_validation_score_cache(
+    candidate_files,
+    features,
+    labels,
+    baseline,
+    tune_mode,
+    n_splits=5,
+    lstm_params=None,
+    random_seed=RANDOM_SEED,
+):
     if baseline == "lstm":
         return build_validation_score_cache_lstm(
             candidate_files, features, labels, tune_mode, n_splits, lstm_params,
+            random_seed=random_seed,
         )
     if tune_mode == "lofo":
         return build_validation_score_cache_lofo(candidate_files, features, labels, baseline)
     if tune_mode == "nfold":
-        return build_validation_score_cache_kfold(candidate_files, features, labels, baseline, n_splits)
+        return build_validation_score_cache_kfold(
+            candidate_files, features, labels, baseline, n_splits, random_seed=random_seed,
+        )
     raise ValueError(f"Unknown tuning mode: {tune_mode}")

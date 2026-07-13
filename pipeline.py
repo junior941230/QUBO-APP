@@ -2,6 +2,7 @@ import mne
 import os
 import warnings
 import numpy as np
+from config import RANDOM_SEED
 from parser import parse_seizure_file
 from FeatureExtraction import extract_band_power
 from core.channels import CANONICAL_CHB_CHANNELS, build_channel_plan
@@ -111,7 +112,7 @@ def preprocess_one_file(edf_path, seizure_times):
     return X_feat, y_data
 
 
-def solve_qubo_seizure(all_scores, lmbda=0.5, threshold=0.5):
+def solve_qubo_seizure(all_scores, lmbda=0.5, threshold=0.5, seed=RANDOM_SEED):
     """
     輸入: 
         all_scores: SVM 產出的機率向量 (E,)
@@ -143,7 +144,7 @@ def solve_qubo_seizure(all_scores, lmbda=0.5, threshold=0.5):
     # 3. 使用模擬退火求解 (模擬量子運算行為)
     sampler = SimulatedAnnealingSampler()
     # num_reads 是抽樣次數，可以先設 10-50 次
-    sampleset = sampler.sample_qubo(Q, num_reads=20)
+    sampleset = sampler.sample_qubo(Q, num_reads=20, seed=int(seed))
 
     # 取得能量最低的最佳解
     best_sample = sampleset.first.sample
@@ -151,11 +152,12 @@ def solve_qubo_seizure(all_scores, lmbda=0.5, threshold=0.5):
 
     return y_star
 
-def solve_chain_qubo_exact(all_scores, lmbda=0.5, threshold=0.5):
+def solve_chain_qubo_exact(all_scores, lmbda=0.5, threshold=0.5, seed=RANDOM_SEED):
     """
     針對鏈狀 QUBO 的精確 DP 解法，O(E) 時間複雜度
     比 SA 快且保證全局最優解
     """
+    del seed  # Keep the solver interface consistent; this exact solver has no RNG.
     E = len(all_scores)
     unary = -(all_scores - threshold)  # shape (E,)
 
