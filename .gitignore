@@ -10,3 +10,4 @@ results/
 .agents/
 .gradio/
 .pytest_cache/
+.graphify-out/

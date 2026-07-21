@@ -74,3 +74,39 @@ def build_channel_plan(channel_names):
             + ", ".join(missing)
         )
     return plan
+
+
+def validate_edf_channels(file_paths, read_raw_edf=None):
+    """Split EDF paths into channel-compatible files and validation failures.
+
+    Only EDF headers are read. ``read_raw_edf`` is injectable so the preflight
+    can be tested without loading MNE or real EDF data.
+    """
+    if read_raw_edf is None:
+        import mne
+
+        read_raw_edf = mne.io.read_raw_edf
+
+    valid_paths = []
+    failures = {}
+
+    for file_path in file_paths:
+        raw = None
+        try:
+            raw = read_raw_edf(file_path, preload=False, verbose=False)
+            build_channel_plan(raw.ch_names)
+        except Exception as exc:
+            failures[str(file_path)] = str(exc)
+        else:
+            valid_paths.append(file_path)
+        finally:
+            close = getattr(raw, "close", None)
+            if callable(close):
+                try:
+                    close()
+                except Exception:
+                    # Header validation is complete; close errors must not turn
+                    # a compatible EDF into a false rejection.
+                    pass
+
+    return valid_paths, failures

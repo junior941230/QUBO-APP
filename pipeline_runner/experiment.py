@@ -1,6 +1,7 @@
 from config import *
 from core.logging_utils import log_step, parse_float_list
 from core.io import collect_files_and_seizures
+from core.channels import validate_edf_channels
 from core.splits import leave_one_file_out_train_sets
 from core.checkpoint import make_run_id, load_checkpoint, save_checkpoint, clear_checkpoint
 from core.results import save_results_pkl
@@ -106,6 +107,26 @@ def run_experiment(
 
     if len(file_paths) < 2:
         return ("Need at least 2 EDF files", pd.DataFrame(), None, None, "", run_id)
+
+    # --- Channel preflight ---
+    # Read headers only, so incompatible recordings are rejected before the
+    # expensive parallel preprocessing stage starts.
+    progress(0.05, desc="Validating EDF channels")
+    file_paths, channel_failures = validate_edf_channels(file_paths)
+    for path, reason in channel_failures.items():
+        note = f"Excluded {os.path.basename(path)}: channel preflight failed ({reason})"
+        notes.append(note)
+        log_step(f"[Channel-Preflight] {note}")
+    log_step(
+        f"[Channel-Preflight] compatible={len(file_paths)}, "
+        f"excluded={len(channel_failures)}"
+    )
+
+    if len(file_paths) < 2:
+        message = "Need at least 2 channel-compatible EDF files"
+        if notes:
+            message += "\n\n" + "\n".join(f"- {note}" for note in notes)
+        return (message, pd.DataFrame(), None, None, "", run_id)
 
     # --- Preprocess ---
     progress(0.10, desc="Preprocessing EDF files")

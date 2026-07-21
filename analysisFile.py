@@ -1,135 +1,236 @@
+import argparse
 import os
-import mne
 from collections import defaultdict
-import pandas as pd
+from pathlib import Path
 
-def scan_chb_channels(data_root):
-    """
-    掃描 CHB-MIT 資料夾下所有 EDF 檔案的 channel 資訊
-    data_root: 資料集根目錄，例如 '/data/chb-mit'
-    """
-    
-    results = []  # 儲存每個檔案的資訊
-    channel_sets = defaultdict(list)  # 以 frozenset(channels) 為 key，記錄哪些檔案有這組 channels
-    
-    # 遞迴掃描所有 .edf 檔案
+from core.channels import CANONICAL_CHB_CHANNELS, build_channel_plan
+
+
+def _discover_edf_files(data_root):
     edf_files = []
-    for root, dirs, files in os.walk(data_root):
-        for f in sorted(files):
-            if f.endswith('.edf'):
-                edf_files.append(os.path.join(root, f))
-    
-    print(f"找到 {len(edf_files)} 個 EDF 檔案，開始掃描...\n")
-    
+    for root, _dirs, files in os.walk(data_root):
+        for filename in sorted(files):
+            if filename.lower().endswith(".edf"):
+                edf_files.append(os.path.join(root, filename))
+    return sorted(edf_files)
+
+
+def scan_chb_channels(data_root, read_raw_edf=None):
+    """Scan EDF headers and validate the canonical CHB bipolar montage.
+
+    Returns one result per EDF plus a mapping of raw channel combinations to
+    files. Compatible recordings may use direct bipolar channels or channels
+    that can be reconstructed from a common reference.
+    """
+    if read_raw_edf is None:
+        import mne
+
+        read_raw_edf = mne.io.read_raw_edf
+
+    data_root = os.fspath(data_root)
+    results = []
+    channel_sets = defaultdict(list)
+    edf_files = _discover_edf_files(data_root)
+
+    print(f"找到 {len(edf_files)} 個 EDF 檔案，開始驗證 channel header...\n")
+
     for filepath in edf_files:
         filename = os.path.relpath(filepath, data_root)
+        raw = None
         try:
-            # 只讀 header，不載入資料（速度快）
-            raw = mne.io.read_raw_edf(filepath, preload=False, verbose=False)
-            ch_names = raw.ch_names
-            n_channels = len(ch_names)
-            
-            results.append({
-                'file': filename,
-                'n_channels': n_channels,
-                'channels': ch_names
-            })
-            
+            raw = read_raw_edf(filepath, preload=False, verbose=False)
+            ch_names = list(raw.ch_names)
             channel_sets[frozenset(ch_names)].append(filename)
-            
-        except Exception as e:
-            print(f"  ❌ 無法讀取 {filename}: {e}")
-            results.append({
-                'file': filename,
-                'n_channels': -1,
-                'channels': []
-            })
-    
+
+            try:
+                plan = build_channel_plan(ch_names)
+            except Exception as exc:
+                result = {
+                    "file": filename,
+                    "n_channels": len(ch_names),
+                    "channels": ch_names,
+                    "status": "incompatible",
+                    "compatible": False,
+                    "validation_error": str(exc),
+                    "direct_channels": 0,
+                    "reconstructed_channels": 0,
+                }
+            else:
+                direct_count = sum(item[0] == "direct" for item in plan)
+                result = {
+                    "file": filename,
+                    "n_channels": len(ch_names),
+                    "channels": ch_names,
+                    "status": "compatible",
+                    "compatible": True,
+                    "validation_error": "",
+                    "direct_channels": direct_count,
+                    "reconstructed_channels": len(plan) - direct_count,
+                }
+        except Exception as exc:
+            print(f"  ❌ 無法讀取 {filename}: {exc}")
+            result = {
+                "file": filename,
+                "n_channels": -1,
+                "channels": [],
+                "status": "unreadable",
+                "compatible": False,
+                "validation_error": str(exc),
+                "direct_channels": 0,
+                "reconstructed_channels": 0,
+            }
+        finally:
+            close = getattr(raw, "close", None)
+            if callable(close):
+                try:
+                    close()
+                except Exception:
+                    pass
+
+        results.append(result)
+
     return results, channel_sets
 
 
 def report_channel_diff(results, channel_sets):
-    """印出診斷報告"""
-    
+    """Print raw channel variants and canonical-montage validation results."""
     print("=" * 60)
     print("📊 Channel 組合統計")
     print("=" * 60)
-    
-    # 找出最常見的 channel 組合（視為「標準」）
-    standard_set = max(channel_sets.keys(), key=lambda k: len(channel_sets[k]))
+
+    if not channel_sets:
+        print("\n❌ 沒有可讀取的 EDF channel header。")
+        return [], list(results)
+
+    standard_set = max(channel_sets, key=lambda key: len(channel_sets[key]))
     standard_channels = sorted(standard_set)
-    
-    print(f"\n✅ 標準 channel 組合（出現於 {len(channel_sets[standard_set])} 個檔案）：")
+
+    print(f"\n最常見的原始 channel 組合（{len(channel_sets[standard_set])} 個檔案）：")
     print(f"   數量：{len(standard_channels)} channels")
     print(f"   名稱：{standard_channels}\n")
-    
-    # 列出所有不同的 channel 組合
-    print(f"共有 {len(channel_sets)} 種不同的 channel 組合：\n")
-    
-    for i, (ch_set, files) in enumerate(
-        sorted(channel_sets.items(), key=lambda x: -len(x[1]))
+    print(f"共有 {len(channel_sets)} 種不同的原始 channel 組合：\n")
+
+    for index, (channel_set, files) in enumerate(
+        sorted(channel_sets.items(), key=lambda item: -len(item[1])),
+        start=1,
     ):
-        ch_list = sorted(ch_set)
-        print(f"  組合 #{i+1}：{len(ch_list)} channels，出現於 {len(files)} 個檔案")
-        
-        # 與標準組合比較差異
-        extra = sorted(ch_set - standard_set)
-        missing = sorted(standard_set - ch_set)
-        
+        channel_list = sorted(channel_set)
+        print(
+            f"  組合 #{index}：{len(channel_list)} channels，"
+            f"出現於 {len(files)} 個檔案"
+        )
+
+        extra = sorted(channel_set - standard_set)
+        missing = sorted(standard_set - channel_set)
         if extra:
-            print(f"    ➕ 多出的 channels：{extra}")
+            print(f"    ➕ 相較最常見組合多出：{extra}")
         if missing:
-            print(f"    ➖ 缺少的 channels：{missing}")
+            print(f"    ➖ 相較最常見組合缺少：{missing}")
         if not extra and not missing:
-            print(f"    ✅ 與標準相同")
-        
-        # 列出屬於這個組合的檔案
-        print(f"    📁 檔案：")
-        for f in sorted(files)[:10]:  # 最多顯示 10 個
-            print(f"       - {f}")
+            print("    ✅ 與最常見組合相同")
+
+        print("    📁 檔案：")
+        for filename in sorted(files)[:10]:
+            print(f"       - {filename}")
         if len(files) > 10:
-            print(f"       ... 還有 {len(files)-10} 個檔案")
+            print(f"       ... 還有 {len(files) - 10} 個檔案")
         print()
-    
+
+    non_standard = [
+        result
+        for result in results
+        if result["n_channels"] != len(standard_channels)
+        or frozenset(result["channels"]) != standard_set
+    ]
+
+    compatible = [result for result in results if result["compatible"]]
+    failures = [result for result in results if not result["compatible"]]
+    reconstructed = [
+        result for result in compatible if result["reconstructed_channels"] > 0
+    ]
+
     print("=" * 60)
-    print("⚠️  需要特別處理的檔案（非標準 channel 組合）：")
+    print("🧪 Canonical 18-channel montage 驗證")
     print("=" * 60)
-    
-    non_standard = []
-    for r in results:
-        if r['n_channels'] != len(standard_channels) or \
-           frozenset(r['channels']) != standard_set:
-            non_standard.append(r)
-    
-    if non_standard:
-        for r in non_standard:
-            extra = sorted(set(r['channels']) - standard_set)
-            missing = sorted(standard_set - set(r['channels']))
-            print(f"\n  📄 {r['file']}")
-            print(f"     Channel 數：{r['n_channels']}")
-            if extra:
-                print(f"     ➕ 多出：{extra}")
-            if missing:
-                print(f"     ➖ 缺少：{missing}")
+    print(f"Canonical channels：{list(CANONICAL_CHB_CHANNELS)}")
+    print(f"✅ 通過：{len(compatible)}")
+    print(f"🔧 其中需要重建 channel：{len(reconstructed)}")
+    print(f"❌ 未通過：{len(failures)}")
+
+    if reconstructed:
+        print("\n需要由 common-reference 重建的檔案：")
+        for result in reconstructed:
+            print(
+                f"  - {result['file']}: "
+                f"{result['reconstructed_channels']} channels"
+            )
+
+    if failures:
+        print("\n未通過驗證的檔案：")
+        for result in failures:
+            print(
+                f"  - {result['file']} [{result['status']}]: "
+                f"{result['validation_error']}"
+            )
     else:
-        print("\n  🎉 所有檔案的 channel 組合一致！")
-    
+        print("\n🎉 所有 EDF 都能建立固定的 canonical montage。")
+
     return standard_channels, non_standard
 
 
-# ── 執行 ──────────────────────────────────────────────
+def write_channel_audit_csv(results, output_path):
+    """Write the validation details to CSV."""
+    import pandas as pd
+
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    dataframe = pd.DataFrame([
+        {
+            "file": result["file"],
+            "status": result["status"],
+            "compatible": result["compatible"],
+            "validation_error": result["validation_error"],
+            "n_channels": result["n_channels"],
+            "direct_channels": result["direct_channels"],
+            "reconstructed_channels": result["reconstructed_channels"],
+            "channel_list": ", ".join(result["channels"]),
+        }
+        for result in results
+    ])
+    dataframe.to_csv(output_path, index=False)
+    return output_path
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(
+        description="Validate CHB-MIT EDF channels before running experiments."
+    )
+    parser.add_argument(
+        "data_root",
+        nargs="?",
+        default="DESTINATION",
+        help="Dataset root containing subject folders (default: DESTINATION).",
+    )
+    parser.add_argument(
+        "--output",
+        default="chb_channel_audit.csv",
+        help="CSV report path (default: chb_channel_audit.csv).",
+    )
+    args = parser.parse_args(argv)
+
+    results, channel_sets = scan_chb_channels(args.data_root)
+    report_channel_diff(results, channel_sets)
+    output_path = write_channel_audit_csv(results, args.output)
+    print(f"\n📝 詳細結果已儲存至 {output_path}")
+
+    failures = [result for result in results if not result["compatible"]]
+    if not results or failures:
+        print("\n❌ Channel preflight 未通過，請先處理上述檔案。")
+        return 1
+
+    print("\n✅ Channel preflight 通過，可以開始執行實驗。")
+    return 0
+
+
 if __name__ == "__main__":
-    DATA_ROOT = "DESTINATION/"  # ← 改成你的資料集路徑
-    
-    results, channel_sets = scan_chb_channels(DATA_ROOT)
-    standard_channels, problem_files = report_channel_diff(results, channel_sets)
-    
-    # 可選：輸出成 CSV 方便查閱
-    df = pd.DataFrame([{
-        'file': r['file'],
-        'n_channels': r['n_channels'],
-        'channel_list': ', '.join(r['channels'])
-    } for r in results])
-    
-    df.to_csv("chb_channel_audit.csv", index=False)
-    print("\n📝 詳細結果已儲存至 chb_channel_audit.csv")
+    raise SystemExit(main())

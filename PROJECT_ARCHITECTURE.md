@@ -116,8 +116,12 @@ def processAllFiles(fileList, seizureTimesDict, nJobs=-1)
     └─ 並行處理多個 EDF 文件
     └─ 返回特徵和標籤字典
 
+validate_edf_channels(file_paths)
+    ├─ 只讀 EDF header
+    └─ 排除無法建立 canonical montage 的檔案並記錄原因
+
 def preprocess_one_file(edf_path, seizure_times)
-    ├─ 1. 讀取 EDF 文件 (使用 MNE)
+    ├─ 1. 讀取通過驗證的 EDF 文件 (使用 MNE)
     ├─ 2. 正規化成固定 18-channel bipolar montage
     ├─ 3. 數據濾波 (帶通濾波)
     ├─ 4. 分割成 epochs (時間窗口)
@@ -477,6 +481,9 @@ python app.py
 ### 命令行使用
 
 ```bash
+# 正式執行前，獨立驗證所有 EDF 是否能建立 canonical 18-channel montage
+python analysisFile.py DESTINATION --output chb_channel_audit.csv
+
 # 直接執行訓練／評估
 python app.py train \
     --subjects chb01 chb02 \
@@ -488,6 +495,9 @@ python app.py train \
 # 查看所有 CLI 選項
 python app.py train --help
 ```
+
+`analysisFile.py` 只讀 EDF header；報告會區分可直接使用、需要由 common-reference
+重建、缺少必要 channel，以及無法讀取的檔案。存在未通過項目時程式回傳非零 exit code。
 
 ---
 
@@ -518,7 +528,9 @@ python app.py train --help
 1. **切分單位是 EDF，不是患者**：同一患者的其他 EDF 可能同時出現在訓練集。
    若要衡量對未見患者的泛化能力，需另行實作 leave-one-subject-out 或 group split。
 2. **變長 LSTM 序列直接補零**：目前沒有 packed sequence，padding 可能影響訓練效率。
-3. **前處理缺少逐檔容錯**：任一 EDF 前處理失敗可能中止整批 `joblib` 工作。
+3. **前處理僅有 channel preflight 容錯**：無法讀取 header 或無法建立 canonical
+   montage 的 EDF 會在前處理前排除；通過驗證後若在濾波或特徵提取階段失敗，仍可能
+   中止整批 `joblib` 工作。
 4. **QUBO 調優的 solver 失敗會被略過**：目前所有 validation solver call 都失敗時，
    仍可能回傳第一組參數與 0 分，應在後續版本加入成功次數驗證。
 5. **Pickle 僅適用於可信檔案**：result viewer 與 checkpoint 會呼叫 `pickle.load`，

@@ -42,6 +42,10 @@ class ExperimentIsolationTests(unittest.TestCase):
                 return_value=(features, labels),
             ),
             patch(
+                "pipeline_runner.experiment.validate_edf_channels",
+                return_value=(paths, {}),
+            ),
+            patch(
                 "pipeline_runner.experiment.build_validation_score_cache",
                 side_effect=fake_cache_builder,
             ),
@@ -58,7 +62,7 @@ class ExperimentIsolationTests(unittest.TestCase):
             patch("pipeline_runner.experiment.build_detail_plot", return_value=None),
         )
 
-        with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5], patches[6], patches[7]:
+        with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5], patches[6], patches[7], patches[8]:
             _, result_df, _, _, _, _ = run_experiment(
                 ["chb01"], "svm", "solve_chain_qubo_exact", "lofo", 2,
                 0, 1, "0.0", "0.5", True, False, False,
