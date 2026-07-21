@@ -11,9 +11,28 @@ except (ImportError, ModuleNotFoundError, NameError):
 
 @unittest.skipUnless(run_experiment is not None, "project runtime dependencies unavailable")
 class ExperimentIsolationTests(unittest.TestCase):
-    def test_precomputed_caches_exclude_each_outer_test_file(self):
-        files = ["a.edf", "b.edf", "c.edf", "d.edf"]
-        paths = [f"/fake/{name}" for name in files]
+    def test_nested_evaluation_requires_at_least_three_subjects(self):
+        summary, result_df, _, _, _, run_id = run_experiment(
+            ["p1", "p2"], "svm", "solve_chain_qubo_exact", "loso", 2,
+            0, 1, "0.0", "0.5", True, False, False,
+            32, 1, 1, 1e-3, 1, 0.0, False,
+            progress=lambda *_args, **_kwargs: None,
+        )
+
+        self.assertIn("at least 3 subjects", summary)
+        self.assertTrue(result_df.empty)
+        self.assertEqual(run_id, "")
+
+    def test_precomputed_caches_exclude_each_outer_test_subject(self):
+        files = [
+            "p1_a.edf", "p1_b.edf",
+            "p2_a.edf", "p2_b.edf",
+            "p3_a.edf", "p3_b.edf",
+        ]
+        file_to_subject = {
+            name: name.split("_")[0] for name in files
+        }
+        paths = [f"/fake/{file_to_subject[name]}/{name}" for name in files]
         features = {name: np.array([[0.0], [1.0]]) for name in files}
         labels = {name: np.array([0, 1]) for name in files}
         cache_candidates = []
@@ -64,19 +83,23 @@ class ExperimentIsolationTests(unittest.TestCase):
 
         with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5], patches[6], patches[7], patches[8]:
             _, result_df, _, _, _, _ = run_experiment(
-                ["chb01"], "svm", "solve_chain_qubo_exact", "lofo", 2,
+                ["p1", "p2", "p3"], "svm", "solve_chain_qubo_exact", "loso", 2,
                 0, 1, "0.0", "0.5", True, False, False,
                 32, 1, 1, 1e-3, 1, 0.0, False,
                 progress=lambda *_args, **_kwargs: None,
             )
 
         expected_train_sets = {
-            tuple(name for name in files if name != test_file)
-            for test_file in files
+            tuple(
+                name for name in files
+                if file_to_subject[name] != test_subject
+            )
+            for test_subject in {"p1", "p2", "p3"}
         }
         self.assertEqual(set(cache_candidates), expected_train_sets)
-        self.assertEqual(len(cache_candidates), len(files))
+        self.assertEqual(len(cache_candidates), 3)
         self.assertEqual(len(result_df), len(files))
+        self.assertEqual(set(result_df["subject"]), {"p1", "p2", "p3"})
 
 
 if __name__ == "__main__":

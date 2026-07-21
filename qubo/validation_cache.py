@@ -1,65 +1,32 @@
+import numpy as np
+
 from config import RANDOM_SEED
 from core.logging_utils import log_step
-from sklearn.model_selection import KFold, StratifiedKFold
+from core.splits import patient_independent_validation_splits
 from models.registry import predict_scores
 from models.lstm import _predict_lstm_sequence, _train_lstm_on_files
-import numpy as np
+
 try:
     import torch
-    import torch.nn as nn
-    from torch.utils.data import DataLoader, Dataset
     TORCH_AVAILABLE = True
 except ImportError:
     TORCH_AVAILABLE = False
 
-def build_validation_score_cache_lofo(candidate_files, features, labels, baseline):
+
+def _cache_classical_folds(splits, features, labels, baseline, log_prefix):
     cache = {}
-    log_step(f"[Cache-LOFO] start, files={len(candidate_files)}")
-    for val_file in candidate_files:
-        inner_train_files = [name for name in candidate_files if name != val_file]
-        if not inner_train_files:
-            continue
-        x_train = np.concatenate([features[f] for f in inner_train_files])
-        y_train = np.concatenate([labels[f] for f in inner_train_files]).astype(int)
-        if len(np.unique(y_train)) < 2:
-            continue
-        x_val = features[val_file]
-        y_val = np.asarray(labels[val_file]).astype(int)
-        scores = np.asarray(predict_scores(baseline, x_train, y_train, x_val))
-        cache[val_file] = {"scores": scores, "y_val": y_val}
-    log_step(f"[Cache-LOFO] done, cached_files={len(cache)}")
-    return cache
-
-
-def build_validation_score_cache_kfold(
-    candidate_files, features, labels, baseline, n_splits=5, random_seed=RANDOM_SEED,
-):
-    cache = {}
-    arr = np.array(candidate_files)
-    effective_splits = max(2, min(int(n_splits), len(candidate_files)))
-    log_step(
-        f"[Cache-NFold] start, files={len(candidate_files)}, "
-        f"effective={effective_splits}"
-    )
-    file_has_seizure = np.array([1 if np.sum(labels[f]) > 0 else 0 for f in candidate_files])
-    min_class_count = min(np.sum(file_has_seizure), np.sum(1 - file_has_seizure))
-
-    if min_class_count >= effective_splits:
-        splitter = StratifiedKFold(n_splits=effective_splits, shuffle=True, random_state=random_seed)
-        split_iter = splitter.split(arr, file_has_seizure)
-    else:
-        splitter = KFold(n_splits=effective_splits, shuffle=True, random_state=random_seed)
-        split_iter = splitter.split(arr)
-
-    for fold_idx, (train_idx, val_idx) in enumerate(split_iter, start=1):
-        inner_train_files = arr[train_idx].tolist()
-        val_files = arr[val_idx].tolist()
-        x_train = np.concatenate([features[f] for f in inner_train_files])
-        y_train = np.concatenate([labels[f] for f in inner_train_files]).astype(int)
+    log_step(f"[{log_prefix}] folds={len(splits)}")
+    for fold_idx, (inner_train_files, val_files) in enumerate(splits, start=1):
+        x_train = np.concatenate([features[name] for name in inner_train_files])
+        y_train = np.concatenate([labels[name] for name in inner_train_files]).astype(int)
         if len(np.unique(y_train)) < 2:
             continue
 
-        x_val_all = np.concatenate([features[f] for f in val_files])
+        log_step(
+            f"[{log_prefix}] fold {fold_idx}/{len(splits)} "
+            f"train_files={len(inner_train_files)} val_files={len(val_files)}"
+        )
+        x_val_all = np.concatenate([features[name] for name in val_files])
         scores_all = np.asarray(predict_scores(baseline, x_train, y_train, x_val_all))
 
         offset = 0
@@ -75,51 +42,126 @@ def build_validation_score_cache_kfold(
             cache[val_file] = {"scores": scores, "y_val": y_val}
             offset += val_len
 
-    log_step(f"[Cache-NFold] done, cached_files={len(cache)}")
+    log_step(f"[{log_prefix}] done, cached_files={len(cache)}")
     return cache
 
-def build_validation_score_cache_lstm(candidate_files, features, labels,
-                                      tune_mode, n_splits, lstm_params,
-                                      random_seed=RANDOM_SEED):
-    """LSTM version: train once per fold, infer on all val files."""
+
+def build_validation_score_cache_loso(
+    candidate_files,
+    features,
+    labels,
+    baseline,
+    file_to_subject,
+    random_seed=RANDOM_SEED,
+):
+    splits = patient_independent_validation_splits(
+        candidate_files,
+        file_to_subject,
+        "loso",
+        labels=labels,
+        random_seed=random_seed,
+    )
+    return _cache_classical_folds(
+        splits, features, labels, baseline, "Cache-LOSO"
+    )
+
+
+def build_validation_score_cache_lofo(
+    candidate_files,
+    features,
+    labels,
+    baseline,
+    file_to_subject,
+    random_seed=RANDOM_SEED,
+):
+    """Compatibility alias; validation is grouped by subject, not file."""
+    return build_validation_score_cache_loso(
+        candidate_files,
+        features,
+        labels,
+        baseline,
+        file_to_subject,
+        random_seed=random_seed,
+    )
+
+
+def build_validation_score_cache_kfold(
+    candidate_files,
+    features,
+    labels,
+    baseline,
+    n_splits=5,
+    random_seed=RANDOM_SEED,
+    file_to_subject=None,
+):
+    if file_to_subject is None:
+        raise ValueError("file_to_subject is required for patient-independent validation")
+    splits = patient_independent_validation_splits(
+        candidate_files,
+        file_to_subject,
+        "group_nfold",
+        n_splits=n_splits,
+        labels=labels,
+        random_seed=random_seed,
+    )
+    return _cache_classical_folds(
+        splits, features, labels, baseline, "Cache-GroupKFold"
+    )
+
+
+def build_validation_score_cache_lstm(
+    candidate_files,
+    features,
+    labels,
+    tune_mode,
+    n_splits,
+    lstm_params,
+    file_to_subject,
+    random_seed=RANDOM_SEED,
+):
+    """Train once per patient-independent fold, then infer all fold files."""
+    splits = patient_independent_validation_splits(
+        candidate_files,
+        file_to_subject,
+        tune_mode,
+        n_splits=n_splits,
+        labels=labels,
+        random_seed=random_seed,
+    )
+
     cache = {}
-    arr = np.array(candidate_files)
-
-    if tune_mode == "lofo":
-        splits = [([f for f in candidate_files if f != v], [v]) for v in candidate_files]
-    else:
-        effective = max(2, min(int(n_splits), len(candidate_files)))
-        file_has_sz = np.array([1 if np.sum(labels[f]) > 0 else 0 for f in candidate_files])
-        min_cls = min(np.sum(file_has_sz), np.sum(1 - file_has_sz))
-        if min_cls >= effective:
-            splitter = StratifiedKFold(n_splits=effective, shuffle=True, random_state=random_seed)
-            split_iter = splitter.split(arr, file_has_sz)
-        else:
-            splitter = KFold(n_splits=effective, shuffle=True, random_state=random_seed)
-            split_iter = splitter.split(arr)
-        splits = [(arr[tr].tolist(), arr[va].tolist()) for tr, va in split_iter]
-
-    log_step(f"[Cache-LSTM] folds={len(splits)}")
-    for fi, (inner_train, val_files) in enumerate(splits, 1):
-        y_tr_all = np.concatenate([labels[f] for f in inner_train]).astype(int)
-        if len(np.unique(y_tr_all)) < 2:
+    log_step(f"[Cache-LSTM-Grouped] folds={len(splits)}")
+    for fold_idx, (inner_train, val_files) in enumerate(splits, start=1):
+        y_train = np.concatenate([labels[name] for name in inner_train]).astype(int)
+        if len(np.unique(y_train)) < 2:
             continue
-        log_step(f"[Cache-LSTM] fold {fi}/{len(splits)} train={len(inner_train)} val={len(val_files)}")
-        model, mean, std, device = _train_lstm_on_files(
-            inner_train, features, labels,
-            random_seed=random_seed, **(lstm_params or {}),
+        log_step(
+            f"[Cache-LSTM-Grouped] fold {fold_idx}/{len(splits)} "
+            f"train_files={len(inner_train)} val_files={len(val_files)}"
         )
-        for vf in val_files:
-            scores = _predict_lstm_sequence(model, features[vf], mean, std, device)
-            cache[vf] = {"scores": scores, "y_val": np.asarray(labels[vf]).astype(int)}
+        model, mean, std, device = _train_lstm_on_files(
+            inner_train,
+            features,
+            labels,
+            random_seed=random_seed,
+            **(lstm_params or {}),
+        )
+        for val_file in val_files:
+            scores = _predict_lstm_sequence(
+                model, features[val_file], mean, std, device
+            )
+            cache[val_file] = {
+                "scores": scores,
+                "y_val": np.asarray(labels[val_file]).astype(int),
+            }
 
-        # free GPU
         del model
         if TORCH_AVAILABLE and torch.cuda.is_available():
             torch.cuda.empty_cache()
 
-    log_step(f"[Cache-LSTM] done, cached={len(cache)}")
+    log_step(f"[Cache-LSTM-Grouped] done, cached_files={len(cache)}")
     return cache
+
 
 def build_validation_score_cache(
     candidate_files,
@@ -129,17 +171,43 @@ def build_validation_score_cache(
     tune_mode,
     n_splits=5,
     lstm_params=None,
+    file_to_subject=None,
     random_seed=RANDOM_SEED,
 ):
+    if file_to_subject is None:
+        raise ValueError("file_to_subject is required for patient-independent validation")
     if baseline == "lstm":
         return build_validation_score_cache_lstm(
-            candidate_files, features, labels, tune_mode, n_splits, lstm_params,
+            candidate_files,
+            features,
+            labels,
+            tune_mode,
+            n_splits,
+            lstm_params,
+            file_to_subject,
             random_seed=random_seed,
         )
-    if tune_mode == "lofo":
-        return build_validation_score_cache_lofo(candidate_files, features, labels, baseline)
-    if tune_mode == "nfold":
-        return build_validation_score_cache_kfold(
-            candidate_files, features, labels, baseline, n_splits, random_seed=random_seed,
+
+    normalized_mode = {"lofo": "loso", "nfold": "group_nfold"}.get(
+        tune_mode, tune_mode
+    )
+    if normalized_mode == "loso":
+        return build_validation_score_cache_loso(
+            candidate_files,
+            features,
+            labels,
+            baseline,
+            file_to_subject,
+            random_seed=random_seed,
         )
-    raise ValueError(f"Unknown tuning mode: {tune_mode}")
+    if normalized_mode == "group_nfold":
+        return build_validation_score_cache_kfold(
+            candidate_files,
+            features,
+            labels,
+            baseline,
+            n_splits=n_splits,
+            random_seed=random_seed,
+            file_to_subject=file_to_subject,
+        )
+    raise ValueError(f"Unknown patient-independent tuning mode: {tune_mode}")

@@ -231,7 +231,8 @@ def safe_solver_call(solver, scores, lmbda, threshold, seed=RANDOM_SEED)
 ├─ 使用驗證集上的模型得分
 ├─ 掃描 λ 和 threshold 參數空間
 ├─ 最大化 seizure-file mean F1 - α × non-seizure-file mean FP rate
-└─ 每個外層測試檔建立獨立的驗證分數快取
+├─ 內層驗證使用 LOSO 或 grouped N-fold，EDF 依患者整組移動
+└─ 每個外層 held-out 患者建立獨立的驗證分數快取
 ```
 
 `solve_chain_qubo_exact` 是確定性的精確 DP；`solve_qubo_seizure` 使用模擬退火，
@@ -254,13 +255,13 @@ def run_experiment(
     selected_subjects,      # 選擇的患者
     baseline,               # 模型類型 (svm/xgboost/lstm)
     solver_name,            # QUBO 求解器名稱
-    tune_mode,              # 調優模式 (grid/random)
+    tune_mode,              # 患者分組調優 (loso/group_nfold)
     tune_n_splits,          # 交叉驗證分割數
     ...
 )
     ├─ 1. 收集文件和標籤 (core/io.py)
     ├─ 2. 預處理 EDF 文件 (pipeline.py)
-    ├─ 3. 以 EDF 文件為單位執行 leave-one-file-out 分割
+    ├─ 3. 外層 leave-one-subject-out（held-out 患者完全不參與訓練/調優）
     ├─ 4. 模型訓練 (models/registry.py)
     ├─ 5. QUBO 參數調優 (qubo/tuning.py)
     ├─ 6. 應用 QUBO 求解器 (qubo/solvers.py)
@@ -268,6 +269,11 @@ def run_experiment(
     ├─ 8. 繪製結果圖表 (viz/plots.py)
     └─ 9. 保存結果 (core/results.py)
 ```
+
+此流程是巢狀 patient-independent evaluation。外層每次保留一位患者的全部 EDF
+作測試；內層只在其餘患者中，以 LOSO 或 grouped N-fold 調整 QUBO 參數。同一位
+患者不會跨越任一 train/validation/test 邊界。為同時建立外層測試與內層患者獨立
+驗證，執行時至少需要 3 位具有可用 EDF 的患者。
 
 ---
 
@@ -294,7 +300,7 @@ def build_ui()
 #### 訓練標籤: `ui/training_tab.py`
 
 **輸入參數:**
-- 患者選擇（多選）
+- 患者選擇（多選，至少 3 位）
 - 模型選擇（SVM/XGBoost/LSTM）
 - QUBO 求解器選擇
 - 調優配置（λ 和 threshold 值）
@@ -486,10 +492,10 @@ python analysisFile.py DESTINATION --output chb_channel_audit.csv
 
 # 直接執行訓練／評估
 python app.py train \
-    --subjects chb01 chb02 \
+    --subjects chb01 chb02 chb03 \
     --baseline svm \
     --solver solve_chain_qubo_exact \
-    --tune-mode nfold \
+    --tune-mode group_nfold \
     --tune-n-splits 5
 
 # 查看所有 CLI 選項
@@ -513,8 +519,8 @@ python app.py train --help
 - 每個 worker 都會 preload EDF，處理大量檔案時應限制 worker 數以避免記憶體壓力
 
 ### 3. **快取機制** (Caching)
-- `qubo/validation_cache.py`: 每個外層測試 fold 分別建立驗證快取；
-  快取訓練資料不包含該外層測試檔，避免資料洩漏
+- `qubo/validation_cache.py`: 每個外層 held-out 患者分別建立驗證快取；
+  快取的內層 folds 同樣按患者分組，避免患者資料洩漏
 - `core/checkpoint.py`: 保存已完成 EDF 的評估結果，支持部分恢復
 
 ### 4. **模塊化設計** (Modularity)
@@ -525,8 +531,8 @@ python app.py train --help
 
 ## ⚠️ 已知限制與結果解讀
 
-1. **切分單位是 EDF，不是患者**：同一患者的其他 EDF 可能同時出現在訓練集。
-   若要衡量對未見患者的泛化能力，需另行實作 leave-one-subject-out 或 group split。
+1. **摘要仍以 EDF 為統計單位**：切分已是 patient-independent，但整體 mean 指標會讓
+   EDF 較多的患者占較高權重；若要每位患者等權，需另算 patient-level macro mean。
 2. **變長 LSTM 序列直接補零**：目前沒有 packed sequence，padding 可能影響訓練效率。
 3. **前處理僅有 channel preflight 容錯**：無法讀取 header 或無法建立 canonical
    montage 的 EDF 會在前處理前排除；通過驗證後若在濾波或特徵提取階段失敗，仍可能

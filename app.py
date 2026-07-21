@@ -103,7 +103,7 @@ def parse_args():
         "--subjects",
         nargs="+",
         required=True,
-        help="Subject IDs such as chb01 chb02, or 'all'.",
+        help="At least 3 subject IDs such as chb01 chb02 chb03, or 'all'.",
     )
     train_parser.add_argument("--baseline", choices=["svm", "xgboost", "lstm"], default="svm")
     train_parser.add_argument(
@@ -111,7 +111,12 @@ def parse_args():
         choices=["solve_qubo_seizure", "solve_chain_qubo_exact"],
         default="solve_chain_qubo_exact",
     )
-    train_parser.add_argument("--tune-mode", choices=["lofo", "nfold"], default="nfold")
+    train_parser.add_argument(
+        "--tune-mode",
+        choices=["loso", "group_nfold"],
+        default="group_nfold",
+        help="Patient-grouped inner validation strategy.",
+    )
     train_parser.add_argument("--tune-n-splits", type=int, default=5)
     train_parser.add_argument("--max-files-per-subject", type=int, default=0)
     train_parser.add_argument("--n-jobs", type=int, default=-1)

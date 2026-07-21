@@ -14,4 +14,4 @@ RANDOM_SEED = 42
 
 # Increment when preprocessing or evaluation semantics change so checkpoints
 # produced by older code cannot be resumed into an incompatible run.
-RUN_SCHEMA_VERSION = 6
+RUN_SCHEMA_VERSION = 7

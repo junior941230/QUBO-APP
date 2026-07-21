@@ -9,7 +9,9 @@ def build_training_tab():
     with gr.Column():
         gr.Markdown("## 🧪 Training / Evaluation")
         gr.Markdown(
-            "Leave-one-file-out evaluation with inner-validation QUBO tuning. "
+            "Patient-independent nested evaluation: each outer fold holds out one "
+            "subject, and QUBO tuning also keeps subjects separated. Select at "
+            "least 3 subjects. "
             "中斷可續跑:勾選 **Resume** 後,相同設定會從 checkpoint 繼續。"
         )
 
@@ -21,7 +23,7 @@ def build_training_tab():
 
         selected_subjects = gr.CheckboxGroup(
             choices=subjects,
-            value=subjects[:1] if subjects else [],
+            value=subjects[:3] if subjects else [],
             label="Subjects (multi-select)",
         )
 
@@ -35,9 +37,13 @@ def build_training_tab():
 
         with gr.Row():
             tune_mode = gr.Radio(
-                choices=["lofo", "nfold"], value="nfold", label="Tuning Strategy"
+                choices=["loso", "group_nfold"],
+                value="group_nfold",
+                label="Patient-grouped Tuning Strategy",
             )
-            tune_n_splits = gr.Slider(2, 10, value=5, step=1, label="Nfold Splits")
+            tune_n_splits = gr.Slider(
+                2, 10, value=5, step=1, label="Grouped N-fold Splits"
+            )
 
         with gr.Row():
             max_files_per_subject = gr.Slider(
@@ -69,7 +75,7 @@ def build_training_tab():
         with gr.Row():
             reuse_global_cache = gr.Checkbox(
                 value=True,
-                label="Precompute leak-free validation cache per outer test file",
+                label="Precompute validation cache per held-out subject",
             )
             save_pkl = gr.Checkbox(value=True, label="Save results to ./results/")
 
