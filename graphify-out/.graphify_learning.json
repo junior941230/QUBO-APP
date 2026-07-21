@@ -1,5 +1,70 @@
 {
-  "generated_at": "2026-07-21T06:40:29.222959+00:00",
-  "nodes": {},
+  "generated_at": "2026-07-21T08:48:30.383484+00:00",
+  "nodes": {
+    "core_splits": {
+      "code_fingerprint": "728082a9fa1510b471076d292f8a5b2dee56d16889b8aa0ec1f91cd2e0c798c6",
+      "label": "splits.py",
+      "last": "2026-07-21T06:49:10.429713+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-21T06:49:10.429713+00:00",
+          "outcome": "useful",
+          "q": "將專案改成 patient-independent evaluation"
+        }
+      ],
+      "score": 0.998087132,
+      "source_file": "core/splits.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "pipeline_runner_experiment_run_experiment": {
+      "code_fingerprint": "f4e2e6795482b5e51c68417724c0277e3e48d98cc8ad8405f604f35601287ac2",
+      "label": "run_experiment()",
+      "last": "2026-07-21T06:49:10.429713+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-21T06:49:10.429713+00:00",
+          "outcome": "useful",
+          "q": "將專案改成 patient-independent evaluation"
+        }
+      ],
+      "score": 0.998087132,
+      "source_file": "pipeline_runner/experiment.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "qubo_validation_cache_build_validation_score_cache_kfold": {
+      "code_fingerprint": "33ffbf56fd9bfe7c8dd10dd022784d50f584a44189293be19e3f00a23c7d4829",
+      "label": "build_validation_score_cache_kfold()",
+      "last": "2026-07-21T06:49:10.429713+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-21T06:49:10.429713+00:00",
+          "outcome": "useful",
+          "q": "將專案改成 patient-independent evaluation"
+        }
+      ],
+      "score": 0.998087132,
+      "source_file": "qubo/validation_cache.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "ui_training_tab": {
+      "code_fingerprint": "da2874257c78b9ee883df5c66327c1ac776f45ac644e3f25b723bcb46fc3edf2",
+      "label": "training_tab.py",
+      "last": "2026-07-21T06:49:10.429713+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-21T06:49:10.429713+00:00",
+          "outcome": "useful",
+          "q": "將專案改成 patient-independent evaluation"
+        }
+      ],
+      "score": 0.998087132,
+      "source_file": "ui/training_tab.py",
+      "status": "tentative",
+      "uses": 1
+    }
+  },
   "version": 1
 }
