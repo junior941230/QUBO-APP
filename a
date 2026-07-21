@@ -1,4 +1,8 @@
-python app.py train \
+mkdir -p logs
+
+setsid env CUDA_VISIBLE_DEVICES=0 \
+  .venv/bin/python app.py train \
   --subjects chb01 chb02 chb03 chb04 chb05 chb06 chb07 chb08 chb09 chb10 \
   --baseline xgboost \
-  --solver solve_chain_qubo_exact
+  --solver solve_chain_qubo_exact \
+  > logs/xgboost-qubo.log 2>&1 < /dev/null &
