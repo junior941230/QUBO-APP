@@ -105,6 +105,7 @@ def _train_lstm_on_files(
 
     _set_lstm_seed(random_seed)
     device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+    log_step(f"[LSTM] device={device}")
 
     seqs   = [np.asarray(features[f], dtype=np.float32) for f in train_files]
     labs   = [np.asarray(labels[f], dtype=np.float32)    for f in train_files]

@@ -1,16 +1,17 @@
 # QUBO-APP core Python dependencies.
 #
 # This file intentionally contains only pip-installable packages.  The GPU SVM
-# backend (`cuml`) is part of RAPIDS and should be installed with conda; see
-# environment-rapids.yml.  If RAPIDS is unavailable, the app falls back to
-# scikit-learn SVM.
+# backend (`cuml`) is part of RAPIDS and can be installed with conda via
+# environment-rapids.yml or with pip via requirements-cuml.txt. If RAPIDS is
+# unavailable, the app falls back to scikit-learn SVM.
 
 dwave-neal==0.6.0
 gradio==6.13.0
 joblib==1.5.3
 matplotlib==3.10.9
 mne==1.12.1
-numpy==2.4.3
+# Compatible with the Numba version required by requirements-cuml.txt.
+numpy==2.2.6
 pandas==2.3.3
 scikit-learn==1.8.0
 scipy==1.16.3

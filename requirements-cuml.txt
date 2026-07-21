@@ -1,0 +1,13 @@
+# Optional RAPIDS cuML backend for the server's Tesla V100 (CUDA 12).
+# Install together with the core requirements:
+#   python -m pip install --no-user -r requirements.txt -r requirements-cuml.txt
+
+--extra-index-url https://pypi.nvidia.com
+
+# RAPIDS 26.02 supports Python 3.12, Volta, Driver 535+, and CUDA 12. The CUDA
+# package pins match the PyTorch 2.10 CUDA 12.8 runtime used by this project.
+cuml-cu12==26.2.0
+cuda-toolkit==12.8.1
+cuda-python==12.9.4
+cuda-bindings==12.9.4
+nvidia-nvjitlink-cu12==12.8.93
