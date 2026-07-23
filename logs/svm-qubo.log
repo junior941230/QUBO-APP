@@ -1,66 +1,66 @@
-[21:16:10] [Run] run_id=chb01-chb02-chb03+7_svm_solve_chain_qubo_exact_7ca0bc108e
+[11:04:37] [Run] run_id=chb01-chb02-chb03+7_svm_solve_chain_qubo_exact_7ca0bc108e
 [   2%] Collecting files
-[21:16:10] [Run] files=298
+[11:04:37] [Run] files=298
 [   5%] Validating EDF channels
-[21:16:11] [Channel-Preflight] compatible=298, excluded=0
+[11:04:39] [Channel-Preflight] compatible=298, excluded=0
 [  10%] Preprocessing EDF files
 [Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
-Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
-0 bad epochs dropped
-0 bad epochs dropped
-0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done   5 tasks      | elapsed:    8.7s
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done   5 tasks      | elapsed:    8.9s
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
-0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done  10 tasks      | elapsed:   12.1s
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done  10 tasks      | elapsed:   12.4s
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 2663 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done  17 tasks      | elapsed:   18.7s
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
-0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done  17 tasks      | elapsed:   18.6s
 Using data from preloaded Raw for 3600 events and 256 original time points ...
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done  24 tasks      | elapsed:   23.0s
 Using data from preloaded Raw for 2325 events and 256 original time points ...
-0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
-[Parallel(n_jobs=-1)]: Done  24 tasks      | elapsed:   23.3s
 0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
@@ -72,16 +72,12 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done  33 tasks      | elapsed:   30.1s
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done  33 tasks      | elapsed:   29.6s
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
@@ -93,15 +89,15 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
-[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:   38.1s
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
+[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:   36.9s
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
@@ -121,10 +117,14 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done  53 tasks      | elapsed:   47.2s
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done  53 tasks      | elapsed:   45.1s
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 959 events and 256 original time points ...
 0 bad epochs dropped
@@ -133,18 +133,20 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done  64 tasks      | elapsed:   56.1s
+[Parallel(n_jobs=-1)]: Done  64 tasks      | elapsed:   54.0s
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
@@ -181,8 +183,6 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
@@ -191,17 +191,17 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done  90 tasks      | elapsed:  1.3min
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done  90 tasks      | elapsed:  1.2min
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
@@ -229,7 +229,7 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 105 tasks      | elapsed:  1.5min
+[Parallel(n_jobs=-1)]: Done 105 tasks      | elapsed:  1.4min
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
@@ -251,12 +251,12 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 14398 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
-Using data from preloaded Raw for 14400 events and 256 original time points ...
-0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 120 tasks      | elapsed:  1.9min
+[Parallel(n_jobs=-1)]: Done 120 tasks      | elapsed:  1.8min
 Using data from preloaded Raw for 9536 events and 256 original time points ...
 Using data from preloaded Raw for 7496 events and 256 original time points ...
 0 bad epochs dropped
@@ -295,7 +295,7 @@ Using data from preloaded Raw for 10684 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 14406 events and 256 original time points ...
 0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 137 tasks      | elapsed:  2.8min
+[Parallel(n_jobs=-1)]: Done 137 tasks      | elapsed:  2.7min
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
@@ -330,47 +330,32 @@ Using data from preloaded Raw for 14400 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 154 tasks      | elapsed:  3.7min
+[Parallel(n_jobs=-1)]: Done 154 tasks      | elapsed:  3.5min
 Using data from preloaded Raw for 5823 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3610 events and 256 original time points ...
-0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
+0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 173 tasks      | elapsed:  4.0min
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
@@ -384,9 +369,18 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done 173 tasks      | elapsed:  3.8min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
@@ -408,67 +402,73 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:  4.3min
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:  4.1min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 14427 events and 256 original time points ...
-0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
 Using data from preloaded Raw for 13261 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
-0 bad epochs dropped
-Using data from preloaded Raw for 14400 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 14400 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
-0 bad epochs dropped
-Using data from preloaded Raw for 14400 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 14400 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3030 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
-0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
 Using data from preloaded Raw for 7928 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
-0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 213 tasks      | elapsed:  5.2min
+[Parallel(n_jobs=-1)]: Done 213 tasks      | elapsed:  4.9min
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 14411 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 14400 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 4920 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 4660 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
-Using data from preloaded Raw for 14400 events and 256 original time points ...
-0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
@@ -491,16 +491,12 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 14411 events and 256 original time points ...
-Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
-0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 234 tasks      | elapsed:  6.2min
-Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done 234 tasks      | elapsed:  5.9min
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
@@ -512,20 +508,24 @@ Using data from preloaded Raw for 3600 events and 256 original time points ...
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
-0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 3600 events and 256 original time points ...
 0 bad epochs dropped
@@ -534,35 +534,35 @@ Using data from preloaded Raw for 3623 events and 256 original time points ...
 Using data from preloaded Raw for 8023 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 14399 events and 256 original time points ...
-Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
 Using data from preloaded Raw for 14415 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 257 tasks      | elapsed:  6.7min
+[Parallel(n_jobs=-1)]: Done 257 tasks      | elapsed:  6.3min
 Using data from preloaded Raw for 14399 events and 256 original time points ...
-Using data from preloaded Raw for 14400 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 14400 events and 256 original time points ...
-0 bad epochs dropped
-0 bad epochs dropped
-Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
 Using data from preloaded Raw for 14400 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 14405 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 14411 events and 256 original time points ...
+0 bad epochs dropped
 Using data from preloaded Raw for 974 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 14421 events and 256 original time points ...
-0 bad epochs dropped
 Using data from preloaded Raw for 13591 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
@@ -577,20 +577,20 @@ Using data from preloaded Raw for 7200 events and 256 original time points ...
 Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 7200 events and 256 original time points ...
-0 bad epochs dropped
 Using data from preloaded Raw for 7200 events and 256 original time points ...
 Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
-Using data from preloaded Raw for 7200 events and 256 original time points ...
-0 bad epochs dropped
-Using data from preloaded Raw for 7200 events and 256 original time points ...
-Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 280 tasks      | elapsed:  7.6min
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=-1)]: Done 280 tasks      | elapsed:  7.2min
+0 bad epochs dropped
 Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 7200 events and 256 original time points ...
@@ -603,16 +603,16 @@ Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 7200 events and 256 original time points ...
 Using data from preloaded Raw for 7212 events and 256 original time points ...
-Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
 Using data from preloaded Raw for 7218 events and 256 original time points ...
 Using data from preloaded Raw for 7200 events and 256 original time points ...
-Using data from preloaded Raw for 7213 events and 256 original time points ...
 0 bad epochs dropped
+Using data from preloaded Raw for 7213 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
 Using data from preloaded Raw for 7221 events and 256 original time points ...
@@ -621,145 +621,368 @@ Using data from preloaded Raw for 7200 events and 256 original time points ...
 Using data from preloaded Raw for 7200 events and 256 original time points ...
 0 bad epochs dropped
 0 bad epochs dropped
-[Parallel(n_jobs=-1)]: Done 298 out of 298 | elapsed:  8.1min finished
-[21:24:15] [Run] preprocess done, elapsed=483.40s
+[Parallel(n_jobs=-1)]: Done 298 out of 298 | elapsed:  7.7min finished
+[11:12:19] [Run] preprocess done, elapsed=460.20s
 [  11%] Building grouped cache for held-out chb01
-[21:24:15] [Cache-GroupKFold] folds=5
-[21:24:15] [Cache-GroupKFold] fold 1/5 train_files=199 val_files=57
-[21:24:15] [SVM] device=cuda (cuML)
-[21:29:50] [Cache-GroupKFold] fold 2/5 train_files=201 val_files=55
-[21:29:50] [SVM] device=cuda (cuML)
-[21:35:36] [Cache-GroupKFold] fold 3/5 train_files=189 val_files=67
-[21:35:36] [SVM] device=cuda (cuML)
-[21:38:18] [Cache-GroupKFold] fold 4/5 train_files=199 val_files=57
-[21:38:18] [SVM] device=cuda (cuML)
-[21:43:09] [Cache-GroupKFold] fold 5/5 train_files=236 val_files=20
-[21:43:09] [SVM] device=cuda (cuML)
-[21:49:43] [Cache-GroupKFold] done, cached_files=256
+[11:12:19] [Cache-GroupKFold] folds=5
+[11:12:19] [Cache-GroupKFold] fold 1/5 train_files=199 val_files=57
+[11:12:19] [SVM] device=cuda (cuML)
+[11:12:19] [Run] validation cache failed for held-out subject chb01: std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable
 [  11%] Building grouped cache for held-out chb02
-[21:49:43] [Cache-GroupKFold] folds=5
-[21:49:44] [Cache-GroupKFold] fold 1/5 train_files=205 val_files=57
-[21:49:44] [SVM] device=cuda (cuML)
-[21:55:20] [Cache-GroupKFold] fold 2/5 train_files=201 val_files=61
-[21:55:20] [SVM] device=cuda (cuML)
-[22:01:06] [Cache-GroupKFold] fold 3/5 train_files=195 val_files=67
-[22:01:06] [SVM] device=cuda (cuML)
-[22:03:54] [Cache-GroupKFold] fold 4/5 train_files=205 val_files=57
-[22:03:55] [SVM] device=cuda (cuML)
-[22:08:48] [Cache-GroupKFold] fold 5/5 train_files=242 val_files=20
-[22:08:48] [SVM] device=cuda (cuML)
-[22:15:40] [Cache-GroupKFold] done, cached_files=262
+[11:12:19] [Cache-GroupKFold] folds=5
+[11:12:20] [Cache-GroupKFold] fold 1/5 train_files=205 val_files=57
+[11:12:20] [SVM] device=cuda (cuML)
+[11:12:20] [Run] validation cache failed for held-out subject chb02: std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable
 [  12%] Building grouped cache for held-out chb03
-[22:15:40] [Cache-GroupKFold] folds=5
-[22:15:40] [Cache-GroupKFold] fold 1/5 train_files=205 val_files=55
-[22:15:40] [SVM] device=cuda (cuML)
-[22:21:16] [Cache-GroupKFold] fold 2/5 train_files=199 val_files=61
-[22:21:16] [SVM] device=cuda (cuML)
-[22:26:53] [Cache-GroupKFold] fold 3/5 train_files=193 val_files=67
-[22:26:53] [SVM] device=cuda (cuML)
-[22:29:38] [Cache-GroupKFold] fold 4/5 train_files=203 val_files=57
-[22:29:38] [SVM] device=cuda (cuML)
-[22:34:29] [Cache-GroupKFold] fold 5/5 train_files=240 val_files=20
-[22:34:29] [SVM] device=cuda (cuML)
-[22:41:09] [Cache-GroupKFold] done, cached_files=260
+[11:12:20] [Cache-GroupKFold] folds=5
+[11:12:20] [Cache-GroupKFold] fold 1/5 train_files=205 val_files=55
+[11:12:20] [SVM] device=cuda (cuML)
+[11:12:20] [Run] validation cache failed for held-out subject chb03: std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable
 [  12%] Building grouped cache for held-out chb04
-[22:41:09] [Cache-GroupKFold] folds=5
-[22:41:10] [Cache-GroupKFold] fold 1/5 train_files=201 val_files=55
-[22:41:10] [SVM] device=cuda (cuML)
-[22:43:49] [Cache-GroupKFold] fold 2/5 train_files=195 val_files=61
-[22:43:49] [SVM] device=cuda (cuML)
-[22:46:22] [Cache-GroupKFold] fold 3/5 train_files=193 val_files=63
-[22:46:22] [SVM] device=cuda (cuML)
-[22:49:03] [Cache-GroupKFold] fold 4/5 train_files=199 val_files=57
-[22:49:03] [SVM] device=cuda (cuML)
-[22:51:11] [Cache-GroupKFold] fold 5/5 train_files=236 val_files=20
-[22:51:11] [SVM] device=cuda (cuML)
-[22:54:18] [Cache-GroupKFold] done, cached_files=256
+[11:12:20] [Cache-GroupKFold] folds=5
+[11:12:21] [Cache-GroupKFold] fold 1/5 train_files=201 val_files=55
+[11:12:21] [SVM] device=cuda (cuML)
+[11:12:21] [Run] validation cache failed for held-out subject chb04: std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable
 [  12%] Building grouped cache for held-out chb05
-[22:54:18] [Cache-GroupKFold] folds=5
-[22:54:19] [Cache-GroupKFold] fold 1/5 train_files=204 val_files=55
-[22:54:19] [SVM] device=cuda (cuML)
-[22:59:43] [Cache-GroupKFold] fold 2/5 train_files=198 val_files=61
-[22:59:43] [SVM] device=cuda (cuML)
-[23:05:18] [Cache-GroupKFold] fold 3/5 train_files=196 val_files=63
-[23:05:18] [SVM] device=cuda (cuML)
-[23:10:59] [Cache-GroupKFold] fold 4/5 train_files=199 val_files=60
-[23:10:59] [SVM] device=cuda (cuML)
-[23:13:11] [Cache-GroupKFold] fold 5/5 train_files=239 val_files=20
-[23:13:11] [SVM] device=cuda (cuML)
-[23:20:02] [Cache-GroupKFold] done, cached_files=259
+[11:12:21] [Cache-GroupKFold] folds=5
+[11:12:21] [Cache-GroupKFold] fold 1/5 train_files=204 val_files=55
+[11:12:21] [SVM] device=cuda (cuML)
+[11:12:21] [Run] validation cache failed for held-out subject chb05: std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable
 [  13%] Building grouped cache for held-out chb06
-[23:20:02] [Cache-GroupKFold] folds=5
-[23:20:02] [Cache-GroupKFold] fold 1/5 train_files=225 val_files=55
-[23:20:02] [SVM] device=cuda (cuML)
-[23:24:24] [Cache-GroupKFold] fold 2/5 train_files=219 val_files=61
-[23:24:24] [SVM] device=cuda (cuML)
-[23:28:50] [Cache-GroupKFold] fold 3/5 train_files=217 val_files=63
-[23:28:50] [SVM] device=cuda (cuML)
-[23:33:17] [Cache-GroupKFold] fold 4/5 train_files=199 val_files=81
-[23:33:17] [SVM] device=cuda (cuML)
-[23:35:28] [Cache-GroupKFold] fold 5/5 train_files=260 val_files=20
-[23:35:28] [SVM] device=cuda (cuML)
-[23:40:53] [Cache-GroupKFold] done, cached_files=280
+[11:12:21] [Cache-GroupKFold] folds=5
+[11:12:22] [Cache-GroupKFold] fold 1/5 train_files=225 val_files=55
+[11:12:22] [SVM] device=cuda (cuML)
+[11:12:22] [Run] validation cache failed for held-out subject chb06: std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable
 [  14%] Building grouped cache for held-out chb07
-[23:40:53] [Cache-GroupKFold] folds=5
-[23:40:53] [Cache-GroupKFold] fold 1/5 train_files=224 val_files=55
-[23:40:53] [SVM] device=cuda (cuML)
-[23:46:03] [Cache-GroupKFold] fold 2/5 train_files=219 val_files=60
-[23:46:03] [SVM] device=cuda (cuML)
-[23:50:29] [Cache-GroupKFold] fold 3/5 train_files=216 val_files=63
-[23:50:29] [SVM] device=cuda (cuML)
-[23:55:49] [Cache-GroupKFold] fold 4/5 train_files=198 val_files=81
-[23:55:49] [SVM] device=cuda (cuML)
-[23:58:29] [Cache-GroupKFold] fold 5/5 train_files=259 val_files=20
-[23:58:29] [SVM] device=cuda (cuML)
-[00:04:48] [Cache-GroupKFold] done, cached_files=279
+[11:12:22] [Cache-GroupKFold] folds=5
+[11:12:22] [Cache-GroupKFold] fold 1/5 train_files=224 val_files=55
+[11:12:22] [SVM] device=cuda (cuML)
+[11:12:22] [Run] validation cache failed for held-out subject chb07: std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable
 [  14%] Building grouped cache for held-out chb08
-[00:04:48] [Cache-GroupKFold] folds=5
-[00:04:48] [Cache-GroupKFold] fold 1/5 train_files=223 val_files=55
-[00:04:48] [SVM] device=cuda (cuML)
-[00:10:11] [Cache-GroupKFold] fold 2/5 train_files=218 val_files=60
-[00:10:11] [SVM] device=cuda (cuML)
-[00:14:44] [Cache-GroupKFold] fold 3/5 train_files=215 val_files=63
-[00:14:45] [SVM] device=cuda (cuML)
-[00:20:24] [Cache-GroupKFold] fold 4/5 train_files=197 val_files=81
-[00:20:24] [SVM] device=cuda (cuML)
-[00:22:57] [Cache-GroupKFold] fold 5/5 train_files=259 val_files=19
-[00:22:57] [SVM] device=cuda (cuML)
-[00:29:19] [Cache-GroupKFold] done, cached_files=278
+[11:12:22] [Cache-GroupKFold] folds=5
+[11:12:23] [Cache-GroupKFold] fold 1/5 train_files=223 val_files=55
+[11:12:23] [SVM] device=cuda (cuML)
+[11:12:23] [Run] validation cache failed for held-out subject chb08: std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable
 [  15%] Building grouped cache for held-out chb09
-[00:29:19] [Cache-GroupKFold] folds=5
-[00:29:20] [Cache-GroupKFold] fold 1/5 train_files=223 val_files=56
-[00:29:20] [SVM] device=cuda (cuML)
-[00:34:39] [Cache-GroupKFold] fold 2/5 train_files=219 val_files=60
-[00:34:39] [SVM] device=cuda (cuML)
-[00:38:55] [Cache-GroupKFold] fold 3/5 train_files=216 val_files=63
-[00:38:55] [SVM] device=cuda (cuML)
-[00:43:57] [Cache-GroupKFold] fold 4/5 train_files=198 val_files=81
-[00:43:57] [SVM] device=cuda (cuML)
-[00:46:26] [Cache-GroupKFold] fold 5/5 train_files=260 val_files=19
-[00:46:26] [SVM] device=cuda (cuML)
-[00:52:18] [Cache-GroupKFold] done, cached_files=279
+[11:12:23] [Cache-GroupKFold] folds=5
+[11:12:23] [Cache-GroupKFold] fold 1/5 train_files=223 val_files=56
+[11:12:23] [SVM] device=cuda (cuML)
+[11:12:23] [Run] validation cache failed for held-out subject chb09: std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable
 [  15%] Building grouped cache for held-out chb10
-[00:52:18] [Cache-GroupKFold] folds=5
-[00:52:19] [Cache-GroupKFold] fold 1/5 train_files=217 val_files=56
-[00:52:19] [SVM] device=cuda (cuML)
-[00:58:01] [Cache-GroupKFold] fold 2/5 train_files=213 val_files=60
-[00:58:02] [SVM] device=cuda (cuML)
-[01:02:29] [Cache-GroupKFold] fold 3/5 train_files=216 val_files=57
-[01:02:29] [SVM] device=cuda (cuML)
-[01:07:32] [Cache-GroupKFold] fold 4/5 train_files=192 val_files=81
-[01:07:32] [SVM] device=cuda (cuML)
-[01:10:07] [Cache-GroupKFold] fold 5/5 train_files=254 val_files=19
-[01:10:07] [SVM] device=cuda (cuML)
-[01:16:20] [Cache-GroupKFold] done, cached_files=273
+[11:12:23] [Cache-GroupKFold] folds=5
+[11:12:24] [Cache-GroupKFold] fold 1/5 train_files=217 val_files=56
+[11:12:24] [SVM] device=cuda (cuML)
+[11:12:24] [Run] validation cache failed for held-out subject chb10: std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable
 [  23%] Evaluating held-out subject chb01
-[01:18:52] [QUBO-Tune] best λ=1.5, θ=0.5, score=0.1403
-[01:18:53] [Subject] 1/10 test=chb01 train_subjects=9 test_files=42
-[01:18:53] [SVM] device=cuda (cuML)
-[01:26:52] [File] done chb01_01.edf, held_out_subject=chb01, baseline_f1=0.0000, qubo_f1=0.0000, Δ=0.0000, elapsed=479.13s
-[01:26:52] [SVM] device=cuda (cuML)
-/home/junior941230/workspace/QUBO-APP/.venv/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 6 leaked semlock objects to clean up at shutdown
-  warnings.warn(
-/home/junior941230/workspace/QUBO-APP/.venv/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 1 leaked folder objects to clean up at shutdown
-  warnings.warn(
+[  31%] Evaluating held-out subject chb02
+[  39%] Evaluating held-out subject chb03
+[  47%] Evaluating held-out subject chb04
+[  55%] Evaluating held-out subject chb05
+[  63%] Evaluating held-out subject chb06
+[  71%] Evaluating held-out subject chb07
+[  79%] Evaluating held-out subject chb08
+[  87%] Evaluating held-out subject chb09
+[  95%] Evaluating held-out subject chb10
+
+Run failed
+
+chb01_01.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_02.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_03.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_04.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_05.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_06.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_07.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_08.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_09.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_10.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_11.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_12.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_13.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_14.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_15.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_16.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_17.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_18.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_19.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_20.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_21.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_22.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_23.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_24.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_25.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_26.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_27.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_29.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_30.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_31.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_32.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_33.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_34.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_36.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_37.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_38.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_39.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_40.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_41.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_42.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_43.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb01_46.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1125319680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_01.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_02.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_03.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_04.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_05.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_06.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_07.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_08.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_09.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_10.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_11.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_12.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_13.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_14.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_15.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_16+.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_16.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_17.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_18.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_19.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_20.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_21.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_22.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_23.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_24.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_25.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_26.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_27.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_28.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_29.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_30.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_31.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_32.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_33.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_34.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb02_35.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_01.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_02.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_03.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_04.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_05.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_06.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_07.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_08.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_09.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_10.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_11.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_12.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_13.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_14.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_15.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_16.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_17.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_18.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_19.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_20.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_21.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_22.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_23.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_24.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_25.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_26.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_27.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_28.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_29.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_30.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_31.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_32.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_33.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_34.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_35.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_36.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_37.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb03_38.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1139020560 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_01.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_02.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_03.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_04.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_05.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_06.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_07.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_08.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_09.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_10.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_11.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_12.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_13.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_14.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_15.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_16.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_17.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_18.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_19.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_21.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_22.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_23.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_24.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_25.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_26.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_27.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_28.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_29.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_30.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_31.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_32.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_33.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_34.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_35.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_36.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_37.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_38.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_39.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_40.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_41.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_42.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb04_43.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 833000400 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_01.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_02.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_03.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_04.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_05.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_06.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_07.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_08.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_09.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_10.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_11.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_12.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_13.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_14.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_15.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_16.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_17.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_18.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_19.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_20.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_21.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_22.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_23.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_24.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_25.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_26.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_27.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_28.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_29.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_30.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_31.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_32.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_33.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_34.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_35.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_36.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_37.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_38.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb05_39.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1136425680 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_01.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_02.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_03.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_04.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_05.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_06.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_07.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_08.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_09.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_10.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_12.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_13.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_14.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_15.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_16.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_17.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_18.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb06_24.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1064543760 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_01.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_02.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_03.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_04.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_05.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_06.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_07.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_08.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_09.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_10.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_11.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_12.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_13.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_14.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_15.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_16.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_17.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_18.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb07_19.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1063721520 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_02.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_03.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_04.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_05.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_10.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_11.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_12.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_13.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_14.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_15.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_16.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_17.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_18.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_19.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_20.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_21.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_22.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_23.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_24.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb08_29.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_01.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_02.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_03.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_04.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_05.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_06.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_07.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_08.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_09.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_10.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_11.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_12.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_13.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_14.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_15.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_16.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_17.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_18.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb09_19.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1185664320 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_01.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_02.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_03.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_04.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_05.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_06.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_07.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_08.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_12.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_13.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_14.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_15.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_16.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_17.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_18.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_19.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_20.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_21.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_22.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_27.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_28.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_30.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_31.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_38.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+chb10_89.edf: subject-level cache build failed (std::bad_alloc: CUDA error (failed to allocate 1231927200 bytes) at: /tmp/pip-build-env-jynth0j7/normal/lib/python3.12/site-packages/librmm/include/rmm/mr/cuda_memory_resource.hpp:51: cudaErrorDevicesUnavailable CUDA-capable device(s) is/are busy or unavailable)
+
+Run ID: chb01-chb02-chb03+7_svm_solve_chain_qubo_exact_7ca0bc108e

@@ -19,6 +19,12 @@ from datetime import datetime
 from sklearn.metrics import f1_score, precision_score, recall_score
 import gradio as gr
 
+
+def _is_retryable_skip(message):
+    """Return whether a saved skip came from a transient runtime failure."""
+    return ": subject-level cache build failed (" in message
+
+
 def run_experiment(
     selected_subjects,
     baseline,
@@ -104,10 +110,21 @@ def run_experiment(
         if ckpt is not None:
             rows = ckpt.get("rows", [])
             detail_cache = ckpt.get("detail_cache", {})
-            skipped = ckpt.get("skipped", [])
+            saved_skipped = ckpt.get("skipped", [])
+            retryable_skipped = [
+                item for item in saved_skipped if _is_retryable_skip(item)
+            ]
+            skipped = [
+                item for item in saved_skipped if not _is_retryable_skip(item)
+            ]
             done_files = {r["file"] for r in rows} | {
                 s.split(":")[0].strip() for s in skipped if ":" in s
             }
+            if retryable_skipped:
+                log_step(
+                    f"[Run] retrying {len(retryable_skipped)} files skipped by "
+                    "transient subject-level cache failures"
+                )
             log_step(f"[Run] resumed, already done/skipped={len(done_files)}")
 
     # --- Collect files ---

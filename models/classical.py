@@ -36,18 +36,39 @@ def _svm_backend():
         return CuMLSVC, CuMLStandardScaler, "cuda (cuML)"
     return SklearnSVC, SklearnStandardScaler, "cpu (scikit-learn)"
 
-def predict_svm(x_train, y_train, x_test):
-    svc_class, scaler_class, device = _svm_backend()
-    log_step(f"[SVM] device={device}")
+
+def _predict_svm_with_backend(
+    svc_class, scaler_class, x_train, y_train, x_test,
+):
     scaler = scaler_class()
     x_train_scaled = scaler.fit_transform(x_train)
     x_test_scaled = scaler.transform(x_test)
     clf = svc_class(
         probability=True, kernel="rbf",
-        class_weight="balanced", random_state=RANDOM_SEED,
+        class_weight="balanced", random_state=RANDOM_SEED, cache_size=512,
     )
     clf.fit(x_train_scaled, y_train)
     return np.asarray(clf.predict_proba(x_test_scaled))[:, 1]
+
+
+def predict_svm(x_train, y_train, x_test):
+    svc_class, scaler_class, device = _svm_backend()
+    log_step(f"[SVM] device={device}")
+    try:
+        return _predict_svm_with_backend(
+            svc_class, scaler_class, x_train, y_train, x_test,
+        )
+    except Exception as exc:
+        if device != "cuda (cuML)":
+            raise
+        log_step(
+            f"[SVM] cuML failed ({type(exc).__name__}: {exc}); "
+            "retrying on CPU"
+        )
+        return _predict_svm_with_backend(
+            SklearnSVC, SklearnStandardScaler, x_train, y_train, x_test,
+        )
+
 
 def predict_xgboost(x_train, y_train, x_test):
     if XGBClassifier is None:

@@ -34,6 +34,33 @@ class GpuPreferenceTests(unittest.TestCase):
         self.assertIs(scaler, classical.SklearnStandardScaler)
         self.assertEqual(device, "cpu (scikit-learn)")
 
+    def test_svm_retries_on_cpu_when_cuml_fails(self):
+        expected = np.array([0.8])
+
+        with (
+            patch.object(
+                classical,
+                "_svm_backend",
+                return_value=(object(), object(), "cuda (cuML)"),
+            ),
+            patch.object(
+                classical,
+                "_predict_svm_with_backend",
+                side_effect=[RuntimeError("CUDA unavailable"), expected],
+            ) as predict_backend,
+        ):
+            scores = classical.predict_svm(
+                np.array([[0.0], [1.0]]),
+                np.array([0, 1]),
+                np.array([[0.5]]),
+            )
+
+        self.assertEqual(predict_backend.call_count, 2)
+        self.assertIs(
+            predict_backend.call_args_list[1].args[0], classical.SklearnSVC
+        )
+        np.testing.assert_allclose(scores, expected)
+
     def test_xgboost_prefers_cuda(self):
         classifier = Mock()
         classifier.predict_proba.return_value = np.array([[0.25, 0.75]])
