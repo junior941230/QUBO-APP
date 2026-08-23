@@ -1,6 +1,22 @@
 {
-  "generated_at": "2026-07-21T08:48:30.383484+00:00",
+  "generated_at": "2026-08-02T10:01:11.487291+00:00",
   "nodes": {
+    "core_results_load_result_pkl": {
+      "code_fingerprint": "6663e102eadef17d8d486bf39ccfef13a008af795079855bd689396dc21e8538",
+      "label": "load_result_pkl()",
+      "last": "2026-07-21T08:52:39.310573+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-21T08:52:39.310573+00:00",
+          "outcome": "useful",
+          "q": "分析一下 results/qubo_run_20260721_155946.pkl"
+        }
+      ],
+      "score": 0.757025348,
+      "source_file": "core/results.py",
+      "status": "tentative",
+      "uses": 1
+    },
     "core_splits": {
       "code_fingerprint": "728082a9fa1510b471076d292f8a5b2dee56d16889b8aa0ec1f91cd2e0c798c6",
       "label": "splits.py",
@@ -12,24 +28,61 @@
           "q": "將專案改成 patient-independent evaluation"
         }
       ],
-      "score": 0.998087132,
+      "score": 0.755526963,
       "source_file": "core/splits.py",
       "status": "tentative",
       "uses": 1
     },
     "pipeline_runner_experiment_run_experiment": {
-      "code_fingerprint": "f4e2e6795482b5e51c68417724c0277e3e48d98cc8ad8405f604f35601287ac2",
+      "code_fingerprint": "7b73f9473f0a9880f4c1989472dbe3c76600f096a4dbc8fac173a447fc639223",
       "label": "run_experiment()",
-      "last": "2026-07-21T06:49:10.429713+00:00",
+      "last": "2026-07-21T08:52:39.310573+00:00",
       "provenance": [
+        {
+          "date": "2026-07-21T08:52:39.310573+00:00",
+          "outcome": "useful",
+          "q": "分析一下 results/qubo_run_20260721_155946.pkl"
+        },
         {
           "date": "2026-07-21T06:49:10.429713+00:00",
           "outcome": "useful",
           "q": "將專案改成 patient-independent evaluation"
         }
       ],
-      "score": 0.998087132,
+      "score": 1.51255231,
       "source_file": "pipeline_runner/experiment.py",
+      "status": "preferred",
+      "uses": 2
+    },
+    "pipeline_solve_chain_qubo_exact": {
+      "code_fingerprint": "5c6ef3f7d96317588cdaf688736447ee853e7aaa780f4b91f07e46a814e53d14",
+      "label": "solve_chain_qubo_exact()",
+      "last": "2026-07-21T08:52:39.310573+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-21T08:52:39.310573+00:00",
+          "outcome": "useful",
+          "q": "分析一下 results/qubo_run_20260721_155946.pkl"
+        }
+      ],
+      "score": 0.757025348,
+      "source_file": "pipeline.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "qubo_tuning_tune_qubo_params_from_cache": {
+      "code_fingerprint": "455accec8c759e177334881cdae64ac9ca089c463bc1c8749e150ba07eb7d64f",
+      "label": "tune_qubo_params_from_cache()",
+      "last": "2026-07-21T08:52:39.310573+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-21T08:52:39.310573+00:00",
+          "outcome": "useful",
+          "q": "分析一下 results/qubo_run_20260721_155946.pkl"
+        }
+      ],
+      "score": 0.757025348,
+      "source_file": "qubo/tuning.py",
       "status": "tentative",
       "uses": 1
     },
@@ -44,7 +97,7 @@
           "q": "將專案改成 patient-independent evaluation"
         }
       ],
-      "score": 0.998087132,
+      "score": 0.755526963,
       "source_file": "qubo/validation_cache.py",
       "status": "tentative",
       "uses": 1
@@ -60,8 +113,24 @@
           "q": "將專案改成 patient-independent evaluation"
         }
       ],
-      "score": 0.998087132,
+      "score": 0.755526963,
       "source_file": "ui/training_tab.py",
+      "status": "tentative",
+      "uses": 1
+    },
+    "viz_plots_build_summary_plot": {
+      "code_fingerprint": "f71780c1d7463d8c7de2a759e69be770d54a2e827521b5aad4a6aac6f93f7dfd",
+      "label": "build_summary_plot()",
+      "last": "2026-07-21T08:52:39.310573+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-21T08:52:39.310573+00:00",
+          "outcome": "useful",
+          "q": "分析一下 results/qubo_run_20260721_155946.pkl"
+        }
+      ],
+      "score": 0.757025348,
+      "source_file": "viz/plots.py",
       "status": "tentative",
       "uses": 1
     }
