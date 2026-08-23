@@ -6,10 +6,16 @@ def build_summary_plot(df):
     nonseizure_df = df[~df["has_seizure"]]
 
     fig, axes = plt.subplots(1, 3, figsize=(16, 4))
-    
+
     if len(seizure_df) > 0:
+        labels = ["Baseline", "QUBO"]
         means_f1 = [seizure_df["baseline_f1"].mean(), seizure_df["qubo_f1"].mean()]
-        axes[0].bar(["Baseline", "QUBO"], means_f1, color=["#5B8FF9", "#5AD8A6"])
+        colors = ["#5B8FF9", "#5AD8A6"]
+        if "baseline_fixed_f1" in seizure_df:
+            labels.insert(0, "Baseline@0.5")
+            means_f1.insert(0, seizure_df["baseline_fixed_f1"].mean())
+            colors.insert(0, "#9AA5B1")
+        axes[0].bar(labels, means_f1, color=colors)
         axes[0].set_ylim(0, 1)
         axes[0].set_title(f"Mean F1 on Seizure Files (n={len(seizure_df)})")
         axes[0].set_ylabel("F1")
@@ -53,6 +59,7 @@ def build_summary_plot(df):
 def build_detail_plot(detail, baseline, solver_name):
     y_true = detail["y_true"]
     y_baseline = detail["y_baseline"]
+    y_baseline_fixed = detail.get("y_baseline_fixed")
     y_qubo = detail["y_qubo"]
     scores = detail["scores"]
     timeline = np.arange(len(y_true))
@@ -60,6 +67,11 @@ def build_detail_plot(detail, baseline, solver_name):
     fig, ax = plt.subplots(figsize=(13, 4))
     ax.step(timeline, y_true, where="post", label="Ground Truth", linewidth=2)
     ax.plot(timeline, scores, label="Baseline Probability", alpha=0.55)
+    if y_baseline_fixed is not None and not np.array_equal(y_baseline_fixed, y_baseline):
+        ax.step(
+            timeline, y_baseline_fixed, where="post",
+            label=f"{baseline.upper()} @ 0.5", alpha=0.55,
+        )
     ax.step(timeline, y_baseline, where="post", label=f"{baseline.upper()} Binary")
     ax.step(timeline, y_qubo, where="post", label=solver_name)
 

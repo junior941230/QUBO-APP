@@ -1,481 +1,513 @@
-from config import *
-from core.logging_utils import log_step, parse_float_list
-from core.io import collect_files_and_seizures
-from core.channels import validate_edf_channels
-from core.splits import leave_one_subject_out_splits
-from core.checkpoint import make_run_id, load_checkpoint, save_checkpoint, clear_checkpoint
-from core.results import save_results_pkl
-from models.registry import predict_scores
-from qubo.solvers import get_qubo_solver, safe_solver_call
-from qubo.validation_cache import build_validation_score_cache
-from qubo.tuning import tune_qubo_params_from_cache
-from viz.plots import build_summary_plot, build_detail_plot
-from pipeline import processAllFiles  # 你的 EDF 前處理
+"""Patient-independent experiment orchestration.
+
+The engine accepts one typed request and has no dependency on Gradio or the CLI.
+"""
+
+from dataclasses import asdict
+from datetime import datetime
 import os
 import time
+
 import numpy as np
 import pandas as pd
-from datetime import datetime
-from sklearn.metrics import f1_score, precision_score, recall_score
-import gradio as gr
+from sklearn.metrics import (
+    average_precision_score,
+    f1_score,
+    precision_score,
+    recall_score,
+)
+
+from config import BASELINE_THRESHOLD, RUN_SCHEMA_VERSION
+from core.channels import validate_edf_channels
+from core.checkpoint import (
+    clear_checkpoint,
+    load_checkpoint,
+    make_run_id,
+    save_checkpoint,
+)
+from core.io import collect_files_and_seizures
+from core.logging_utils import log_step
+from core.options import ExperimentRequest
+from core.results import save_results_pkl
+from core.splits import leave_one_subject_out_splits
+from models.registry import predict_scores
+from models.selection import tune_baseline_threshold_from_cache
+from models.training_data import prepare_training_data
+from pipeline import process_all_files
+from qubo.solvers import get_qubo_solver, safe_solver_call
+from qubo.tuning import tune_qubo_params_from_cache
+from qubo.validation_cache import build_validation_score_cache
+from viz.plots import build_detail_plot, build_summary_plot
 
 
 def _is_retryable_skip(message):
-    """Return whether a saved skip came from a transient runtime failure."""
     return ": subject-level cache build failed (" in message
 
 
-def run_experiment(
-    selected_subjects,
-    baseline,
-    solver_name,
-    tune_mode,
-    tune_n_splits,
-    max_files_per_subject,
-    n_jobs,
-    lambda_text,
-    threshold_text,
-    reuse_global_cache,
-    save_pkl,
-    resume_enabled,
-    lstm_hidden,
-    lstm_layers,
-    lstm_epochs,
-    lstm_lr,
-    lstm_batch,
-    lstm_dropout,
-    force_restart,
-    progress=gr.Progress(),
-):
-    if not selected_subjects:
-        return "Please select at least one subject", pd.DataFrame(), None, None, "", ""
+def _empty_result(message, run_id=""):
+    return message, pd.DataFrame(), None, None, "", run_id
 
-    selected_subjects = list(dict.fromkeys(selected_subjects))
-    if len(selected_subjects) < 3:
-        return (
-            "Patient-independent nested evaluation needs at least 3 subjects "
-            "(one outer test subject and at least two inner train/validation subjects)",
-            pd.DataFrame(), None, None, "", "",
-        )
 
-    n_jobs = int(n_jobs)
-    if n_jobs == 0:
-        n_jobs = 1
-    tune_n_splits = int(tune_n_splits)
-    tune_mode = {"lofo": "loso", "nfold": "group_nfold"}.get(
-        tune_mode, tune_mode
-    )
-    max_files_per_subject = int(max_files_per_subject)
-    lambda_list = parse_float_list(lambda_text, DEFAULT_LAMBDA_LIST)
-    threshold_list = parse_float_list(threshold_text, DEFAULT_THRESHOLD_LIST)
-    lstm_params = {
-        "hidden_dim": int(lstm_hidden),
-        "num_layers": int(lstm_layers),
-        "dropout": float(lstm_dropout),
-        "epochs": int(lstm_epochs),
-        "lr": float(lstm_lr),
-        "batch_size": int(lstm_batch),
-    }
-    config = {
-        "run_schema_version": RUN_SCHEMA_VERSION,
-        "evaluation_protocol": "nested_leave_one_subject_out",
-        "subjects": list(selected_subjects),
-        "baseline": baseline,
-        "solver_name": solver_name,
-        "tune_mode": tune_mode,
-        "tune_n_splits": tune_n_splits,
-        "max_files_per_subject": max_files_per_subject,
-        "lambda_list": lambda_list,
-        "threshold_list": threshold_list,
-        "reuse_global_cache": reuse_global_cache,
-        "random_seed": RANDOM_SEED,
-        "lstm_params": lstm_params if baseline == "lstm" else None,
-    }
-    run_id = make_run_id(config)
-    log_step(f"[Run] run_id={run_id}")
+def _report(progress, value, description):
+    if progress is not None:
+        progress(value, desc=description)
 
-    run_start = time.perf_counter()
 
-    # --- Resume ---
-    rows = []
-    detail_cache = {}
-    skipped = []
-    done_files = set()
-
-    if force_restart:
-        clear_checkpoint(run_id)
-
-    if resume_enabled and not force_restart:
-        ckpt = load_checkpoint(run_id, expected_config=config)
-        if ckpt is not None:
-            rows = ckpt.get("rows", [])
-            detail_cache = ckpt.get("detail_cache", {})
-            saved_skipped = ckpt.get("skipped", [])
-            retryable_skipped = [
-                item for item in saved_skipped if _is_retryable_skip(item)
-            ]
-            skipped = [
-                item for item in saved_skipped if not _is_retryable_skip(item)
-            ]
-            done_files = {r["file"] for r in rows} | {
-                s.split(":")[0].strip() for s in skipped if ":" in s
-            }
-            if retryable_skipped:
-                log_step(
-                    f"[Run] retrying {len(retryable_skipped)} files skipped by "
-                    "transient subject-level cache failures"
-                )
-            log_step(f"[Run] resumed, already done/skipped={len(done_files)}")
-
-    # --- Collect files ---
-    progress(0.02, desc="Collecting files")
-    file_paths, seizure_times, notes = collect_files_and_seizures(
-        selected_subjects, max_files_per_subject
-    )
-    log_step(f"[Run] files={len(file_paths)}")
-
-    if len(file_paths) < 2:
-        return ("Need at least 2 EDF files", pd.DataFrame(), None, None, "", run_id)
-
-    # --- Channel preflight ---
-    # Read headers only, so incompatible recordings are rejected before the
-    # expensive parallel preprocessing stage starts.
-    progress(0.05, desc="Validating EDF channels")
-    file_paths, channel_failures = validate_edf_channels(file_paths)
-    for path, reason in channel_failures.items():
-        note = f"Excluded {os.path.basename(path)}: channel preflight failed ({reason})"
-        notes.append(note)
-        log_step(f"[Channel-Preflight] {note}")
-    log_step(
-        f"[Channel-Preflight] compatible={len(file_paths)}, "
-        f"excluded={len(channel_failures)}"
-    )
-
-    if len(file_paths) < 2:
-        message = "Need at least 2 channel-compatible EDF files"
-        if notes:
-            message += "\n\n" + "\n".join(f"- {note}" for note in notes)
-        return (message, pd.DataFrame(), None, None, "", run_id)
-
-    # --- Preprocess ---
-    progress(0.10, desc="Preprocessing EDF files")
-    t0 = time.perf_counter()
-    features, labels = processAllFiles(file_paths, seizure_times, nJobs=n_jobs)
-    log_step(f"[Run] preprocess done, elapsed={time.perf_counter() - t0:.2f}s")
-
-    test_files = [os.path.basename(path) for path in file_paths]
-    if len(test_files) != len(set(test_files)):
-        return (
-            "EDF basenames must be unique so features can be assigned to subjects",
-            pd.DataFrame(), None, None, "", run_id,
-        )
-    file_to_subject = {
+def _file_to_subject(file_paths):
+    return {
         os.path.basename(path): os.path.basename(os.path.dirname(os.path.normpath(path)))
         for path in file_paths
     }
-    missing = [f for f in test_files if f not in features or f not in labels]
-    if missing:
-        test_files = [f for f in test_files if f not in missing]
-        notes.append(f"Dropped {len(missing)} files with missing features")
 
-    effective_subjects = sorted({file_to_subject[name] for name in test_files})
-    if len(effective_subjects) < 3:
-        return (
-            "Need at least 3 subjects with usable EDF files after preprocessing "
-            "for nested patient-independent evaluation",
-            pd.DataFrame(), None, None, "", run_id,
+
+def _metric_row(
+    subject,
+    file_name,
+    y_true,
+    scores,
+    y_fixed,
+    y_baseline,
+    y_qubo,
+    baseline_threshold,
+    qubo_lambda,
+    qubo_threshold,
+    qubo_val_score,
+    train_subject_count,
+):
+    baseline_f1 = f1_score(y_true, y_baseline, zero_division=0)
+    qubo_f1 = f1_score(y_true, y_qubo, zero_division=0)
+    return {
+        "subject": subject,
+        "file": file_name,
+        "has_seizure": bool(y_true.sum()),
+        "baseline_fixed_f1": f1_score(y_true, y_fixed, zero_division=0),
+        "baseline_f1": baseline_f1,
+        "qubo_f1": qubo_f1,
+        "improvement": qubo_f1 - baseline_f1,
+        "baseline_threshold": float(baseline_threshold),
+        "best_lambda": float(qubo_lambda),
+        "best_threshold": float(qubo_threshold),
+        "val_score": float(qubo_val_score),
+        "baseline_average_precision": (
+            average_precision_score(y_true, scores) if y_true.any() else 0.0
+        ),
+        "baseline_precision": precision_score(y_true, y_baseline, zero_division=0),
+        "qubo_precision": precision_score(y_true, y_qubo, zero_division=0),
+        "baseline_recall": recall_score(y_true, y_baseline, zero_division=0),
+        "qubo_recall": recall_score(y_true, y_qubo, zero_division=0),
+        "baseline_fp_rate": float(np.mean(y_baseline)),
+        "qubo_fp_rate": float(np.mean(y_qubo)),
+        "epochs": int(len(y_true)),
+        "seizure_epochs": int(y_true.sum()),
+        "train_subject_count": int(train_subject_count),
+    }
+
+
+def _save_progress(run_id, rows, detail_cache, skipped, config):
+    save_checkpoint(run_id, rows, detail_cache, skipped, config)
+
+
+def _attach_patient_metrics(result_df, detail_cache):
+    """Attach held-out-patient aggregates without changing per-file rows."""
+    patient_metrics = []
+    for subject, subject_rows in result_df.groupby("subject"):
+        details = [detail_cache[name] for name in subject_rows["file"]]
+        y_true = np.concatenate([item["y_true"] for item in details])
+        scores = np.concatenate([item["scores"] for item in details])
+        seizure_rows = subject_rows[subject_rows["has_seizure"]]
+        normal_rows = subject_rows[~subject_rows["has_seizure"]]
+        metrics = {
+            "subject": subject,
+            "patient_average_precision": (
+                average_precision_score(y_true, scores) if y_true.any() else 0.0
+            ),
+            "patient_seizure_macro_baseline_f1": (
+                float(seizure_rows["baseline_f1"].mean())
+                if len(seizure_rows) else 0.0
+            ),
+            "patient_seizure_macro_qubo_f1": (
+                float(seizure_rows["qubo_f1"].mean())
+                if len(seizure_rows) else 0.0
+            ),
+            "patient_nonseizure_baseline_fp_rate": (
+                float(normal_rows["baseline_fp_rate"].mean())
+                if len(normal_rows) else 0.0
+            ),
+            "patient_nonseizure_qubo_fp_rate": (
+                float(normal_rows["qubo_fp_rate"].mean())
+                if len(normal_rows) else 0.0
+            ),
+        }
+        patient_metrics.append(metrics)
+        mask = result_df["subject"] == subject
+        for key, value in metrics.items():
+            if key != "subject":
+                result_df.loc[mask, key] = value
+    return result_df, patient_metrics
+
+
+def _build_subject_cache(request, train_files, features, labels, file_to_subject):
+    subject_count = len({file_to_subject[name] for name in train_files})
+    return build_validation_score_cache(
+        train_files,
+        features,
+        labels,
+        request.baseline,
+        tune_mode=request.tune_mode,
+        n_splits=min(request.tune_n_splits, subject_count),
+        lstm_params=request.lstm.as_dict(),
+        file_to_subject=file_to_subject,
+        random_seed=request.random_seed,
+        options=request.options,
+    )
+
+
+def _summary_text(request, run_id, result_df, notes, skipped):
+    seizure = result_df[result_df["has_seizure"]]
+    nonseizure = result_df[~result_df["has_seizure"]]
+    lines = [
+        f"Run ID: {run_id}",
+        "Evaluation: patient-independent nested leave-one-subject-out",
+        f"Finished {len(result_df)} files "
+        f"(seizure={len(seizure)}, non-seizure={len(nonseizure)})",
+        f"Held-out subjects evaluated: {result_df['subject'].nunique()} "
+        f"({', '.join(sorted(result_df['subject'].unique()))})",
+        f"Baseline={request.baseline}, Solver={request.solver_name}, "
+        f"Patient-grouped tuning={request.tune_mode}",
+        "",
+        "[Seizure files]",
+    ]
+    if len(seizure):
+        patient_ap = result_df.groupby("subject")["patient_average_precision"].first()
+        lines.extend([
+            f"  Mean fixed-threshold baseline F1 = {seizure['baseline_fixed_f1'].mean():.4f}",
+            f"  Mean selected baseline F1        = {seizure['baseline_f1'].mean():.4f}",
+            f"  Mean held-out-patient PR-AUC     = {patient_ap.mean():.4f}",
+            f"  Mean QUBO F1                     = {seizure['qubo_f1'].mean():.4f}",
+            f"  Mean Δ F1                        = {seizure['improvement'].mean():.4f}",
+        ])
+    else:
+        lines.append("  (none)")
+    lines.extend(["", "[Non-seizure files]"])
+    if len(nonseizure):
+        lines.extend([
+            f"  Mean baseline FP rate = {nonseizure['baseline_fp_rate'].mean():.4f}",
+            f"  Mean QUBO FP rate     = {nonseizure['qubo_fp_rate'].mean():.4f}",
+        ])
+    else:
+        lines.append("  (none)")
+    if notes:
+        lines.extend(["", "Notes:", *(f"- {note}" for note in notes)])
+    if skipped:
+        lines.extend(["", "Skipped:", *(f"- {item}" for item in skipped[:10])])
+        if len(skipped) > 10:
+            lines.append(f"- ... and {len(skipped) - 10} more")
+    return "\n".join(lines)
+
+
+def run_experiment(request, progress=None):
+    """Run a complete nested patient-independent evaluation."""
+    if not isinstance(request, ExperimentRequest):
+        raise TypeError("run_experiment expects an ExperimentRequest")
+    if not request.selected_subjects:
+        return _empty_result("Please select at least one subject")
+    if len(request.selected_subjects) < 3:
+        return _empty_result(
+            "Patient-independent nested evaluation needs at least 3 subjects "
+            "(one outer test subject and at least two inner train/validation subjects)"
         )
 
-    solver = get_qubo_solver(solver_name)
+    config = request.semantic_config()
+    run_id = make_run_id(config)
+    log_step(f"[Run] run_id={run_id}")
+    run_start = time.perf_counter()
+    rows, detail_cache, skipped, done_files = [], {}, [], set()
+    if request.force_restart:
+        clear_checkpoint(run_id)
+    if request.resume_enabled and not request.force_restart:
+        checkpoint = load_checkpoint(run_id, expected_config=config)
+        if checkpoint is not None:
+            rows = checkpoint.get("rows", [])
+            detail_cache = checkpoint.get("detail_cache", {})
+            saved_skips = checkpoint.get("skipped", [])
+            skipped = [item for item in saved_skips if not _is_retryable_skip(item)]
+            done_files = {row["file"] for row in rows} | {
+                item.split(":")[0].strip() for item in skipped if ":" in item
+            }
+            log_step(f"[Run] resumed, already done/skipped={len(done_files)}")
 
+    _report(progress, 0.02, "Collecting files")
+    file_paths, seizure_times, notes = collect_files_and_seizures(
+        request.selected_subjects, request.max_files_per_subject
+    )
+    if len(file_paths) < 2:
+        return _empty_result("Need at least 2 EDF files", run_id)
+
+    _report(progress, 0.05, "Validating EDF channels")
+    file_paths, channel_failures = validate_edf_channels(file_paths)
+    for path, reason in channel_failures.items():
+        notes.append(
+            f"Excluded {os.path.basename(path)}: channel preflight failed ({reason})"
+        )
+    if len(file_paths) < 2:
+        return _empty_result(
+            "Need at least 2 channel-compatible EDF files\n\n"
+            + "\n".join(f"- {note}" for note in notes),
+            run_id,
+        )
+
+    _report(progress, 0.10, "Preprocessing EDF files")
+    features, labels = process_all_files(
+        file_paths,
+        seizure_times,
+        n_jobs=request.n_jobs,
+        options=request.options,
+    )
+    test_files = [os.path.basename(path) for path in file_paths]
+    if len(test_files) != len(set(test_files)):
+        return _empty_result("EDF basenames must be unique", run_id)
+    file_to_subject = _file_to_subject(file_paths)
+    missing = [name for name in test_files if name not in features or name not in labels]
+    if missing:
+        test_files = [name for name in test_files if name not in missing]
+        notes.append(f"Dropped {len(missing)} files with missing features")
+    if len({file_to_subject[name] for name in test_files}) < 3:
+        return _empty_result(
+            "Need at least 3 subjects with usable EDF files after preprocessing", run_id
+        )
+
+    solver = get_qubo_solver(request.solver_name)
     outer_splits = leave_one_subject_out_splits(test_files, file_to_subject)
-
-    # --- Leak-free outer validation caches ---
-    # Each cache belongs to one held-out subject. Inner folds are grouped by
-    # subject as well, so no patient's EDFs can cross any split boundary.
-    outer_validation_caches = {}
-    outer_cache_errors = {}
-    if reuse_global_cache:
-        cache_targets = [
+    validation_caches, cache_errors = {}, {}
+    if request.reuse_validation_cache:
+        targets = [
             subject for subject, split in outer_splits.items()
             if any(name not in done_files for name in split["test_files"])
         ]
-        for cache_idx, test_subject in enumerate(cache_targets, start=1):
-            train_files = outer_splits[test_subject]["train_files"]
-            train_subject_count = len({file_to_subject[name] for name in train_files})
-            progress(
-                0.10 + 0.05 * (cache_idx / max(1, len(cache_targets))),
-                desc=f"Building grouped cache for held-out {test_subject}",
+        for index, subject in enumerate(targets, start=1):
+            _report(
+                progress,
+                0.10 + 0.05 * index / max(1, len(targets)),
+                f"Building grouped cache for held-out {subject}",
             )
             try:
-                outer_validation_caches[test_subject] = (
-                    build_validation_score_cache(
-                        train_files, features, labels, baseline,
-                        tune_mode=tune_mode,
-                        n_splits=min(tune_n_splits, train_subject_count),
-                        lstm_params=lstm_params,
-                        file_to_subject=file_to_subject,
-                        random_seed=RANDOM_SEED,
-                    )
+                validation_caches[subject] = _build_subject_cache(
+                    request,
+                    outer_splits[subject]["train_files"],
+                    features,
+                    labels,
+                    file_to_subject,
                 )
             except Exception as exc:
-                outer_cache_errors[test_subject] = str(exc)
-                log_step(
-                    f"[Run] validation cache failed for held-out subject "
-                    f"{test_subject}: {exc}"
-                )
+                cache_errors[subject] = str(exc)
+                log_step(f"[Run] validation cache failed for {subject}: {exc}")
 
-    # --- Outer leave-one-subject-out loop ---
-    loop_total = max(1, len(outer_splits))
-    for subject_idx, (test_subject, split) in enumerate(outer_splits.items(), start=1):
+    for subject_index, (test_subject, split) in enumerate(outer_splits.items(), start=1):
         train_files = split["train_files"]
-        subject_test_files = split["test_files"]
-        pending_test_files = [
-            name for name in subject_test_files if name not in done_files
+        pending_files = [
+            name for name in split["test_files"] if name not in done_files
         ]
-        progress(
-            0.15 + 0.8 * (subject_idx / loop_total),
-            desc=f"Evaluating held-out subject {test_subject}",
-        )
-        if not pending_test_files:
-            log_step(f"[Subject] skip (already done): {test_subject}")
+        if not pending_files:
             continue
-
+        _report(
+            progress,
+            0.15 + 0.8 * subject_index / max(1, len(outer_splits)),
+            f"Evaluating held-out subject {test_subject}",
+        )
         try:
-            if reuse_global_cache:
-                if test_subject in outer_cache_errors:
-                    raise RuntimeError(outer_cache_errors[test_subject])
-                score_cache = outer_validation_caches.get(test_subject, {})
+            if request.reuse_validation_cache:
+                if test_subject in cache_errors:
+                    raise RuntimeError(cache_errors[test_subject])
+                score_cache = validation_caches.get(test_subject, {})
             else:
-                train_subject_count = len({file_to_subject[name] for name in train_files})
-                score_cache = build_validation_score_cache(
-                    train_files, features, labels, baseline,
-                    tune_mode=tune_mode,
-                    n_splits=min(tune_n_splits, train_subject_count),
-                    lstm_params=lstm_params,
-                    file_to_subject=file_to_subject,
-                    random_seed=RANDOM_SEED,
+                score_cache = _build_subject_cache(
+                    request, train_files, features, labels, file_to_subject
                 )
         except Exception as exc:
             skipped.extend(
                 f"{name}: subject-level cache build failed ({exc})"
-                for name in pending_test_files
+                for name in pending_files
             )
-            save_checkpoint(run_id, rows, detail_cache, skipped, config)
+            _save_progress(run_id, rows, detail_cache, skipped, config)
             continue
-
         if not score_cache:
             skipped.extend(
-                f"{name}: empty subject-level score cache"
-                for name in pending_test_files
+                f"{name}: empty subject-level score cache" for name in pending_files
             )
-            save_checkpoint(run_id, rows, detail_cache, skipped, config)
+            _save_progress(run_id, rows, detail_cache, skipped, config)
             continue
 
         try:
-            best_lambda, best_threshold, best_val_score = tune_qubo_params_from_cache(
-                score_cache, solver, lambda_list, threshold_list,
-                alpha=TUNE_ALPHA, random_seed=RANDOM_SEED,
+            qubo_lambda, qubo_threshold, qubo_val_score = (
+                tune_qubo_params_from_cache(
+                    score_cache,
+                    solver,
+                    request.lambda_values,
+                    request.qubo_threshold_values,
+                    alpha=request.tune_alpha,
+                    random_seed=request.random_seed,
+                )
             )
+            baseline_selection = None
+            baseline_threshold = BASELINE_THRESHOLD
+            if request.options.tune_baseline_threshold:
+                baseline_selection = tune_baseline_threshold_from_cache(
+                    score_cache,
+                    request.options.baseline_threshold_grid,
+                    alpha=request.tune_alpha,
+                )
+                baseline_threshold = baseline_selection["threshold"]
         except Exception as exc:
             skipped.extend(
-                f"{name}: subject-level QUBO tuning failed ({exc})"
-                for name in pending_test_files
+                f"{name}: subject-level tuning failed ({exc})"
+                for name in pending_files
             )
-            save_checkpoint(run_id, rows, detail_cache, skipped, config)
+            _save_progress(run_id, rows, detail_cache, skipped, config)
             continue
 
-        x_train = np.concatenate([features[f] for f in train_files])
-        y_train = np.concatenate([labels[f] for f in train_files]).astype(int)
-
-        if len(np.unique(y_train)) < 2:
+        if request.baseline == "lstm":
+            train_features = np.empty((0, 0))
+            train_labels = np.concatenate([labels[name] for name in train_files])
+            train_sample_weight = None
+        else:
+            training = prepare_training_data(
+                train_files,
+                features,
+                labels,
+                request.options,
+                request.random_seed,
+                file_to_subject=file_to_subject,
+            )
+            train_features = training.features
+            train_labels = training.labels
+            train_sample_weight = training.sample_weight
+        if len(np.unique(train_labels)) < 2:
             skipped.extend(
-                f"{name}: single class in training labels"
-                for name in pending_test_files
+                f"{name}: single class in training labels" for name in pending_files
             )
-            save_checkpoint(run_id, rows, detail_cache, skipped, config)
+            _save_progress(run_id, rows, detail_cache, skipped, config)
             continue
-
         train_subjects = sorted({file_to_subject[name] for name in train_files})
         if test_subject in train_subjects:
             raise AssertionError(f"Patient leakage detected for {test_subject}")
-        log_step(
-            f"[Subject] {subject_idx}/{len(outer_splits)} test={test_subject} "
-            f"train_subjects={len(train_subjects)} "
-            f"test_files={len(subject_test_files)}"
-        )
 
-        for test_file in pending_test_files:
+        for test_file in pending_files:
             file_start = time.perf_counter()
-            x_test = features[test_file]
-            y_test = np.asarray(labels[test_file]).astype(int)
-
+            y_true = np.asarray(labels[test_file]).astype(int)
             try:
                 scores = np.asarray(predict_scores(
-                    baseline, x_train, y_train, x_test,
-                    train_files=train_files, test_file=test_file,
-                    features=features, labels=labels,
-                    lstm_params=lstm_params,
-                    random_seed=RANDOM_SEED,
+                    request.baseline,
+                    train_features,
+                    train_labels,
+                    features[test_file],
+                    options=request.options,
+                    sample_weight=train_sample_weight,
+                    train_files=train_files,
+                    test_file=test_file,
+                    features=features,
+                    labels=labels,
+                    lstm_params=request.lstm.as_dict(),
+                    random_seed=request.random_seed,
                 ))
-                y_baseline = (scores >= BASELINE_THRESHOLD).astype(int)
+                y_fixed = (scores >= BASELINE_THRESHOLD).astype(int)
+                y_baseline = (scores >= baseline_threshold).astype(int)
                 y_qubo = safe_solver_call(
-                    solver, scores, best_lambda, best_threshold, seed=RANDOM_SEED,
+                    solver,
+                    scores,
+                    qubo_lambda,
+                    qubo_threshold,
+                    seed=request.random_seed,
                 )
             except Exception as exc:
                 skipped.append(f"{test_file}: inference failed ({exc})")
-                save_checkpoint(run_id, rows, detail_cache, skipped, config)
+                _save_progress(run_id, rows, detail_cache, skipped, config)
                 continue
 
-            has_seizure = bool(y_test.sum() > 0)
-            baseline_f1 = f1_score(y_test, y_baseline, zero_division=0)
-            qubo_f1 = f1_score(y_test, y_qubo, zero_division=0)
-
-            rows.append({
-                "subject": test_subject,
-                "file": test_file,
-                "has_seizure": has_seizure,
-                "baseline_f1": baseline_f1,
-                "qubo_f1": qubo_f1,
-                "improvement": qubo_f1 - baseline_f1,
-                "best_lambda": best_lambda,
-                "best_threshold": best_threshold,
-                "val_score": best_val_score,
-                "baseline_precision": precision_score(y_test, y_baseline, zero_division=0),
-                "qubo_precision": precision_score(y_test, y_qubo, zero_division=0),
-                "baseline_recall": recall_score(y_test, y_baseline, zero_division=0),
-                "qubo_recall": recall_score(y_test, y_qubo, zero_division=0),
-                "baseline_fp_rate": float(np.mean(y_baseline)),
-                "qubo_fp_rate": float(np.mean(y_qubo)),
-                "epochs": int(len(y_test)),
-                "seizure_epochs": int(y_test.sum()),
-                "train_subject_count": len(train_subjects),
-            })
-
+            row = _metric_row(
+                test_subject,
+                test_file,
+                y_true,
+                scores,
+                y_fixed,
+                y_baseline,
+                y_qubo,
+                baseline_threshold,
+                qubo_lambda,
+                qubo_threshold,
+                qubo_val_score,
+                len(train_subjects),
+            )
+            rows.append(row)
             detail_cache[test_file] = {
                 "subject": test_subject,
                 "file_name": test_file,
-                "has_seizure": has_seizure,
-                "y_true": y_test,
+                "has_seizure": row["has_seizure"],
+                "y_true": y_true,
+                "y_baseline_fixed": y_fixed,
                 "y_baseline": y_baseline,
                 "y_qubo": y_qubo,
                 "scores": scores,
-                "best_lambda": best_lambda,
-                "best_threshold": best_threshold,
+                "baseline_threshold": baseline_threshold,
+                "baseline_selection": baseline_selection,
+                "best_lambda": qubo_lambda,
+                "best_threshold": qubo_threshold,
             }
-
-            save_checkpoint(run_id, rows, detail_cache, skipped, config)
+            _save_progress(run_id, rows, detail_cache, skipped, config)
             log_step(
-                f"[File] done {test_file}, held_out_subject={test_subject}, "
-                f"baseline_f1={baseline_f1:.4f}, qubo_f1={qubo_f1:.4f}, "
-                f"Δ={qubo_f1 - baseline_f1:.4f}, "
-                f"elapsed={time.perf_counter() - file_start:.2f}s"
+                f"[File] done {test_file}, baseline_f1={row['baseline_f1']:.4f}, "
+                f"qubo_f1={row['qubo_f1']:.4f}, elapsed={time.perf_counter() - file_start:.2f}s"
             )
 
-    # --- Aggregate ---
     if not rows:
-        note_text = "\n".join(notes + skipped) or "No valid result"
-        return (f"Run failed\n\n{note_text}",
-                pd.DataFrame(), None, None, "", run_id)
-
+        return _empty_result(
+            "Run failed\n\n" + ("\n".join(notes + skipped) or "No valid result"),
+            run_id,
+        )
     result_df = (
         pd.DataFrame(rows)
-        .sort_values(
-            ["subject", "has_seizure", "improvement"],
-            ascending=[True, False, False],
-        )
+        .sort_values(["subject", "has_seizure", "improvement"], ascending=[True, False, False])
         .reset_index(drop=True)
     )
-
+    result_df, patient_metrics = _attach_patient_metrics(result_df, detail_cache)
     seizure_df = result_df[result_df["has_seizure"]]
-    nonseizure_df = result_df[~result_df["has_seizure"]]
-    summary_fig = build_summary_plot(result_df)
-
-    if len(seizure_df) > 0:
-        top_file = seizure_df.sort_values("improvement", ascending=False).iloc[0]["file"]
-    else:
-        top_file = result_df.iloc[0]["file"]
-    detail_fig = build_detail_plot(detail_cache[top_file], baseline, solver_name)
-
-    progress(0.96, desc="Saving results")
-
+    top_file = (
+        seizure_df.sort_values("improvement", ascending=False).iloc[0]["file"]
+        if len(seizure_df)
+        else result_df.iloc[0]["file"]
+    )
+    summary_figure = build_summary_plot(result_df)
+    detail_figure = build_detail_plot(
+        detail_cache[top_file], request.baseline, request.solver_name
+    )
+    _report(progress, 0.96, "Saving results")
     meta = {
+        **config,
         "run_schema_version": RUN_SCHEMA_VERSION,
-        "evaluation_protocol": "nested_leave_one_subject_out",
         "timestamp": datetime.now().isoformat(),
         "run_id": run_id,
-        "subjects": list(selected_subjects),
-        "baseline": baseline,
-        "solver_name": solver_name,
-        "tune_mode": tune_mode,
-        "tune_n_splits": tune_n_splits,
-        "max_files_per_subject": max_files_per_subject,
-        "n_jobs": n_jobs,
-        "lambda_list": lambda_list,
-        "threshold_list": threshold_list,
-        "reuse_global_cache": reuse_global_cache,
-        "tune_alpha": TUNE_ALPHA,
-        "baseline_threshold": BASELINE_THRESHOLD,
-        "random_seed": RANDOM_SEED,
+        "n_jobs": request.n_jobs,
+        "reuse_validation_cache": request.reuse_validation_cache,
+        "baseline_fixed_threshold": BASELINE_THRESHOLD,
+        "options": asdict(request.options),
+        "patient_metrics": patient_metrics,
         "notes": notes,
         "skipped": skipped,
         "total_elapsed_sec": time.perf_counter() - run_start,
-        "lstm_params": lstm_params if baseline == "lstm" else None,
     }
-
     saved_path = ""
-    if save_pkl:
+    if request.save_pkl:
         try:
             saved_path = save_results_pkl(result_df, detail_cache, meta)
-            # 訓練完成後清理 checkpoint
             clear_checkpoint(run_id)
         except Exception as exc:
             saved_path = f"(save failed: {exc})"
-
-    progress(1.0, desc="Done")
-
-    summary_text = (
-        f"Run ID: {run_id}\n"
-        "Evaluation: patient-independent nested leave-one-subject-out\n"
-        f"Finished {len(result_df)} files "
-        f"(seizure={len(seizure_df)}, non-seizure={len(nonseizure_df)})\n"
-        f"Held-out subjects evaluated: {result_df['subject'].nunique()} "
-        f"({', '.join(sorted(result_df['subject'].unique()))})\n"
-        f"Baseline={baseline}, Solver={solver_name}, "
-        f"Patient-grouped tuning={tune_mode}, Nfold={tune_n_splits}\n"
+    _report(progress, 1.0, "Done")
+    log_step(f"[Run] done, evaluated={len(result_df)}")
+    return (
+        _summary_text(request, run_id, result_df, notes, skipped),
+        result_df,
+        summary_figure,
+        detail_figure,
+        saved_path,
+        run_id,
     )
-
-    summary_text += "\n[Seizure files]"
-    if len(seizure_df) > 0:
-        summary_text += (
-            f"\n  Mean baseline F1 = {seizure_df['baseline_f1'].mean():.4f}"
-            f"\n  Mean QUBO F1     = {seizure_df['qubo_f1'].mean():.4f}"
-            f"\n  Mean Δ F1        = {seizure_df['improvement'].mean():.4f}"
-        )
-    else:
-        summary_text += "\n  (none)"
-
-    summary_text += "\n\n[Non-seizure files]"
-    if len(nonseizure_df) > 0:
-        summary_text += (
-            f"\n  Mean baseline FP rate = {nonseizure_df['baseline_fp_rate'].mean():.4f}"
-            f"\n  Mean QUBO FP rate     = {nonseizure_df['qubo_fp_rate'].mean():.4f}"
-        )
-    else:
-        summary_text += "\n  (none)"
-
-    if notes or skipped:
-        summary_text += "\n\n"
-        if notes:
-            summary_text += "Notes:\n" + "\n".join(f"- {n}" for n in notes)
-        if skipped:
-            summary_text += "\nSkipped:\n" + "\n".join(f"- {s}" for s in skipped[:10])
-            if len(skipped) > 10:
-                summary_text += f"\n- ... and {len(skipped) - 10} more"
-
-    log_step(
-        f"[Run] done, evaluated={len(result_df)}, "
-        f"total={time.perf_counter() - run_start:.2f}s"
-    )
-
-    return summary_text, result_df, summary_fig, detail_fig, saved_path, run_id

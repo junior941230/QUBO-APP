@@ -26,9 +26,10 @@ def make_run_id(config):
     """Create a deterministic run id from experiment config."""
     raw = _config_signature(config).encode("utf-8")
     digest = hashlib.md5(raw).hexdigest()[:10]
-    subj_tag = "-".join(config["subjects"][:3])
-    if len(config["subjects"]) > 3:
-        subj_tag += f"+{len(config['subjects']) - 3}"
+    subjects = sorted(config["subjects"])
+    subj_tag = "-".join(subjects[:3])
+    if len(subjects) > 3:
+        subj_tag += f"+{len(subjects) - 3}"
     return f"{subj_tag}_{config['baseline']}_{config['solver_name']}_{digest}"
 
 

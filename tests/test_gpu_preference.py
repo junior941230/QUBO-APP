@@ -3,6 +3,7 @@ from unittest.mock import Mock, patch
 
 import numpy as np
 
+from core.options import ExperimentOptions
 from models import classical
 
 
@@ -61,6 +62,27 @@ class GpuPreferenceTests(unittest.TestCase):
         )
         np.testing.assert_allclose(scores, expected)
 
+    def test_svm_propagates_requested_random_seed(self):
+        with (
+            patch.object(
+                classical,
+                "_svm_backend",
+                return_value=(object(), object(), "cpu (scikit-learn)"),
+            ),
+            patch.object(
+                classical,
+                "_predict_svm_with_backend",
+                return_value=np.array([0.5]),
+            ) as predict_backend,
+        ):
+            classical.predict_svm(
+                np.array([[0.0], [1.0]]),
+                np.array([0, 1]),
+                np.array([[0.5]]),
+                random_seed=7,
+            )
+        self.assertEqual(predict_backend.call_args.args[-1], 7)
+
     def test_xgboost_prefers_cuda(self):
         classifier = Mock()
         classifier.predict_proba.return_value = np.array([[0.25, 0.75]])
@@ -96,6 +118,50 @@ class GpuPreferenceTests(unittest.TestCase):
             )
 
         self.assertEqual(factory.call_args.kwargs["device"], "cpu")
+
+    def test_xgboost_applies_enabled_imbalance_options_and_weights(self):
+        classifier = Mock()
+        classifier.predict_proba.return_value = np.array([[0.4, 0.6]])
+        factory = Mock(return_value=classifier)
+        weights = np.array([0.5, 1.5])
+        options = ExperimentOptions(
+            xgb_class_weight_enabled=True,
+            xgb_scale_pos_weight=25,
+            xgb_max_delta_step_enabled=True,
+            xgb_max_delta_step=1,
+        )
+        with (
+            patch.object(classical, "_cuda_available", return_value=False),
+            patch.object(classical, "XGBClassifier", factory),
+        ):
+            classical.predict_xgboost(
+                np.array([[0.0], [1.0]]),
+                np.array([0, 1]),
+                np.array([[0.5]]),
+                options=options,
+                sample_weight=weights,
+            )
+        self.assertEqual(factory.call_args.kwargs["scale_pos_weight"], 25)
+        self.assertEqual(factory.call_args.kwargs["max_delta_step"], 1)
+        np.testing.assert_array_equal(
+            classifier.fit.call_args.kwargs["sample_weight"], weights
+        )
+
+    def test_xgboost_uses_requested_random_seed(self):
+        classifier = Mock()
+        classifier.predict_proba.return_value = np.array([[0.4, 0.6]])
+        factory = Mock(return_value=classifier)
+        with (
+            patch.object(classical, "_cuda_available", return_value=False),
+            patch.object(classical, "XGBClassifier", factory),
+        ):
+            classical.predict_xgboost(
+                np.array([[0.0], [1.0]]),
+                np.array([0, 1]),
+                np.array([[0.5]]),
+                random_seed=7,
+            )
+        self.assertEqual(factory.call_args.kwargs["random_state"], 7)
 
 
 if __name__ == "__main__":

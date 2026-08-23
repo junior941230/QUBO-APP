@@ -22,7 +22,7 @@ class ValidationCacheTests(unittest.TestCase):
         }
         calls = []
 
-        def fake_predict_scores(_baseline, x_train, _y_train, x_test):
+        def fake_predict_scores(_baseline, x_train, _y_train, x_test, **_kwargs):
             train_ids = set(x_train[:, 0].astype(int).tolist())
             val_ids = set(x_test[:, 0].astype(int).tolist())
             calls.append((train_ids, val_ids))

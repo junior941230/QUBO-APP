@@ -5,7 +5,7 @@ from datetime import datetime
 
 def save_results_pkl(result_df, detail_cache, meta, output_dir=RESULTS_DIR):
     output_dir.mkdir(parents=True, exist_ok=True)
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     filename = f"qubo_run_{timestamp}.pkl"
     filepath = output_dir / filename
 
@@ -38,9 +38,18 @@ def load_result_pkl(path):
 def format_meta(meta):
     lines = ["## Run Metadata"]
     for k, v in meta.items():
-        if k in ("notes", "skipped"):
+        if k in ("notes", "skipped", "patient_metrics"):
             continue
         lines.append(f"- **{k}**: {v}")
+    if meta.get("patient_metrics"):
+        lines.append("### Held-out Patient Metrics")
+        for item in meta["patient_metrics"]:
+            lines.append(
+                f"- **{item['subject']}**: AP="
+                f"{item['patient_average_precision']:.4f}, seizure macro F1="
+                f"{item['patient_seizure_macro_baseline_f1']:.4f}, normal FP="
+                f"{item['patient_nonseizure_baseline_fp_rate']:.4f}"
+            )
     if meta.get("notes"):
         lines.append("### Notes")
         lines.extend(f"- {n}" for n in meta["notes"])

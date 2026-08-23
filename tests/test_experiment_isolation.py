@@ -3,6 +3,7 @@ from unittest.mock import patch
 
 try:
     import numpy as np
+    from core.options import ExperimentRequest
     from pipeline_runner.experiment import run_experiment
 except (ImportError, ModuleNotFoundError, NameError):
     np = None
@@ -13,9 +14,10 @@ except (ImportError, ModuleNotFoundError, NameError):
 class ExperimentIsolationTests(unittest.TestCase):
     def test_nested_evaluation_requires_at_least_three_subjects(self):
         summary, result_df, _, _, _, run_id = run_experiment(
-            ["p1", "p2"], "svm", "solve_chain_qubo_exact", "loso", 2,
-            0, 1, "0.0", "0.5", True, False, False,
-            32, 1, 1, 1e-3, 1, 0.0, False,
+            ExperimentRequest(
+                selected_subjects=("p1", "p2"), tune_mode="loso",
+                tune_n_splits=2, save_pkl=False,
+            ),
             progress=lambda *_args, **_kwargs: None,
         )
 
@@ -57,7 +59,7 @@ class ExperimentIsolationTests(unittest.TestCase):
                 return_value=(paths, {}, []),
             ),
             patch(
-                "pipeline_runner.experiment.processAllFiles",
+                "pipeline_runner.experiment.process_all_files",
                 return_value=(features, labels),
             ),
             patch(
@@ -83,9 +85,16 @@ class ExperimentIsolationTests(unittest.TestCase):
 
         with patches[0], patches[1], patches[2], patches[3], patches[4], patches[5], patches[6], patches[7], patches[8]:
             _, result_df, _, _, _, _ = run_experiment(
-                ["p1", "p2", "p3"], "svm", "solve_chain_qubo_exact", "loso", 2,
-                0, 1, "0.0", "0.5", True, False, False,
-                32, 1, 1, 1e-3, 1, 0.0, False,
+                ExperimentRequest(
+                    selected_subjects=("p1", "p2", "p3"),
+                    tune_mode="loso",
+                    tune_n_splits=2,
+                    n_jobs=1,
+                    lambda_values=(0.0,),
+                    qubo_threshold_values=(0.5,),
+                    save_pkl=False,
+                    resume_enabled=False,
+                ),
                 progress=lambda *_args, **_kwargs: None,
             )
 

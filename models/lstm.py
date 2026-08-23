@@ -11,13 +11,17 @@ try:
     from torch.utils.data import DataLoader, Dataset
     TORCH_AVAILABLE = True
 except ImportError:
+    torch = None
+    nn = None
+    DataLoader = None
+    Dataset = None
     TORCH_AVAILABLE = False
 import numpy as np
 from config import RANDOM_SEED
 from core.logging_utils import log_step
 
 
-class SeizureLSTM(nn.Module):
+class SeizureLSTM(nn.Module if TORCH_AVAILABLE else object):
     """
     Per-epoch binary classifier.
     Input : (batch, seq_len, feat_dim)
@@ -46,7 +50,7 @@ class SeizureLSTM(nn.Module):
         return logits
 
 
-class SeqDataset(Dataset):
+class SeqDataset(Dataset if TORCH_AVAILABLE else object):
     """Each item = one EDF file as one sequence."""
     def __init__(self, seqs, labels):
         self.seqs = seqs        # list of np.ndarray (T_i, F)

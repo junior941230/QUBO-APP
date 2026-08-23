@@ -4,12 +4,14 @@ from pathlib import Path
 
 os.environ.setdefault("MPLCONFIGDIR", str(Path(".cache/matplotlib").resolve()))
 
-import gradio as gr
-from config import DEFAULT_LAMBDA_LIST, DEFAULT_THRESHOLD_LIST
+from config import (
+    DEFAULT_BASELINE_THRESHOLD_LIST,
+    DEFAULT_LAMBDA_LIST,
+    DEFAULT_THRESHOLD_LIST,
+)
 from core.io import discover_subjects
+from core.options import build_experiment_request
 from pipeline_runner.experiment import run_experiment
-from ui.training_tab import build_training_tab
-from ui.viewer_tab import build_viewer_tab
 
 
 def _env_bool(name, default=False):
@@ -30,6 +32,10 @@ class CliProgress:
 
 
 def build_ui():
+    import gradio as gr
+    from ui.training_tab import build_training_tab
+    from ui.viewer_tab import build_viewer_tab
+
     with gr.Blocks(title="QUBO Seizure UI") as demo:
         gr.Markdown("# 🧠 QUBO Seizure Experiment Dashboard")
         with gr.Tabs():
@@ -53,17 +59,17 @@ def train(args):
     if subjects == ["all"]:
         subjects = discover_subjects()
 
-    summary, result_df, _summary_fig, _detail_fig, saved_path, run_id = run_experiment(
-        selected_subjects=subjects,
+    request = build_experiment_request(
+        selected_subjects=tuple(subjects),
         baseline=args.baseline,
         solver_name=args.solver,
         tune_mode=args.tune_mode,
         tune_n_splits=args.tune_n_splits,
         max_files_per_subject=args.max_files_per_subject,
         n_jobs=args.n_jobs,
-        lambda_text=args.lambdas,
-        threshold_text=args.thresholds,
-        reuse_global_cache=not args.no_reuse_global_cache,
+        lambda_values=args.lambdas,
+        qubo_threshold_values=args.thresholds,
+        reuse_validation_cache=not args.no_reuse_global_cache,
         save_pkl=not args.no_save_pkl,
         resume_enabled=not args.no_resume,
         lstm_hidden=args.lstm_hidden,
@@ -73,7 +79,22 @@ def train(args):
         lstm_batch=args.lstm_batch,
         lstm_dropout=args.lstm_dropout,
         force_restart=args.force_restart,
-        progress=CliProgress(),
+        tune_baseline_threshold=args.tune_baseline_threshold,
+        baseline_threshold_grid=args.baseline_thresholds,
+        xgb_class_weight_enabled=args.xgb_class_weight,
+        xgb_scale_pos_weight=args.xgb_scale_pos_weight,
+        xgb_max_delta_step_enabled=args.xgb_max_delta_step_enabled,
+        xgb_max_delta_step=args.xgb_max_delta_step,
+        patient_balanced_weights=args.patient_balanced_weights,
+        negative_downsample_enabled=args.negative_downsample,
+        negative_keep_fraction=args.negative_keep_fraction,
+        log_power=args.log_power,
+        relative_power=args.relative_power,
+        robust_normalize=args.robust_normalize,
+        temporal_context_seconds=args.temporal_context_seconds,
+    )
+    summary, result_df, _summary_fig, _detail_fig, saved_path, run_id = (
+        run_experiment(request, progress=CliProgress())
     )
 
     print("\n" + summary)
@@ -122,6 +143,26 @@ def parse_args():
     train_parser.add_argument("--n-jobs", type=int, default=-1)
     train_parser.add_argument("--lambdas", default=_float_grid(DEFAULT_LAMBDA_LIST))
     train_parser.add_argument("--thresholds", default=_float_grid(DEFAULT_THRESHOLD_LIST))
+    train_parser.add_argument(
+        "--tune-baseline-threshold",
+        action="store_true",
+        help="Tune the baseline decision threshold on inner validation folds.",
+    )
+    train_parser.add_argument(
+        "--baseline-thresholds",
+        default=_float_grid(DEFAULT_BASELINE_THRESHOLD_LIST),
+    )
+    train_parser.add_argument("--xgb-class-weight", action="store_true")
+    train_parser.add_argument("--xgb-scale-pos-weight", type=float, default=1.0)
+    train_parser.add_argument("--xgb-max-delta-step-enabled", action="store_true")
+    train_parser.add_argument("--xgb-max-delta-step", type=float, default=0.0)
+    train_parser.add_argument("--patient-balanced-weights", action="store_true")
+    train_parser.add_argument("--negative-downsample", action="store_true")
+    train_parser.add_argument("--negative-keep-fraction", type=float, default=1.0)
+    train_parser.add_argument("--log-power", action="store_true")
+    train_parser.add_argument("--relative-power", action="store_true")
+    train_parser.add_argument("--robust-normalize", action="store_true")
+    train_parser.add_argument("--temporal-context-seconds", type=int, default=0)
     train_parser.add_argument("--no-reuse-global-cache", action="store_true")
     train_parser.add_argument("--no-save-pkl", action="store_true")
     train_parser.add_argument("--no-resume", action="store_true")
