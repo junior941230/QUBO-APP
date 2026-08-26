@@ -1,0 +1,3176 @@
+[14:19:22] [Run] run_id=chb01-chb02-chb03+21_xgboost_solve_chain_qubo_exact_ac471c34ce
+[   2%] Collecting files
+[   5%] Validating EDF channels
+[  10%] Preprocessing EDF files
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done   5 tasks      | elapsed:    9.0s
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done  10 tasks      | elapsed:   12.2s
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 2663 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done  17 tasks      | elapsed:   17.9s
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:   21.7s
+Using data from preloaded Raw for 600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 2325 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done  33 tasks      | elapsed:   28.4s
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+[Parallel(n_jobs=4)]: Done  42 tasks      | elapsed:   36.0s
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done  53 tasks      | elapsed:   43.9s
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 959 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+[Parallel(n_jobs=4)]: Done  64 tasks      | elapsed:   52.8s
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done  77 tasks      | elapsed:  1.0min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done  90 tasks      | elapsed:  1.2min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3606 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 105 tasks      | elapsed:  1.4min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14398 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 120 tasks      | elapsed:  1.8min
+Using data from preloaded Raw for 9536 events and 256 original time points ...
+Using data from preloaded Raw for 7496 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 4832 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14420 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14398 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14418 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 13732 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14425 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 10684 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14406 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 137 tasks      | elapsed:  2.7min
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14427 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14423 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14403 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 5613 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 154 tasks      | elapsed:  3.5min
+Using data from preloaded Raw for 5823 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3610 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 173 tasks      | elapsed:  3.8min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+[Parallel(n_jobs=4)]: Done 192 tasks      | elapsed:  4.1min
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14427 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 13261 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3030 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 7928 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 213 tasks      | elapsed:  4.9min
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14411 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 4920 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 4660 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3726 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 12060 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14411 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+[Parallel(n_jobs=4)]: Done 234 tasks      | elapsed:  5.9min
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3623 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 8023 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14399 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14415 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 257 tasks      | elapsed:  6.4min
+Using data from preloaded Raw for 14399 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14405 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14411 events and 256 original time points ...
+Using data from preloaded Raw for 14421 events and 256 original time points ...
+Using data from preloaded Raw for 13591 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 974 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 5700 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7220 events and 256 original time points ...
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 280 tasks      | elapsed:  7.3min
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+Using data from preloaded Raw for 7212 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7218 events and 256 original time points ...
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 7213 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7221 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+Using data from preloaded Raw for 3598 events and 256 original time points ...
+Using data from preloaded Raw for 7200 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 305 tasks      | elapsed:  7.8min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 330 tasks      | elapsed:  8.1min
+Using data from preloaded Raw for 2859 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3606 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3612 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3611 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 2431 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3624 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3616 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 357 tasks      | elapsed:  8.5min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 384 tasks      | elapsed:  8.8min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 413 tasks      | elapsed:  9.2min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3602 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 442 tasks      | elapsed:  9.6min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3625 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3609 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+[Parallel(n_jobs=4)]: Done 473 tasks      | elapsed: 10.0min
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3624 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3611 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+[Parallel(n_jobs=4)]: Done 504 tasks      | elapsed: 10.4min
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 2274 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 537 tasks      | elapsed: 10.9min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3612 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3334 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3606 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 570 tasks      | elapsed: 11.3min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3469 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 742 events and 256 original time points ...
+Using data from preloaded Raw for 3618 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 2964 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 2167 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3599 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 605 tasks      | elapsed: 11.8min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 2990 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3611 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 640 tasks      | elapsed: 12.2min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 2560 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 7486 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 10342 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14426 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 12587 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 5009 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 14400 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 677 tasks      | elapsed: 12.9min
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+0 bad epochs dropped
+Using data from preloaded Raw for 1067 events and 256 original time points ...
+0 bad epochs dropped
+Using data from preloaded Raw for 3600 events and 256 original time points ...
+0 bad epochs dropped
+[Parallel(n_jobs=4)]: Done 686 out of 686 | elapsed: 13.0min finished
+[  10%] Building grouped cache for held-out chb01
+[14:32:29] [Cache-GroupKFold] folds=5
+[14:32:35] [Cache-GroupKFold] fold 1/5 train_files=497 val_files=147
+[14:32:44] [XGBoost] device=cuda
+/home/junior941230/workspace/QUBO-APP/.venv/lib/python3.12/site-packages/xgboost/core.py:751: UserWarning: [14:32:58] WARNING: /__w/xgboost/xgboost/src/common/error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.
+Potential solutions:
+- Use a data structure that matches the device ordinal in the booster.
+- Set the device for booster before call to inplace_predict.
+
+This warning will only be shown once.
+
+  return func(**kwargs)
+[14:33:00] [Cache-GroupKFold] fold 2/5 train_files=479 val_files=165
+[14:33:00] [XGBoost] device=cuda
+[14:33:13] [Cache-GroupKFold] fold 3/5 train_files=494 val_files=150
+[14:33:13] [XGBoost] device=cuda
+[14:33:28] [Cache-GroupKFold] fold 4/5 train_files=558 val_files=86
+[14:33:28] [XGBoost] device=cuda
+[14:33:44] [Cache-GroupKFold] fold 5/5 train_files=548 val_files=96
+[14:33:44] [XGBoost] device=cuda
+[14:33:59] [Cache-GroupKFold] done, cached_files=644
+[  10%] Building grouped cache for held-out chb02
+[14:33:59] [Cache-GroupKFold] folds=5
+[14:34:00] [Cache-GroupKFold] fold 1/5 train_files=497 val_files=153
+[14:34:00] [XGBoost] device=cuda
+[14:34:15] [Cache-GroupKFold] fold 2/5 train_files=485 val_files=165
+[14:34:15] [XGBoost] device=cuda
+[14:34:28] [Cache-GroupKFold] fold 3/5 train_files=500 val_files=150
+[14:34:28] [XGBoost] device=cuda
+[14:34:43] [Cache-GroupKFold] fold 4/5 train_files=564 val_files=86
+[14:34:43] [XGBoost] device=cuda
+[14:34:59] [Cache-GroupKFold] fold 5/5 train_files=554 val_files=96
+[14:34:59] [XGBoost] device=cuda
+[14:35:14] [Cache-GroupKFold] done, cached_files=650
+[  11%] Building grouped cache for held-out chb03
+[14:35:14] [Cache-GroupKFold] folds=5
+[14:35:15] [Cache-GroupKFold] fold 1/5 train_files=495 val_files=153
+[14:35:15] [XGBoost] device=cuda
+[14:35:30] [Cache-GroupKFold] fold 2/5 train_files=485 val_files=163
+[14:35:31] [XGBoost] device=cuda
+[14:35:44] [Cache-GroupKFold] fold 3/5 train_files=498 val_files=150
+[14:35:44] [XGBoost] device=cuda
+[14:35:59] [Cache-GroupKFold] fold 4/5 train_files=562 val_files=86
+[14:35:59] [XGBoost] device=cuda
+[14:36:14] [Cache-GroupKFold] fold 5/5 train_files=552 val_files=96
+[14:36:14] [XGBoost] device=cuda
+[14:36:30] [Cache-GroupKFold] done, cached_files=648
+[  11%] Building grouped cache for held-out chb04
+[14:36:30] [Cache-GroupKFold] folds=5
+[14:36:31] [Cache-GroupKFold] fold 1/5 train_files=491 val_files=153
+[14:36:31] [XGBoost] device=cuda
+[14:36:44] [Cache-GroupKFold] fold 2/5 train_files=485 val_files=159
+[14:36:44] [XGBoost] device=cuda
+[14:36:56] [Cache-GroupKFold] fold 3/5 train_files=494 val_files=150
+[14:36:56] [XGBoost] device=cuda
+[14:37:09] [Cache-GroupKFold] fold 4/5 train_files=558 val_files=86
+[14:37:09] [XGBoost] device=cuda
+[14:37:23] [Cache-GroupKFold] fold 5/5 train_files=548 val_files=96
+[14:37:23] [XGBoost] device=cuda
+[14:37:36] [Cache-GroupKFold] done, cached_files=644
+[  11%] Building grouped cache for held-out chb05
+[14:37:36] [Cache-GroupKFold] folds=5
+[14:37:37] [Cache-GroupKFold] fold 1/5 train_files=494 val_files=153
+[14:37:37] [XGBoost] device=cuda
+[14:37:53] [Cache-GroupKFold] fold 2/5 train_files=488 val_files=159
+[14:37:53] [XGBoost] device=cuda
+[14:38:07] [Cache-GroupKFold] fold 3/5 train_files=494 val_files=153
+[14:38:07] [XGBoost] device=cuda
+[14:38:21] [Cache-GroupKFold] fold 4/5 train_files=561 val_files=86
+[14:38:21] [XGBoost] device=cuda
+[14:38:36] [Cache-GroupKFold] fold 5/5 train_files=551 val_files=96
+[14:38:36] [XGBoost] device=cuda
+[14:38:52] [Cache-GroupKFold] done, cached_files=647
+[  11%] Building grouped cache for held-out chb06
+[14:38:52] [Cache-GroupKFold] folds=5
+[14:38:53] [Cache-GroupKFold] fold 1/5 train_files=515 val_files=153
+[14:38:53] [XGBoost] device=cuda
+[14:39:08] [Cache-GroupKFold] fold 2/5 train_files=509 val_files=159
+[14:39:08] [XGBoost] device=cuda
+[14:39:22] [Cache-GroupKFold] fold 3/5 train_files=494 val_files=174
+[14:39:22] [XGBoost] device=cuda
+[14:39:35] [Cache-GroupKFold] fold 4/5 train_files=582 val_files=86
+[14:39:35] [XGBoost] device=cuda
+[14:39:50] [Cache-GroupKFold] fold 5/5 train_files=572 val_files=96
+[14:39:50] [XGBoost] device=cuda
+[14:40:05] [Cache-GroupKFold] done, cached_files=668
+[  11%] Building grouped cache for held-out chb07
+[14:40:05] [Cache-GroupKFold] folds=5
+[14:40:06] [Cache-GroupKFold] fold 1/5 train_files=514 val_files=153
+[14:40:06] [XGBoost] device=cuda
+[14:40:21] [Cache-GroupKFold] fold 2/5 train_files=509 val_files=158
+[14:40:21] [XGBoost] device=cuda
+[14:40:35] [Cache-GroupKFold] fold 3/5 train_files=493 val_files=174
+[14:40:35] [XGBoost] device=cuda
+[14:40:49] [Cache-GroupKFold] fold 4/5 train_files=581 val_files=86
+[14:40:49] [XGBoost] device=cuda
+[14:41:05] [Cache-GroupKFold] fold 5/5 train_files=571 val_files=96
+[14:41:05] [XGBoost] device=cuda
+[14:41:20] [Cache-GroupKFold] done, cached_files=667
+[  12%] Building grouped cache for held-out chb08
+[14:41:20] [Cache-GroupKFold] folds=5
+[14:41:21] [Cache-GroupKFold] fold 1/5 train_files=513 val_files=153
+[14:41:21] [XGBoost] device=cuda
+[14:41:37] [Cache-GroupKFold] fold 2/5 train_files=508 val_files=158
+[14:41:37] [XGBoost] device=cuda
+[14:41:52] [Cache-GroupKFold] fold 3/5 train_files=492 val_files=174
+[14:41:52] [XGBoost] device=cuda
+[14:42:06] [Cache-GroupKFold] fold 4/5 train_files=580 val_files=86
+[14:42:06] [XGBoost] device=cuda
+[14:42:22] [Cache-GroupKFold] fold 5/5 train_files=571 val_files=95
+[14:42:22] [XGBoost] device=cuda
+[14:42:36] [Cache-GroupKFold] done, cached_files=666
+[  12%] Building grouped cache for held-out chb09
+[14:42:36] [Cache-GroupKFold] folds=5
+[14:42:38] [Cache-GroupKFold] fold 1/5 train_files=514 val_files=153
+[14:42:38] [XGBoost] device=cuda
+[14:42:52] [Cache-GroupKFold] fold 2/5 train_files=509 val_files=158
+[14:42:52] [XGBoost] device=cuda
+[14:43:06] [Cache-GroupKFold] fold 3/5 train_files=493 val_files=174
+[14:43:07] [XGBoost] device=cuda
+[14:43:20] [Cache-GroupKFold] fold 4/5 train_files=580 val_files=87
+[14:43:20] [XGBoost] device=cuda
+[14:43:35] [Cache-GroupKFold] fold 5/5 train_files=572 val_files=95
+[14:43:35] [XGBoost] device=cuda
+[14:43:49] [Cache-GroupKFold] done, cached_files=667
+[  12%] Building grouped cache for held-out chb10
+[14:43:49] [Cache-GroupKFold] folds=5
+[14:43:51] [Cache-GroupKFold] fold 1/5 train_files=514 val_files=147
+[14:43:51] [XGBoost] device=cuda
+[14:44:05] [Cache-GroupKFold] fold 2/5 train_files=503 val_files=158
+[14:44:05] [XGBoost] device=cuda
+[14:44:20] [Cache-GroupKFold] fold 3/5 train_files=487 val_files=174
+[14:44:20] [XGBoost] device=cuda
+[14:44:33] [Cache-GroupKFold] fold 4/5 train_files=574 val_files=87
+[14:44:33] [XGBoost] device=cuda
+[14:44:50] [Cache-GroupKFold] fold 5/5 train_files=566 val_files=95
+[14:44:50] [XGBoost] device=cuda
+[14:45:04] [Cache-GroupKFold] done, cached_files=661
+[  12%] Building grouped cache for held-out chb11
+[14:45:04] [Cache-GroupKFold] folds=5
+[14:45:05] [Cache-GroupKFold] fold 1/5 train_files=514 val_files=137
+[14:45:05] [XGBoost] device=cuda
+[14:45:20] [Cache-GroupKFold] fold 2/5 train_files=493 val_files=158
+[14:45:20] [XGBoost] device=cuda
+[14:45:35] [Cache-GroupKFold] fold 3/5 train_files=477 val_files=174
+[14:45:35] [XGBoost] device=cuda
+[14:45:48] [Cache-GroupKFold] fold 4/5 train_files=564 val_files=87
+[14:45:49] [XGBoost] device=cuda
+[14:46:05] [Cache-GroupKFold] fold 5/5 train_files=556 val_files=95
+[14:46:05] [XGBoost] device=cuda
+[14:46:19] [Cache-GroupKFold] done, cached_files=651
+[  12%] Building grouped cache for held-out chb12
+[14:46:19] [Cache-GroupKFold] folds=5
+[14:46:21] [Cache-GroupKFold] fold 1/5 train_files=525 val_files=137
+[14:46:21] [XGBoost] device=cuda
+[14:46:36] [Cache-GroupKFold] fold 2/5 train_files=504 val_files=158
+[14:46:36] [XGBoost] device=cuda
+[14:46:50] [Cache-GroupKFold] fold 3/5 train_files=488 val_files=174
+[14:46:51] [XGBoost] device=cuda
+[14:47:04] [Cache-GroupKFold] fold 4/5 train_files=575 val_files=87
+[14:47:05] [XGBoost] device=cuda
+[14:47:21] [Cache-GroupKFold] fold 5/5 train_files=556 val_files=106
+[14:47:21] [XGBoost] device=cuda
+[14:47:36] [Cache-GroupKFold] done, cached_files=662
+[  13%] Building grouped cache for held-out chb13
+[14:47:36] [Cache-GroupKFold] folds=5
+[14:47:37] [Cache-GroupKFold] fold 1/5 train_files=516 val_files=137
+[14:47:37] [XGBoost] device=cuda
+[14:47:51] [Cache-GroupKFold] fold 2/5 train_files=495 val_files=158
+[14:47:52] [XGBoost] device=cuda
+[14:48:06] [Cache-GroupKFold] fold 3/5 train_files=488 val_files=165
+[14:48:06] [XGBoost] device=cuda
+[14:48:20] [Cache-GroupKFold] fold 4/5 train_files=566 val_files=87
+[14:48:20] [XGBoost] device=cuda
+[14:48:36] [Cache-GroupKFold] fold 5/5 train_files=547 val_files=106
+[14:48:37] [XGBoost] device=cuda
+[14:48:51] [Cache-GroupKFold] done, cached_files=653
+[  13%] Building grouped cache for held-out chb14
+[14:48:51] [Cache-GroupKFold] folds=5
+[14:48:52] [Cache-GroupKFold] fold 1/5 train_files=523 val_files=137
+[14:48:52] [XGBoost] device=cuda
+[14:49:07] [Cache-GroupKFold] fold 2/5 train_files=495 val_files=165
+[14:49:07] [XGBoost] device=cuda
+[14:49:22] [Cache-GroupKFold] fold 3/5 train_files=495 val_files=165
+[14:49:22] [XGBoost] device=cuda
+[14:49:36] [Cache-GroupKFold] fold 4/5 train_files=573 val_files=87
+[14:49:36] [XGBoost] device=cuda
+[14:49:52] [Cache-GroupKFold] fold 5/5 train_files=554 val_files=106
+[14:49:53] [XGBoost] device=cuda
+[14:50:07] [Cache-GroupKFold] done, cached_files=660
+[  13%] Building grouped cache for held-out chb15
+[14:50:07] [Cache-GroupKFold] folds=5
+[14:50:08] [Cache-GroupKFold] fold 1/5 train_files=509 val_files=137
+[14:50:08] [XGBoost] device=cuda
+[14:50:23] [Cache-GroupKFold] fold 2/5 train_files=495 val_files=151
+[14:50:23] [XGBoost] device=cuda
+[14:50:38] [Cache-GroupKFold] fold 3/5 train_files=481 val_files=165
+[14:50:38] [XGBoost] device=cuda
+[14:50:52] [Cache-GroupKFold] fold 4/5 train_files=559 val_files=87
+[14:50:52] [XGBoost] device=cuda
+[14:51:08] [Cache-GroupKFold] fold 5/5 train_files=540 val_files=106
+[14:51:08] [XGBoost] device=cuda
+[14:51:22] [Cache-GroupKFold] done, cached_files=646
+[  13%] Building grouped cache for held-out chb16
+[14:51:22] [Cache-GroupKFold] folds=5
+[14:51:23] [Cache-GroupKFold] fold 1/5 train_files=530 val_files=137
+[14:51:23] [XGBoost] device=cuda
+[14:51:38] [Cache-GroupKFold] fold 2/5 train_files=516 val_files=151
+[14:51:38] [XGBoost] device=cuda
+[14:51:53] [Cache-GroupKFold] fold 3/5 train_files=502 val_files=165
+[14:51:54] [XGBoost] device=cuda
+[14:52:08] [Cache-GroupKFold] fold 4/5 train_files=580 val_files=87
+[14:52:08] [XGBoost] device=cuda
+[14:52:24] [Cache-GroupKFold] fold 5/5 train_files=540 val_files=127
+[14:52:24] [XGBoost] device=cuda
+[14:52:39] [Cache-GroupKFold] done, cached_files=667
+[  14%] Building grouped cache for held-out chb17
+[14:52:39] [Cache-GroupKFold] folds=5
+[14:52:40] [Cache-GroupKFold] fold 1/5 train_files=530 val_files=135
+[14:52:40] [XGBoost] device=cuda
+[14:52:55] [Cache-GroupKFold] fold 2/5 train_files=514 val_files=151
+[14:52:55] [XGBoost] device=cuda
+[14:53:10] [Cache-GroupKFold] fold 3/5 train_files=500 val_files=165
+[14:53:10] [XGBoost] device=cuda
+[14:53:24] [Cache-GroupKFold] fold 4/5 train_files=578 val_files=87
+[14:53:24] [XGBoost] device=cuda
+[14:53:41] [Cache-GroupKFold] fold 5/5 train_files=538 val_files=127
+[14:53:41] [XGBoost] device=cuda
+[14:53:55] [Cache-GroupKFold] done, cached_files=665
+[  14%] Building grouped cache for held-out chb18
+[14:53:55] [Cache-GroupKFold] folds=5
+[14:53:56] [Cache-GroupKFold] fold 1/5 train_files=515 val_files=135
+[14:53:56] [XGBoost] device=cuda
+[14:54:11] [Cache-GroupKFold] fold 2/5 train_files=499 val_files=151
+[14:54:11] [XGBoost] device=cuda
+[14:54:26] [Cache-GroupKFold] fold 3/5 train_files=485 val_files=165
+[14:54:26] [XGBoost] device=cuda
+[14:54:40] [Cache-GroupKFold] fold 4/5 train_files=578 val_files=72
+[14:54:40] [XGBoost] device=cuda
+[14:54:56] [Cache-GroupKFold] fold 5/5 train_files=523 val_files=127
+[14:54:57] [XGBoost] device=cuda
+[14:55:11] [Cache-GroupKFold] done, cached_files=650
+[  14%] Building grouped cache for held-out chb19
+[14:55:11] [Cache-GroupKFold] folds=5
+[14:55:12] [Cache-GroupKFold] fold 1/5 train_files=515 val_files=141
+[14:55:12] [XGBoost] device=cuda
+[14:55:27] [Cache-GroupKFold] fold 2/5 train_files=505 val_files=151
+[14:55:27] [XGBoost] device=cuda
+[14:55:41] [Cache-GroupKFold] fold 3/5 train_files=491 val_files=165
+[14:55:42] [XGBoost] device=cuda
+[14:55:56] [Cache-GroupKFold] fold 4/5 train_files=584 val_files=72
+[14:55:56] [XGBoost] device=cuda
+[14:56:12] [Cache-GroupKFold] fold 5/5 train_files=529 val_files=127
+[14:56:12] [XGBoost] device=cuda
+[14:56:27] [Cache-GroupKFold] done, cached_files=656
+[  14%] Building grouped cache for held-out chb20
+[14:56:27] [Cache-GroupKFold] folds=5
+[14:56:28] [Cache-GroupKFold] fold 1/5 train_files=516 val_files=141
+[14:56:28] [XGBoost] device=cuda
+[14:56:43] [Cache-GroupKFold] fold 2/5 train_files=506 val_files=151
+[14:56:43] [XGBoost] device=cuda
+[14:56:58] [Cache-GroupKFold] fold 3/5 train_files=491 val_files=166
+[14:56:58] [XGBoost] device=cuda
+[14:57:12] [Cache-GroupKFold] fold 4/5 train_files=585 val_files=72
+[14:57:12] [XGBoost] device=cuda
+[14:57:28] [Cache-GroupKFold] fold 5/5 train_files=530 val_files=127
+[14:57:28] [XGBoost] device=cuda
+[14:57:43] [Cache-GroupKFold] done, cached_files=657
+[  14%] Building grouped cache for held-out chb21
+[14:57:43] [Cache-GroupKFold] folds=5
+[14:57:44] [Cache-GroupKFold] fold 1/5 train_files=512 val_files=141
+[14:57:44] [XGBoost] device=cuda
+[14:57:58] [Cache-GroupKFold] fold 2/5 train_files=502 val_files=151
+[14:57:59] [XGBoost] device=cuda
+[14:58:13] [Cache-GroupKFold] fold 3/5 train_files=487 val_files=166
+[14:58:14] [XGBoost] device=cuda
+[14:58:27] [Cache-GroupKFold] fold 4/5 train_files=581 val_files=72
+[14:58:27] [XGBoost] device=cuda
+[14:58:44] [Cache-GroupKFold] fold 5/5 train_files=530 val_files=123
+[14:58:44] [XGBoost] device=cuda
+[14:58:58] [Cache-GroupKFold] done, cached_files=653
+[  15%] Building grouped cache for held-out chb22
+[14:58:58] [Cache-GroupKFold] folds=5
+[14:58:59] [Cache-GroupKFold] fold 1/5 train_files=514 val_files=141
+[14:58:59] [XGBoost] device=cuda
+[14:59:14] [Cache-GroupKFold] fold 2/5 train_files=504 val_files=151
+[14:59:14] [XGBoost] device=cuda
+[14:59:29] [Cache-GroupKFold] fold 3/5 train_files=487 val_files=168
+[14:59:29] [XGBoost] device=cuda
+[14:59:43] [Cache-GroupKFold] fold 4/5 train_files=583 val_files=72
+[14:59:43] [XGBoost] device=cuda
+[15:00:00] [Cache-GroupKFold] fold 5/5 train_files=532 val_files=123
+[15:00:00] [XGBoost] device=cuda
+[15:00:14] [Cache-GroupKFold] done, cached_files=655
+[  15%] Building grouped cache for held-out chb23
+[15:00:14] [Cache-GroupKFold] folds=5
+[15:00:15] [Cache-GroupKFold] fold 1/5 train_files=536 val_files=141
+[15:00:15] [XGBoost] device=cuda
+[15:00:30] [Cache-GroupKFold] fold 2/5 train_files=526 val_files=151
+[15:00:30] [XGBoost] device=cuda
+[15:00:45] [Cache-GroupKFold] fold 3/5 train_files=509 val_files=168
+[15:00:45] [XGBoost] device=cuda
+[15:00:59] [Cache-GroupKFold] fold 4/5 train_files=583 val_files=94
+[15:00:59] [XGBoost] device=cuda
+[15:01:16] [Cache-GroupKFold] fold 5/5 train_files=554 val_files=123
+[15:01:16] [XGBoost] device=cuda
+[15:01:30] [Cache-GroupKFold] done, cached_files=677
+[  15%] Building grouped cache for held-out chb24
+[15:01:30] [Cache-GroupKFold] folds=5
+[15:01:31] [Cache-GroupKFold] fold 1/5 train_files=523 val_files=141
+[15:01:31] [XGBoost] device=cuda
+[15:01:46] [Cache-GroupKFold] fold 2/5 train_files=513 val_files=151
+[15:01:46] [XGBoost] device=cuda
+[15:02:01] [Cache-GroupKFold] fold 3/5 train_files=496 val_files=168
+[15:02:01] [XGBoost] device=cuda
+[15:02:16] [Cache-GroupKFold] fold 4/5 train_files=583 val_files=81
+[15:02:16] [XGBoost] device=cuda
+[15:02:32] [Cache-GroupKFold] fold 5/5 train_files=541 val_files=123
+[15:02:32] [XGBoost] device=cuda
+[15:02:47] [Cache-GroupKFold] done, cached_files=664
+[  18%] Evaluating held-out subject chb01
+[15:14:16] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1427
+[15:14:20] [XGBoost] device=cuda
+[15:14:37] [File] done chb01_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.63s
+[15:14:37] [XGBoost] device=cuda
+[15:14:54] [File] done chb01_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.61s
+[15:14:54] [XGBoost] device=cuda
+[15:15:10] [File] done chb01_03.edf, baseline_f1=0.4286, qubo_f1=0.0000, elapsed=16.57s
+[15:15:10] [XGBoost] device=cuda
+[15:15:27] [File] done chb01_04.edf, baseline_f1=0.4412, qubo_f1=0.0000, elapsed=16.55s
+[15:15:27] [XGBoost] device=cuda
+[15:15:43] [File] done chb01_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.56s
+[15:15:43] [XGBoost] device=cuda
+[15:16:00] [File] done chb01_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.59s
+[15:16:00] [XGBoost] device=cuda
+[15:16:16] [File] done chb01_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.49s
+[15:16:16] [XGBoost] device=cuda
+[15:16:33] [File] done chb01_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.54s
+[15:16:33] [XGBoost] device=cuda
+[15:16:49] [File] done chb01_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.60s
+[15:16:49] [XGBoost] device=cuda
+[15:17:06] [File] done chb01_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.62s
+[15:17:06] [XGBoost] device=cuda
+[15:17:23] [File] done chb01_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.56s
+[15:17:23] [XGBoost] device=cuda
+[15:17:39] [File] done chb01_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.55s
+[15:17:39] [XGBoost] device=cuda
+[15:17:56] [File] done chb01_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.66s
+[15:17:56] [XGBoost] device=cuda
+[15:18:13] [File] done chb01_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[15:18:13] [XGBoost] device=cuda
+[15:18:29] [File] done chb01_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.61s
+[15:18:29] [XGBoost] device=cuda
+[15:18:46] [File] done chb01_16.edf, baseline_f1=0.5385, qubo_f1=0.0000, elapsed=16.47s
+[15:18:46] [XGBoost] device=cuda
+[15:19:02] [File] done chb01_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[15:19:02] [XGBoost] device=cuda
+[15:19:19] [File] done chb01_18.edf, baseline_f1=0.3540, qubo_f1=0.0000, elapsed=16.67s
+[15:19:19] [XGBoost] device=cuda
+[15:19:36] [File] done chb01_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.60s
+[15:19:36] [XGBoost] device=cuda
+[15:19:52] [File] done chb01_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.63s
+[15:19:52] [XGBoost] device=cuda
+[15:20:09] [File] done chb01_21.edf, baseline_f1=0.5695, qubo_f1=0.0000, elapsed=16.66s
+[15:20:09] [XGBoost] device=cuda
+[15:20:26] [File] done chb01_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.64s
+[15:20:26] [XGBoost] device=cuda
+[15:20:42] [File] done chb01_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.66s
+[15:20:42] [XGBoost] device=cuda
+[15:20:59] [File] done chb01_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.54s
+[15:20:59] [XGBoost] device=cuda
+[15:21:15] [File] done chb01_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.61s
+[15:21:15] [XGBoost] device=cuda
+[15:21:32] [File] done chb01_26.edf, baseline_f1=0.5000, qubo_f1=0.0000, elapsed=16.66s
+[15:21:32] [XGBoost] device=cuda
+[15:21:49] [File] done chb01_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.55s
+[15:21:49] [XGBoost] device=cuda
+[15:22:05] [File] done chb01_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.62s
+[15:22:05] [XGBoost] device=cuda
+[15:22:22] [File] done chb01_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.66s
+[15:22:22] [XGBoost] device=cuda
+[15:22:38] [File] done chb01_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.58s
+[15:22:38] [XGBoost] device=cuda
+[15:22:55] [File] done chb01_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.57s
+[15:22:55] [XGBoost] device=cuda
+[15:23:12] [File] done chb01_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.58s
+[15:23:12] [XGBoost] device=cuda
+[15:23:28] [File] done chb01_34.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.63s
+[15:23:28] [XGBoost] device=cuda
+[15:23:45] [File] done chb01_36.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[15:23:45] [XGBoost] device=cuda
+[15:24:02] [File] done chb01_37.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[15:24:02] [XGBoost] device=cuda
+[15:24:18] [File] done chb01_38.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[15:24:18] [XGBoost] device=cuda
+[15:24:35] [File] done chb01_39.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[15:24:35] [XGBoost] device=cuda
+[15:24:51] [File] done chb01_40.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.63s
+[15:24:51] [XGBoost] device=cuda
+[15:25:08] [File] done chb01_41.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.63s
+[15:25:08] [XGBoost] device=cuda
+[15:25:25] [File] done chb01_42.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.62s
+[15:25:25] [XGBoost] device=cuda
+[15:25:41] [File] done chb01_43.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[15:25:41] [XGBoost] device=cuda
+[15:25:58] [File] done chb01_46.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[  22%] Evaluating held-out subject chb02
+[15:37:27] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1372
+[15:37:34] [XGBoost] device=cuda
+[15:37:51] [File] done chb02_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.64s
+[15:37:51] [XGBoost] device=cuda
+[15:38:07] [File] done chb02_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.61s
+[15:38:07] [XGBoost] device=cuda
+[15:38:24] [File] done chb02_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.55s
+[15:38:24] [XGBoost] device=cuda
+[15:38:40] [File] done chb02_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.53s
+[15:38:40] [XGBoost] device=cuda
+[15:38:57] [File] done chb02_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[15:38:57] [XGBoost] device=cuda
+[15:39:14] [File] done chb02_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.66s
+[15:39:14] [XGBoost] device=cuda
+[15:39:30] [File] done chb02_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[15:39:30] [XGBoost] device=cuda
+[15:39:47] [File] done chb02_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.57s
+[15:39:47] [XGBoost] device=cuda
+[15:40:04] [File] done chb02_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.61s
+[15:40:04] [XGBoost] device=cuda
+[15:40:20] [File] done chb02_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.56s
+[15:40:20] [XGBoost] device=cuda
+[15:40:37] [File] done chb02_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[15:40:37] [XGBoost] device=cuda
+[15:40:54] [File] done chb02_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[15:40:54] [XGBoost] device=cuda
+[15:41:11] [File] done chb02_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[15:41:11] [XGBoost] device=cuda
+[15:41:28] [File] done chb02_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[15:41:28] [XGBoost] device=cuda
+[15:41:45] [File] done chb02_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.99s
+[15:41:45] [XGBoost] device=cuda
+[15:42:02] [File] done chb02_16+.edf, baseline_f1=0.2922, qubo_f1=0.5664, elapsed=16.94s
+[15:42:02] [XGBoost] device=cuda
+[15:42:19] [File] done chb02_16.edf, baseline_f1=0.6560, qubo_f1=0.0000, elapsed=16.93s
+[15:42:19] [XGBoost] device=cuda
+[15:42:36] [File] done chb02_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[15:42:36] [XGBoost] device=cuda
+[15:42:52] [File] done chb02_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[15:42:52] [XGBoost] device=cuda
+[15:43:10] [File] done chb02_19.edf, baseline_f1=0.2857, qubo_f1=0.0000, elapsed=17.06s
+[15:43:10] [XGBoost] device=cuda
+[15:43:26] [File] done chb02_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[15:43:26] [XGBoost] device=cuda
+[15:43:43] [File] done chb02_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.91s
+[15:43:43] [XGBoost] device=cuda
+[15:44:00] [File] done chb02_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.96s
+[15:44:00] [XGBoost] device=cuda
+[15:44:17] [File] done chb02_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.95s
+[15:44:17] [XGBoost] device=cuda
+[15:44:34] [File] done chb02_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[15:44:34] [XGBoost] device=cuda
+[15:44:51] [File] done chb02_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.05s
+[15:44:51] [XGBoost] device=cuda
+[15:45:08] [File] done chb02_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.99s
+[15:45:08] [XGBoost] device=cuda
+[15:45:25] [File] done chb02_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[15:45:25] [XGBoost] device=cuda
+[15:45:42] [File] done chb02_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.97s
+[15:45:42] [XGBoost] device=cuda
+[15:45:59] [File] done chb02_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[15:45:59] [XGBoost] device=cuda
+[15:46:16] [File] done chb02_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.02s
+[15:46:16] [XGBoost] device=cuda
+[15:46:33] [File] done chb02_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.10s
+[15:46:33] [XGBoost] device=cuda
+[15:46:50] [File] done chb02_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.97s
+[15:46:50] [XGBoost] device=cuda
+[15:47:07] [File] done chb02_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.97s
+[15:47:07] [XGBoost] device=cuda
+[15:47:24] [File] done chb02_34.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.07s
+[15:47:24] [XGBoost] device=cuda
+[15:47:41] [File] done chb02_35.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.10s
+[  25%] Evaluating held-out subject chb03
+[15:59:10] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1337
+[15:59:14] [XGBoost] device=cuda
+[15:59:31] [File] done chb03_01.edf, baseline_f1=0.5526, qubo_f1=0.0000, elapsed=17.06s
+[15:59:31] [XGBoost] device=cuda
+[15:59:48] [File] done chb03_02.edf, baseline_f1=0.6538, qubo_f1=0.0000, elapsed=17.09s
+[15:59:48] [XGBoost] device=cuda
+[16:00:05] [File] done chb03_03.edf, baseline_f1=0.7692, qubo_f1=0.1096, elapsed=17.00s
+[16:00:05] [XGBoost] device=cuda
+[16:00:22] [File] done chb03_04.edf, baseline_f1=0.6875, qubo_f1=0.0000, elapsed=17.01s
+[16:00:22] [XGBoost] device=cuda
+[16:00:39] [File] done chb03_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.89s
+[16:00:39] [XGBoost] device=cuda
+[16:00:55] [File] done chb03_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[16:00:55] [XGBoost] device=cuda
+[16:01:12] [File] done chb03_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[16:01:12] [XGBoost] device=cuda
+[16:01:29] [File] done chb03_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.81s
+[16:01:29] [XGBoost] device=cuda
+[16:01:46] [File] done chb03_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[16:01:46] [XGBoost] device=cuda
+[16:02:03] [File] done chb03_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.89s
+[16:02:03] [XGBoost] device=cuda
+[16:02:20] [File] done chb03_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.97s
+[16:02:20] [XGBoost] device=cuda
+[16:02:37] [File] done chb03_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[16:02:37] [XGBoost] device=cuda
+[16:02:54] [File] done chb03_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[16:02:54] [XGBoost] device=cuda
+[16:03:10] [File] done chb03_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[16:03:10] [XGBoost] device=cuda
+[16:03:27] [File] done chb03_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[16:03:27] [XGBoost] device=cuda
+[16:03:44] [File] done chb03_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.85s
+[16:03:44] [XGBoost] device=cuda
+[16:04:01] [File] done chb03_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[16:04:01] [XGBoost] device=cuda
+[16:04:18] [File] done chb03_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[16:04:18] [XGBoost] device=cuda
+[16:04:34] [File] done chb03_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.78s
+[16:04:34] [XGBoost] device=cuda
+[16:04:51] [File] done chb03_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.85s
+[16:04:51] [XGBoost] device=cuda
+[16:05:08] [File] done chb03_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.81s
+[16:05:08] [XGBoost] device=cuda
+[16:05:25] [File] done chb03_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[16:05:25] [XGBoost] device=cuda
+[16:05:42] [File] done chb03_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.85s
+[16:05:42] [XGBoost] device=cuda
+[16:05:59] [File] done chb03_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.85s
+[16:05:59] [XGBoost] device=cuda
+[16:06:15] [File] done chb03_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[16:06:15] [XGBoost] device=cuda
+[16:06:32] [File] done chb03_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[16:06:32] [XGBoost] device=cuda
+[16:06:49] [File] done chb03_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[16:06:49] [XGBoost] device=cuda
+[16:07:06] [File] done chb03_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[16:07:06] [XGBoost] device=cuda
+[16:07:23] [File] done chb03_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[16:07:23] [XGBoost] device=cuda
+[16:07:40] [File] done chb03_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[16:07:40] [XGBoost] device=cuda
+[16:07:56] [File] done chb03_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[16:07:56] [XGBoost] device=cuda
+[16:08:13] [File] done chb03_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.98s
+[16:08:13] [XGBoost] device=cuda
+[16:08:30] [File] done chb03_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.78s
+[16:08:30] [XGBoost] device=cuda
+[16:08:47] [File] done chb03_34.edf, baseline_f1=0.3210, qubo_f1=0.0000, elapsed=16.81s
+[16:08:47] [XGBoost] device=cuda
+[16:09:04] [File] done chb03_35.edf, baseline_f1=0.2892, qubo_f1=0.0000, elapsed=16.81s
+[16:09:04] [XGBoost] device=cuda
+[16:09:21] [File] done chb03_36.edf, baseline_f1=0.3250, qubo_f1=0.0000, elapsed=16.82s
+[16:09:21] [XGBoost] device=cuda
+[16:09:38] [File] done chb03_37.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.83s
+[16:09:38] [XGBoost] device=cuda
+[16:09:54] [File] done chb03_38.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[  28%] Evaluating held-out subject chb04
+[16:19:54] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1314
+[16:19:58] [XGBoost] device=cuda
+[16:20:12] [File] done chb04_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.85s
+[16:20:12] [XGBoost] device=cuda
+[16:20:27] [File] done chb04_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.91s
+[16:20:27] [XGBoost] device=cuda
+[16:20:42] [File] done chb04_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.83s
+[16:20:42] [XGBoost] device=cuda
+[16:20:57] [File] done chb04_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.85s
+[16:20:57] [XGBoost] device=cuda
+[16:21:12] [File] done chb04_05.edf, baseline_f1=0.4272, qubo_f1=0.0000, elapsed=14.94s
+[16:21:12] [XGBoost] device=cuda
+[16:21:27] [File] done chb04_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.85s
+[16:21:27] [XGBoost] device=cuda
+[16:21:42] [File] done chb04_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.78s
+[16:21:42] [XGBoost] device=cuda
+[16:21:57] [File] done chb04_08.edf, baseline_f1=0.2923, qubo_f1=0.0000, elapsed=14.97s
+[16:21:57] [XGBoost] device=cuda
+[16:22:11] [File] done chb04_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.95s
+[16:22:11] [XGBoost] device=cuda
+[16:22:26] [File] done chb04_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.85s
+[16:22:26] [XGBoost] device=cuda
+[16:22:41] [File] done chb04_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.86s
+[16:22:41] [XGBoost] device=cuda
+[16:22:56] [File] done chb04_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.89s
+[16:22:56] [XGBoost] device=cuda
+[16:23:11] [File] done chb04_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.81s
+[16:23:11] [XGBoost] device=cuda
+[16:23:26] [File] done chb04_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.90s
+[16:23:26] [XGBoost] device=cuda
+[16:23:41] [File] done chb04_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.85s
+[16:23:41] [XGBoost] device=cuda
+[16:23:55] [File] done chb04_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.85s
+[16:23:55] [XGBoost] device=cuda
+[16:24:10] [File] done chb04_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.94s
+[16:24:10] [XGBoost] device=cuda
+[16:24:25] [File] done chb04_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.89s
+[16:24:25] [XGBoost] device=cuda
+[16:24:40] [File] done chb04_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.88s
+[16:24:40] [XGBoost] device=cuda
+[16:24:55] [File] done chb04_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.85s
+[16:24:55] [XGBoost] device=cuda
+[16:25:10] [File] done chb04_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.90s
+[16:25:10] [XGBoost] device=cuda
+[16:25:25] [File] done chb04_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=15.15s
+[16:25:25] [XGBoost] device=cuda
+[16:25:40] [File] done chb04_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.92s
+[16:25:40] [XGBoost] device=cuda
+[16:25:55] [File] done chb04_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.94s
+[16:25:55] [XGBoost] device=cuda
+[16:26:10] [File] done chb04_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.86s
+[16:26:10] [XGBoost] device=cuda
+[16:26:25] [File] done chb04_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=15.11s
+[16:26:25] [XGBoost] device=cuda
+[16:26:40] [File] done chb04_28.edf, baseline_f1=0.5360, qubo_f1=0.0448, elapsed=14.94s
+[16:26:40] [XGBoost] device=cuda
+[16:26:55] [File] done chb04_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.94s
+[16:26:55] [XGBoost] device=cuda
+[16:27:10] [File] done chb04_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.92s
+[16:27:10] [XGBoost] device=cuda
+[16:27:25] [File] done chb04_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.93s
+[16:27:25] [XGBoost] device=cuda
+[16:27:40] [File] done chb04_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.91s
+[16:27:40] [XGBoost] device=cuda
+[16:27:54] [File] done chb04_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.91s
+[16:27:54] [XGBoost] device=cuda
+[16:28:09] [File] done chb04_34.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.98s
+[16:28:09] [XGBoost] device=cuda
+[16:28:24] [File] done chb04_35.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.92s
+[16:28:24] [XGBoost] device=cuda
+[16:28:39] [File] done chb04_36.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=15.00s
+[16:28:39] [XGBoost] device=cuda
+[16:28:54] [File] done chb04_37.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.95s
+[16:28:54] [XGBoost] device=cuda
+[16:29:09] [File] done chb04_38.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.98s
+[16:29:09] [XGBoost] device=cuda
+[16:29:24] [File] done chb04_39.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.85s
+[16:29:24] [XGBoost] device=cuda
+[16:29:39] [File] done chb04_40.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.98s
+[16:29:39] [XGBoost] device=cuda
+[16:29:54] [File] done chb04_41.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.85s
+[16:29:54] [XGBoost] device=cuda
+[16:30:09] [File] done chb04_42.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=14.89s
+[16:30:09] [XGBoost] device=cuda
+[16:30:24] [File] done chb04_43.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=15.02s
+[  32%] Evaluating held-out subject chb05
+[16:41:47] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1089
+[16:41:51] [XGBoost] device=cuda
+[16:42:08] [File] done chb05_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[16:42:08] [XGBoost] device=cuda
+[16:42:25] [File] done chb05_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.91s
+[16:42:25] [XGBoost] device=cuda
+[16:42:41] [File] done chb05_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.81s
+[16:42:41] [XGBoost] device=cuda
+[16:42:58] [File] done chb05_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[16:42:58] [XGBoost] device=cuda
+[16:43:15] [File] done chb05_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.96s
+[16:43:15] [XGBoost] device=cuda
+[16:43:32] [File] done chb05_06.edf, baseline_f1=0.4177, qubo_f1=0.8286, elapsed=16.77s
+[16:43:32] [XGBoost] device=cuda
+[16:43:49] [File] done chb05_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[16:43:49] [XGBoost] device=cuda
+[16:44:06] [File] done chb05_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[16:44:06] [XGBoost] device=cuda
+[16:44:22] [File] done chb05_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[16:44:22] [XGBoost] device=cuda
+[16:44:39] [File] done chb05_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.83s
+[16:44:39] [XGBoost] device=cuda
+[16:44:56] [File] done chb05_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[16:44:56] [XGBoost] device=cuda
+[16:45:13] [File] done chb05_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[16:45:13] [XGBoost] device=cuda
+[16:45:30] [File] done chb05_13.edf, baseline_f1=0.4530, qubo_f1=0.8235, elapsed=16.83s
+[16:45:30] [XGBoost] device=cuda
+[16:45:47] [File] done chb05_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.76s
+[16:45:47] [XGBoost] device=cuda
+[16:46:03] [File] done chb05_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[16:46:03] [XGBoost] device=cuda
+[16:46:20] [File] done chb05_16.edf, baseline_f1=0.3757, qubo_f1=0.7692, elapsed=16.79s
+[16:46:20] [XGBoost] device=cuda
+[16:46:37] [File] done chb05_17.edf, baseline_f1=0.2623, qubo_f1=0.6885, elapsed=16.92s
+[16:46:37] [XGBoost] device=cuda
+[16:46:54] [File] done chb05_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[16:46:54] [XGBoost] device=cuda
+[16:47:11] [File] done chb05_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[16:47:11] [XGBoost] device=cuda
+[16:47:28] [File] done chb05_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[16:47:28] [XGBoost] device=cuda
+[16:47:45] [File] done chb05_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[16:47:45] [XGBoost] device=cuda
+[16:48:01] [File] done chb05_22.edf, baseline_f1=0.2165, qubo_f1=0.8462, elapsed=16.89s
+[16:48:01] [XGBoost] device=cuda
+[16:48:18] [File] done chb05_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[16:48:18] [XGBoost] device=cuda
+[16:48:35] [File] done chb05_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[16:48:35] [XGBoost] device=cuda
+[16:48:52] [File] done chb05_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.83s
+[16:48:52] [XGBoost] device=cuda
+[16:49:09] [File] done chb05_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[16:49:09] [XGBoost] device=cuda
+[16:49:26] [File] done chb05_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[16:49:26] [XGBoost] device=cuda
+[16:49:43] [File] done chb05_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.83s
+[16:49:43] [XGBoost] device=cuda
+[16:50:00] [File] done chb05_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[16:50:00] [XGBoost] device=cuda
+[16:50:16] [File] done chb05_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[16:50:16] [XGBoost] device=cuda
+[16:50:33] [File] done chb05_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[16:50:33] [XGBoost] device=cuda
+[16:50:50] [File] done chb05_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[16:50:50] [XGBoost] device=cuda
+[16:51:07] [File] done chb05_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[16:51:07] [XGBoost] device=cuda
+[16:51:24] [File] done chb05_34.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[16:51:24] [XGBoost] device=cuda
+[16:51:41] [File] done chb05_35.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[16:51:41] [XGBoost] device=cuda
+[16:51:58] [File] done chb05_36.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[16:51:58] [XGBoost] device=cuda
+[16:52:14] [File] done chb05_37.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.81s
+[16:52:14] [XGBoost] device=cuda
+[16:52:31] [File] done chb05_38.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.89s
+[16:52:31] [XGBoost] device=cuda
+[16:52:48] [File] done chb05_39.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[  35%] Evaluating held-out subject chb06
+[17:03:55] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1820
+[17:03:58] [XGBoost] device=cuda
+[17:04:15] [File] done chb06_01.edf, baseline_f1=0.0077, qubo_f1=0.0000, elapsed=16.68s
+[17:04:15] [XGBoost] device=cuda
+[17:04:32] [File] done chb06_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.61s
+[17:04:32] [XGBoost] device=cuda
+[17:04:48] [File] done chb06_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.46s
+[17:04:48] [XGBoost] device=cuda
+[17:05:05] [File] done chb06_04.edf, baseline_f1=0.0430, qubo_f1=0.0000, elapsed=16.53s
+[17:05:05] [XGBoost] device=cuda
+[17:05:21] [File] done chb06_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.60s
+[17:05:21] [XGBoost] device=cuda
+[17:05:38] [File] done chb06_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.59s
+[17:05:38] [XGBoost] device=cuda
+[17:05:54] [File] done chb06_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.54s
+[17:05:54] [XGBoost] device=cuda
+[17:06:11] [File] done chb06_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.52s
+[17:06:11] [XGBoost] device=cuda
+[17:06:27] [File] done chb06_09.edf, baseline_f1=0.0101, qubo_f1=0.0000, elapsed=16.55s
+[17:06:27] [XGBoost] device=cuda
+[17:06:44] [File] done chb06_10.edf, baseline_f1=0.0051, qubo_f1=0.0000, elapsed=16.52s
+[17:06:44] [XGBoost] device=cuda
+[17:07:01] [File] done chb06_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.55s
+[17:07:01] [XGBoost] device=cuda
+[17:07:17] [File] done chb06_13.edf, baseline_f1=0.0024, qubo_f1=0.0000, elapsed=16.55s
+[17:07:17] [XGBoost] device=cuda
+[17:07:34] [File] done chb06_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.52s
+[17:07:34] [XGBoost] device=cuda
+[17:07:50] [File] done chb06_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.47s
+[17:07:50] [XGBoost] device=cuda
+[17:08:06] [File] done chb06_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.38s
+[17:08:06] [XGBoost] device=cuda
+[17:08:23] [File] done chb06_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.51s
+[17:08:23] [XGBoost] device=cuda
+[17:08:39] [File] done chb06_18.edf, baseline_f1=0.0100, qubo_f1=0.0000, elapsed=16.48s
+[17:08:39] [XGBoost] device=cuda
+[17:08:56] [File] done chb06_24.edf, baseline_f1=0.0087, qubo_f1=0.0000, elapsed=16.49s
+[  38%] Evaluating held-out subject chb07
+[17:19:57] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1204
+[17:20:01] [XGBoost] device=cuda
+[17:20:18] [File] done chb07_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.51s
+[17:20:18] [XGBoost] device=cuda
+[17:20:34] [File] done chb07_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.59s
+[17:20:34] [XGBoost] device=cuda
+[17:20:51] [File] done chb07_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.50s
+[17:20:51] [XGBoost] device=cuda
+[17:21:07] [File] done chb07_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.45s
+[17:21:07] [XGBoost] device=cuda
+[17:21:24] [File] done chb07_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.50s
+[17:21:24] [XGBoost] device=cuda
+[17:21:40] [File] done chb07_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.35s
+[17:21:40] [XGBoost] device=cuda
+[17:21:56] [File] done chb07_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.40s
+[17:21:56] [XGBoost] device=cuda
+[17:22:13] [File] done chb07_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.54s
+[17:22:13] [XGBoost] device=cuda
+[17:22:29] [File] done chb07_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.51s
+[17:22:29] [XGBoost] device=cuda
+[17:22:46] [File] done chb07_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.52s
+[17:22:46] [XGBoost] device=cuda
+[17:23:03] [File] done chb07_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.52s
+[17:23:03] [XGBoost] device=cuda
+[17:23:19] [File] done chb07_12.edf, baseline_f1=0.1997, qubo_f1=0.0000, elapsed=16.61s
+[17:23:19] [XGBoost] device=cuda
+[17:23:36] [File] done chb07_13.edf, baseline_f1=0.5398, qubo_f1=0.8364, elapsed=16.49s
+[17:23:36] [XGBoost] device=cuda
+[17:23:52] [File] done chb07_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.60s
+[17:23:52] [XGBoost] device=cuda
+[17:24:09] [File] done chb07_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.55s
+[17:24:09] [XGBoost] device=cuda
+[17:24:25] [File] done chb07_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.51s
+[17:24:25] [XGBoost] device=cuda
+[17:24:42] [File] done chb07_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.49s
+[17:24:42] [XGBoost] device=cuda
+[17:24:58] [File] done chb07_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.54s
+[17:24:58] [XGBoost] device=cuda
+[17:25:15] [File] done chb07_19.edf, baseline_f1=0.4078, qubo_f1=0.6509, elapsed=16.64s
+[  42%] Evaluating held-out subject chb08
+[17:36:51] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1311
+[17:36:55] [XGBoost] device=cuda
+[17:37:12] [File] done chb08_02.edf, baseline_f1=0.4581, qubo_f1=0.0000, elapsed=17.20s
+[17:37:12] [XGBoost] device=cuda
+[17:37:30] [File] done chb08_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.19s
+[17:37:30] [XGBoost] device=cuda
+[17:37:47] [File] done chb08_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.22s
+[17:37:47] [XGBoost] device=cuda
+[17:38:04] [File] done chb08_05.edf, baseline_f1=0.4327, qubo_f1=0.0000, elapsed=17.14s
+[17:38:04] [XGBoost] device=cuda
+[17:38:21] [File] done chb08_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.23s
+[17:38:21] [XGBoost] device=cuda
+[17:38:38] [File] done chb08_11.edf, baseline_f1=0.3732, qubo_f1=0.2930, elapsed=17.13s
+[17:38:38] [XGBoost] device=cuda
+[17:38:55] [File] done chb08_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.15s
+[17:38:55] [XGBoost] device=cuda
+[17:39:13] [File] done chb08_13.edf, baseline_f1=0.3878, qubo_f1=0.0952, elapsed=17.06s
+[17:39:13] [XGBoost] device=cuda
+[17:39:30] [File] done chb08_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.16s
+[17:39:30] [XGBoost] device=cuda
+[17:39:47] [File] done chb08_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.22s
+[17:39:47] [XGBoost] device=cuda
+[17:40:04] [File] done chb08_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.17s
+[17:40:04] [XGBoost] device=cuda
+[17:40:21] [File] done chb08_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.29s
+[17:40:21] [XGBoost] device=cuda
+[17:40:39] [File] done chb08_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.20s
+[17:40:39] [XGBoost] device=cuda
+[17:40:56] [File] done chb08_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.23s
+[17:40:56] [XGBoost] device=cuda
+[17:41:13] [File] done chb08_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.14s
+[17:41:13] [XGBoost] device=cuda
+[17:41:30] [File] done chb08_21.edf, baseline_f1=0.3387, qubo_f1=0.0000, elapsed=17.14s
+[17:41:30] [XGBoost] device=cuda
+[17:41:47] [File] done chb08_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.21s
+[17:41:47] [XGBoost] device=cuda
+[17:42:04] [File] done chb08_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.05s
+[17:42:04] [XGBoost] device=cuda
+[17:42:21] [File] done chb08_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.18s
+[17:42:21] [XGBoost] device=cuda
+[17:42:39] [File] done chb08_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.20s
+[  45%] Evaluating held-out subject chb09
+[17:53:42] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1114
+[17:53:46] [XGBoost] device=cuda
+[17:54:03] [File] done chb09_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.46s
+[17:54:03] [XGBoost] device=cuda
+[17:54:19] [File] done chb09_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.57s
+[17:54:19] [XGBoost] device=cuda
+[17:54:36] [File] done chb09_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.54s
+[17:54:36] [XGBoost] device=cuda
+[17:54:52] [File] done chb09_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.50s
+[17:54:52] [XGBoost] device=cuda
+[17:55:09] [File] done chb09_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.46s
+[17:55:09] [XGBoost] device=cuda
+[17:55:25] [File] done chb09_06.edf, baseline_f1=0.0231, qubo_f1=0.9000, elapsed=16.57s
+[17:55:25] [XGBoost] device=cuda
+[17:55:42] [File] done chb09_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.55s
+[17:55:42] [XGBoost] device=cuda
+[17:55:58] [File] done chb09_08.edf, baseline_f1=0.0774, qubo_f1=0.9547, elapsed=16.46s
+[17:55:58] [XGBoost] device=cuda
+[17:56:15] [File] done chb09_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.41s
+[17:56:15] [XGBoost] device=cuda
+[17:56:31] [File] done chb09_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.52s
+[17:56:31] [XGBoost] device=cuda
+[17:56:48] [File] done chb09_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.60s
+[17:56:48] [XGBoost] device=cuda
+[17:57:04] [File] done chb09_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.46s
+[17:57:04] [XGBoost] device=cuda
+[17:57:21] [File] done chb09_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.53s
+[17:57:21] [XGBoost] device=cuda
+[17:57:37] [File] done chb09_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.55s
+[17:57:37] [XGBoost] device=cuda
+[17:57:54] [File] done chb09_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.56s
+[17:57:54] [XGBoost] device=cuda
+[17:58:10] [File] done chb09_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.49s
+[17:58:10] [XGBoost] device=cuda
+[17:58:27] [File] done chb09_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.39s
+[17:58:27] [XGBoost] device=cuda
+[17:58:43] [File] done chb09_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.48s
+[17:58:43] [XGBoost] device=cuda
+[17:59:00] [File] done chb09_19.edf, baseline_f1=0.0416, qubo_f1=0.8209, elapsed=16.36s
+[  48%] Evaluating held-out subject chb10
+[18:10:14] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1123
+[18:10:18] [XGBoost] device=cuda
+[18:10:35] [File] done chb10_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[18:10:35] [XGBoost] device=cuda
+[18:10:51] [File] done chb10_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.49s
+[18:10:51] [XGBoost] device=cuda
+[18:11:08] [File] done chb10_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.55s
+[18:11:08] [XGBoost] device=cuda
+[18:11:25] [File] done chb10_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.54s
+[18:11:25] [XGBoost] device=cuda
+[18:11:41] [File] done chb10_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.64s
+[18:11:41] [XGBoost] device=cuda
+[18:11:58] [File] done chb10_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.49s
+[18:11:58] [XGBoost] device=cuda
+[18:12:14] [File] done chb10_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.57s
+[18:12:14] [XGBoost] device=cuda
+[18:12:31] [File] done chb10_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.57s
+[18:12:31] [XGBoost] device=cuda
+[18:12:47] [File] done chb10_12.edf, baseline_f1=0.0404, qubo_f1=0.1081, elapsed=16.60s
+[18:12:47] [XGBoost] device=cuda
+[18:13:04] [File] done chb10_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.55s
+[18:13:04] [XGBoost] device=cuda
+[18:13:21] [File] done chb10_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.68s
+[18:13:21] [XGBoost] device=cuda
+[18:13:37] [File] done chb10_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.58s
+[18:13:37] [XGBoost] device=cuda
+[18:13:54] [File] done chb10_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.51s
+[18:13:54] [XGBoost] device=cuda
+[18:14:10] [File] done chb10_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.57s
+[18:14:10] [XGBoost] device=cuda
+[18:14:27] [File] done chb10_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.48s
+[18:14:27] [XGBoost] device=cuda
+[18:14:43] [File] done chb10_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.57s
+[18:14:43] [XGBoost] device=cuda
+[18:15:00] [File] done chb10_20.edf, baseline_f1=0.0677, qubo_f1=0.8430, elapsed=16.64s
+[18:15:00] [XGBoost] device=cuda
+[18:15:17] [File] done chb10_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.59s
+[18:15:17] [XGBoost] device=cuda
+[18:15:33] [File] done chb10_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.54s
+[18:15:33] [XGBoost] device=cuda
+[18:15:50] [File] done chb10_27.edf, baseline_f1=0.2703, qubo_f1=0.8393, elapsed=16.57s
+[18:15:50] [XGBoost] device=cuda
+[18:16:06] [File] done chb10_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.55s
+[18:16:06] [XGBoost] device=cuda
+[18:16:23] [File] done chb10_30.edf, baseline_f1=0.6727, qubo_f1=0.0000, elapsed=16.51s
+[18:16:23] [XGBoost] device=cuda
+[18:16:39] [File] done chb10_31.edf, baseline_f1=0.1331, qubo_f1=0.8986, elapsed=16.55s
+[18:16:39] [XGBoost] device=cuda
+[18:16:56] [File] done chb10_38.edf, baseline_f1=0.1367, qubo_f1=0.8133, elapsed=16.45s
+[18:16:56] [XGBoost] device=cuda
+[18:17:12] [File] done chb10_89.edf, baseline_f1=0.2752, qubo_f1=0.0000, elapsed=16.53s
+[  52%] Evaluating held-out subject chb11
+[18:28:37] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1258
+[18:28:40] [XGBoost] device=cuda
+[18:28:57] [File] done chb11_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[18:28:57] [XGBoost] device=cuda
+[18:29:14] [File] done chb11_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[18:29:14] [XGBoost] device=cuda
+[18:29:31] [File] done chb11_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[18:29:31] [XGBoost] device=cuda
+[18:29:47] [File] done chb11_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[18:29:47] [XGBoost] device=cuda
+[18:30:04] [File] done chb11_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[18:30:04] [XGBoost] device=cuda
+[18:30:21] [File] done chb11_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[18:30:21] [XGBoost] device=cuda
+[18:30:37] [File] done chb11_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.68s
+[18:30:37] [XGBoost] device=cuda
+[18:30:54] [File] done chb11_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.64s
+[18:30:54] [XGBoost] device=cuda
+[18:31:11] [File] done chb11_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.68s
+[18:31:11] [XGBoost] device=cuda
+[18:31:27] [File] done chb11_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.57s
+[18:31:27] [XGBoost] device=cuda
+[18:31:44] [File] done chb11_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[18:31:44] [XGBoost] device=cuda
+[18:32:00] [File] done chb11_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.61s
+[18:32:00] [XGBoost] device=cuda
+[18:32:17] [File] done chb11_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.81s
+[18:32:17] [XGBoost] device=cuda
+[18:32:34] [File] done chb11_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.85s
+[18:32:34] [XGBoost] device=cuda
+[18:32:51] [File] done chb11_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.63s
+[18:32:51] [XGBoost] device=cuda
+[18:33:07] [File] done chb11_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.75s
+[18:33:07] [XGBoost] device=cuda
+[18:33:24] [File] done chb11_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[18:33:24] [XGBoost] device=cuda
+[18:33:41] [File] done chb11_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[18:33:41] [XGBoost] device=cuda
+[18:33:58] [File] done chb11_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[18:33:58] [XGBoost] device=cuda
+[18:34:14] [File] done chb11_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[18:34:14] [XGBoost] device=cuda
+[18:34:31] [File] done chb11_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[18:34:31] [XGBoost] device=cuda
+[18:34:48] [File] done chb11_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[18:34:48] [XGBoost] device=cuda
+[18:35:05] [File] done chb11_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[18:35:05] [XGBoost] device=cuda
+[18:35:21] [File] done chb11_53.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[18:35:21] [XGBoost] device=cuda
+[18:35:38] [File] done chb11_54.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[18:35:38] [XGBoost] device=cuda
+[18:35:55] [File] done chb11_55.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.75s
+[18:35:55] [XGBoost] device=cuda
+[18:36:12] [File] done chb11_56.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.76s
+[18:36:12] [XGBoost] device=cuda
+[18:36:28] [File] done chb11_58.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[18:36:28] [XGBoost] device=cuda
+[18:36:45] [File] done chb11_60.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.76s
+[18:36:45] [XGBoost] device=cuda
+[18:37:02] [File] done chb11_61.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[18:37:02] [XGBoost] device=cuda
+[18:37:19] [File] done chb11_62.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[18:37:19] [XGBoost] device=cuda
+[18:37:35] [File] done chb11_63.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[18:37:35] [XGBoost] device=cuda
+[18:37:52] [File] done chb11_82.edf, baseline_f1=0.0950, qubo_f1=0.0000, elapsed=16.72s
+[18:37:52] [XGBoost] device=cuda
+[18:38:09] [File] done chb11_92.edf, baseline_f1=0.1818, qubo_f1=0.0000, elapsed=16.76s
+[18:38:09] [XGBoost] device=cuda
+[18:38:25] [File] done chb11_99.edf, baseline_f1=0.6937, qubo_f1=0.3177, elapsed=16.72s
+[  55%] Evaluating held-out subject chb12
+[18:50:01] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1469
+[18:50:04] [XGBoost] device=cuda
+[18:50:21] [File] done chb12_06.edf, baseline_f1=0.0516, qubo_f1=0.0000, elapsed=16.95s
+[18:50:21] [XGBoost] device=cuda
+[18:50:38] [File] done chb12_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.99s
+[18:50:38] [XGBoost] device=cuda
+[18:50:55] [File] done chb12_09.edf, baseline_f1=0.0811, qubo_f1=0.0000, elapsed=16.90s
+[18:50:55] [XGBoost] device=cuda
+[18:51:12] [File] done chb12_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[18:51:12] [XGBoost] device=cuda
+[18:51:29] [File] done chb12_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.89s
+[18:51:29] [XGBoost] device=cuda
+[18:51:46] [File] done chb12_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[18:51:46] [XGBoost] device=cuda
+[18:52:03] [File] done chb12_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[18:52:03] [XGBoost] device=cuda
+[18:52:20] [File] done chb12_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[18:52:20] [XGBoost] device=cuda
+[18:52:37] [File] done chb12_23.edf, baseline_f1=0.1495, qubo_f1=0.0000, elapsed=16.86s
+[18:52:37] [XGBoost] device=cuda
+[18:52:54] [File] done chb12_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[18:52:54] [XGBoost] device=cuda
+[18:53:11] [File] done chb12_27.edf, baseline_f1=0.0659, qubo_f1=0.0000, elapsed=17.00s
+[18:53:11] [XGBoost] device=cuda
+[18:53:28] [File] done chb12_28.edf, baseline_f1=0.0755, qubo_f1=0.0000, elapsed=16.93s
+[18:53:28] [XGBoost] device=cuda
+[18:53:44] [File] done chb12_29.edf, baseline_f1=0.1423, qubo_f1=0.0000, elapsed=16.95s
+[18:53:44] [XGBoost] device=cuda
+[18:54:01] [File] done chb12_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.95s
+[18:54:01] [XGBoost] device=cuda
+[18:54:18] [File] done chb12_33.edf, baseline_f1=0.1636, qubo_f1=0.0000, elapsed=16.83s
+[18:54:18] [XGBoost] device=cuda
+[18:54:35] [File] done chb12_34.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[18:54:35] [XGBoost] device=cuda
+[18:54:52] [File] done chb12_35.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[18:54:52] [XGBoost] device=cuda
+[18:55:09] [File] done chb12_36.edf, baseline_f1=0.0211, qubo_f1=0.0000, elapsed=16.90s
+[18:55:09] [XGBoost] device=cuda
+[18:55:26] [File] done chb12_37.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[18:55:26] [XGBoost] device=cuda
+[18:55:43] [File] done chb12_38.edf, baseline_f1=0.0352, qubo_f1=0.0000, elapsed=17.00s
+[18:55:43] [XGBoost] device=cuda
+[18:56:00] [File] done chb12_39.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[18:56:00] [XGBoost] device=cuda
+[18:56:17] [File] done chb12_40.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[18:56:17] [XGBoost] device=cuda
+[18:56:34] [File] done chb12_41.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[18:56:34] [XGBoost] device=cuda
+[18:56:50] [File] done chb12_42.edf, baseline_f1=0.0680, qubo_f1=0.0000, elapsed=16.88s
+[  58%] Evaluating held-out subject chb13
+[19:08:15] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1470
+[19:08:26] [XGBoost] device=cuda
+[19:08:42] [File] done chb13_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[19:08:42] [XGBoost] device=cuda
+[19:08:59] [File] done chb13_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[19:08:59] [XGBoost] device=cuda
+[19:09:16] [File] done chb13_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[19:09:16] [XGBoost] device=cuda
+[19:09:33] [File] done chb13_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[19:09:33] [XGBoost] device=cuda
+[19:09:49] [File] done chb13_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.81s
+[19:09:49] [XGBoost] device=cuda
+[19:10:06] [File] done chb13_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.75s
+[19:10:06] [XGBoost] device=cuda
+[19:10:23] [File] done chb13_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[19:10:23] [XGBoost] device=cuda
+[19:10:40] [File] done chb13_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[19:10:40] [XGBoost] device=cuda
+[19:10:56] [File] done chb13_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[19:10:56] [XGBoost] device=cuda
+[19:11:13] [File] done chb13_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[19:11:13] [XGBoost] device=cuda
+[19:11:30] [File] done chb13_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[19:11:30] [XGBoost] device=cuda
+[19:11:46] [File] done chb13_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[19:11:46] [XGBoost] device=cuda
+[19:12:03] [File] done chb13_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[19:12:03] [XGBoost] device=cuda
+[19:12:20] [File] done chb13_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[19:12:20] [XGBoost] device=cuda
+[19:12:37] [File] done chb13_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[19:12:37] [XGBoost] device=cuda
+[19:12:53] [File] done chb13_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[19:12:53] [XGBoost] device=cuda
+[19:13:10] [File] done chb13_19.edf, baseline_f1=0.0124, qubo_f1=0.0000, elapsed=16.77s
+[19:13:10] [XGBoost] device=cuda
+[19:13:27] [File] done chb13_21.edf, baseline_f1=0.0205, qubo_f1=0.0000, elapsed=16.70s
+[19:13:27] [XGBoost] device=cuda
+[19:13:43] [File] done chb13_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[19:13:43] [XGBoost] device=cuda
+[19:14:00] [File] done chb13_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[19:14:00] [XGBoost] device=cuda
+[19:14:17] [File] done chb13_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[19:14:17] [XGBoost] device=cuda
+[19:14:34] [File] done chb13_36.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.75s
+[19:14:34] [XGBoost] device=cuda
+[19:14:50] [File] done chb13_37.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.75s
+[19:14:50] [XGBoost] device=cuda
+[19:15:07] [File] done chb13_38.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[19:15:07] [XGBoost] device=cuda
+[19:15:24] [File] done chb13_39.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[19:15:24] [XGBoost] device=cuda
+[19:15:41] [File] done chb13_40.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.76s
+[19:15:41] [XGBoost] device=cuda
+[19:15:57] [File] done chb13_47.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.64s
+[19:15:57] [XGBoost] device=cuda
+[19:16:14] [File] done chb13_55.edf, baseline_f1=0.0167, qubo_f1=0.0000, elapsed=16.70s
+[19:16:14] [XGBoost] device=cuda
+[19:16:31] [File] done chb13_56.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.68s
+[19:16:31] [XGBoost] device=cuda
+[19:16:47] [File] done chb13_58.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.66s
+[19:16:47] [XGBoost] device=cuda
+[19:17:04] [File] done chb13_59.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[19:17:04] [XGBoost] device=cuda
+[19:17:21] [File] done chb13_60.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.75s
+[19:17:21] [XGBoost] device=cuda
+[19:17:38] [File] done chb13_62.edf, baseline_f1=0.2129, qubo_f1=0.0000, elapsed=16.67s
+[  62%] Evaluating held-out subject chb14
+[19:29:09] [QUBO-Tune] best λ=1.0, θ=0.3, score=0.1361
+[19:29:13] [XGBoost] device=cuda
+[19:29:30] [File] done chb14_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[19:29:30] [XGBoost] device=cuda
+[19:29:47] [File] done chb14_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[19:29:47] [XGBoost] device=cuda
+[19:30:04] [File] done chb14_03.edf, baseline_f1=0.0331, qubo_f1=0.0000, elapsed=16.91s
+[19:30:04] [XGBoost] device=cuda
+[19:30:20] [File] done chb14_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[19:30:20] [XGBoost] device=cuda
+[19:30:37] [File] done chb14_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.91s
+[19:30:37] [XGBoost] device=cuda
+[19:30:54] [File] done chb14_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[19:30:54] [XGBoost] device=cuda
+[19:31:11] [File] done chb14_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.89s
+[19:31:11] [XGBoost] device=cuda
+[19:31:28] [File] done chb14_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[19:31:28] [XGBoost] device=cuda
+[19:31:45] [File] done chb14_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.91s
+[19:31:45] [XGBoost] device=cuda
+[19:32:02] [File] done chb14_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.89s
+[19:32:02] [XGBoost] device=cuda
+[19:32:19] [File] done chb14_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.97s
+[19:32:19] [XGBoost] device=cuda
+[19:32:36] [File] done chb14_17.edf, baseline_f1=0.0175, qubo_f1=0.0000, elapsed=16.88s
+[19:32:36] [XGBoost] device=cuda
+[19:32:52] [File] done chb14_18.edf, baseline_f1=0.0109, qubo_f1=0.0000, elapsed=16.82s
+[19:32:52] [XGBoost] device=cuda
+[19:33:09] [File] done chb14_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[19:33:09] [XGBoost] device=cuda
+[19:33:26] [File] done chb14_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[19:33:26] [XGBoost] device=cuda
+[19:33:43] [File] done chb14_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[19:33:43] [XGBoost] device=cuda
+[19:34:00] [File] done chb14_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[19:34:00] [XGBoost] device=cuda
+[19:34:17] [File] done chb14_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[19:34:17] [XGBoost] device=cuda
+[19:34:34] [File] done chb14_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[19:34:34] [XGBoost] device=cuda
+[19:34:51] [File] done chb14_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.99s
+[19:34:51] [XGBoost] device=cuda
+[19:35:08] [File] done chb14_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[19:35:08] [XGBoost] device=cuda
+[19:35:25] [File] done chb14_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.95s
+[19:35:25] [XGBoost] device=cuda
+[19:35:41] [File] done chb14_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[19:35:41] [XGBoost] device=cuda
+[19:35:58] [File] done chb14_37.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[19:35:58] [XGBoost] device=cuda
+[19:36:15] [File] done chb14_39.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[19:36:15] [XGBoost] device=cuda
+[19:36:32] [File] done chb14_42.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[  65%] Evaluating held-out subject chb15
+[19:47:51] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1464
+[19:47:55] [XGBoost] device=cuda
+[19:48:12] [File] done chb15_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[19:48:12] [XGBoost] device=cuda
+[19:48:28] [File] done chb15_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.75s
+[19:48:29] [XGBoost] device=cuda
+[19:48:45] [File] done chb15_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[19:48:45] [XGBoost] device=cuda
+[19:49:02] [File] done chb15_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[19:49:02] [XGBoost] device=cuda
+[19:49:19] [File] done chb15_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[19:49:19] [XGBoost] device=cuda
+[19:49:35] [File] done chb15_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[19:49:35] [XGBoost] device=cuda
+[19:49:52] [File] done chb15_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[19:49:52] [XGBoost] device=cuda
+[19:50:09] [File] done chb15_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[19:50:09] [XGBoost] device=cuda
+[19:50:25] [File] done chb15_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.66s
+[19:50:25] [XGBoost] device=cuda
+[19:50:42] [File] done chb15_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.64s
+[19:50:42] [XGBoost] device=cuda
+[19:50:59] [File] done chb15_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.59s
+[19:50:59] [XGBoost] device=cuda
+[19:51:15] [File] done chb15_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[19:51:15] [XGBoost] device=cuda
+[19:51:32] [File] done chb15_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[19:51:32] [XGBoost] device=cuda
+[19:51:49] [File] done chb15_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[19:51:49] [XGBoost] device=cuda
+[19:52:06] [File] done chb15_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[19:52:06] [XGBoost] device=cuda
+[19:52:22] [File] done chb15_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[19:52:22] [XGBoost] device=cuda
+[19:52:39] [File] done chb15_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[19:52:39] [XGBoost] device=cuda
+[19:52:56] [File] done chb15_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[19:52:56] [XGBoost] device=cuda
+[19:53:12] [File] done chb15_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[19:53:12] [XGBoost] device=cuda
+[19:53:29] [File] done chb15_22.edf, baseline_f1=0.0096, qubo_f1=0.0000, elapsed=16.71s
+[19:53:29] [XGBoost] device=cuda
+[19:53:46] [File] done chb15_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[19:53:46] [XGBoost] device=cuda
+[19:54:03] [File] done chb15_28.edf, baseline_f1=0.0104, qubo_f1=0.0000, elapsed=16.89s
+[19:54:03] [XGBoost] device=cuda
+[19:54:19] [File] done chb15_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[19:54:19] [XGBoost] device=cuda
+[19:54:36] [File] done chb15_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.68s
+[19:54:36] [XGBoost] device=cuda
+[19:54:53] [File] done chb15_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[19:54:53] [XGBoost] device=cuda
+[19:55:09] [File] done chb15_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[19:55:09] [XGBoost] device=cuda
+[19:55:26] [File] done chb15_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[19:55:26] [XGBoost] device=cuda
+[19:55:43] [File] done chb15_35.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.64s
+[19:55:43] [XGBoost] device=cuda
+[19:56:00] [File] done chb15_37.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.68s
+[19:56:00] [XGBoost] device=cuda
+[19:56:16] [File] done chb15_40.edf, baseline_f1=0.0162, qubo_f1=0.0000, elapsed=16.68s
+[19:56:16] [XGBoost] device=cuda
+[19:56:33] [File] done chb15_45.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[19:56:33] [XGBoost] device=cuda
+[19:56:50] [File] done chb15_46.edf, baseline_f1=0.0526, qubo_f1=0.0000, elapsed=16.65s
+[19:56:50] [XGBoost] device=cuda
+[19:57:06] [File] done chb15_49.edf, baseline_f1=0.0255, qubo_f1=0.0000, elapsed=16.66s
+[19:57:06] [XGBoost] device=cuda
+[19:57:23] [File] done chb15_50.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[19:57:23] [XGBoost] device=cuda
+[19:57:40] [File] done chb15_51.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[19:57:40] [XGBoost] device=cuda
+[19:57:56] [File] done chb15_52.edf, baseline_f1=0.0274, qubo_f1=0.0000, elapsed=16.71s
+[19:57:56] [XGBoost] device=cuda
+[19:58:13] [File] done chb15_54.edf, baseline_f1=0.0195, qubo_f1=0.0000, elapsed=16.73s
+[19:58:13] [XGBoost] device=cuda
+[19:58:30] [File] done chb15_61.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[19:58:30] [XGBoost] device=cuda
+[19:58:47] [File] done chb15_62.edf, baseline_f1=0.1356, qubo_f1=0.0000, elapsed=16.73s
+[19:58:47] [XGBoost] device=cuda
+[19:59:03] [File] done chb15_63.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.66s
+[  68%] Evaluating held-out subject chb16
+[20:10:47] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1471
+[20:10:51] [XGBoost] device=cuda
+[20:11:08] [File] done chb16_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.03s
+[20:11:08] [XGBoost] device=cuda
+[20:11:25] [File] done chb16_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.06s
+[20:11:25] [XGBoost] device=cuda
+[20:11:42] [File] done chb16_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.96s
+[20:11:42] [XGBoost] device=cuda
+[20:11:59] [File] done chb16_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.98s
+[20:11:59] [XGBoost] device=cuda
+[20:12:16] [File] done chb16_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.98s
+[20:12:16] [XGBoost] device=cuda
+[20:12:33] [File] done chb16_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.96s
+[20:12:33] [XGBoost] device=cuda
+[20:12:50] [File] done chb16_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.05s
+[20:12:50] [XGBoost] device=cuda
+[20:13:07] [File] done chb16_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.95s
+[20:13:07] [XGBoost] device=cuda
+[20:13:24] [File] done chb16_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.03s
+[20:13:24] [XGBoost] device=cuda
+[20:13:41] [File] done chb16_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.06s
+[20:13:41] [XGBoost] device=cuda
+[20:13:58] [File] done chb16_11.edf, baseline_f1=0.0513, qubo_f1=0.0000, elapsed=17.04s
+[20:13:58] [XGBoost] device=cuda
+[20:14:15] [File] done chb16_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.04s
+[20:14:15] [XGBoost] device=cuda
+[20:14:32] [File] done chb16_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.09s
+[20:14:32] [XGBoost] device=cuda
+[20:14:49] [File] done chb16_14.edf, baseline_f1=0.0172, qubo_f1=0.0000, elapsed=17.08s
+[20:14:49] [XGBoost] device=cuda
+[20:15:06] [File] done chb16_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.03s
+[20:15:06] [XGBoost] device=cuda
+[20:15:23] [File] done chb16_16.edf, baseline_f1=0.0656, qubo_f1=0.0000, elapsed=17.06s
+[20:15:23] [XGBoost] device=cuda
+[20:15:40] [File] done chb16_17.edf, baseline_f1=0.1754, qubo_f1=0.0000, elapsed=17.14s
+[20:15:40] [XGBoost] device=cuda
+[20:15:57] [File] done chb16_18.edf, baseline_f1=0.0870, qubo_f1=0.0000, elapsed=17.00s
+[20:15:57] [XGBoost] device=cuda
+[20:16:14] [File] done chb16_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.97s
+[  72%] Evaluating held-out subject chb17
+[20:27:49] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1350
+[20:27:54] [XGBoost] device=cuda
+[20:28:11] [File] done chb17a_03.edf, baseline_f1=0.1714, qubo_f1=0.0000, elapsed=16.91s
+[20:28:11] [XGBoost] device=cuda
+[20:28:27] [File] done chb17a_04.edf, baseline_f1=0.2647, qubo_f1=0.0000, elapsed=16.93s
+[20:28:27] [XGBoost] device=cuda
+[20:28:44] [File] done chb17a_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.99s
+[20:28:44] [XGBoost] device=cuda
+[20:29:01] [File] done chb17a_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.95s
+[20:29:01] [XGBoost] device=cuda
+[20:29:18] [File] done chb17a_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.01s
+[20:29:18] [XGBoost] device=cuda
+[20:29:35] [File] done chb17b_57.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[20:29:35] [XGBoost] device=cuda
+[20:29:52] [File] done chb17b_58.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.91s
+[20:29:52] [XGBoost] device=cuda
+[20:30:09] [File] done chb17b_59.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[20:30:09] [XGBoost] device=cuda
+[20:30:26] [File] done chb17b_60.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.95s
+[20:30:26] [XGBoost] device=cuda
+[20:30:43] [File] done chb17b_63.edf, baseline_f1=0.1935, qubo_f1=0.0000, elapsed=16.96s
+[20:30:43] [XGBoost] device=cuda
+[20:31:00] [File] done chb17b_67.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[20:31:00] [XGBoost] device=cuda
+[20:31:17] [File] done chb17b_68.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.00s
+[20:31:17] [XGBoost] device=cuda
+[20:31:34] [File] done chb17b_69.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[20:31:34] [XGBoost] device=cuda
+[20:31:51] [File] done chb17c_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[20:31:51] [XGBoost] device=cuda
+[20:32:08] [File] done chb17c_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.83s
+[20:32:08] [XGBoost] device=cuda
+[20:32:25] [File] done chb17c_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[20:32:25] [XGBoost] device=cuda
+[20:32:42] [File] done chb17c_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[20:32:42] [XGBoost] device=cuda
+[20:32:58] [File] done chb17c_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[20:32:58] [XGBoost] device=cuda
+[20:33:15] [File] done chb17c_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[20:33:15] [XGBoost] device=cuda
+[20:33:32] [File] done chb17c_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.96s
+[20:33:32] [XGBoost] device=cuda
+[20:33:49] [File] done chb17c_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[  75%] Evaluating held-out subject chb18
+[20:45:17] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1370
+[20:45:21] [XGBoost] device=cuda
+[20:45:38] [File] done chb18_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.85s
+[20:45:38] [XGBoost] device=cuda
+[20:45:55] [File] done chb18_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[20:45:55] [XGBoost] device=cuda
+[20:46:11] [File] done chb18_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.66s
+[20:46:11] [XGBoost] device=cuda
+[20:46:28] [File] done chb18_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.59s
+[20:46:28] [XGBoost] device=cuda
+[20:46:45] [File] done chb18_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[20:46:45] [XGBoost] device=cuda
+[20:47:01] [File] done chb18_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.62s
+[20:47:01] [XGBoost] device=cuda
+[20:47:18] [File] done chb18_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.63s
+[20:47:18] [XGBoost] device=cuda
+[20:47:35] [File] done chb18_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[20:47:35] [XGBoost] device=cuda
+[20:47:51] [File] done chb18_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.64s
+[20:47:51] [XGBoost] device=cuda
+[20:48:08] [File] done chb18_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.60s
+[20:48:08] [XGBoost] device=cuda
+[20:48:25] [File] done chb18_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[20:48:25] [XGBoost] device=cuda
+[20:48:41] [File] done chb18_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.60s
+[20:48:41] [XGBoost] device=cuda
+[20:48:58] [File] done chb18_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.60s
+[20:48:58] [XGBoost] device=cuda
+[20:49:14] [File] done chb18_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.65s
+[20:49:14] [XGBoost] device=cuda
+[20:49:31] [File] done chb18_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.54s
+[20:49:31] [XGBoost] device=cuda
+[20:49:48] [File] done chb18_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[20:49:48] [XGBoost] device=cuda
+[20:50:04] [File] done chb18_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[20:50:04] [XGBoost] device=cuda
+[20:50:21] [File] done chb18_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[20:50:21] [XGBoost] device=cuda
+[20:50:38] [File] done chb18_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[20:50:38] [XGBoost] device=cuda
+[20:50:55] [File] done chb18_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.85s
+[20:50:55] [XGBoost] device=cuda
+[20:51:11] [File] done chb18_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.69s
+[20:51:11] [XGBoost] device=cuda
+[20:51:28] [File] done chb18_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.62s
+[20:51:28] [XGBoost] device=cuda
+[20:51:45] [File] done chb18_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[20:51:45] [XGBoost] device=cuda
+[20:52:02] [File] done chb18_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[20:52:02] [XGBoost] device=cuda
+[20:52:18] [File] done chb18_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.75s
+[20:52:18] [XGBoost] device=cuda
+[20:52:35] [File] done chb18_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[20:52:35] [XGBoost] device=cuda
+[20:52:52] [File] done chb18_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[20:52:52] [XGBoost] device=cuda
+[20:53:08] [File] done chb18_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[20:53:08] [XGBoost] device=cuda
+[20:53:25] [File] done chb18_29.edf, baseline_f1=0.3824, qubo_f1=0.0000, elapsed=16.73s
+[20:53:25] [XGBoost] device=cuda
+[20:53:42] [File] done chb18_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.66s
+[20:53:42] [XGBoost] device=cuda
+[20:53:58] [File] done chb18_31.edf, baseline_f1=0.2556, qubo_f1=0.0000, elapsed=16.54s
+[20:53:58] [XGBoost] device=cuda
+[20:54:15] [File] done chb18_32.edf, baseline_f1=0.2189, qubo_f1=0.0000, elapsed=16.84s
+[20:54:15] [XGBoost] device=cuda
+[20:54:32] [File] done chb18_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[20:54:32] [XGBoost] device=cuda
+[20:54:49] [File] done chb18_34.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.76s
+[20:54:49] [XGBoost] device=cuda
+[20:55:05] [File] done chb18_35.edf, baseline_f1=0.1212, qubo_f1=0.0000, elapsed=16.76s
+[20:55:05] [XGBoost] device=cuda
+[20:55:22] [File] done chb18_36.edf, baseline_f1=0.2453, qubo_f1=0.0000, elapsed=16.62s
+[  78%] Evaluating held-out subject chb19
+[21:06:57] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1233
+[21:07:01] [XGBoost] device=cuda
+[21:07:17] [File] done chb19_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.81s
+[21:07:17] [XGBoost] device=cuda
+[21:07:34] [File] done chb19_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[21:07:34] [XGBoost] device=cuda
+[21:07:51] [File] done chb19_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[21:07:51] [XGBoost] device=cuda
+[21:08:08] [File] done chb19_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[21:08:08] [XGBoost] device=cuda
+[21:08:25] [File] done chb19_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[21:08:25] [XGBoost] device=cuda
+[21:08:42] [File] done chb19_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[21:08:42] [XGBoost] device=cuda
+[21:08:59] [File] done chb19_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[21:08:59] [XGBoost] device=cuda
+[21:09:15] [File] done chb19_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[21:09:15] [XGBoost] device=cuda
+[21:09:32] [File] done chb19_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[21:09:32] [XGBoost] device=cuda
+[21:09:49] [File] done chb19_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[21:09:49] [XGBoost] device=cuda
+[21:10:06] [File] done chb19_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.96s
+[21:10:06] [XGBoost] device=cuda
+[21:10:23] [File] done chb19_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[21:10:23] [XGBoost] device=cuda
+[21:10:40] [File] done chb19_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[21:10:40] [XGBoost] device=cuda
+[21:10:57] [File] done chb19_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[21:10:57] [XGBoost] device=cuda
+[21:11:14] [File] done chb19_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[21:11:14] [XGBoost] device=cuda
+[21:11:30] [File] done chb19_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[21:11:30] [XGBoost] device=cuda
+[21:11:47] [File] done chb19_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.98s
+[21:11:47] [XGBoost] device=cuda
+[21:12:04] [File] done chb19_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[21:12:04] [XGBoost] device=cuda
+[21:12:21] [File] done chb19_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.81s
+[21:12:21] [XGBoost] device=cuda
+[21:12:38] [File] done chb19_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.89s
+[21:12:38] [XGBoost] device=cuda
+[21:12:55] [File] done chb19_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[21:12:55] [XGBoost] device=cuda
+[21:13:12] [File] done chb19_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.07s
+[21:13:12] [XGBoost] device=cuda
+[21:13:29] [File] done chb19_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.85s
+[21:13:29] [XGBoost] device=cuda
+[21:13:45] [File] done chb19_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[21:13:45] [XGBoost] device=cuda
+[21:14:02] [File] done chb19_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.89s
+[21:14:02] [XGBoost] device=cuda
+[21:14:19] [File] done chb19_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[21:14:19] [XGBoost] device=cuda
+[21:14:36] [File] done chb19_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[21:14:36] [XGBoost] device=cuda
+[21:14:53] [File] done chb19_28.edf, baseline_f1=0.3333, qubo_f1=0.2857, elapsed=16.91s
+[21:14:53] [XGBoost] device=cuda
+[21:15:10] [File] done chb19_29.edf, baseline_f1=0.6438, qubo_f1=0.6491, elapsed=16.87s
+[21:15:10] [XGBoost] device=cuda
+[21:15:27] [File] done chb19_30.edf, baseline_f1=0.7296, qubo_f1=0.7244, elapsed=16.82s
+[  82%] Evaluating held-out subject chb20
+[21:27:03] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1367
+[21:27:07] [XGBoost] device=cuda
+[21:27:24] [File] done chb20_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[21:27:24] [XGBoost] device=cuda
+[21:27:41] [File] done chb20_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.96s
+[21:27:41] [XGBoost] device=cuda
+[21:27:58] [File] done chb20_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[21:27:58] [XGBoost] device=cuda
+[21:28:14] [File] done chb20_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.76s
+[21:28:14] [XGBoost] device=cuda
+[21:28:31] [File] done chb20_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[21:28:31] [XGBoost] device=cuda
+[21:28:48] [File] done chb20_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.99s
+[21:28:48] [XGBoost] device=cuda
+[21:29:05] [File] done chb20_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.88s
+[21:29:05] [XGBoost] device=cuda
+[21:29:22] [File] done chb20_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[21:29:22] [XGBoost] device=cuda
+[21:29:39] [File] done chb20_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[21:29:39] [XGBoost] device=cuda
+[21:29:56] [File] done chb20_12.edf, baseline_f1=0.2545, qubo_f1=0.0000, elapsed=16.94s
+[21:29:56] [XGBoost] device=cuda
+[21:30:13] [File] done chb20_13.edf, baseline_f1=0.2151, qubo_f1=0.0000, elapsed=16.94s
+[21:30:13] [XGBoost] device=cuda
+[21:30:30] [File] done chb20_14.edf, baseline_f1=0.0323, qubo_f1=0.0000, elapsed=16.92s
+[21:30:30] [XGBoost] device=cuda
+[21:30:47] [File] done chb20_15.edf, baseline_f1=0.3077, qubo_f1=0.0000, elapsed=16.88s
+[21:30:47] [XGBoost] device=cuda
+[21:31:04] [File] done chb20_16.edf, baseline_f1=0.4810, qubo_f1=0.0000, elapsed=16.95s
+[21:31:04] [XGBoost] device=cuda
+[21:31:20] [File] done chb20_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[21:31:20] [XGBoost] device=cuda
+[21:31:37] [File] done chb20_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.91s
+[21:31:37] [XGBoost] device=cuda
+[21:31:54] [File] done chb20_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[21:31:54] [XGBoost] device=cuda
+[21:32:11] [File] done chb20_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.90s
+[21:32:11] [XGBoost] device=cuda
+[21:32:28] [File] done chb20_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[21:32:28] [XGBoost] device=cuda
+[21:32:45] [File] done chb20_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[21:32:45] [XGBoost] device=cuda
+[21:33:02] [File] done chb20_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[21:33:02] [XGBoost] device=cuda
+[21:33:18] [File] done chb20_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[21:33:18] [XGBoost] device=cuda
+[21:33:35] [File] done chb20_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[21:33:35] [XGBoost] device=cuda
+[21:33:52] [File] done chb20_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.86s
+[21:33:52] [XGBoost] device=cuda
+[21:34:09] [File] done chb20_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.91s
+[21:34:09] [XGBoost] device=cuda
+[21:34:26] [File] done chb20_34.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[21:34:26] [XGBoost] device=cuda
+[21:34:43] [File] done chb20_59.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.84s
+[21:34:43] [XGBoost] device=cuda
+[21:34:59] [File] done chb20_60.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.81s
+[21:34:59] [XGBoost] device=cuda
+[21:35:16] [File] done chb20_68.edf, baseline_f1=0.2034, qubo_f1=0.0000, elapsed=16.85s
+[  85%] Evaluating held-out subject chb21
+[21:46:45] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1366
+[21:46:49] [XGBoost] device=cuda
+[21:47:06] [File] done chb21_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[21:47:06] [XGBoost] device=cuda
+[21:47:23] [File] done chb21_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.76s
+[21:47:23] [XGBoost] device=cuda
+[21:47:39] [File] done chb21_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[21:47:39] [XGBoost] device=cuda
+[21:47:56] [File] done chb21_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[21:47:56] [XGBoost] device=cuda
+[21:48:13] [File] done chb21_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[21:48:13] [XGBoost] device=cuda
+[21:48:30] [File] done chb21_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[21:48:30] [XGBoost] device=cuda
+[21:48:46] [File] done chb21_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[21:48:46] [XGBoost] device=cuda
+[21:49:03] [File] done chb21_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[21:49:03] [XGBoost] device=cuda
+[21:49:20] [File] done chb21_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[21:49:20] [XGBoost] device=cuda
+[21:49:37] [File] done chb21_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[21:49:37] [XGBoost] device=cuda
+[21:49:54] [File] done chb21_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.75s
+[21:49:54] [XGBoost] device=cuda
+[21:50:10] [File] done chb21_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[21:50:10] [XGBoost] device=cuda
+[21:50:27] [File] done chb21_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[21:50:27] [XGBoost] device=cuda
+[21:50:44] [File] done chb21_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.76s
+[21:50:44] [XGBoost] device=cuda
+[21:51:01] [File] done chb21_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.83s
+[21:51:01] [XGBoost] device=cuda
+[21:51:18] [File] done chb21_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.83s
+[21:51:18] [XGBoost] device=cuda
+[21:51:34] [File] done chb21_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[21:51:34] [XGBoost] device=cuda
+[21:51:51] [File] done chb21_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[21:51:51] [XGBoost] device=cuda
+[21:52:08] [File] done chb21_19.edf, baseline_f1=0.1892, qubo_f1=0.0000, elapsed=16.79s
+[21:52:08] [XGBoost] device=cuda
+[21:52:24] [File] done chb21_20.edf, baseline_f1=0.3429, qubo_f1=0.0000, elapsed=16.65s
+[21:52:24] [XGBoost] device=cuda
+[21:52:41] [File] done chb21_21.edf, baseline_f1=0.3704, qubo_f1=0.0000, elapsed=16.79s
+[21:52:41] [XGBoost] device=cuda
+[21:52:58] [File] done chb21_22.edf, baseline_f1=0.3333, qubo_f1=0.0000, elapsed=16.75s
+[21:52:58] [XGBoost] device=cuda
+[21:53:15] [File] done chb21_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.81s
+[21:53:15] [XGBoost] device=cuda
+[21:53:31] [File] done chb21_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[21:53:31] [XGBoost] device=cuda
+[21:53:48] [File] done chb21_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[21:53:48] [XGBoost] device=cuda
+[21:54:05] [File] done chb21_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[21:54:05] [XGBoost] device=cuda
+[21:54:22] [File] done chb21_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[21:54:22] [XGBoost] device=cuda
+[21:54:39] [File] done chb21_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.76s
+[21:54:39] [XGBoost] device=cuda
+[21:54:55] [File] done chb21_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.78s
+[21:54:55] [XGBoost] device=cuda
+[21:55:12] [File] done chb21_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[21:55:12] [XGBoost] device=cuda
+[21:55:29] [File] done chb21_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.78s
+[21:55:29] [XGBoost] device=cuda
+[21:55:46] [File] done chb21_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.79s
+[21:55:46] [XGBoost] device=cuda
+[21:56:02] [File] done chb21_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[  88%] Evaluating held-out subject chb22
+[22:07:31] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1241
+[22:07:34] [XGBoost] device=cuda
+[22:07:51] [File] done chb22_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[22:07:51] [XGBoost] device=cuda
+[22:08:08] [File] done chb22_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[22:08:08] [XGBoost] device=cuda
+[22:08:25] [File] done chb22_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.78s
+[22:08:25] [XGBoost] device=cuda
+[22:08:42] [File] done chb22_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.82s
+[22:08:42] [XGBoost] device=cuda
+[22:08:58] [File] done chb22_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[22:08:58] [XGBoost] device=cuda
+[22:09:15] [File] done chb22_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[22:09:15] [XGBoost] device=cuda
+[22:09:32] [File] done chb22_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.75s
+[22:09:32] [XGBoost] device=cuda
+[22:09:49] [File] done chb22_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.85s
+[22:09:49] [XGBoost] device=cuda
+[22:10:05] [File] done chb22_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[22:10:05] [XGBoost] device=cuda
+[22:10:22] [File] done chb22_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.77s
+[22:10:22] [XGBoost] device=cuda
+[22:10:39] [File] done chb22_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[22:10:39] [XGBoost] device=cuda
+[22:10:56] [File] done chb22_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[22:10:56] [XGBoost] device=cuda
+[22:11:13] [File] done chb22_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.73s
+[22:11:13] [XGBoost] device=cuda
+[22:11:29] [File] done chb22_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[22:11:29] [XGBoost] device=cuda
+[22:11:46] [File] done chb22_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.68s
+[22:11:46] [XGBoost] device=cuda
+[22:12:03] [File] done chb22_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[22:12:03] [XGBoost] device=cuda
+[22:12:19] [File] done chb22_20.edf, baseline_f1=0.6087, qubo_f1=0.4935, elapsed=16.72s
+[22:12:19] [XGBoost] device=cuda
+[22:12:36] [File] done chb22_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[22:12:36] [XGBoost] device=cuda
+[22:12:53] [File] done chb22_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.80s
+[22:12:53] [XGBoost] device=cuda
+[22:13:10] [File] done chb22_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.78s
+[22:13:10] [XGBoost] device=cuda
+[22:13:26] [File] done chb22_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[22:13:26] [XGBoost] device=cuda
+[22:13:43] [File] done chb22_25.edf, baseline_f1=0.6369, qubo_f1=0.4086, elapsed=16.69s
+[22:13:43] [XGBoost] device=cuda
+[22:14:00] [File] done chb22_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[22:14:00] [XGBoost] device=cuda
+[22:14:17] [File] done chb22_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.83s
+[22:14:17] [XGBoost] device=cuda
+[22:14:33] [File] done chb22_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.70s
+[22:14:33] [XGBoost] device=cuda
+[22:14:50] [File] done chb22_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[22:14:50] [XGBoost] device=cuda
+[22:15:07] [File] done chb22_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.74s
+[22:15:07] [XGBoost] device=cuda
+[22:15:24] [File] done chb22_38.edf, baseline_f1=0.4615, qubo_f1=0.1538, elapsed=16.75s
+[22:15:24] [XGBoost] device=cuda
+[22:15:40] [File] done chb22_51.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.71s
+[22:15:40] [XGBoost] device=cuda
+[22:15:57] [File] done chb22_54.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.72s
+[22:15:57] [XGBoost] device=cuda
+[22:16:14] [File] done chb22_77.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.67s
+[  92%] Evaluating held-out subject chb23
+[22:27:45] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1294
+[22:27:49] [XGBoost] device=cuda
+[22:28:06] [File] done chb23_06.edf, baseline_f1=0.5474, qubo_f1=0.0000, elapsed=16.98s
+[22:28:06] [XGBoost] device=cuda
+[22:28:22] [File] done chb23_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.87s
+[22:28:22] [XGBoost] device=cuda
+[22:28:39] [File] done chb23_08.edf, baseline_f1=0.2197, qubo_f1=0.0000, elapsed=16.94s
+[22:28:39] [XGBoost] device=cuda
+[22:28:56] [File] done chb23_09.edf, baseline_f1=0.5275, qubo_f1=0.0163, elapsed=17.06s
+[22:28:56] [XGBoost] device=cuda
+[22:29:13] [File] done chb23_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.09s
+[22:29:13] [XGBoost] device=cuda
+[22:29:30] [File] done chb23_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[22:29:30] [XGBoost] device=cuda
+[22:29:47] [File] done chb23_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.94s
+[22:29:47] [XGBoost] device=cuda
+[22:30:04] [File] done chb23_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.01s
+[22:30:04] [XGBoost] device=cuda
+[22:30:21] [File] done chb23_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.91s
+[  95%] Evaluating held-out subject chb24
+[22:42:01] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.1241
+[22:42:05] [XGBoost] device=cuda
+[22:42:22] [File] done chb24_01.edf, baseline_f1=0.3924, qubo_f1=0.2571, elapsed=17.05s
+[22:42:22] [XGBoost] device=cuda
+[22:42:39] [File] done chb24_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.97s
+[22:42:39] [XGBoost] device=cuda
+[22:42:56] [File] done chb24_03.edf, baseline_f1=0.5378, qubo_f1=0.5600, elapsed=17.03s
+[22:42:56] [XGBoost] device=cuda
+[22:43:13] [File] done chb24_04.edf, baseline_f1=0.2639, qubo_f1=0.0000, elapsed=16.89s
+[22:43:13] [XGBoost] device=cuda
+[22:43:30] [File] done chb24_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.95s
+[22:43:30] [XGBoost] device=cuda
+[22:43:47] [File] done chb24_06.edf, baseline_f1=0.1429, qubo_f1=0.0000, elapsed=16.90s
+[22:43:47] [XGBoost] device=cuda
+[22:44:04] [File] done chb24_07.edf, baseline_f1=0.0579, qubo_f1=0.0000, elapsed=16.96s
+[22:44:04] [XGBoost] device=cuda
+[22:44:21] [File] done chb24_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=17.07s
+[22:44:21] [XGBoost] device=cuda
+[22:44:38] [File] done chb24_09.edf, baseline_f1=0.1374, qubo_f1=0.0000, elapsed=16.95s
+[22:44:38] [XGBoost] device=cuda
+[22:44:55] [File] done chb24_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.98s
+[22:44:55] [XGBoost] device=cuda
+[22:45:12] [File] done chb24_11.edf, baseline_f1=0.2198, qubo_f1=0.0000, elapsed=17.12s
+[22:45:12] [XGBoost] device=cuda
+[22:45:29] [File] done chb24_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[22:45:29] [XGBoost] device=cuda
+[22:45:46] [File] done chb24_13.edf, baseline_f1=0.2535, qubo_f1=0.0000, elapsed=16.88s
+[22:45:46] [XGBoost] device=cuda
+[22:46:03] [File] done chb24_14.edf, baseline_f1=0.1176, qubo_f1=0.0000, elapsed=17.02s
+[22:46:03] [XGBoost] device=cuda
+[22:46:20] [File] done chb24_15.edf, baseline_f1=0.3226, qubo_f1=0.0000, elapsed=16.92s
+[22:46:20] [XGBoost] device=cuda
+[22:46:37] [File] done chb24_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.96s
+[22:46:37] [XGBoost] device=cuda
+[22:46:54] [File] done chb24_17.edf, baseline_f1=0.5145, qubo_f1=0.4471, elapsed=16.89s
+[22:46:54] [XGBoost] device=cuda
+[22:47:11] [File] done chb24_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.93s
+[22:47:11] [XGBoost] device=cuda
+[22:47:27] [File] done chb24_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.91s
+[22:47:27] [XGBoost] device=cuda
+[22:47:44] [File] done chb24_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[22:47:44] [XGBoost] device=cuda
+[22:48:01] [File] done chb24_21.edf, baseline_f1=0.4582, qubo_f1=0.7748, elapsed=16.98s
+[22:48:01] [XGBoost] device=cuda
+[22:48:18] [File] done chb24_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=16.92s
+[  96%] Saving results
+[22:48:19] [Save] results written to results/qubo_run_20260823_224819_531573.pkl
+[22:48:19] [Ckpt] cleared checkpoints/ckpt_chb01-chb02-chb03+21_xgboost_solve_chain_qubo_exact_ac471c34ce.pkl
+[ 100%] Done
+[22:48:19] [Run] done, evaluated=686
+
+Run ID: chb01-chb02-chb03+21_xgboost_solve_chain_qubo_exact_ac471c34ce
+Evaluation: patient-independent nested leave-one-subject-out
+Finished 686 files (seizure=141, non-seizure=545)
+Held-out subjects evaluated: 24 (chb01, chb02, chb03, chb04, chb05, chb06, chb07, chb08, chb09, chb10, chb11, chb12, chb13, chb14, chb15, chb16, chb17, chb18, chb19, chb20, chb21, chb22, chb23, chb24)
+Baseline=xgboost, Solver=solve_chain_qubo_exact, Patient-grouped tuning=group_nfold
+
+[Seizure files]
+  Mean fixed-threshold baseline F1 = 0.1094
+  Mean selected baseline F1        = 0.2210
+  Mean held-out-patient PR-AUC     = 0.2016
+  Mean QUBO F1                     = 0.1264
+  Mean Δ F1                        = -0.0946
+
+[Non-seizure files]
+  Mean baseline FP rate = 0.0407
+  Mean QUBO FP rate     = 0.0008
+
+Run ID: chb01-chb02-chb03+21_xgboost_solve_chain_qubo_exact_ac471c34ce
+Saved PKL: results/qubo_run_20260823_224819_531573.pkl
