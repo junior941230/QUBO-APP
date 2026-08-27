@@ -2602,3 +2602,575 @@ This warning will only be shown once.
 [16:47:03] [XGBoost] device=cuda
 [16:47:08] [File] done chb15_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.84s
 [16:47:08] [XGBoost] device=cuda
+[16:47:13] [File] done chb15_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.87s
+[16:47:13] [XGBoost] device=cuda
+[16:47:18] [File] done chb15_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.85s
+[16:47:18] [XGBoost] device=cuda
+[16:47:22] [File] done chb15_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.86s
+[16:47:22] [XGBoost] device=cuda
+[16:47:27] [File] done chb15_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[16:47:27] [XGBoost] device=cuda
+[16:47:32] [File] done chb15_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.86s
+[16:47:32] [XGBoost] device=cuda
+[16:47:37] [File] done chb15_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.87s
+[16:47:37] [XGBoost] device=cuda
+[16:47:42] [File] done chb15_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[16:47:42] [XGBoost] device=cuda
+[16:47:47] [File] done chb15_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.85s
+[16:47:47] [XGBoost] device=cuda
+[16:47:52] [File] done chb15_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[16:47:52] [XGBoost] device=cuda
+[16:47:57] [File] done chb15_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.85s
+[16:47:57] [XGBoost] device=cuda
+[16:48:01] [File] done chb15_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.87s
+[16:48:01] [XGBoost] device=cuda
+[16:48:06] [File] done chb15_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.87s
+[16:48:06] [XGBoost] device=cuda
+[16:48:11] [File] done chb15_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.86s
+[16:48:11] [XGBoost] device=cuda
+[16:48:16] [File] done chb15_20.edf, baseline_f1=0.0323, qubo_f1=0.0000, elapsed=4.86s
+[16:48:16] [XGBoost] device=cuda
+[16:48:21] [File] done chb15_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.85s
+[16:48:21] [XGBoost] device=cuda
+[16:48:26] [File] done chb15_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.83s
+[16:48:26] [XGBoost] device=cuda
+[16:48:31] [File] done chb15_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.07s
+[16:48:31] [XGBoost] device=cuda
+[16:48:36] [File] done chb15_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[16:48:36] [XGBoost] device=cuda
+[16:48:40] [File] done chb15_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.86s
+[16:48:40] [XGBoost] device=cuda
+[16:48:45] [File] done chb15_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.84s
+[16:48:45] [XGBoost] device=cuda
+[16:48:50] [File] done chb15_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.87s
+[16:48:50] [XGBoost] device=cuda
+[16:48:55] [File] done chb15_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[16:48:55] [XGBoost] device=cuda
+[16:49:00] [File] done chb15_35.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.86s
+[16:49:00] [XGBoost] device=cuda
+[16:49:05] [File] done chb15_37.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[16:49:05] [XGBoost] device=cuda
+[16:49:10] [File] done chb15_40.edf, baseline_f1=0.0395, qubo_f1=0.0000, elapsed=4.85s
+[16:49:10] [XGBoost] device=cuda
+[16:49:15] [File] done chb15_45.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.86s
+[16:49:15] [XGBoost] device=cuda
+[16:49:19] [File] done chb15_46.edf, baseline_f1=0.0855, qubo_f1=0.0000, elapsed=4.86s
+[16:49:19] [XGBoost] device=cuda
+[16:49:24] [File] done chb15_49.edf, baseline_f1=0.0621, qubo_f1=0.0000, elapsed=4.85s
+[16:49:24] [XGBoost] device=cuda
+[16:49:29] [File] done chb15_50.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.85s
+[16:49:29] [XGBoost] device=cuda
+[16:49:34] [File] done chb15_51.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[16:49:34] [XGBoost] device=cuda
+[16:49:39] [File] done chb15_52.edf, baseline_f1=0.0526, qubo_f1=0.0000, elapsed=4.84s
+[16:49:39] [XGBoost] device=cuda
+[16:49:44] [File] done chb15_54.edf, baseline_f1=0.0049, qubo_f1=0.0000, elapsed=4.86s
+[16:49:44] [XGBoost] device=cuda
+[16:49:49] [File] done chb15_61.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[16:49:49] [XGBoost] device=cuda
+[16:49:53] [File] done chb15_62.edf, baseline_f1=0.0877, qubo_f1=0.0000, elapsed=4.90s
+[16:49:53] [XGBoost] device=cuda
+[16:49:58] [File] done chb15_63.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.86s
+[  68%] Evaluating held-out subject chb16
+[17:01:15] [QUBO-Tune] best λ=1.0, θ=0.3, score=0.3192
+[17:01:18] [XGBoost] device=cuda
+[17:01:23] [File] done chb16_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.99s
+[17:01:23] [XGBoost] device=cuda
+[17:01:28] [File] done chb16_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.99s
+[17:01:28] [XGBoost] device=cuda
+[17:01:33] [File] done chb16_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.97s
+[17:01:33] [XGBoost] device=cuda
+[17:01:38] [File] done chb16_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.00s
+[17:01:38] [XGBoost] device=cuda
+[17:01:43] [File] done chb16_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.98s
+[17:01:43] [XGBoost] device=cuda
+[17:01:48] [File] done chb16_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.99s
+[17:01:48] [XGBoost] device=cuda
+[17:01:53] [File] done chb16_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.98s
+[17:01:53] [XGBoost] device=cuda
+[17:01:58] [File] done chb16_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.97s
+[17:01:58] [XGBoost] device=cuda
+[17:02:03] [File] done chb16_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.97s
+[17:02:03] [XGBoost] device=cuda
+[17:02:08] [File] done chb16_10.edf, baseline_f1=0.0588, qubo_f1=0.0000, elapsed=4.97s
+[17:02:08] [XGBoost] device=cuda
+[17:02:13] [File] done chb16_11.edf, baseline_f1=0.0645, qubo_f1=0.0000, elapsed=4.97s
+[17:02:13] [XGBoost] device=cuda
+[17:02:18] [File] done chb16_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.98s
+[17:02:18] [XGBoost] device=cuda
+[17:02:23] [File] done chb16_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.98s
+[17:02:23] [XGBoost] device=cuda
+[17:02:28] [File] done chb16_14.edf, baseline_f1=0.0056, qubo_f1=0.0000, elapsed=4.98s
+[17:02:28] [XGBoost] device=cuda
+[17:02:32] [File] done chb16_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.97s
+[17:02:32] [XGBoost] device=cuda
+[17:02:37] [File] done chb16_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.97s
+[17:02:37] [XGBoost] device=cuda
+[17:02:42] [File] done chb16_17.edf, baseline_f1=0.1250, qubo_f1=0.0000, elapsed=4.95s
+[17:02:42] [XGBoost] device=cuda
+[17:02:47] [File] done chb16_18.edf, baseline_f1=0.0952, qubo_f1=0.0000, elapsed=4.95s
+[17:02:47] [XGBoost] device=cuda
+[17:02:52] [File] done chb16_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[  72%] Evaluating held-out subject chb17
+[17:14:09] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.2794
+[17:14:12] [XGBoost] device=cuda
+[17:14:17] [File] done chb17a_03.edf, baseline_f1=0.1373, qubo_f1=0.0435, elapsed=5.01s
+[17:14:17] [XGBoost] device=cuda
+[17:14:22] [File] done chb17a_04.edf, baseline_f1=0.2406, qubo_f1=0.3212, elapsed=4.97s
+[17:14:22] [XGBoost] device=cuda
+[17:14:27] [File] done chb17a_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[17:14:27] [XGBoost] device=cuda
+[17:14:32] [File] done chb17a_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[17:14:32] [XGBoost] device=cuda
+[17:14:37] [File] done chb17a_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[17:14:37] [XGBoost] device=cuda
+[17:14:42] [File] done chb17b_57.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:14:42] [XGBoost] device=cuda
+[17:14:47] [File] done chb17b_58.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[17:14:47] [XGBoost] device=cuda
+[17:14:52] [File] done chb17b_59.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:14:52] [XGBoost] device=cuda
+[17:14:57] [File] done chb17b_60.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[17:14:57] [XGBoost] device=cuda
+[17:15:02] [File] done chb17b_63.edf, baseline_f1=0.2034, qubo_f1=0.5469, elapsed=4.97s
+[17:15:02] [XGBoost] device=cuda
+[17:15:07] [File] done chb17b_67.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.00s
+[17:15:07] [XGBoost] device=cuda
+[17:15:12] [File] done chb17b_68.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[17:15:12] [XGBoost] device=cuda
+[17:15:17] [File] done chb17b_69.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[17:15:17] [XGBoost] device=cuda
+[17:15:22] [File] done chb17c_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.00s
+[17:15:22] [XGBoost] device=cuda
+[17:15:27] [File] done chb17c_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[17:15:27] [XGBoost] device=cuda
+[17:15:32] [File] done chb17c_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[17:15:32] [XGBoost] device=cuda
+[17:15:36] [File] done chb17c_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[17:15:36] [XGBoost] device=cuda
+[17:15:41] [File] done chb17c_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[17:15:41] [XGBoost] device=cuda
+[17:15:46] [File] done chb17c_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[17:15:46] [XGBoost] device=cuda
+[17:15:51] [File] done chb17c_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.08s
+[17:15:51] [XGBoost] device=cuda
+[17:15:56] [File] done chb17c_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.99s
+[  75%] Evaluating held-out subject chb18
+[17:27:03] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.2808
+[17:27:06] [XGBoost] device=cuda
+[17:27:11] [File] done chb18_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:27:11] [XGBoost] device=cuda
+[17:27:16] [File] done chb18_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[17:27:16] [XGBoost] device=cuda
+[17:27:21] [File] done chb18_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[17:27:21] [XGBoost] device=cuda
+[17:27:26] [File] done chb18_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[17:27:26] [XGBoost] device=cuda
+[17:27:31] [File] done chb18_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[17:27:31] [XGBoost] device=cuda
+[17:27:36] [File] done chb18_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.87s
+[17:27:36] [XGBoost] device=cuda
+[17:27:41] [File] done chb18_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[17:27:41] [XGBoost] device=cuda
+[17:27:45] [File] done chb18_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[17:27:45] [XGBoost] device=cuda
+[17:27:50] [File] done chb18_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[17:27:50] [XGBoost] device=cuda
+[17:27:55] [File] done chb18_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[17:27:55] [XGBoost] device=cuda
+[17:28:00] [File] done chb18_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[17:28:00] [XGBoost] device=cuda
+[17:28:05] [File] done chb18_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[17:28:05] [XGBoost] device=cuda
+[17:28:10] [File] done chb18_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[17:28:10] [XGBoost] device=cuda
+[17:28:15] [File] done chb18_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[17:28:15] [XGBoost] device=cuda
+[17:28:20] [File] done chb18_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[17:28:20] [XGBoost] device=cuda
+[17:28:25] [File] done chb18_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.86s
+[17:28:25] [XGBoost] device=cuda
+[17:28:29] [File] done chb18_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[17:28:29] [XGBoost] device=cuda
+[17:28:34] [File] done chb18_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[17:28:34] [XGBoost] device=cuda
+[17:28:39] [File] done chb18_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[17:28:39] [XGBoost] device=cuda
+[17:28:44] [File] done chb18_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.87s
+[17:28:44] [XGBoost] device=cuda
+[17:28:49] [File] done chb18_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:28:49] [XGBoost] device=cuda
+[17:28:54] [File] done chb18_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[17:28:54] [XGBoost] device=cuda
+[17:28:59] [File] done chb18_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[17:28:59] [XGBoost] device=cuda
+[17:29:04] [File] done chb18_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[17:29:04] [XGBoost] device=cuda
+[17:29:09] [File] done chb18_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[17:29:09] [XGBoost] device=cuda
+[17:29:14] [File] done chb18_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[17:29:14] [XGBoost] device=cuda
+[17:29:18] [File] done chb18_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[17:29:18] [XGBoost] device=cuda
+[17:29:23] [File] done chb18_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[17:29:23] [XGBoost] device=cuda
+[17:29:28] [File] done chb18_29.edf, baseline_f1=0.3492, qubo_f1=0.5294, elapsed=4.86s
+[17:29:28] [XGBoost] device=cuda
+[17:29:33] [File] done chb18_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[17:29:33] [XGBoost] device=cuda
+[17:29:38] [File] done chb18_31.edf, baseline_f1=0.2883, qubo_f1=0.6964, elapsed=4.91s
+[17:29:38] [XGBoost] device=cuda
+[17:29:43] [File] done chb18_32.edf, baseline_f1=0.2471, qubo_f1=0.6316, elapsed=4.92s
+[17:29:43] [XGBoost] device=cuda
+[17:29:48] [File] done chb18_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[17:29:48] [XGBoost] device=cuda
+[17:29:53] [File] done chb18_34.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:29:53] [XGBoost] device=cuda
+[17:29:58] [File] done chb18_35.edf, baseline_f1=0.0708, qubo_f1=0.2250, elapsed=4.87s
+[17:29:58] [XGBoost] device=cuda
+[17:30:03] [File] done chb18_36.edf, baseline_f1=0.2273, qubo_f1=0.7356, elapsed=4.94s
+[  78%] Evaluating held-out subject chb19
+[17:41:09] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.2628
+[17:41:12] [XGBoost] device=cuda
+[17:41:17] [File] done chb19_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[17:41:17] [XGBoost] device=cuda
+[17:41:22] [File] done chb19_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[17:41:22] [XGBoost] device=cuda
+[17:41:27] [File] done chb19_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[17:41:27] [XGBoost] device=cuda
+[17:41:32] [File] done chb19_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:41:32] [XGBoost] device=cuda
+[17:41:37] [File] done chb19_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[17:41:37] [XGBoost] device=cuda
+[17:41:41] [File] done chb19_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[17:41:41] [XGBoost] device=cuda
+[17:41:46] [File] done chb19_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:41:46] [XGBoost] device=cuda
+[17:41:51] [File] done chb19_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[17:41:51] [XGBoost] device=cuda
+[17:41:56] [File] done chb19_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[17:41:56] [XGBoost] device=cuda
+[17:42:01] [File] done chb19_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:42:01] [XGBoost] device=cuda
+[17:42:06] [File] done chb19_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[17:42:06] [XGBoost] device=cuda
+[17:42:11] [File] done chb19_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[17:42:11] [XGBoost] device=cuda
+[17:42:16] [File] done chb19_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[17:42:16] [XGBoost] device=cuda
+[17:42:21] [File] done chb19_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[17:42:21] [XGBoost] device=cuda
+[17:42:26] [File] done chb19_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:42:26] [XGBoost] device=cuda
+[17:42:31] [File] done chb19_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:42:31] [XGBoost] device=cuda
+[17:42:36] [File] done chb19_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[17:42:36] [XGBoost] device=cuda
+[17:42:41] [File] done chb19_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[17:42:41] [XGBoost] device=cuda
+[17:42:45] [File] done chb19_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[17:42:45] [XGBoost] device=cuda
+[17:42:50] [File] done chb19_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[17:42:50] [XGBoost] device=cuda
+[17:42:55] [File] done chb19_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[17:42:55] [XGBoost] device=cuda
+[17:43:00] [File] done chb19_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.06s
+[17:43:00] [XGBoost] device=cuda
+[17:43:05] [File] done chb19_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[17:43:05] [XGBoost] device=cuda
+[17:43:10] [File] done chb19_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[17:43:10] [XGBoost] device=cuda
+[17:43:15] [File] done chb19_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[17:43:15] [XGBoost] device=cuda
+[17:43:20] [File] done chb19_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[17:43:20] [XGBoost] device=cuda
+[17:43:25] [File] done chb19_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[17:43:25] [XGBoost] device=cuda
+[17:43:30] [File] done chb19_28.edf, baseline_f1=0.4000, qubo_f1=0.7481, elapsed=4.93s
+[17:43:30] [XGBoost] device=cuda
+[17:43:35] [File] done chb19_29.edf, baseline_f1=0.6763, qubo_f1=0.7704, elapsed=4.91s
+[17:43:35] [XGBoost] device=cuda
+[17:43:40] [File] done chb19_30.edf, baseline_f1=0.7606, qubo_f1=0.8429, elapsed=4.90s
+[  82%] Evaluating held-out subject chb20
+[17:54:50] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.3038
+[17:54:53] [XGBoost] device=cuda
+[17:54:58] [File] done chb20_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.00s
+[17:54:58] [XGBoost] device=cuda
+[17:55:03] [File] done chb20_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.02s
+[17:55:03] [XGBoost] device=cuda
+[17:55:07] [File] done chb20_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[17:55:07] [XGBoost] device=cuda
+[17:55:13] [File] done chb20_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.02s
+[17:55:13] [XGBoost] device=cuda
+[17:55:18] [File] done chb20_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.00s
+[17:55:18] [XGBoost] device=cuda
+[17:55:22] [File] done chb20_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[17:55:22] [XGBoost] device=cuda
+[17:55:27] [File] done chb20_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.00s
+[17:55:27] [XGBoost] device=cuda
+[17:55:32] [File] done chb20_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.97s
+[17:55:32] [XGBoost] device=cuda
+[17:55:37] [File] done chb20_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.99s
+[17:55:37] [XGBoost] device=cuda
+[17:55:42] [File] done chb20_12.edf, baseline_f1=0.2368, qubo_f1=0.7111, elapsed=4.99s
+[17:55:42] [XGBoost] device=cuda
+[17:55:47] [File] done chb20_13.edf, baseline_f1=0.3077, qubo_f1=0.6857, elapsed=5.01s
+[17:55:47] [XGBoost] device=cuda
+[17:55:52] [File] done chb20_14.edf, baseline_f1=0.0606, qubo_f1=0.0000, elapsed=4.99s
+[17:55:52] [XGBoost] device=cuda
+[17:55:57] [File] done chb20_15.edf, baseline_f1=0.2542, qubo_f1=0.6116, elapsed=4.99s
+[17:55:57] [XGBoost] device=cuda
+[17:56:02] [File] done chb20_16.edf, baseline_f1=0.3210, qubo_f1=0.8136, elapsed=4.98s
+[17:56:02] [XGBoost] device=cuda
+[17:56:07] [File] done chb20_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.99s
+[17:56:07] [XGBoost] device=cuda
+[17:56:12] [File] done chb20_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.99s
+[17:56:12] [XGBoost] device=cuda
+[17:56:17] [File] done chb20_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[17:56:17] [XGBoost] device=cuda
+[17:56:22] [File] done chb20_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[17:56:22] [XGBoost] device=cuda
+[17:56:27] [File] done chb20_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[17:56:27] [XGBoost] device=cuda
+[17:56:32] [File] done chb20_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[17:56:32] [XGBoost] device=cuda
+[17:56:37] [File] done chb20_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.02s
+[17:56:37] [XGBoost] device=cuda
+[17:56:42] [File] done chb20_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.97s
+[17:56:42] [XGBoost] device=cuda
+[17:56:47] [File] done chb20_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.06s
+[17:56:47] [XGBoost] device=cuda
+[17:56:52] [File] done chb20_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.02s
+[17:56:52] [XGBoost] device=cuda
+[17:56:57] [File] done chb20_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.99s
+[17:56:57] [XGBoost] device=cuda
+[17:57:02] [File] done chb20_34.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.01s
+[17:57:02] [XGBoost] device=cuda
+[17:57:07] [File] done chb20_59.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.05s
+[17:57:07] [XGBoost] device=cuda
+[17:57:12] [File] done chb20_60.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.98s
+[17:57:12] [XGBoost] device=cuda
+[17:57:17] [File] done chb20_68.edf, baseline_f1=0.1818, qubo_f1=0.4400, elapsed=4.99s
+[  85%] Evaluating held-out subject chb21
+[18:08:20] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.2946
+[18:08:23] [XGBoost] device=cuda
+[18:08:28] [File] done chb21_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[18:08:28] [XGBoost] device=cuda
+[18:08:33] [File] done chb21_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[18:08:33] [XGBoost] device=cuda
+[18:08:38] [File] done chb21_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[18:08:38] [XGBoost] device=cuda
+[18:08:42] [File] done chb21_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.86s
+[18:08:42] [XGBoost] device=cuda
+[18:08:47] [File] done chb21_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[18:08:47] [XGBoost] device=cuda
+[18:08:52] [File] done chb21_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[18:08:52] [XGBoost] device=cuda
+[18:08:57] [File] done chb21_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[18:08:57] [XGBoost] device=cuda
+[18:09:02] [File] done chb21_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[18:09:02] [XGBoost] device=cuda
+[18:09:07] [File] done chb21_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[18:09:07] [XGBoost] device=cuda
+[18:09:12] [File] done chb21_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[18:09:12] [XGBoost] device=cuda
+[18:09:17] [File] done chb21_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[18:09:17] [XGBoost] device=cuda
+[18:09:22] [File] done chb21_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[18:09:22] [XGBoost] device=cuda
+[18:09:27] [File] done chb21_13.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[18:09:27] [XGBoost] device=cuda
+[18:09:31] [File] done chb21_14.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[18:09:31] [XGBoost] device=cuda
+[18:09:36] [File] done chb21_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[18:09:36] [XGBoost] device=cuda
+[18:09:41] [File] done chb21_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[18:09:41] [XGBoost] device=cuda
+[18:09:46] [File] done chb21_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[18:09:46] [XGBoost] device=cuda
+[18:09:51] [File] done chb21_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[18:09:51] [XGBoost] device=cuda
+[18:09:56] [File] done chb21_19.edf, baseline_f1=0.1231, qubo_f1=0.3030, elapsed=4.92s
+[18:09:56] [XGBoost] device=cuda
+[18:10:01] [File] done chb21_20.edf, baseline_f1=0.2899, qubo_f1=0.6301, elapsed=4.89s
+[18:10:01] [XGBoost] device=cuda
+[18:10:06] [File] done chb21_21.edf, baseline_f1=0.2857, qubo_f1=0.7727, elapsed=4.94s
+[18:10:06] [XGBoost] device=cuda
+[18:10:11] [File] done chb21_22.edf, baseline_f1=0.1818, qubo_f1=0.5882, elapsed=4.94s
+[18:10:11] [XGBoost] device=cuda
+[18:10:16] [File] done chb21_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.87s
+[18:10:16] [XGBoost] device=cuda
+[18:10:20] [File] done chb21_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.87s
+[18:10:20] [XGBoost] device=cuda
+[18:10:25] [File] done chb21_25.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[18:10:25] [XGBoost] device=cuda
+[18:10:30] [File] done chb21_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[18:10:30] [XGBoost] device=cuda
+[18:10:35] [File] done chb21_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[18:10:35] [XGBoost] device=cuda
+[18:10:40] [File] done chb21_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[18:10:40] [XGBoost] device=cuda
+[18:10:45] [File] done chb21_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[18:10:45] [XGBoost] device=cuda
+[18:10:50] [File] done chb21_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.88s
+[18:10:50] [XGBoost] device=cuda
+[18:10:55] [File] done chb21_31.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[18:10:55] [XGBoost] device=cuda
+[18:11:00] [File] done chb21_32.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.98s
+[18:11:00] [XGBoost] device=cuda
+[18:11:05] [File] done chb21_33.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[  88%] Evaluating held-out subject chb22
+[18:22:16] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.2978
+[18:22:19] [XGBoost] device=cuda
+[18:22:24] [File] done chb22_01.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[18:22:24] [XGBoost] device=cuda
+[18:22:29] [File] done chb22_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[18:22:29] [XGBoost] device=cuda
+[18:22:34] [File] done chb22_03.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[18:22:34] [XGBoost] device=cuda
+[18:22:39] [File] done chb22_04.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.05s
+[18:22:39] [XGBoost] device=cuda
+[18:22:44] [File] done chb22_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[18:22:44] [XGBoost] device=cuda
+[18:22:49] [File] done chb22_06.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.90s
+[18:22:49] [XGBoost] device=cuda
+[18:22:54] [File] done chb22_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[18:22:54] [XGBoost] device=cuda
+[18:22:59] [File] done chb22_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[18:22:59] [XGBoost] device=cuda
+[18:23:04] [File] done chb22_09.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.89s
+[18:23:04] [XGBoost] device=cuda
+[18:23:09] [File] done chb22_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[18:23:09] [XGBoost] device=cuda
+[18:23:14] [File] done chb22_11.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.98s
+[18:23:14] [XGBoost] device=cuda
+[18:23:18] [File] done chb22_15.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[18:23:18] [XGBoost] device=cuda
+[18:23:23] [File] done chb22_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[18:23:23] [XGBoost] device=cuda
+[18:23:28] [File] done chb22_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[18:23:28] [XGBoost] device=cuda
+[18:23:33] [File] done chb22_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[18:23:33] [XGBoost] device=cuda
+[18:23:38] [File] done chb22_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[18:23:38] [XGBoost] device=cuda
+[18:23:43] [File] done chb22_20.edf, baseline_f1=0.6880, qubo_f1=0.7030, elapsed=4.89s
+[18:23:43] [XGBoost] device=cuda
+[18:23:48] [File] done chb22_21.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[18:23:48] [XGBoost] device=cuda
+[18:23:53] [File] done chb22_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.91s
+[18:23:53] [XGBoost] device=cuda
+[18:23:58] [File] done chb22_23.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.93s
+[18:23:58] [XGBoost] device=cuda
+[18:24:03] [File] done chb22_24.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[18:24:03] [XGBoost] device=cuda
+[18:24:08] [File] done chb22_25.edf, baseline_f1=0.7320, qubo_f1=0.7545, elapsed=4.92s
+[18:24:08] [XGBoost] device=cuda
+[18:24:13] [File] done chb22_26.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[18:24:13] [XGBoost] device=cuda
+[18:24:18] [File] done chb22_27.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.99s
+[18:24:18] [XGBoost] device=cuda
+[18:24:23] [File] done chb22_28.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.92s
+[18:24:23] [XGBoost] device=cuda
+[18:24:28] [File] done chb22_29.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[18:24:28] [XGBoost] device=cuda
+[18:24:32] [File] done chb22_30.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[18:24:32] [XGBoost] device=cuda
+[18:24:37] [File] done chb22_38.edf, baseline_f1=0.5591, qubo_f1=0.7041, elapsed=4.93s
+[18:24:37] [XGBoost] device=cuda
+[18:24:42] [File] done chb22_51.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.95s
+[18:24:42] [XGBoost] device=cuda
+[18:24:47] [File] done chb22_54.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[18:24:47] [XGBoost] device=cuda
+[18:24:52] [File] done chb22_77.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.94s
+[  92%] Evaluating held-out subject chb23
+[18:36:02] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.2979
+[18:36:05] [XGBoost] device=cuda
+[18:36:10] [File] done chb23_06.edf, baseline_f1=0.5699, qubo_f1=0.9537, elapsed=5.05s
+[18:36:10] [XGBoost] device=cuda
+[18:36:15] [File] done chb23_07.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.98s
+[18:36:15] [XGBoost] device=cuda
+[18:36:20] [File] done chb23_08.edf, baseline_f1=0.3086, qubo_f1=0.4906, elapsed=5.01s
+[18:36:20] [XGBoost] device=cuda
+[18:36:25] [File] done chb23_09.edf, baseline_f1=0.5012, qubo_f1=0.8534, elapsed=5.04s
+[18:36:25] [XGBoost] device=cuda
+[18:36:30] [File] done chb23_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.04s
+[18:36:30] [XGBoost] device=cuda
+[18:36:35] [File] done chb23_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.03s
+[18:36:35] [XGBoost] device=cuda
+[18:36:40] [File] done chb23_17.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.02s
+[18:36:40] [XGBoost] device=cuda
+[18:36:45] [File] done chb23_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.06s
+[18:36:45] [XGBoost] device=cuda
+[18:36:50] [File] done chb23_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.01s
+[  95%] Evaluating held-out subject chb24
+[18:48:05] [QUBO-Tune] best λ=0.5, θ=0.3, score=0.2882
+[18:48:08] [XGBoost] device=cuda
+[18:48:13] [File] done chb24_01.edf, baseline_f1=0.3265, qubo_f1=0.6078, elapsed=5.14s
+[18:48:13] [XGBoost] device=cuda
+[18:48:18] [File] done chb24_02.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.00s
+[18:48:18] [XGBoost] device=cuda
+[18:48:23] [File] done chb24_03.edf, baseline_f1=0.5391, qubo_f1=0.7500, elapsed=5.00s
+[18:48:23] [XGBoost] device=cuda
+[18:48:28] [File] done chb24_04.edf, baseline_f1=0.2736, qubo_f1=0.6809, elapsed=4.98s
+[18:48:28] [XGBoost] device=cuda
+[18:48:33] [File] done chb24_05.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.00s
+[18:48:33] [XGBoost] device=cuda
+[18:48:38] [File] done chb24_06.edf, baseline_f1=0.1778, qubo_f1=0.6286, elapsed=4.98s
+[18:48:38] [XGBoost] device=cuda
+[18:48:43] [File] done chb24_07.edf, baseline_f1=0.0878, qubo_f1=0.4545, elapsed=4.97s
+[18:48:43] [XGBoost] device=cuda
+[18:48:48] [File] done chb24_08.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.99s
+[18:48:48] [XGBoost] device=cuda
+[18:48:53] [File] done chb24_09.edf, baseline_f1=0.1408, qubo_f1=0.6667, elapsed=5.02s
+[18:48:53] [XGBoost] device=cuda
+[18:48:58] [File] done chb24_10.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.96s
+[18:48:58] [XGBoost] device=cuda
+[18:49:03] [File] done chb24_11.edf, baseline_f1=0.2316, qubo_f1=0.2716, elapsed=5.01s
+[18:49:03] [XGBoost] device=cuda
+[18:49:08] [File] done chb24_12.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.97s
+[18:49:08] [XGBoost] device=cuda
+[18:49:13] [File] done chb24_13.edf, baseline_f1=0.2222, qubo_f1=0.8148, elapsed=4.96s
+[18:49:13] [XGBoost] device=cuda
+[18:49:18] [File] done chb24_14.edf, baseline_f1=0.2182, qubo_f1=0.4878, elapsed=5.06s
+[18:49:18] [XGBoost] device=cuda
+[18:49:23] [File] done chb24_15.edf, baseline_f1=0.4000, qubo_f1=0.8421, elapsed=5.00s
+[18:49:23] [XGBoost] device=cuda
+[18:49:28] [File] done chb24_16.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.03s
+[18:49:28] [XGBoost] device=cuda
+[18:49:33] [File] done chb24_17.edf, baseline_f1=0.4321, qubo_f1=0.8591, elapsed=4.99s
+[18:49:33] [XGBoost] device=cuda
+[18:49:38] [File] done chb24_18.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.05s
+[18:49:38] [XGBoost] device=cuda
+[18:49:43] [File] done chb24_19.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.05s
+[18:49:43] [XGBoost] device=cuda
+[18:49:48] [File] done chb24_20.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=5.02s
+[18:49:48] [XGBoost] device=cuda
+[18:49:53] [File] done chb24_21.edf, baseline_f1=0.5650, qubo_f1=0.9403, elapsed=4.97s
+[18:49:53] [XGBoost] device=cuda
+[18:49:58] [File] done chb24_22.edf, baseline_f1=0.0000, qubo_f1=0.0000, elapsed=4.97s
+[  96%] Saving results
+[18:49:59] [Save] results written to results/qubo_run_20260826_184958_966223.pkl
+[18:49:59] [Ckpt] cleared checkpoints/ckpt_chb01-chb02-chb03+21_xgboost_solve_chain_qubo_exact_07926d2aac.pkl
+[ 100%] Done
+[18:49:59] [Run] done, evaluated=686
+
+Run ID: chb01-chb02-chb03+21_xgboost_solve_chain_qubo_exact_07926d2aac
+Evaluation: patient-independent nested leave-one-subject-out
+Finished 686 files (seizure=141, non-seizure=545)
+Held-out subjects evaluated: 24 (chb01, chb02, chb03, chb04, chb05, chb06, chb07, chb08, chb09, chb10, chb11, chb12, chb13, chb14, chb15, chb16, chb17, chb18, chb19, chb20, chb21, chb22, chb23, chb24)
+Baseline=xgboost, Solver=solve_chain_qubo_exact, Patient-grouped tuning=group_nfold
+
+[Seizure files]
+  Mean fixed-threshold baseline F1 = 0.2316
+  Mean selected baseline F1        = 0.2232
+  Mean held-out-patient PR-AUC     = 0.2337
+  Mean QUBO F1                     = 0.3343
+  Mean Δ F1                        = 0.1112
+
+[Non-seizure files]
+  Mean baseline FP rate = 0.0414
+  Mean QUBO FP rate     = 0.0629
+
+Run ID: chb01-chb02-chb03+21_xgboost_solve_chain_qubo_exact_07926d2aac
+Saved PKL: results/qubo_run_20260826_184958_966223.pkl
