@@ -162,6 +162,28 @@ def _build_subject_cache(request, train_files, features, labels, file_to_subject
     )
 
 
+def _predict_subject_scores(
+    request, train_features, train_labels, train_sample_weight, test_files, features
+):
+    """Fit the classical baseline once and score every held-out file with it."""
+    lengths = [len(features[name]) for name in test_files]
+    scores_all = np.asarray(predict_scores(
+        request.baseline,
+        train_features,
+        train_labels,
+        np.concatenate([features[name] for name in test_files]),
+        options=request.options,
+        sample_weight=train_sample_weight,
+        random_seed=request.random_seed,
+    ))
+    if len(scores_all) != sum(lengths):
+        raise ValueError(
+            f"Score length mismatch: {len(scores_all)} scores "
+            f"for {sum(lengths)} test windows"
+        )
+    return dict(zip(test_files, np.split(scores_all, np.cumsum(lengths)[:-1])))
+
+
 def _summary_text(request, run_id, result_df, notes, skipped):
     seizure = result_df[result_df["has_seizure"]]
     nonseizure = result_df[~result_df["has_seizure"]]
@@ -391,24 +413,50 @@ def run_experiment(request, progress=None):
         if test_subject in train_subjects:
             raise AssertionError(f"Patient leakage detected for {test_subject}")
 
+        # Classical baselines share one training set per held-out subject.
+        subject_scores, subject_error = {}, None
+        if request.baseline != "lstm":
+            fit_start = time.perf_counter()
+            try:
+                subject_scores = _predict_subject_scores(
+                    request,
+                    train_features,
+                    train_labels,
+                    train_sample_weight,
+                    pending_files,
+                    features,
+                )
+            except Exception as exc:
+                subject_error = exc
+            log_step(
+                f"[Subject] {test_subject} baseline fit+predict "
+                f"files={len(pending_files)}, "
+                f"elapsed={time.perf_counter() - fit_start:.2f}s"
+            )
+
         for test_file in pending_files:
             file_start = time.perf_counter()
             y_true = np.asarray(labels[test_file]).astype(int)
             try:
-                scores = np.asarray(predict_scores(
-                    request.baseline,
-                    train_features,
-                    train_labels,
-                    features[test_file],
-                    options=request.options,
-                    sample_weight=train_sample_weight,
-                    train_files=train_files,
-                    test_file=test_file,
-                    features=features,
-                    labels=labels,
-                    lstm_params=request.lstm.as_dict(),
-                    random_seed=request.random_seed,
-                ))
+                if request.baseline == "lstm":
+                    scores = np.asarray(predict_scores(
+                        request.baseline,
+                        train_features,
+                        train_labels,
+                        features[test_file],
+                        options=request.options,
+                        sample_weight=train_sample_weight,
+                        train_files=train_files,
+                        test_file=test_file,
+                        features=features,
+                        labels=labels,
+                        lstm_params=request.lstm.as_dict(),
+                        random_seed=request.random_seed,
+                    ))
+                elif subject_error is not None:
+                    raise subject_error
+                else:
+                    scores = subject_scores[test_file]
                 y_fixed = (scores >= BASELINE_THRESHOLD).astype(int)
                 y_baseline = (scores >= baseline_threshold).astype(int)
                 y_qubo = safe_solver_call(

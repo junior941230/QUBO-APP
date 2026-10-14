@@ -49,6 +49,12 @@ class ExperimentIsolationTests(unittest.TestCase):
                 for name in candidate_files
             }
 
+        predict_calls = []
+
+        def fake_predict_scores(_baseline, _x_train, _y_train, x_test, **_kwargs):
+            predict_calls.append(len(x_test))
+            return np.tile([0.1, 0.9], len(x_test) // 2)
+
         def threshold_solver(scores, lmbda=0.0, threshold=0.5):
             del lmbda
             return np.asarray(scores) >= threshold
@@ -72,7 +78,7 @@ class ExperimentIsolationTests(unittest.TestCase):
             ),
             patch(
                 "pipeline_runner.experiment.predict_scores",
-                return_value=np.array([0.1, 0.9]),
+                side_effect=fake_predict_scores,
             ),
             patch(
                 "pipeline_runner.experiment.get_qubo_solver",
@@ -109,6 +115,8 @@ class ExperimentIsolationTests(unittest.TestCase):
         self.assertEqual(len(cache_candidates), 3)
         self.assertEqual(len(result_df), len(files))
         self.assertEqual(set(result_df["subject"]), {"p1", "p2", "p3"})
+        # One fit per held-out subject, scoring both of its files together.
+        self.assertEqual(predict_calls, [4, 4, 4])
 
 
 if __name__ == "__main__":
