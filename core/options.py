@@ -158,7 +158,7 @@ class ExperimentRequest:
             raise ValueError("QUBO threshold values must be between 0 and 1")
         if self.tune_alpha < 0:
             raise ValueError("tune_alpha cannot be negative")
-        if self.qubo_tune_objective not in {"file_mean", "patient_macro"}:
+        if self.qubo_tune_objective not in {"file_mean", "patient_macro", "event"}:
             raise ValueError(f"Unknown QUBO tune objective: {self.qubo_tune_objective}")
         if self.qubo_tune_alpha is not None and self.qubo_tune_alpha < 0:
             raise ValueError("qubo_tune_alpha cannot be negative")

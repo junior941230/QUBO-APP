@@ -143,9 +143,13 @@ def parse_args():
     train_parser.add_argument("--tune-n-splits", type=int, default=5)
     train_parser.add_argument(
         "--qubo-tune-objective",
-        choices=["file_mean", "patient_macro"],
+        choices=["file_mean", "patient_macro", "event"],
         default="file_mean",
-        help="How inner-validation files are averaged when selecting QUBO λ/θ.",
+        help=(
+            "QUBO λ/θ selection score: epoch F1 pooled over files (file_mean) or "
+            "per patient (patient_macro), or seizure-event sensitivity minus "
+            "--qubo-tune-alpha × false alarms per hour (event)."
+        ),
     )
     train_parser.add_argument(
         "--qubo-tune-alpha",
