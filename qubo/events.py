@@ -5,6 +5,12 @@ from config import EPOCH_DURATION_SECONDS
 
 # Predicted events closer than this many epochs count as one alarm.
 MERGE_GAP = 10
+# Alarms within this many epochs before onset / after offset of a seizure are
+# not false alarms (pre-/post-ictal tolerance).
+SEIZURE_MARGIN = 30
+# A false alarm lasting longer than this many epochs counts once per started
+# block, so flagging long stretches cannot pass as a single alarm.
+MAX_ALARM_EPOCHS = 60
 
 
 def events(mask, merge_gap=0):
@@ -24,7 +30,13 @@ def events(mask, merge_gap=0):
 
 
 def file_event_counts(y_true, y_pred):
-    """Return (true events, detected events, latencies in seconds, false alarms)."""
+    """Return (true events, detected events, latencies in seconds, false alarms).
+
+    A seizure is detected when any predicted epoch falls inside it. Predicted
+    epochs outside every seizure (widened by SEIZURE_MARGIN) are false-alarm
+    epochs; they are grouped into alarms (gaps <= MERGE_GAP merged) and each
+    alarm counts once per MAX_ALARM_EPOCHS it lasts.
+    """
     truth = events(y_true)
     y_pred = np.asarray(y_pred).astype(bool)
     detected, latencies = 0, []
@@ -33,11 +45,22 @@ def file_event_counts(y_true, y_pred):
         if hits.size:
             detected += 1
             latencies.append(float(hits[0]) * EPOCH_DURATION_SECONDS)
-    false_alarms = sum(
-        1 for p_start, p_end in events(y_pred, MERGE_GAP)
-        if not any(p_start < t_end and t_start < p_end for t_start, t_end in truth)
+    return len(truth), detected, latencies, false_alarm_count(y_true, y_pred)
+
+
+def false_alarm_mask(y_true, y_pred):
+    """Predicted epochs that are not within SEIZURE_MARGIN of any seizure."""
+    allowed = np.zeros(len(y_pred), dtype=bool)
+    for start, end in events(y_true):
+        allowed[max(0, start - SEIZURE_MARGIN):end + SEIZURE_MARGIN] = True
+    return np.asarray(y_pred).astype(bool) & ~allowed
+
+
+def false_alarm_count(y_true, y_pred):
+    return sum(
+        -(-(end - start) // MAX_ALARM_EPOCHS)
+        for start, end in events(false_alarm_mask(y_true, y_pred), MERGE_GAP)
     )
-    return len(truth), detected, latencies, false_alarms
 
 
 def recording_hours(y_true):

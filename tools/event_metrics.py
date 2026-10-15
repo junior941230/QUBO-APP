@@ -8,9 +8,11 @@ alarms fire per hour. For each prediction (tuned baseline and QUBO):
   inside the event,
 * latency: seconds from seizure onset to the first predicted epoch inside it
   (detected events only),
-* false alarms per hour: predicted events that overlap no true seizure,
-  divided by recording hours. Predicted events closer than MERGE_GAP epochs are
-  merged first, so one flickering alarm counts once.
+* false alarms per hour: predicted epochs more than SEIZURE_MARGIN epochs
+  away from every seizure are grouped into alarms (gaps <= MERGE_GAP merged);
+  each alarm counts once per MAX_ALARM_EPOCHS it lasts, so long stretches of
+  alarm cannot pass as a single event. Divided by recording hours.
+* false-alarm time: share of epochs that are false-alarm epochs.
 
 Metrics are computed per patient and then averaged over patients.
 
@@ -24,7 +26,7 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from qubo.events import file_event_counts, recording_hours  # noqa: E402
+from qubo.events import false_alarm_mask, file_event_counts, recording_hours  # noqa: E402
 
 
 def run_metrics(pkl_path):
@@ -40,12 +42,15 @@ def run_metrics(pkl_path):
                 "subject": detail["subject"], "pred": kind[2:], "events": n_true,
                 "detected": n_det, "latency_sum": sum(lat), "latency_n": len(lat),
                 "false_alarms": fa, "hours": hours,
+                "fa_epochs": int(false_alarm_mask(y_true, detail[kind]).sum()),
+                "epochs": len(y_true),
             })
     df = pd.DataFrame(rows).groupby(["pred", "subject"]).sum(numeric_only=True)
     per_patient = pd.DataFrame({
         "sensitivity": df.detected / df.events.where(df.events > 0),
         "latency_s": df.latency_sum / df.latency_n.where(df.latency_n > 0),
         "fa_per_h": df.false_alarms / df.hours,
+        "fa_time_pct": 100 * df.fa_epochs / df.epochs,
     })
     summary = per_patient.groupby(level="pred").mean()
     summary["events_detected"] = df.groupby(level="pred").detected.sum().astype(str) + "/" + \
