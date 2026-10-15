@@ -95,3 +95,36 @@ seizure-file macro F1 再取平均（程式 summary 的 F1 是對所有 seizure 
   22 位變好、0 位變差、FP 1.5%，是全部設定中最好的端對端結果）；加入 10 秒 context 後
   QUBO 增益只剩 −0.001 至 +0.036。注意 chain QUBO 使用整段 EDF（含未來 epoch），屬於離線平滑；
   causal context 只用過去與當下，可用於線上偵測，兩者不是同一種使用情境。
+
+## 後續研究：離線 vs 因果 QUBO（2026-10-15）
+
+TODO 的結論顯示 QUBO 與 causal context 會互相取代，但原本的 chain QUBO 會用到整段 EDF 的未來
+epoch。新增 `solve_chain_qubo_causal`（同一個 forward DP，每個時間點取前綴最佳解的最後狀態，
+只用過去與當下），在三個 robust baseline 上比較。指標同上（逐患者 macro F1 的平均）；
+逐檔結果在 `results/qubo-20261015/`。
+
+| QUBO | 參數範圍 | baseline | baseline F1 | QUBO F1 | 好 / 差 | FP（baseline → QUBO） |
+|---|---|---|---|---|---|---|
+| 離線 | 預設（λ 0.5–3、θ 0.3–0.6） | spw25 + robust | 0.382 | 0.511 | 15 / 7 | 2.0% → 0.7% |
+| 離線 | 預設 | spw25 + neg0.25 + robust | 0.384 | **0.535** | 22 / 0 | 2.1% → 1.5% |
+| 離線 | 預設 | spw25 + robust + context10 | 0.477 | 0.476 | 12 / 9 | 2.2% → 0.9% |
+| 離線 | 低段（λ 0.1–1、θ 0.05–0.4） | spw25 + robust | 0.382 | 0.449 | 15 / 7 | 2.0% → 2.5% |
+| 離線 | 低段 | spw25 + neg0.25 + robust | 0.384 | 0.520 | 18 / 4 | 2.1% → 2.1% |
+| 離線 | 低段 | spw25 + robust + context10 | 0.477 | 0.496 | 13 / 8 | 2.2% → 3.0% |
+| 因果 | 低段 | spw25 + robust | 0.382 | **0.510** | 20 / 2 | 2.0% → 1.4% |
+| 因果 | 低段 | spw25 + neg0.25 + robust | 0.384 | 0.503 | 19 / 2 | 2.1% → 1.6% |
+| 因果 | 低段 | spw25 + robust + context10 | 0.477 | 0.478 | 9 / 9 | 2.2% → 2.4% |
+| 因果 | 高段（λ 0.75–3、θ 0.1–0.5） | spw25 + neg0.25 + robust | 0.384 | 0.503 | 19 / 2 | 2.1% → 1.6% |
+
+- **因果 QUBO 是比 causal context 更好的線上時間平滑。** spw25 + robust + 因果 QUBO 的 F1 0.510
+  （20 好 / 2 差、FP 1.4%），高於最佳 causal-context baseline 的 0.477；兩者都只用過去資訊。
+- **QUBO 的增益大部分不需要未來資訊。** 離線最好 0.535，因果最好 0.510，差距約 0.025。
+- **在 context10 baseline 上，任何 QUBO 變體都沒有穩定增益**（−0.001 至 +0.019，且 FP 上升或好壞各半）。
+- **擴大 QUBO 參數範圍不一定更好。** 低段範圍包含預設範圍的 λ 0.5 / θ 0.3，但 inner validation
+  改選了 θ 0.1，讓離線 spw25 + robust 從 0.511 掉到 0.449。參數落在範圍邊界不代表最佳值在範圍外；
+  瓶頸在 inner validation 的選參目標（`mean F1 − 0.2 × mean FP`）與 outer-test 表現不一致。
+  因果版本對參數範圍較穩定（高段與低段選到相同參數、結果相同）。
+
+建議的線上偵測組合：**XGBoost spw25 + robust normalization（不加 context）+ 因果 chain QUBO**。
+下一步可檢查 QUBO 選參目標（例如改用 patient-macro F1、或加大 FP 懲罰）是否能讓 inner validation
+選到的參數更穩定地轉移到 held-out 患者。
