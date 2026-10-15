@@ -128,3 +128,24 @@ epoch。新增 `solve_chain_qubo_causal`（同一個 forward DP，每個時間�
 建議的線上偵測組合：**XGBoost spw25 + robust normalization（不加 context）+ 因果 chain QUBO**。
 下一步可檢查 QUBO 選參目標（例如改用 patient-macro F1、或加大 FP 懲罰）是否能讓 inner validation
 選到的參數更穩定地轉移到 held-out 患者。
+
+## 後續研究：QUBO 選參目標（2026-10-15）
+
+在 spw25 + robust、低段 QUBO 範圍（λ 0.1–1、θ 0.05–0.4）上，比較 `--qubo-tune-objective`
+（`file_mean`：所有驗證檔案一起平均；`patient_macro`：先在每位患者內平均）與
+`--qubo-tune-alpha`（只用於 QUBO 選參的 FP 懲罰）。逐檔結果在 `results/qubo-20261015/objective/`。
+
+| QUBO | 選參目標 | α | QUBO F1 | 好 / 差 | QUBO FP |
+|---|---|---|---|---|---|
+| 離線（預設範圍，參考） | file_mean | 0.2 | 0.511 | 15 / 7 | 0.7% |
+| 離線 | file_mean | 0.2 | 0.449 | 15 / 7 | 2.5% |
+| 離線 | file_mean | 1.0 | 0.450 | 15 / 7 | 2.5% |
+| 離線 | patient_macro | 0.2 | 0.484 | 17 / 5 | 1.6% |
+| 離線 | patient_macro | 1.0 | 0.490 | 16 / 4 | 1.3% |
+| 因果 | file_mean | 0.2 | 0.510 | 20 / 2 | 1.4% |
+| 因果 | file_mean / patient_macro | 0.2 / 1.0 | **0.513** | 20 / 2 | 1.35% |
+
+- `patient_macro` 讓離線 QUBO 從 0.449 回到 0.484–0.490：原本的選參確實被檔案多的患者主導。
+  只加大 FP 懲罰（file_mean、α 1.0）沒有效果。
+- 因果 QUBO 對選參目標不敏感，三種設定都選到 λ 0.75、θ 0.2，F1 0.513。
+- 目前最佳的線上偵測設定仍是 **spw25 + robust + 因果 chain QUBO**（F1 0.513、20 好 / 2 差、FP 1.35%）。
