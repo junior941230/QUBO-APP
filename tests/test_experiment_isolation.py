@@ -118,6 +118,70 @@ class ExperimentIsolationTests(unittest.TestCase):
         # One fit per held-out subject, scoring both of its files together.
         self.assertEqual(predict_calls, [4, 4, 4])
 
+    def test_lstm_trains_once_per_outer_subject_without_test_files(self):
+        files = [f"{subject}_{part}.edf" for subject in ("p1", "p2", "p3") for part in "ab"]
+        file_to_subject = {name: name.split("_")[0] for name in files}
+        paths = [f"/fake/{file_to_subject[name]}/{name}" for name in files]
+        features = {name: np.array([[0.0], [1.0]]) for name in files}
+        labels = {name: np.array([0, 1]) for name in files}
+        trained_on = []
+
+        def fake_cache_builder(candidate_files, *_args, **_kwargs):
+            return {
+                name: {"scores": np.array([0.1, 0.9]), "y_val": np.array([0, 1])}
+                for name in candidate_files
+            }
+
+        def fake_train(train_files, *_args, **_kwargs):
+            trained_on.append(tuple(train_files))
+            return object(), 0.0, 1.0, "cpu"
+
+        def threshold_solver(scores, lmbda=0.0, threshold=0.5):
+            del lmbda
+            return np.asarray(scores) >= threshold
+
+        with patch(
+            "pipeline_runner.experiment.collect_files_and_seizures",
+            return_value=(paths, {}, []),
+        ), patch(
+            "pipeline_runner.experiment.process_all_files",
+            return_value=(features, labels),
+        ), patch(
+            "pipeline_runner.experiment.validate_edf_channels",
+            return_value=(paths, {}),
+        ), patch(
+            "pipeline_runner.experiment.build_validation_score_cache",
+            side_effect=fake_cache_builder,
+        ), patch(
+            "models.lstm._train_lstm_on_files", side_effect=fake_train,
+        ), patch(
+            "models.lstm._predict_lstm_sequence", return_value=np.array([0.1, 0.9]),
+        ), patch(
+            "pipeline_runner.experiment.get_qubo_solver", return_value=threshold_solver,
+        ), patch("pipeline_runner.experiment.save_checkpoint"), patch(
+            "pipeline_runner.experiment.build_summary_plot", return_value=None,
+        ), patch("pipeline_runner.experiment.build_detail_plot", return_value=None):
+            _, result_df, _, _, _, _ = run_experiment(
+                ExperimentRequest(
+                    selected_subjects=("p1", "p2", "p3"),
+                    baseline="lstm",
+                    tune_mode="loso",
+                    tune_n_splits=2,
+                    n_jobs=1,
+                    lambda_values=(0.0,),
+                    qubo_threshold_values=(0.5,),
+                    save_pkl=False,
+                    resume_enabled=False,
+                ),
+                progress=lambda *_args, **_kwargs: None,
+            )
+
+        self.assertEqual(len(result_df), len(files))
+        self.assertEqual(len(trained_on), 3)
+        for train_files in trained_on:
+            held_out = {"p1", "p2", "p3"} - {file_to_subject[name] for name in train_files}
+            self.assertEqual(len(held_out), 1)
+
 
 if __name__ == "__main__":
     unittest.main()
