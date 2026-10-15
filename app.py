@@ -65,6 +65,8 @@ def train(args):
         solver_name=args.solver,
         tune_mode=args.tune_mode,
         tune_n_splits=args.tune_n_splits,
+        qubo_tune_objective=args.qubo_tune_objective,
+        qubo_tune_alpha=args.qubo_tune_alpha,
         max_files_per_subject=args.max_files_per_subject,
         n_jobs=args.n_jobs,
         lambda_values=args.lambdas,
@@ -139,6 +141,18 @@ def parse_args():
         help="Patient-grouped inner validation strategy.",
     )
     train_parser.add_argument("--tune-n-splits", type=int, default=5)
+    train_parser.add_argument(
+        "--qubo-tune-objective",
+        choices=["file_mean", "patient_macro"],
+        default="file_mean",
+        help="How inner-validation files are averaged when selecting QUBO λ/θ.",
+    )
+    train_parser.add_argument(
+        "--qubo-tune-alpha",
+        type=float,
+        default=None,
+        help="FP penalty for QUBO λ/θ selection only (default: same as baseline tuning).",
+    )
     train_parser.add_argument("--max-files-per-subject", type=int, default=0)
     train_parser.add_argument("--n-jobs", type=int, default=-1)
     train_parser.add_argument("--lambdas", default=_float_grid(DEFAULT_LAMBDA_LIST))

@@ -1,8 +1,34 @@
+from collections import defaultdict
+
 from config import RANDOM_SEED, TUNE_ALPHA
 from core.logging_utils import log_step
 from sklearn.metrics import f1_score
 from qubo.solvers import safe_solver_call
 import numpy as np
+
+QUBO_TUNE_OBJECTIVES = ("file_mean", "patient_macro")
+
+
+def _mean(values):
+    return float(np.mean(values)) if values else 0.0
+
+
+def _objective_terms(seizure_f1s, nonseizure_fps, objective):
+    """Return (mean F1, mean FP) from {subject: [values]} under an objective.
+
+    file_mean pools every validation file, so patients with many files dominate.
+    patient_macro averages within each patient first, then across patients.
+    """
+    if objective == "file_mean":
+        return (
+            _mean([v for values in seizure_f1s.values() for v in values]),
+            _mean([v for values in nonseizure_fps.values() for v in values]),
+        )
+    return (
+        _mean([_mean(values) for values in seizure_f1s.values()]),
+        _mean([_mean(values) for values in nonseizure_fps.values()]),
+    )
+
 
 def tune_qubo_params_from_cache(
     score_cache,
@@ -11,11 +37,21 @@ def tune_qubo_params_from_cache(
     threshold_list,
     alpha=TUNE_ALPHA,
     random_seed=RANDOM_SEED,
+    objective="file_mean",
+    file_to_subject=None,
 ):
     if not lambda_list or not threshold_list:
         raise ValueError("lambda_list and threshold_list must not be empty")
     if not score_cache:
         raise ValueError("score_cache is empty, cannot tune")
+    if objective not in QUBO_TUNE_OBJECTIVES:
+        raise ValueError(f"Unknown QUBO tune objective: {objective}")
+    if objective == "patient_macro" and file_to_subject is None:
+        raise ValueError("patient_macro objective requires file_to_subject")
+    subject_of = (
+        (lambda name: file_to_subject[name]) if objective == "patient_macro"
+        else (lambda name: None)
+    )
 
     best_score = -1e9
     best_lambda = float(lambda_list[0])
@@ -23,9 +59,9 @@ def tune_qubo_params_from_cache(
 
     for lmbda in lambda_list:
         for threshold in threshold_list:
-            seizure_f1s = []
-            nonseizure_fps = []
-            for data in score_cache.values():
+            seizure_f1s = defaultdict(list)
+            nonseizure_fps = defaultdict(list)
+            for name, data in score_cache.items():
                 try:
                     y_qubo_val = safe_solver_call(
                         solver, data["scores"], lmbda, threshold, seed=random_seed,
@@ -35,12 +71,13 @@ def tune_qubo_params_from_cache(
                     continue
                 y_val = data["y_val"]
                 if np.sum(y_val) > 0:
-                    seizure_f1s.append(f1_score(y_val, y_qubo_val, zero_division=0))
+                    seizure_f1s[subject_of(name)].append(
+                        f1_score(y_val, y_qubo_val, zero_division=0)
+                    )
                 else:
-                    nonseizure_fps.append(float(np.mean(y_qubo_val)))
+                    nonseizure_fps[subject_of(name)].append(float(np.mean(y_qubo_val)))
 
-            mean_f1 = float(np.mean(seizure_f1s)) if seizure_f1s else 0.0
-            mean_fp = float(np.mean(nonseizure_fps)) if nonseizure_fps else 0.0
+            mean_f1, mean_fp = _objective_terms(seizure_f1s, nonseizure_fps, objective)
             combined = mean_f1 - alpha * mean_fp
 
             if combined > best_score:

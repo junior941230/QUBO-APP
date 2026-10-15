@@ -366,8 +366,10 @@ def run_experiment(request, progress=None):
                     solver,
                     request.lambda_values,
                     request.qubo_threshold_values,
-                    alpha=request.tune_alpha,
+                    alpha=request.effective_qubo_tune_alpha,
                     random_seed=request.random_seed,
+                    objective=request.qubo_tune_objective,
+                    file_to_subject=file_to_subject,
                 )
             )
             baseline_selection = None

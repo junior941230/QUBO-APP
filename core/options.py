@@ -117,6 +117,9 @@ class ExperimentRequest:
         default_factory=lambda: tuple(DEFAULT_THRESHOLD_LIST)
     )
     tune_alpha: float = 0.2
+    # QUBO-only selection objective and FP penalty (None: reuse tune_alpha).
+    qubo_tune_objective: str = "file_mean"
+    qubo_tune_alpha: float = None
     random_seed: int = RANDOM_SEED
     reuse_validation_cache: bool = True
     save_pkl: bool = True
@@ -155,6 +158,10 @@ class ExperimentRequest:
             raise ValueError("QUBO threshold values must be between 0 and 1")
         if self.tune_alpha < 0:
             raise ValueError("tune_alpha cannot be negative")
+        if self.qubo_tune_objective not in {"file_mean", "patient_macro"}:
+            raise ValueError(f"Unknown QUBO tune objective: {self.qubo_tune_objective}")
+        if self.qubo_tune_alpha is not None and self.qubo_tune_alpha < 0:
+            raise ValueError("qubo_tune_alpha cannot be negative")
         if self.n_jobs == 0:
             object.__setattr__(self, "n_jobs", 1)
         if self.baseline == "lstm" and (
@@ -171,8 +178,12 @@ class ExperimentRequest:
         ):
             raise ValueError("XGBoost options require baseline=xgboost")
 
+    @property
+    def effective_qubo_tune_alpha(self):
+        return self.tune_alpha if self.qubo_tune_alpha is None else self.qubo_tune_alpha
+
     def semantic_config(self):
-        return {
+        config = {
             "schema_version": RUN_SCHEMA_VERSION,
             "evaluation_protocol": "nested_leave_one_subject_out",
             "subjects": list(self.selected_subjects),
@@ -188,6 +199,12 @@ class ExperimentRequest:
             "options": self.options.semantic_config(),
             "lstm": asdict(self.lstm) if self.baseline == "lstm" else None,
         }
+        # Added only when changed so existing run IDs and checkpoints stay valid.
+        if self.qubo_tune_objective != "file_mean":
+            config["qubo_tune_objective"] = self.qubo_tune_objective
+        if self.qubo_tune_alpha is not None:
+            config["qubo_tune_alpha"] = self.qubo_tune_alpha
+        return config
 
 
 def build_experiment_request(**kwargs):
