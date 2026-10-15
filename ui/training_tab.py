@@ -110,7 +110,7 @@ def build_training_tab():
                 ["svm", "xgboost", "lstm"], value="svm", label="Baseline"
             )
             solver_name = gr.Radio(
-                ["solve_qubo_seizure", "solve_chain_qubo_exact"],
+                ["solve_qubo_seizure", "solve_chain_qubo_exact", "solve_chain_qubo_causal"],
                 value="solve_chain_qubo_exact",
                 label="QUBO Solver",
             )

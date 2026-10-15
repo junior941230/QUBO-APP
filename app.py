@@ -129,7 +129,7 @@ def parse_args():
     train_parser.add_argument("--baseline", choices=["svm", "xgboost", "lstm"], default="svm")
     train_parser.add_argument(
         "--solver",
-        choices=["solve_qubo_seizure", "solve_chain_qubo_exact"],
+        choices=["solve_qubo_seizure", "solve_chain_qubo_exact", "solve_chain_qubo_causal"],
         default="solve_chain_qubo_exact",
     )
     train_parser.add_argument(

@@ -136,7 +136,7 @@ class ExperimentRequest:
         if self.baseline not in {"svm", "xgboost", "lstm"}:
             raise ValueError(f"Unknown baseline: {self.baseline}")
         if self.solver_name not in {
-            "solve_qubo_seizure", "solve_chain_qubo_exact"
+            "solve_qubo_seizure", "solve_chain_qubo_exact", "solve_chain_qubo_causal"
         }:
             raise ValueError(f"Unknown solver: {self.solver_name}")
         normalized_mode = {"lofo": "loso", "nfold": "group_nfold"}.get(

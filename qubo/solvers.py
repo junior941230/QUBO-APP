@@ -56,11 +56,37 @@ def solve_chain_qubo_exact(all_scores, lmbda=0.5, threshold=0.5, seed=RANDOM_SEE
     return result
 
 
+def solve_chain_qubo_causal(all_scores, lmbda=0.5, threshold=0.5, seed=RANDOM_SEED):
+    """Online version of the chain QUBO: label t uses only scores[0..t].
+
+    Runs the same forward dynamic program as solve_chain_qubo_exact but takes
+    the minimum-energy state of each prefix instead of back-tracking from the
+    end of the record, so no future epoch influences an earlier decision.
+    """
+    del seed
+    scores = np.asarray(all_scores, dtype=float)
+    if scores.size == 0:
+        return np.array([], dtype=int)
+    unary = -(scores - threshold)
+    result = np.zeros(len(scores), dtype=int)
+    cost_off, cost_on = 0.0, unary[0]
+    result[0] = int(cost_on < cost_off)
+    for index in range(1, len(scores)):
+        cost_off, cost_on = (
+            min(cost_off, cost_on + lmbda),
+            min(cost_off + lmbda, cost_on) + unary[index],
+        )
+        result[index] = int(cost_on < cost_off)
+    return result
+
+
 def get_qubo_solver(name):
     if name == "solve_qubo_seizure":
         return solve_qubo_seizure
     if name == "solve_chain_qubo_exact":
         return solve_chain_qubo_exact
+    if name == "solve_chain_qubo_causal":
+        return solve_chain_qubo_causal
     raise ValueError(f"Unknown solver: {name}")
 
 
