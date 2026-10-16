@@ -8,6 +8,7 @@ from config import (
     DEFAULT_BASELINE_THRESHOLD_LIST,
     DEFAULT_LAMBDA_LIST,
     DEFAULT_THRESHOLD_LIST,
+    RANDOM_SEED,
 )
 from core.io import discover_subjects
 from core.options import build_experiment_request
@@ -65,6 +66,7 @@ def train(args):
         solver_name=args.solver,
         tune_mode=args.tune_mode,
         tune_n_splits=args.tune_n_splits,
+        random_seed=args.random_seed,
         qubo_tune_objective=args.qubo_tune_objective,
         qubo_tune_alpha=args.qubo_tune_alpha,
         max_files_per_subject=args.max_files_per_subject,
@@ -141,6 +143,12 @@ def parse_args():
         help="Patient-grouped inner validation strategy.",
     )
     train_parser.add_argument("--tune-n-splits", type=int, default=5)
+    train_parser.add_argument(
+        "--random-seed",
+        type=int,
+        default=RANDOM_SEED,
+        help="Seed for inner-fold assignment, sampling and model training.",
+    )
     train_parser.add_argument(
         "--qubo-tune-objective",
         choices=["file_mean", "patient_macro", "event"],
