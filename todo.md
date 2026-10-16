@@ -217,3 +217,29 @@ epoch。新增 `solve_chain_qubo_causal`（同一個 forward DP，每個時間�
   （68.4% vs 67.8%），誤報更少（1.77 vs 2.58 次每小時）、誤報時間更短（0.62% vs 2.36%）。
 - **結論：以事件指標選 QUBO 參數不值得採用**，保留逐秒 F1 選參。低誤報需求選 spw25 + robust +
   離線 QUBO（68%、1.8 次每小時）；需要線上偵測或較高偵測率時選因果 QUBO（74–77%、4–5 次每小時）。
+
+## 後續研究：因果 LSTM baseline（2026-10-17）
+
+單向 LSTM（hidden 32、1 層、50 epochs，只用過去資訊）作為 baseline，搭配因果 chain QUBO
+（λ 0.1–1、θ 0.05–0.4）。評估時改為每位 held-out 患者只訓練一次（訓練固定 seed，結果不變）。
+逐檔結果在 `results/lstm-20261017/`；每個設定約 24 小時。
+
+| 設定 | AP | baseline F1 | QUBO F1 | 偵測率（QUBO） | 每小時誤報（QUBO） |
+|---|---|---|---|---|---|
+| XGBoost spw25 + robust + 因果 QUBO | 0.218 | 0.382 | **0.510** | **73.9%** | 4.2 |
+| LSTM + robust + 因果 QUBO | 0.222 | 0.292 | 0.294 | 55.7% | 4.2 |
+| LSTM + 因果 QUBO | 0.158 | 0.166 | 0.160 | 40.3% | 3.4 |
+
+- 在相同誤報率下，LSTM 的偵測率比 XGBoost + QUBO 低約 18 個百分點。
+- robust normalization 對 LSTM 同樣有大幅幫助（F1 0.166 → 0.292）。
+- QUBO 對 LSTM 幾乎沒有增益：LSTM 已在模型內部做時間平滑，和 causal context 一樣與 QUBO 互相取代。
+- 這個 LSTM 容量很小；在 24 位患者的資料量下，更大的模型是否能勝過 XGBoost + QUBO 仍未知，
+  但每個設定約需一天，優先順序低於下列整理。
+
+## 目前結論（2026-10-17）
+
+| 需求 | 建議設定 | 偵測率 | 延遲 | 每小時誤報 |
+|---|---|---|---|---|
+| 誤報最少（離線分析） | XGBoost spw25 + robust + 離線 chain QUBO，逐秒 F1 選參（預設範圍） | 68% | 9.8 s | 1.8 |
+| 線上偵測 | XGBoost spw25 + robust + 因果 chain QUBO，逐秒 F1 選參 | 74% | 11.6 s | 4.2 |
+| 線上、偏重偵測率 | 上一列加 negative downsampling 0.25 | 77% | 9.8 s | 5.1 |
