@@ -116,8 +116,9 @@ epoch。新增 `solve_chain_qubo_causal`（同一個 forward DP，每個時間�
 | 因果 | 低段 | spw25 + robust + context10 | 0.477 | 0.478 | 9 / 9 | 2.2% → 2.4% |
 | 因果 | 高段（λ 0.75–3、θ 0.1–0.5） | spw25 + neg0.25 + robust | 0.384 | 0.503 | 19 / 2 | 2.1% → 1.6% |
 
-- **因果 QUBO 是比 causal context 更好的線上時間平滑。** spw25 + robust + 因果 QUBO 的 F1 0.510
-  （20 好 / 2 差、FP 1.4%），高於最佳 causal-context baseline 的 0.477；兩者都只用過去資訊。
+- ~~因果 QUBO 是比 causal context 更好的線上時間平滑。~~ 更正：spw25 + robust + 因果 QUBO 的 F1
+  0.510 高於 causal-context baseline 的 0.477，但患者層級 bootstrap 的 95% 區間為 [−0.015, +0.078]，
+  差異不顯著（見下方「統計穩健性」）。
 - **QUBO 的增益大部分不需要未來資訊。** 離線最好 0.535，因果最好 0.510，差距約 0.025。
 - **在 context10 baseline 上，任何 QUBO 變體都沒有穩定增益**（−0.001 至 +0.019，且 FP 上升或好壞各半）。
 - **擴大 QUBO 參數範圍不一定更好。** 低段範圍包含預設範圍的 λ 0.5 / θ 0.3，但 inner validation
@@ -243,3 +244,42 @@ epoch。新增 `solve_chain_qubo_causal`（同一個 forward DP，每個時間�
 | 誤報最少（離線分析） | XGBoost spw25 + robust + 離線 chain QUBO，逐秒 F1 選參（預設範圍） | 68% | 9.8 s | 1.8 |
 | 線上偵測 | XGBoost spw25 + robust + 因果 chain QUBO，逐秒 F1 選參 | 74% | 11.6 s | 4.2 |
 | 線上、偏重偵測率 | 上一列加 negative downsampling 0.25 | 77% | 9.8 s | 5.1 |
+
+## 統計穩健性（2026-10-17）
+
+**種子變異**：兩個建議設定各用 4 個 seed（42、1、2、3；`--random-seed`）重跑，seed 影響 inner fold
+分配、取樣與模型訓練。逐檔結果在 `results/seeds-20261017/`。
+
+| 指標 | 因果 QUBO | 離線 QUBO |
+|---|---|---|
+| baseline F1 | 0.379 ± 0.003 | 同左 |
+| AP | 0.220 ± 0.002 | 同左 |
+| QUBO F1 | 0.502 ± 0.009 | 0.512 ± 0.006 |
+| 偵測率 | 74.2% ± 0.5 | 67.9% ± 0.9 |
+| 每小時誤報 | 4.34 ± 0.31 | 1.63 ± 0.16 |
+| 誤報時間 | 1.32% ± 0.16 | 0.60% ± 0.02 |
+
+**患者層級配對 bootstrap**（`tools/bootstrap_compare.py`，24 位患者重抽 10,000 次，95% 區間）。
+seed 變異遠小於「換一批患者」的不確定性，因此以區間是否包含 0 判定差異是否成立。
+
+| 比較 | 差異 | 95% 區間 | 判定 |
+|---|---|---|---|
+| spw25 vs phase0：AP | +0.025 | [+0.009, +0.044] | 成立 |
+| spw25 vs phase0：F1 | +0.006 | [−0.009, +0.021] | 不顯著 |
+| pbw vs spw25：AP | −0.010 | [−0.026, +0.004] | 不顯著 |
+| neg0.25 vs spw25：F1 / AP | +0.000 / +0.007 | 皆含 0 | 不顯著 |
+| robust vs spw25：F1 | +0.106 | [+0.043, +0.170] | 成立 |
+| robust vs spw25：AP | −0.008 | [−0.064, +0.045] | 不顯著 |
+| context10 vs robust：F1 | +0.094 | [+0.053, +0.140] | 成立 |
+| context10 vs robust：AP | +0.116 | [+0.074, +0.159] | 成立 |
+| robust + 因果 QUBO vs context10 baseline：F1 | +0.033 | [−0.015, +0.078] | 不顯著 |
+| 因果 vs 離線 QUBO（robust）：F1 | −0.001 | [−0.045, +0.041] | 不顯著 |
+| 因果 − 離線 QUBO（robust）：偵測率 | +5.5 pp | [+0.8, +11.5] | 成立 |
+| 因果 − 離線 QUBO（robust）：每小時誤報 | +2.5 | [+1.1, +4.4] | 成立 |
+| 因果 QUBO（robust）− context10 baseline：每小時誤報 | −6.6 | [−8.3, −5.0] | 成立 |
+| 離線 QUBO：robust − (robust + context10)：偵測率 / 每小時誤報 | +1.1 pp / −0.04 | 皆含 0 | 不顯著 |
+
+- 確實成立的效果：robust normalization、時間平滑（context 或 QUBO；兩者都沒有時每小時誤報 > 10 次），
+  以及 QUBO 的操作點（離線偏保守、因果偏積極）。
+- Phase 1–2 的類別不平衡選項在 F1 上都看不出效果，與判定結果隨容忍度翻轉一致。
+- 各建議設定是同一條「偵測率 vs 誤報」取捨曲線上的不同點，沒有任何一個在統計上全面勝出。
