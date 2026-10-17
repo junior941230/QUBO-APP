@@ -7,6 +7,7 @@ from config import (
     RANDOM_SEED,
     RUN_SCHEMA_VERSION,
 )
+from qubo.solvers import POSTPROCESSORS
 
 
 def parse_float_grid(value):
@@ -160,9 +161,7 @@ class ExperimentRequest:
         )
         if self.baseline not in {"svm", "xgboost", "lstm"}:
             raise ValueError(f"Unknown baseline: {self.baseline}")
-        if self.solver_name not in {
-            "solve_qubo_seizure", "solve_chain_qubo_exact", "solve_chain_qubo_causal"
-        }:
+        if self.solver_name not in POSTPROCESSORS:
             raise ValueError(f"Unknown solver: {self.solver_name}")
         normalized_mode = {"lofo": "loso", "nfold": "group_nfold"}.get(
             self.tune_mode, self.tune_mode

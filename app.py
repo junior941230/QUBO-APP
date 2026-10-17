@@ -13,6 +13,7 @@ from config import (
 from core.io import discover_subjects
 from core.options import build_experiment_request
 from pipeline_runner.experiment import run_experiment
+from qubo.solvers import POSTPROCESSORS
 
 
 def _env_bool(name, default=False):
@@ -136,7 +137,7 @@ def parse_args():
     train_parser.add_argument("--baseline", choices=["svm", "xgboost", "lstm"], default="svm")
     train_parser.add_argument(
         "--solver",
-        choices=["solve_qubo_seizure", "solve_chain_qubo_exact", "solve_chain_qubo_causal"],
+        choices=list(POSTPROCESSORS),
         default="solve_chain_qubo_exact",
     )
     train_parser.add_argument(

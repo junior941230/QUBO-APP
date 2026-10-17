@@ -8,6 +8,7 @@ from config import (
 from core.io import discover_subjects
 from core.options import build_experiment_request
 from pipeline_runner.experiment import run_experiment
+from qubo.solvers import POSTPROCESSORS
 
 
 def _grid(values):
@@ -110,7 +111,7 @@ def build_training_tab():
                 ["svm", "xgboost", "lstm"], value="svm", label="Baseline"
             )
             solver_name = gr.Radio(
-                ["solve_qubo_seizure", "solve_chain_qubo_exact", "solve_chain_qubo_causal"],
+                list(POSTPROCESSORS),
                 value="solve_chain_qubo_exact",
                 label="QUBO Solver",
             )
