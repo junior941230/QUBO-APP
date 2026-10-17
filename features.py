@@ -37,6 +37,26 @@ def robust_normalize_features(features):
     return (features - median) / scale
 
 
+def causal_robust_normalize_features(features, window_epochs=0, warmup_epochs=60):
+    """Scale each epoch by the median/IQR of strictly earlier epochs of the record.
+
+    window_epochs=0 uses every earlier epoch (expanding window); otherwise only
+    the last window_epochs. Epochs before warmup_epochs have too little history
+    and are set to 0 (the "typical" value), so they never use later epochs.
+    """
+    features = np.asarray(features, dtype=float)
+    window_epochs, warmup_epochs = int(window_epochs), max(1, int(warmup_epochs))
+    normalized = np.zeros_like(features)
+    for index in range(warmup_epochs, len(features)):
+        start = 0 if window_epochs <= 0 else max(0, index - window_epochs)
+        history = features[start:index]
+        q25, median, q75 = np.percentile(history, [25, 50, 75], axis=0)
+        scale = q75 - q25
+        scale[scale == 0] = 1.0
+        normalized[index] = (features[index] - median) / scale
+    return normalized
+
+
 def add_causal_context(features, window_epochs):
     """Append a trailing mean that never crosses a recording boundary."""
     features = np.asarray(features, dtype=float)

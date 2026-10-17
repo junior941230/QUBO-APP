@@ -14,6 +14,7 @@ from core.options import ExperimentOptions
 from features import (
     BANDS,
     add_causal_context,
+    causal_robust_normalize_features,
     extract_band_power,
     robust_normalize_features,
 )
@@ -99,6 +100,12 @@ def preprocess_one_file(edf_path, seizure_times, options=None):
         )
     if options.robust_normalize:
         features = robust_normalize_features(features)
+    elif options.causal_robust_normalize:
+        features = causal_robust_normalize_features(
+            features,
+            window_epochs=round(options.causal_robust_window_seconds / DURATION),
+            warmup_epochs=max(1, round(options.causal_robust_warmup_seconds / DURATION)),
+        )
     if options.temporal_context_seconds > 0:
         window_epochs = max(1, round(options.temporal_context_seconds / DURATION))
         features = add_causal_context(features, window_epochs)

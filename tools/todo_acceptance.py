@@ -18,7 +18,7 @@ import pandas as pd
 FP_TOLERANCE = 0.01
 # todo.md asks for AP to rise; a strict ">" rejects steps whose AP moves by noise.
 # AP_TOLERANCE allows a drop below this much (non-inferiority), symmetric to FP.
-AP_TOLERANCE = float(sys.argv[2]) if len(sys.argv) > 2 else 0.0
+AP_TOLERANCE = float(sys.argv[2]) if __name__ == "__main__" and len(sys.argv) > 2 else 0.0
 EPS = 0.005  # per-patient F1 differences within this are ties
 
 # (step label, candidates compared against the current best at that point)

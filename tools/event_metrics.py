@@ -29,7 +29,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from qubo.events import false_alarm_mask, file_event_counts, recording_hours  # noqa: E402
 
 
-def run_metrics(pkl_path):
+def per_patient_metrics(pkl_path):
+    """Return (run_id, per-(pred, subject) metrics, per-(pred, subject) counts)."""
     with open(pkl_path, "rb") as fp:
         data = pickle.load(fp)
     rows = []
@@ -52,10 +53,15 @@ def run_metrics(pkl_path):
         "fa_per_h": df.false_alarms / df.hours,
         "fa_time_pct": 100 * df.fa_epochs / df.epochs,
     })
+    return data["meta"].get("run_id", Path(pkl_path).stem), per_patient, df
+
+
+def run_metrics(pkl_path):
+    run_id, per_patient, df = per_patient_metrics(pkl_path)
     summary = per_patient.groupby(level="pred").mean()
     summary["events_detected"] = df.groupby(level="pred").detected.sum().astype(str) + "/" + \
         df.groupby(level="pred").events.sum().astype(str)
-    return data["meta"].get("run_id", Path(pkl_path).stem), summary
+    return run_id, summary
 
 
 def main():

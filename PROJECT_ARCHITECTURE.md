@@ -74,9 +74,10 @@ subjects
 | Log band power | `--log-power` | feature extraction |
 | Relative band power | `--relative-power` | feature extraction |
 | Robust normalization | `--robust-normalize` | 每個 EDF 的 feature matrix |
+| 因果 robust normalization | `--causal-robust-normalize [--causal-robust-window-seconds N] [--causal-robust-warmup-seconds N]` | 每個 EDF，只用較早的 epoch |
 | Causal context | `--temporal-context-seconds N` | 每個 EDF 的 trailing mean |
 
-若同時啟用 relative 與 log，順序是 absolute band power → relative power → log10。Robust normalization 使用整份單一記錄的無標籤統計量，適合目前的 offline evaluation；若改成即時部署，必須換成只依歷史資料更新的 scaler。Causal context 不使用未來 epoch，也不跨 EDF。
+若同時啟用 relative 與 log，順序是 absolute band power → relative power → log10。Robust normalization 使用整份單一記錄的無標籤統計量，適合目前的 offline evaluation；即時部署請改用 `--causal-robust-normalize`：第 t 個 epoch 以同一 EDF 中 t 之前的 epoch（N=0 為全部，否則最近 N 秒）計算 median/IQR，不使用當下或未來的 epoch，也不跨 EDF；前 warm-up 秒（預設 60）歷史不足，特徵設為 0。兩者互斥。Causal context 不使用未來 epoch，也不跨 EDF。
 
 ## 設定與 checkpoint
 

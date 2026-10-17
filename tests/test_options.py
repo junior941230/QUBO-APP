@@ -19,6 +19,7 @@ class ExperimentOptionsTests(unittest.TestCase):
         self.assertFalse(options.log_power)
         self.assertFalse(options.relative_power)
         self.assertFalse(options.robust_normalize)
+        self.assertFalse(options.causal_robust_normalize)
         self.assertEqual(options.temporal_context_seconds, 0)
 
     def test_builder_parses_grids_and_routes_lstm_aliases(self):
@@ -83,6 +84,31 @@ class ExperimentOptionsTests(unittest.TestCase):
             make_run_id(first.semantic_config()),
             make_run_id(second.semantic_config()),
         )
+
+    def test_causal_robust_options_change_run_identity_only_when_enabled(self):
+        def run_id(**option_values):
+            request = ExperimentRequest(
+                selected_subjects=("p1", "p2", "p3"),
+                options=ExperimentOptions(**option_values),
+            )
+            return make_run_id(request.semantic_config())
+
+        default = run_id()
+        self.assertEqual(default, run_id(causal_robust_window_seconds=600))
+        expanding = run_id(causal_robust_normalize=True)
+        sliding = run_id(causal_robust_normalize=True, causal_robust_window_seconds=600)
+        warmup = run_id(causal_robust_normalize=True, causal_robust_warmup_seconds=120)
+        self.assertEqual(len({default, expanding, sliding, warmup}), 4)
+
+    def test_causal_robust_options_are_validated(self):
+        with self.assertRaises(ValueError):
+            ExperimentOptions(robust_normalize=True, causal_robust_normalize=True)
+        with self.assertRaises(ValueError):
+            ExperimentOptions(causal_robust_warmup_seconds=0)
+        with self.assertRaises(ValueError):
+            ExperimentOptions(
+                causal_robust_window_seconds=30, causal_robust_warmup_seconds=60
+            )
 
     def test_invalid_fraction_is_rejected(self):
         with self.assertRaises(ValueError):

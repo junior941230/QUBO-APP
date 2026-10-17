@@ -36,6 +36,10 @@ class ExperimentOptions:
     log_power: bool = False
     relative_power: bool = False
     robust_normalize: bool = False
+    # Online-safe variant: median/IQR of earlier epochs only (0 s = expanding).
+    causal_robust_normalize: bool = False
+    causal_robust_window_seconds: int = 0
+    causal_robust_warmup_seconds: int = 60
     temporal_context_seconds: int = 0
 
     def __post_init__(self):
@@ -53,9 +57,20 @@ class ExperimentOptions:
             raise ValueError("negative_keep_fraction must be in (0, 1]")
         if self.temporal_context_seconds < 0:
             raise ValueError("temporal_context_seconds cannot be negative")
+        if self.robust_normalize and self.causal_robust_normalize:
+            raise ValueError("Choose robust_normalize or causal_robust_normalize, not both")
+        if self.causal_robust_window_seconds < 0:
+            raise ValueError("causal_robust_window_seconds cannot be negative")
+        if self.causal_robust_warmup_seconds < 1:
+            raise ValueError("causal_robust_warmup_seconds must be at least 1")
+        if (
+            self.causal_robust_window_seconds
+            and self.causal_robust_window_seconds < self.causal_robust_warmup_seconds
+        ):
+            raise ValueError("causal_robust_window_seconds must cover the warm-up")
 
     def semantic_config(self):
-        return {
+        config = {
             "tune_baseline_threshold": self.tune_baseline_threshold,
             "baseline_threshold_grid": (
                 list(self.baseline_threshold_grid)
@@ -80,6 +95,13 @@ class ExperimentOptions:
             "robust_normalize": self.robust_normalize,
             "temporal_context_seconds": self.temporal_context_seconds,
         }
+        # Added only when enabled so existing run IDs and checkpoints stay valid.
+        if self.causal_robust_normalize:
+            config["causal_robust_normalize"] = {
+                "window_seconds": self.causal_robust_window_seconds,
+                "warmup_seconds": self.causal_robust_warmup_seconds,
+            }
+        return config
 
 
 @dataclass(frozen=True)

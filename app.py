@@ -95,6 +95,9 @@ def train(args):
         log_power=args.log_power,
         relative_power=args.relative_power,
         robust_normalize=args.robust_normalize,
+        causal_robust_normalize=args.causal_robust_normalize,
+        causal_robust_window_seconds=args.causal_robust_window_seconds,
+        causal_robust_warmup_seconds=args.causal_robust_warmup_seconds,
         temporal_context_seconds=args.temporal_context_seconds,
     )
     summary, result_df, _summary_fig, _detail_fig, saved_path, run_id = (
@@ -188,6 +191,23 @@ def parse_args():
     train_parser.add_argument("--log-power", action="store_true")
     train_parser.add_argument("--relative-power", action="store_true")
     train_parser.add_argument("--robust-normalize", action="store_true")
+    train_parser.add_argument(
+        "--causal-robust-normalize",
+        action="store_true",
+        help="Online-safe robust normalization from earlier epochs of each EDF only.",
+    )
+    train_parser.add_argument(
+        "--causal-robust-window-seconds",
+        type=int,
+        default=0,
+        help="History used by --causal-robust-normalize (0: all earlier epochs).",
+    )
+    train_parser.add_argument(
+        "--causal-robust-warmup-seconds",
+        type=int,
+        default=60,
+        help="Initial seconds of each EDF set to 0 while history accumulates.",
+    )
     train_parser.add_argument("--temporal-context-seconds", type=int, default=0)
     train_parser.add_argument("--no-reuse-global-cache", action="store_true")
     train_parser.add_argument("--no-save-pkl", action="store_true")
