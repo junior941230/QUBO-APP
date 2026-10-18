@@ -1,0 +1,8 @@
+[Parallel(n_jobs=24)]: Using backend LokyBackend with 24 concurrent workers.
+[Parallel(n_jobs=24)]: Done   2 out of  24 | elapsed: 33.1min remaining: 364.0min
+[Parallel(n_jobs=24)]: Done   7 out of  24 | elapsed: 34.2min remaining: 82.9min
+[Parallel(n_jobs=24)]: Done  12 out of  24 | elapsed: 34.6min remaining: 34.6min
+[Parallel(n_jobs=24)]: Done  17 out of  24 | elapsed: 35.7min remaining: 14.7min
+[Parallel(n_jobs=24)]: Done  22 out of  24 | elapsed: 36.3min remaining:  3.3min
+[Parallel(n_jobs=24)]: Done  24 out of  24 | elapsed: 36.5min finished
+[13:46:04] [xchan] wrote results/xchan-20261018

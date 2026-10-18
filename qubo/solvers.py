@@ -31,24 +31,36 @@ def solve_qubo_seizure(all_scores, lmbda=0.5, threshold=0.5, seed=RANDOM_SEED):
 
 
 def _chain_viterbi(unary, lmbda):
-    """Minimise sum(unary * x) + lmbda * sum((x[t] - x[t-1]) ** 2) over binary x."""
-    dp = np.full((len(unary), 2), float("inf"))
-    path = np.zeros((len(unary), 2), dtype=int)
-    dp[0] = (0.0, unary[0])
+    """Minimise sum(unary * x) + lmbda * sum((x[t] - x[t-1]) ** 2) over binary x.
+
+    Two-state Viterbi on plain floats (ties prefer the earlier state 0); the
+    additions follow the order of the original numpy version, so results are
+    bit-identical, only faster.
+    """
+    unary = [float(value) for value in unary]
+    lmbda = float(lmbda)
+    cost_off, cost_on = 0.0, unary[0]
+    from_on_when_off = bytearray(len(unary))
+    from_on_when_on = bytearray(len(unary))
     for index in range(1, len(unary)):
-        for current in range(2):
-            costs = [
-                dp[index - 1, previous]
-                + unary[index] * current
-                + lmbda * (previous - current) ** 2
-                for previous in range(2)
-            ]
-            path[index, current] = int(np.argmin(costs))
-            dp[index, current] = min(costs)
+        u = unary[index]
+        stay_off, switch_off = cost_off, cost_on + lmbda
+        switch_on, stay_on = (cost_off + u) + lmbda, cost_on + u
+        if stay_off <= switch_off:
+            new_off = stay_off
+        else:
+            new_off, from_on_when_off[index] = switch_off, 1
+        if switch_on <= stay_on:
+            new_on = switch_on
+        else:
+            new_on, from_on_when_on[index] = stay_on, 1
+        cost_off, cost_on = new_off, new_on
     result = np.zeros(len(unary), dtype=int)
-    result[-1] = int(np.argmin(dp[-1]))
-    for index in range(len(unary) - 2, -1, -1):
-        result[index] = path[index + 1, result[index + 1]]
+    state = int(cost_on < cost_off)
+    result[-1] = state
+    for index in range(len(unary) - 1, 0, -1):
+        state = (from_on_when_on if state else from_on_when_off)[index]
+        result[index - 1] = state
     return result
 
 

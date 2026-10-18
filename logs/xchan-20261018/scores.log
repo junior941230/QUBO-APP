@@ -1,0 +1,294 @@
+[01:06:37] [XGBoost] device=cuda
+/home/ubuntu/QUBO-APP/.venv/lib/python3.12/site-packages/xgboost/core.py:751: UserWarning: [01:06:49] WARNING: /__w/xgboost/xgboost/src/common/error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.
+Potential solutions:
+- Use a data structure that matches the device ordinal in the booster.
+- Set the device for booster before call to inplace_predict.
+
+This warning will only be shown once.
+
+  return func(**kwargs)
+[01:06:52] [XGBoost] device=cuda
+[01:06:58] [XGBoost] device=cuda
+[01:07:13] [XGBoost] device=cuda
+[01:07:20] [XGBoost] device=cuda
+[01:07:34] [XGBoost] device=cuda
+[01:07:40] [XGBoost] device=cuda
+[01:07:54] [XGBoost] device=cuda
+[01:08:00] [XGBoost] device=cuda
+[01:08:14] [XGBoost] device=cuda
+[01:08:19] [XGBoost] device=cuda
+[01:08:34] [XGBoost] device=cuda
+[01:08:37] [xchan] chb02 scores done in 124s
+[01:08:38] [XGBoost] device=cuda
+[01:08:51] [XGBoost] device=cuda
+[01:08:55] [XGBoost] device=cuda
+[01:09:08] [XGBoost] device=cuda
+[01:09:13] [XGBoost] device=cuda
+[01:09:25] [XGBoost] device=cuda
+[01:09:30] [XGBoost] device=cuda
+[01:09:42] [XGBoost] device=cuda
+[01:09:47] [XGBoost] device=cuda
+[01:09:59] [XGBoost] device=cuda
+[01:10:04] [XGBoost] device=cuda
+[01:10:19] [XGBoost] device=cuda
+[01:10:23] [xchan] chb04 scores done in 106s
+[01:10:24] [XGBoost] device=cuda
+[01:10:39] [XGBoost] device=cuda
+[01:10:44] [XGBoost] device=cuda
+[01:10:59] [XGBoost] device=cuda
+[01:11:02] [XGBoost] device=cuda
+[01:11:15] [XGBoost] device=cuda
+[01:11:19] [XGBoost] device=cuda
+[01:11:32] [XGBoost] device=cuda
+[01:11:35] [XGBoost] device=cuda
+[01:11:48] [XGBoost] device=cuda
+[01:11:51] [XGBoost] device=cuda
+[01:12:06] [XGBoost] device=cuda
+[01:12:08] [xchan] chb05 scores done in 106s
+[01:12:09] [XGBoost] device=cuda
+[01:12:22] [XGBoost] device=cuda
+[01:12:26] [XGBoost] device=cuda
+[01:12:40] [XGBoost] device=cuda
+[01:12:44] [XGBoost] device=cuda
+[01:12:56] [XGBoost] device=cuda
+[01:13:01] [XGBoost] device=cuda
+[01:13:14] [XGBoost] device=cuda
+[01:13:18] [XGBoost] device=cuda
+[01:13:32] [XGBoost] device=cuda
+[01:13:35] [XGBoost] device=cuda
+[01:13:50] [XGBoost] device=cuda
+[01:13:53] [xchan] chb06 scores done in 105s
+[01:13:54] [XGBoost] device=cuda
+[01:14:06] [XGBoost] device=cuda
+[01:14:10] [XGBoost] device=cuda
+[01:14:22] [XGBoost] device=cuda
+[01:14:26] [XGBoost] device=cuda
+[01:14:40] [XGBoost] device=cuda
+[01:14:44] [XGBoost] device=cuda
+[01:14:58] [XGBoost] device=cuda
+[01:15:01] [XGBoost] device=cuda
+[01:15:15] [XGBoost] device=cuda
+[01:15:18] [XGBoost] device=cuda
+[01:15:32] [XGBoost] device=cuda
+[01:15:35] [xchan] chb07 scores done in 102s
+[01:15:36] [XGBoost] device=cuda
+[01:15:49] [XGBoost] device=cuda
+[01:15:53] [XGBoost] device=cuda
+[01:16:06] [XGBoost] device=cuda
+[01:16:10] [XGBoost] device=cuda
+[01:16:23] [XGBoost] device=cuda
+[01:16:27] [XGBoost] device=cuda
+[01:16:41] [XGBoost] device=cuda
+[01:16:46] [XGBoost] device=cuda
+[01:17:00] [XGBoost] device=cuda
+[01:17:04] [XGBoost] device=cuda
+[01:17:17] [XGBoost] device=cuda
+[01:17:20] [xchan] chb08 scores done in 105s
+[01:17:20] [XGBoost] device=cuda
+[01:17:34] [XGBoost] device=cuda
+[01:17:38] [XGBoost] device=cuda
+[01:17:51] [XGBoost] device=cuda
+[01:17:55] [XGBoost] device=cuda
+[01:18:08] [XGBoost] device=cuda
+[01:18:12] [XGBoost] device=cuda
+[01:18:24] [XGBoost] device=cuda
+[01:18:28] [XGBoost] device=cuda
+[01:18:40] [XGBoost] device=cuda
+[01:18:44] [XGBoost] device=cuda
+[01:18:58] [XGBoost] device=cuda
+[01:19:01] [xchan] chb09 scores done in 102s
+[01:19:02] [XGBoost] device=cuda
+[01:19:15] [XGBoost] device=cuda
+[01:19:19] [XGBoost] device=cuda
+[01:19:32] [XGBoost] device=cuda
+[01:19:36] [XGBoost] device=cuda
+[01:19:49] [XGBoost] device=cuda
+[01:19:54] [XGBoost] device=cuda
+[01:20:08] [XGBoost] device=cuda
+[01:20:11] [XGBoost] device=cuda
+[01:20:25] [XGBoost] device=cuda
+[01:20:29] [XGBoost] device=cuda
+[01:20:43] [XGBoost] device=cuda
+[01:20:45] [xchan] chb10 scores done in 104s
+[01:20:46] [XGBoost] device=cuda
+[01:21:00] [XGBoost] device=cuda
+[01:21:04] [XGBoost] device=cuda
+[01:21:17] [XGBoost] device=cuda
+[01:21:21] [XGBoost] device=cuda
+[01:21:35] [XGBoost] device=cuda
+[01:21:39] [XGBoost] device=cuda
+[01:21:54] [XGBoost] device=cuda
+[01:21:59] [XGBoost] device=cuda
+[01:22:13] [XGBoost] device=cuda
+[01:22:18] [XGBoost] device=cuda
+[01:22:33] [XGBoost] device=cuda
+[01:22:36] [xchan] chb11 scores done in 110s
+[01:22:37] [XGBoost] device=cuda
+[01:22:52] [XGBoost] device=cuda
+[01:22:57] [XGBoost] device=cuda
+[01:23:10] [XGBoost] device=cuda
+[01:23:14] [XGBoost] device=cuda
+[01:23:28] [XGBoost] device=cuda
+[01:23:32] [XGBoost] device=cuda
+[01:23:47] [XGBoost] device=cuda
+[01:23:52] [XGBoost] device=cuda
+[01:24:07] [XGBoost] device=cuda
+[01:24:12] [XGBoost] device=cuda
+[01:24:27] [XGBoost] device=cuda
+[01:24:30] [xchan] chb12 scores done in 114s
+[01:24:31] [XGBoost] device=cuda
+[01:24:46] [XGBoost] device=cuda
+[01:24:52] [XGBoost] device=cuda
+[01:25:06] [XGBoost] device=cuda
+[01:25:10] [XGBoost] device=cuda
+[01:25:23] [XGBoost] device=cuda
+[01:25:28] [XGBoost] device=cuda
+[01:25:41] [XGBoost] device=cuda
+[01:25:45] [XGBoost] device=cuda
+[01:25:58] [XGBoost] device=cuda
+[01:26:02] [XGBoost] device=cuda
+[01:26:15] [XGBoost] device=cuda
+[01:26:18] [xchan] chb13 scores done in 108s
+[01:26:19] [XGBoost] device=cuda
+[01:26:31] [XGBoost] device=cuda
+[01:26:35] [XGBoost] device=cuda
+[01:26:48] [XGBoost] device=cuda
+[01:26:52] [XGBoost] device=cuda
+[01:27:06] [XGBoost] device=cuda
+[01:27:10] [XGBoost] device=cuda
+[01:27:24] [XGBoost] device=cuda
+[01:27:28] [XGBoost] device=cuda
+[01:27:42] [XGBoost] device=cuda
+[01:27:46] [XGBoost] device=cuda
+[01:28:01] [XGBoost] device=cuda
+[01:28:03] [xchan] chb14 scores done in 106s
+[01:28:04] [XGBoost] device=cuda
+[01:28:18] [XGBoost] device=cuda
+[01:28:21] [XGBoost] device=cuda
+[01:28:34] [XGBoost] device=cuda
+[01:28:38] [XGBoost] device=cuda
+[01:28:51] [XGBoost] device=cuda
+[01:28:55] [XGBoost] device=cuda
+[01:29:09] [XGBoost] device=cuda
+[01:29:12] [XGBoost] device=cuda
+[01:29:24] [XGBoost] device=cuda
+[01:29:28] [XGBoost] device=cuda
+[01:29:43] [XGBoost] device=cuda
+[01:29:45] [xchan] chb15 scores done in 102s
+[01:29:46] [XGBoost] device=cuda
+[01:30:00] [XGBoost] device=cuda
+[01:30:04] [XGBoost] device=cuda
+[01:30:18] [XGBoost] device=cuda
+[01:30:22] [XGBoost] device=cuda
+[01:30:36] [XGBoost] device=cuda
+[01:30:41] [XGBoost] device=cuda
+[01:30:54] [XGBoost] device=cuda
+[01:30:58] [XGBoost] device=cuda
+[01:31:12] [XGBoost] device=cuda
+[01:31:16] [XGBoost] device=cuda
+[01:31:29] [XGBoost] device=cuda
+[01:31:31] [xchan] chb16 scores done in 106s
+[01:31:32] [XGBoost] device=cuda
+[01:31:45] [XGBoost] device=cuda
+[01:31:49] [XGBoost] device=cuda
+[01:32:02] [XGBoost] device=cuda
+[01:32:06] [XGBoost] device=cuda
+[01:32:20] [XGBoost] device=cuda
+[01:32:25] [XGBoost] device=cuda
+[01:32:39] [XGBoost] device=cuda
+[01:32:42] [XGBoost] device=cuda
+[01:32:56] [XGBoost] device=cuda
+[01:33:01] [XGBoost] device=cuda
+[01:33:15] [XGBoost] device=cuda
+[01:33:18] [xchan] chb17 scores done in 107s
+[01:33:19] [XGBoost] device=cuda
+[01:33:32] [XGBoost] device=cuda
+[01:33:36] [XGBoost] device=cuda
+[01:33:50] [XGBoost] device=cuda
+[01:33:54] [XGBoost] device=cuda
+[01:34:07] [XGBoost] device=cuda
+[01:34:11] [XGBoost] device=cuda
+[01:34:24] [XGBoost] device=cuda
+[01:34:27] [XGBoost] device=cuda
+[01:34:40] [XGBoost] device=cuda
+[01:34:43] [XGBoost] device=cuda
+[01:34:57] [XGBoost] device=cuda
+[01:35:00] [xchan] chb18 scores done in 102s
+[01:35:01] [XGBoost] device=cuda
+[01:35:15] [XGBoost] device=cuda
+[01:35:21] [XGBoost] device=cuda
+[01:35:36] [XGBoost] device=cuda
+[01:35:40] [XGBoost] device=cuda
+[01:35:55] [XGBoost] device=cuda
+[01:36:01] [XGBoost] device=cuda
+[01:36:16] [XGBoost] device=cuda
+[01:36:20] [XGBoost] device=cuda
+[01:36:35] [XGBoost] device=cuda
+[01:36:40] [XGBoost] device=cuda
+[01:36:55] [XGBoost] device=cuda
+[01:36:58] [xchan] chb19 scores done in 119s
+[01:37:00] [XGBoost] device=cuda
+[01:37:13] [XGBoost] device=cuda
+[01:37:17] [XGBoost] device=cuda
+[01:37:31] [XGBoost] device=cuda
+[01:37:35] [XGBoost] device=cuda
+[01:37:48] [XGBoost] device=cuda
+[01:37:53] [XGBoost] device=cuda
+[01:38:06] [XGBoost] device=cuda
+[01:38:10] [XGBoost] device=cuda
+[01:38:22] [XGBoost] device=cuda
+[01:38:26] [XGBoost] device=cuda
+[01:38:39] [XGBoost] device=cuda
+[01:38:42] [xchan] chb20 scores done in 104s
+[01:38:43] [XGBoost] device=cuda
+[01:38:57] [XGBoost] device=cuda
+[01:39:01] [XGBoost] device=cuda
+[01:39:15] [XGBoost] device=cuda
+[01:39:19] [XGBoost] device=cuda
+[01:39:32] [XGBoost] device=cuda
+[01:39:36] [XGBoost] device=cuda
+[01:39:50] [XGBoost] device=cuda
+[01:39:54] [XGBoost] device=cuda
+[01:40:06] [XGBoost] device=cuda
+[01:40:10] [XGBoost] device=cuda
+[01:40:24] [XGBoost] device=cuda
+[01:40:27] [xchan] chb21 scores done in 104s
+[01:40:27] [XGBoost] device=cuda
+[01:40:41] [XGBoost] device=cuda
+[01:40:45] [XGBoost] device=cuda
+[01:40:58] [XGBoost] device=cuda
+[01:41:02] [XGBoost] device=cuda
+[01:41:15] [XGBoost] device=cuda
+[01:41:21] [XGBoost] device=cuda
+[01:41:35] [XGBoost] device=cuda
+[01:41:40] [XGBoost] device=cuda
+[01:41:54] [XGBoost] device=cuda
+[01:42:00] [XGBoost] device=cuda
+[01:42:14] [XGBoost] device=cuda
+[01:42:17] [xchan] chb22 scores done in 111s
+[01:42:19] [XGBoost] device=cuda
+[01:42:33] [XGBoost] device=cuda
+[01:42:39] [XGBoost] device=cuda
+[01:42:54] [XGBoost] device=cuda
+[01:42:59] [XGBoost] device=cuda
+[01:43:14] [XGBoost] device=cuda
+[01:43:20] [XGBoost] device=cuda
+[01:43:35] [XGBoost] device=cuda
+[01:43:39] [XGBoost] device=cuda
+[01:43:54] [XGBoost] device=cuda
+[01:43:59] [XGBoost] device=cuda
+[01:44:14] [XGBoost] device=cuda
+[01:44:17] [xchan] chb23 scores done in 120s
+[01:44:18] [XGBoost] device=cuda
+[01:44:31] [XGBoost] device=cuda
+[01:44:35] [XGBoost] device=cuda
+[01:44:48] [XGBoost] device=cuda
+[01:44:52] [XGBoost] device=cuda
+[01:45:05] [XGBoost] device=cuda
+[01:45:10] [XGBoost] device=cuda
+[01:45:24] [XGBoost] device=cuda
+[01:45:27] [XGBoost] device=cuda
+[01:45:41] [XGBoost] device=cuda
+[01:45:45] [XGBoost] device=cuda
+[01:45:59] [XGBoost] device=cuda
+[01:46:02] [xchan] chb24 scores done in 105s
