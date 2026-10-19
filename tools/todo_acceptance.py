@@ -8,6 +8,7 @@ only when, on the baseline (inner-validation tuned threshold):
   * mean per-patient AP and mean macro F1 both improve, and
   * mean non-seizure FP rate rises by at most FP_TOLERANCE.
 """
+import gzip
 import re
 import sys
 from datetime import datetime, timedelta
@@ -68,7 +69,10 @@ def per_patient(csv):
 
 
 def runtime(log):
-    stamps = re.findall(r"^\[(\d\d:\d\d:\d\d)\]", Path(log).read_text(errors="ignore"), re.M)
+    log = Path(log)
+    opener = gzip.open if log.suffix == ".gz" else open
+    with opener(log, "rt", errors="ignore") as fp:
+        stamps = re.findall(r"^\[(\d\d:\d\d:\d\d)\]", fp.read(), re.M)
     if len(stamps) < 2:
         return None
     t = [datetime.strptime(s, "%H:%M:%S") for s in stamps]
@@ -96,7 +100,8 @@ def compare(best, cand):
 def main(result_dir):
     result_dir = Path(result_dir)
     data = {p.stem: per_patient(p) for p in sorted(result_dir.glob("*.csv"))}
-    times = {p.stem: runtime(p) for p in sorted(result_dir.glob("*.log"))}
+    logs = sorted(result_dir.glob("*.log")) + sorted(result_dir.glob("*.log.gz"))
+    times = {p.name.split(".log")[0]: runtime(p) for p in logs}
 
     print("## Summary (means over 24 held-out patients; baseline uses the tuned threshold)\n")
     rows = []
