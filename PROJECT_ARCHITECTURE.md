@@ -26,6 +26,7 @@ pipeline.py                    單一 EDF 前處理、切 epoch、平行處理
 models/registry.py             lazy model dispatch
 models/classical.py            SVM / XGBoost 訓練與推論
 models/lstm.py                 causal LSTM
+models/transformer.py          sliding-window Transformer（預設因果）
 models/training_data.py        patient weight / negative downsampling
 models/selection.py            inner-validation baseline threshold tuning
 
@@ -118,10 +119,18 @@ python app.py train --subjects chb01 chb02 chb03 --baseline xgboost \
   --tune-baseline-threshold
 ```
 
+## Sequence baseline
+
+`lstm` 與 `transformer` 都把每個 EDF 當作一條逐秒特徵序列，共用 `models.registry.sequence_model()`
+的訓練 / 推論介面，inner cache 與 outer 評估流程相同。Transformer 每一秒只 attend 最近
+`--transformer-window-seconds` 秒（`--transformer-bidirectional` 時改為前後），以短的 depthwise
+卷積取代絕對位置編碼；訓練時把 EDF 切成 `--transformer-segment-seconds` 的段，推論時分塊並帶足
+前後文，結果與整段一次計算相同。Transformer 設定只在 `--baseline transformer` 時寫入 run identity。
+
 ## 驗證
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-測試涵蓋 channel normalization、outer/inner patient isolation、checkpoint identity、GPU fallback、feature transforms、training weights/downsampling、baseline threshold selection 與 exact QUBO solver。
+測試涵蓋 sequence baseline 的因果性與分塊推論、channel normalization、outer/inner patient isolation、checkpoint identity、GPU fallback、feature transforms、training weights/downsampling、baseline threshold selection 與 exact QUBO solver。

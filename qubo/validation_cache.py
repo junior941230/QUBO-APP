@@ -4,7 +4,7 @@ import numpy as np
 
 from config import RANDOM_SEED
 from core.logging_utils import log_step
-from core.options import ExperimentOptions
+from core.options import SEQUENCE_BASELINES, ExperimentOptions
 from core.splits import patient_independent_validation_splits
 from models.registry import predict_scores
 from models.training_data import prepare_training_data
@@ -129,18 +129,22 @@ def build_validation_score_cache_kfold(
     )
 
 
-def build_validation_score_cache_lstm(
+def build_validation_score_cache_sequence(
     candidate_files,
     features,
     labels,
+    baseline,
     tune_mode,
     n_splits,
-    lstm_params,
+    model_params,
     file_to_subject,
     random_seed=RANDOM_SEED,
 ):
-    from models.lstm import _predict_lstm_sequence, _train_lstm_on_files
+    """Inner-fold cache for a sequence baseline (LSTM or Transformer)."""
+    from models.registry import sequence_model
 
+    train_model, predict_sequence = sequence_model(baseline)
+    log_prefix = f"Cache-{baseline.upper()}-Grouped"
     splits = patient_independent_validation_splits(
         candidate_files,
         file_to_subject,
@@ -150,25 +154,25 @@ def build_validation_score_cache_lstm(
         random_seed=random_seed,
     )
     cache = {}
-    log_step(f"[Cache-LSTM-Grouped] folds={len(splits)}")
+    log_step(f"[{log_prefix}] folds={len(splits)}")
     for fold_index, (train_files, val_files) in enumerate(splits, start=1):
         y_train = np.concatenate([labels[name] for name in train_files]).astype(int)
         if len(np.unique(y_train)) < 2:
             continue
         log_step(
-            f"[Cache-LSTM-Grouped] fold {fold_index}/{len(splits)} "
+            f"[{log_prefix}] fold {fold_index}/{len(splits)} "
             f"train_files={len(train_files)} val_files={len(val_files)}"
         )
-        model, mean, std, device = _train_lstm_on_files(
+        model, mean, std, device = train_model(
             train_files,
             features,
             labels,
             random_seed=random_seed,
-            **(lstm_params or {}),
+            **(model_params or {}),
         )
         for val_file in val_files:
             cache[val_file] = {
-                "scores": _predict_lstm_sequence(
+                "scores": predict_sequence(
                     model, features[val_file], mean, std, device
                 ),
                 "y_val": np.asarray(labels[val_file]).astype(int),
@@ -180,7 +184,7 @@ def build_validation_score_cache_lstm(
                 torch.cuda.empty_cache()
         except ImportError:
             pass
-    log_step(f"[Cache-LSTM-Grouped] done, cached_files={len(cache)}")
+    log_step(f"[{log_prefix}] done, cached_files={len(cache)}")
     return cache
 
 
@@ -191,7 +195,7 @@ def build_validation_score_cache(
     baseline,
     tune_mode,
     n_splits=5,
-    lstm_params=None,
+    sequence_params=None,
     file_to_subject=None,
     random_seed=RANDOM_SEED,
     options=None,
@@ -201,14 +205,15 @@ def build_validation_score_cache(
     normalized_mode = {"lofo": "loso", "nfold": "group_nfold"}.get(
         tune_mode, tune_mode
     )
-    if baseline == "lstm":
-        return build_validation_score_cache_lstm(
+    if baseline in SEQUENCE_BASELINES:
+        return build_validation_score_cache_sequence(
             candidate_files,
             features,
             labels,
+            baseline,
             normalized_mode,
             n_splits,
-            lstm_params,
+            sequence_params,
             file_to_subject,
             random_seed,
         )

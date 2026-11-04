@@ -48,6 +48,16 @@ def run_from_ui(
     relative_power,
     robust_normalize,
     temporal_context_seconds,
+    transformer_d_model=64,
+    transformer_n_heads=4,
+    transformer_num_layers=2,
+    transformer_dropout=0.1,
+    transformer_window_seconds=120,
+    transformer_causal=True,
+    transformer_segment_seconds=600,
+    transformer_epochs=20,
+    transformer_lr=5e-4,
+    transformer_batch_size=32,
     progress=gr.Progress(),
 ):
     try:
@@ -84,6 +94,16 @@ def run_from_ui(
             relative_power=relative_power,
             robust_normalize=robust_normalize,
             temporal_context_seconds=int(temporal_context_seconds),
+            transformer_d_model=int(transformer_d_model),
+            transformer_n_heads=int(transformer_n_heads),
+            transformer_num_layers=int(transformer_num_layers),
+            transformer_dropout=float(transformer_dropout),
+            transformer_window_seconds=int(transformer_window_seconds),
+            transformer_causal=bool(transformer_causal),
+            transformer_segment_seconds=int(transformer_segment_seconds),
+            transformer_epochs=int(transformer_epochs),
+            transformer_lr=float(transformer_lr),
+            transformer_batch_size=int(transformer_batch_size),
         )
     except (TypeError, ValueError) as exc:
         import pandas as pd
@@ -108,7 +128,8 @@ def build_training_tab():
         )
         with gr.Row():
             baseline = gr.Radio(
-                ["svm", "xgboost", "lstm"], value="svm", label="Baseline"
+                ["svm", "xgboost", "lstm", "transformer"], value="svm",
+                label="Baseline",
             )
             solver_name = gr.Radio(
                 list(POSTPROCESSORS),
@@ -190,6 +211,35 @@ def build_training_tab():
                 lstm_lr = gr.Number(value=5e-4, label="Learning rate")
                 lstm_batch = gr.Slider(1, 16, value=4, step=1, label="Batch (files)")
 
+        with gr.Accordion("Transformer hyperparameters", open=False):
+            gr.Markdown(
+                "Sliding-window attention over per-second features. Causal mode "
+                "attends only to the past and suits online detection."
+            )
+            with gr.Row():
+                transformer_d_model = gr.Slider(
+                    16, 256, value=64, step=16, label="Model dim"
+                )
+                transformer_n_heads = gr.Slider(1, 8, value=4, step=1, label="Heads")
+                transformer_num_layers = gr.Slider(1, 6, value=2, step=1, label="Layers")
+                transformer_dropout = gr.Slider(
+                    0, 0.6, value=0.1, step=0.05, label="Dropout"
+                )
+            with gr.Row():
+                transformer_window_seconds = gr.Slider(
+                    10, 600, value=120, step=10, label="Attention window (s)"
+                )
+                transformer_causal = gr.Checkbox(value=True, label="Causal (past only)")
+                transformer_segment_seconds = gr.Slider(
+                    120, 3600, value=600, step=60, label="Training segment (s)"
+                )
+            with gr.Row():
+                transformer_epochs = gr.Slider(1, 100, value=20, step=1, label="Epochs")
+                transformer_lr = gr.Number(value=5e-4, label="Learning rate")
+                transformer_batch_size = gr.Slider(
+                    1, 128, value=32, step=1, label="Batch (segments)"
+                )
+
         with gr.Row():
             reuse_validation_cache = gr.Checkbox(
                 value=True, label="Precompute validation cache"
@@ -219,6 +269,10 @@ def build_training_tab():
                 patient_balanced_weights, negative_downsample_enabled,
                 negative_keep_fraction, log_power, relative_power,
                 robust_normalize, temporal_context_seconds,
+                transformer_d_model, transformer_n_heads, transformer_num_layers,
+                transformer_dropout, transformer_window_seconds, transformer_causal,
+                transformer_segment_seconds, transformer_epochs, transformer_lr,
+                transformer_batch_size,
             ],
             outputs=[
                 summary_output, result_table, summary_plot, detail_plot,
