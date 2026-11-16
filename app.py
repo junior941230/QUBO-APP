@@ -83,6 +83,19 @@ def train(args):
         lstm_lr=args.lstm_lr,
         lstm_batch=args.lstm_batch,
         lstm_dropout=args.lstm_dropout,
+        transformer_d_model=args.transformer_d_model,
+        transformer_n_heads=args.transformer_heads,
+        transformer_num_layers=args.transformer_layers,
+        transformer_ff_dim=args.transformer_ff_dim,
+        transformer_dropout=args.transformer_dropout,
+        transformer_window_seconds=args.transformer_window_seconds,
+        transformer_conv_kernel=args.transformer_conv_kernel,
+        transformer_causal=not args.transformer_bidirectional,
+        transformer_segment_seconds=args.transformer_segment_seconds,
+        transformer_epochs=args.transformer_epochs,
+        transformer_lr=args.transformer_lr,
+        transformer_weight_decay=args.transformer_weight_decay,
+        transformer_batch_size=args.transformer_batch,
         force_restart=args.force_restart,
         tune_baseline_threshold=args.tune_baseline_threshold,
         baseline_threshold_grid=args.baseline_thresholds,
@@ -134,7 +147,9 @@ def parse_args():
         required=True,
         help="At least 3 subject IDs such as chb01 chb02 chb03, or 'all'.",
     )
-    train_parser.add_argument("--baseline", choices=["svm", "xgboost", "lstm"], default="svm")
+    train_parser.add_argument(
+        "--baseline", choices=["svm", "xgboost", "lstm", "transformer"], default="svm"
+    )
     train_parser.add_argument(
         "--solver",
         choices=list(POSTPROCESSORS),
@@ -221,6 +236,43 @@ def parse_args():
     train_parser.add_argument("--lstm-lr", type=float, default=5e-4)
     train_parser.add_argument("--lstm-batch", type=int, default=4)
     train_parser.add_argument("--lstm-dropout", type=float, default=0.2)
+    transformer = train_parser.add_argument_group(
+        "Transformer baseline (--baseline transformer)"
+    )
+    transformer.add_argument("--transformer-d-model", type=int, default=64)
+    transformer.add_argument("--transformer-heads", type=int, default=4)
+    transformer.add_argument("--transformer-layers", type=int, default=2)
+    transformer.add_argument("--transformer-ff-dim", type=int, default=128)
+    transformer.add_argument("--transformer-dropout", type=float, default=0.1)
+    transformer.add_argument(
+        "--transformer-window-seconds",
+        type=int,
+        default=120,
+        help="Each epoch attends to this many epochs (past only unless bidirectional).",
+    )
+    transformer.add_argument(
+        "--transformer-conv-kernel",
+        type=int,
+        default=5,
+        help="Depthwise convolution width that encodes local order.",
+    )
+    transformer.add_argument(
+        "--transformer-bidirectional",
+        action="store_true",
+        help="Also attend to future epochs (offline); default is causal.",
+    )
+    transformer.add_argument(
+        "--transformer-segment-seconds",
+        type=int,
+        default=600,
+        help="Training EDFs are cut into segments of this length.",
+    )
+    transformer.add_argument("--transformer-epochs", type=int, default=20)
+    transformer.add_argument("--transformer-lr", type=float, default=5e-4)
+    transformer.add_argument("--transformer-weight-decay", type=float, default=0.01)
+    transformer.add_argument(
+        "--transformer-batch", type=int, default=32, help="Segments per batch."
+    )
     train_parser.set_defaults(func=train)
 
     args = parser.parse_args()

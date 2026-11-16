@@ -119,6 +119,18 @@ class ExperimentIsolationTests(unittest.TestCase):
         self.assertEqual(predict_calls, [4, 4, 4])
 
     def test_lstm_trains_once_per_outer_subject_without_test_files(self):
+        self._check_sequence_baseline_isolation(
+            "lstm", "models.lstm._train_lstm_on_files",
+            "models.lstm._predict_lstm_sequence",
+        )
+
+    def test_transformer_trains_once_per_outer_subject_without_test_files(self):
+        self._check_sequence_baseline_isolation(
+            "transformer", "models.transformer._train_transformer_on_files",
+            "models.transformer._predict_transformer_sequence",
+        )
+
+    def _check_sequence_baseline_isolation(self, baseline, train_target, predict_target):
         files = [f"{subject}_{part}.edf" for subject in ("p1", "p2", "p3") for part in "ab"]
         file_to_subject = {name: name.split("_")[0] for name in files}
         paths = [f"/fake/{file_to_subject[name]}/{name}" for name in files]
@@ -153,9 +165,9 @@ class ExperimentIsolationTests(unittest.TestCase):
             "pipeline_runner.experiment.build_validation_score_cache",
             side_effect=fake_cache_builder,
         ), patch(
-            "models.lstm._train_lstm_on_files", side_effect=fake_train,
+            train_target, side_effect=fake_train,
         ), patch(
-            "models.lstm._predict_lstm_sequence", return_value=np.array([0.1, 0.9]),
+            predict_target, return_value=np.array([0.1, 0.9]),
         ), patch(
             "pipeline_runner.experiment.get_qubo_solver", return_value=threshold_solver,
         ), patch("pipeline_runner.experiment.save_checkpoint"), patch(
@@ -164,7 +176,7 @@ class ExperimentIsolationTests(unittest.TestCase):
             _, result_df, _, _, _, _ = run_experiment(
                 ExperimentRequest(
                     selected_subjects=("p1", "p2", "p3"),
-                    baseline="lstm",
+                    baseline=baseline,
                     tune_mode="loso",
                     tune_n_splits=2,
                     n_jobs=1,

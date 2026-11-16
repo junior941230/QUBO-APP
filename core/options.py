@@ -127,6 +127,50 @@ class LSTMOptions:
 
 
 @dataclass(frozen=True)
+class TransformerOptions:
+    """Sliding-window Transformer baseline; lengths are in 1-second epochs."""
+
+    d_model: int = 64
+    n_heads: int = 4
+    num_layers: int = 2
+    ff_dim: int = 128
+    dropout: float = 0.1
+    window_seconds: int = 120
+    conv_kernel: int = 5
+    causal: bool = True
+    segment_seconds: int = 600
+    epochs: int = 20
+    lr: float = 0.0005
+    weight_decay: float = 0.01
+    batch_size: int = 32
+
+    def __post_init__(self):
+        sizes = (
+            self.d_model, self.n_heads, self.num_layers, self.ff_dim,
+            self.window_seconds, self.conv_kernel, self.segment_seconds,
+            self.epochs, self.batch_size,
+        )
+        if min(sizes) <= 0:
+            raise ValueError("Transformer sizes, epochs, and batch size must be positive")
+        if self.d_model % self.n_heads:
+            raise ValueError("Transformer d_model must be divisible by n_heads")
+        if not self.causal and self.conv_kernel % 2 == 0:
+            raise ValueError("Non-causal Transformer needs an odd conv_kernel")
+        if self.lr <= 0:
+            raise ValueError("Transformer learning rate must be positive")
+        if self.weight_decay < 0:
+            raise ValueError("Transformer weight decay cannot be negative")
+        if not 0 <= self.dropout < 1:
+            raise ValueError("Transformer dropout must be in [0, 1)")
+
+    def as_dict(self):
+        return asdict(self)
+
+
+SEQUENCE_BASELINES = ("lstm", "transformer")
+
+
+@dataclass(frozen=True)
 class ExperimentRequest:
     selected_subjects: tuple
     baseline: str = "svm"
@@ -150,6 +194,7 @@ class ExperimentRequest:
     force_restart: bool = False
     options: ExperimentOptions = field(default_factory=ExperimentOptions)
     lstm: LSTMOptions = field(default_factory=LSTMOptions)
+    transformer: TransformerOptions = field(default_factory=TransformerOptions)
 
     def __post_init__(self):
         object.__setattr__(
@@ -159,7 +204,7 @@ class ExperimentRequest:
         object.__setattr__(
             self, "qubo_threshold_values", parse_float_grid(self.qubo_threshold_values)
         )
-        if self.baseline not in {"svm", "xgboost", "lstm"}:
+        if self.baseline not in {"svm", "xgboost", *SEQUENCE_BASELINES}:
             raise ValueError(f"Unknown baseline: {self.baseline}")
         if self.solver_name not in POSTPROCESSORS:
             raise ValueError(f"Unknown solver: {self.solver_name}")
@@ -185,7 +230,7 @@ class ExperimentRequest:
             raise ValueError("qubo_tune_alpha cannot be negative")
         if self.n_jobs == 0:
             object.__setattr__(self, "n_jobs", 1)
-        if self.baseline == "lstm" and (
+        if self.baseline in SEQUENCE_BASELINES and (
             self.options.patient_balanced_weights
             or self.options.negative_downsample_enabled
         ):
@@ -198,6 +243,18 @@ class ExperimentRequest:
             or self.options.xgb_max_delta_step_enabled
         ):
             raise ValueError("XGBoost options require baseline=xgboost")
+
+    @property
+    def is_sequence_baseline(self):
+        return self.baseline in SEQUENCE_BASELINES
+
+    def sequence_params(self):
+        """Hyperparameters of the selected sequence baseline (None otherwise)."""
+        if self.baseline == "lstm":
+            return self.lstm.as_dict()
+        if self.baseline == "transformer":
+            return self.transformer.as_dict()
+        return None
 
     @property
     def effective_qubo_tune_alpha(self):
@@ -221,6 +278,8 @@ class ExperimentRequest:
             "lstm": asdict(self.lstm) if self.baseline == "lstm" else None,
         }
         # Added only when changed so existing run IDs and checkpoints stay valid.
+        if self.baseline == "transformer":
+            config["transformer"] = asdict(self.transformer)
         if self.qubo_tune_objective != "file_mean":
             config["qubo_tune_objective"] = self.qubo_tune_objective
         if self.qubo_tune_alpha is not None:
@@ -248,10 +307,21 @@ def build_experiment_request(**kwargs):
             lstm_values[lstm_aliases[key]] = kwargs.pop(key)
         elif key.startswith("lstm_") and key[5:] in lstm_fields:
             lstm_values[key[5:]] = kwargs.pop(key)
+    transformer_fields = set(TransformerOptions.__dataclass_fields__)
+    explicit_transformer = kwargs.pop("transformer", None)
+    transformer_values = {}
+    for key in list(kwargs):
+        if key.startswith("transformer_") and key[12:] in transformer_fields:
+            transformer_values[key[12:]] = kwargs.pop(key)
     if explicit_options is not None and option_values:
         raise ValueError("Pass either options or flat option fields, not both")
     if explicit_lstm is not None and lstm_values:
         raise ValueError("Pass either lstm or flat LSTM fields, not both")
+    if explicit_transformer is not None and transformer_values:
+        raise ValueError("Pass either transformer or flat Transformer fields, not both")
     kwargs["options"] = explicit_options or ExperimentOptions(**option_values)
     kwargs["lstm"] = explicit_lstm or LSTMOptions(**lstm_values)
+    kwargs["transformer"] = explicit_transformer or TransformerOptions(
+        **transformer_values
+    )
     return ExperimentRequest(**kwargs)

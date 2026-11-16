@@ -155,7 +155,7 @@ def _build_subject_cache(request, train_files, features, labels, file_to_subject
         request.baseline,
         tune_mode=request.tune_mode,
         n_splits=min(request.tune_n_splits, subject_count),
-        lstm_params=request.lstm.as_dict(),
+        sequence_params=request.sequence_params(),
         file_to_subject=file_to_subject,
         random_seed=request.random_seed,
         options=request.options,
@@ -184,19 +184,20 @@ def _predict_subject_scores(
     return dict(zip(test_files, np.split(scores_all, np.cumsum(lengths)[:-1])))
 
 
-def _predict_subject_lstm_scores(request, train_files, test_files, features, labels):
-    """Train the causal LSTM once on the outer-training files and score each test file."""
-    from models.lstm import _predict_lstm_sequence, _train_lstm_on_files
+def _predict_subject_sequence_scores(request, train_files, test_files, features, labels):
+    """Train the sequence baseline once on the outer-training files and score each test file."""
+    from models.registry import sequence_model
 
-    model, mean, std, device = _train_lstm_on_files(
+    train_model, predict_sequence = sequence_model(request.baseline)
+    model, mean, std, device = train_model(
         train_files,
         features,
         labels,
         random_seed=request.random_seed,
-        **request.lstm.as_dict(),
+        **request.sequence_params(),
     )
     return {
-        name: np.asarray(_predict_lstm_sequence(model, features[name], mean, std, device))
+        name: np.asarray(predict_sequence(model, features[name], mean, std, device))
         for name in test_files
     }
 
@@ -406,7 +407,7 @@ def run_experiment(request, progress=None):
             _save_progress(run_id, rows, detail_cache, skipped, config)
             continue
 
-        if request.baseline == "lstm":
+        if request.is_sequence_baseline:
             train_features = np.empty((0, 0))
             train_labels = np.concatenate([labels[name] for name in train_files])
             train_sample_weight = None
@@ -437,8 +438,8 @@ def run_experiment(request, progress=None):
         subject_scores, subject_error = {}, None
         fit_start = time.perf_counter()
         try:
-            if request.baseline == "lstm":
-                subject_scores = _predict_subject_lstm_scores(
+            if request.is_sequence_baseline:
+                subject_scores = _predict_subject_sequence_scores(
                     request, train_files, pending_files, features, labels
                 )
             else:

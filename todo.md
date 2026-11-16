@@ -426,3 +426,35 @@ grid：moving average λ 1–60 秒、HMM λ 1–16，θ 皆 0.05–0.6（63 組
 - **結論**：在 CHB-MIT 與這組特徵上，無論一維或跨通道，QUBO 形式都沒有勝過傳統平滑。
   建議論文主方法改為 HMM（可加通道融合），QUBO 作為對照；若仍要研究 QUBO，需要它真正獨有的結構
   （例如非 submodular 的稀疏或互斥約束），且要先有比現在強的通道層級證據。
+
+## 待跑：Sliding-window Transformer baseline
+
+文獻中較強的癲癇偵測模型多為 Transformer 類（例如 SeizureTransformer）。目前只有小型因果 LSTM 作為
+深度學習 baseline，因此新增 `--baseline transformer`（`models/transformer.py`）：輸入與 XGBoost / LSTM
+相同的逐秒特徵，每秒只 attend 最近 120 秒（預設因果，不看未來），以短卷積取代絕對位置編碼；
+d_model 64、4 heads、2 層，訓練時把 EDF 切成 600 秒的段（AdamW，20 epochs）。測試確認因果性、
+分塊推論與整段計算一致、padding 不影響真實 epoch，以及 outer / inner 的患者隔離。
+
+要回答的問題：(1) 在相同特徵與 nested LOSO 下，Transformer 能否勝過 XGBoost spw25 + 平滑；
+(2) Transformer 內部已做時間建模，接上 QUBO / HMM 的增益是否像 LSTM 一樣消失。
+
+設定與既有對照相同（seed 42、inner 選 baseline 門檻、因果 chain QUBO，λ 0.1–1、θ 0.05–0.4）：
+
+```bash
+# 1. 對照「LSTM + robust」與「XGBoost spw25 + robust + 因果 QUBO」
+./run_gpu.sh train --subjects all --baseline transformer --robust-normalize \
+  --tune-baseline-threshold --solver solve_chain_qubo_causal \
+  --lambdas 0.1,0.25,0.5,0.75,1.0 --thresholds 0.05,0.1,0.2,0.3,0.4 \
+  --output-csv results/transformer-<date>/transformer-robust.csv
+
+# 2. 全因果線上設定，對照「spw25 + 因果 robust（10 分鐘）+ 因果 QUBO」
+./run_gpu.sh train --subjects all --baseline transformer \
+  --causal-robust-normalize --causal-robust-window-seconds 600 \
+  --tune-baseline-threshold --solver solve_chain_qubo_causal \
+  --lambdas 0.1,0.25,0.5,0.75,1.0 --thresholds 0.05,0.1,0.2,0.3,0.4 \
+  --output-csv results/transformer-<date>/transformer-crobust600.csv
+```
+
+跑完後用 `tools/event_metrics.py` 算事件指標，以 `tools/bootstrap_compare.py` 和上述對照做患者層級
+bootstrap。若線上結果有競爭力，再測其他後處理（`--solver hmm_forward_causal`、
+`smooth_moving_average_causal`）與離線版（`--transformer-bidirectional` + 離線 QUBO）。
